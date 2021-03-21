@@ -1,0 +1,68 @@
+site_name: GTE Project Management Framework
+markdown_extensions:
+    - toc:
+        permalink: "#"
+repo_url: https://github.com/rossco555/GTE
+repo_name: gte-api-hub
+theme:
+  name: material
+  palette:
+    primary: blue
+  logo: logo.svg
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+nav:
+- 'Home': 'index.md'
+- 'terminology.md'  
+- 'overview.md'
+- 'Core Concepts':
+  - 'core-concepts/earned-value-management.md'
+- 'Delivery Elements':
+  - 'Initiation & Planning': 'delivery-elements/initiation-and-planning.md'
+  - 'Concept & Confirmation (0-30%)': 'delivery-elements/concept-and-confirmation.md'
+  - 'Development (30-100%)': 'delivery-elements/development.md'
+  - 'Off-Site Testing': 'delivery-elements/off-site-testing.md'
+  - 'Site Works': 'delivery-elements/site-works.md'
+  - 'Execution Closeout': 'delivery-elements/execution-closeout.md'
+  - 'Monitoring & Control': 'delivery-elements/monitoring-and-control.md'
+  - 'Project Closeout': 'delivery-elements/project-closeout.md'
+- 'Processes':
+  - 'Project Setup': 'processes/project-setup.md'
+  - 'Project Management Integration': 'processes/project-management-integration.md'
+  - 'Scope Management': 'processes/scope-management.md'
+    # - 'Scope Clarification':
+    #   - 'Technical Queries [TQs] and Requests for Information [RFIs]': tqs-and-rfis.md'
+    # - 'Scope Confirmation':
+    #   - ''
+    #   # Basis of Design [B
+    # - 'Scope Change':
+    #   - ''
+    #   # (Will refer to Integrated Change Contr
+    # - 'Scope Monitoring':
+    #   - ''
+    #   # Document Deliverables List
+    #   # Drawing Deliverables List
+    #   # Design Review
+  - 'Schedule (Time) Management': 'processes/schedule-management.md'
+    # - 'Project Schedule Development':
+    #   - 'Work Breakdown Structure [WBS]': 'wbs.md'
+    #   - 'activitiy-sequencing.md'
+    #   - 'meta-coding.md'
+    #   - 'cost-coding.md'
+    #   # <a href="/Processes/ScheduleManagement/ProjectScheduleDevelopment/CostCoding.html">Cost Coding</a>
+    # - 'Project Schedule Reporting'
+  - 'Cost Management': 'processes/cost-management.md'
+    # - 'Cost Units, Cost Breakdown Structure [CBS] & Control Accounts': 'cost-units-cbs-control-accounts.md'
+    # # <a href="/Processes/CostManagement/CostUnitsCBS&ControlAccounts.html">Cost Units, Cost Breakdown Structure [CBS] & Control Accounts</a>
+    # - 'invoicing.md'
+  - 'Quality Management': 'processes/quality-management.md'
+  - 'Resource Management': 'processes/resource-management.md'
+  - 'Stakeholder & Communications Management': 'processes/communications-management.md'
+  - 'Risk Management': 'processes/risk-management.md'
+  - 'Procurement Management': 'processes/procurement-management.md'
+- 'Tools & Templates':
+  - ''
