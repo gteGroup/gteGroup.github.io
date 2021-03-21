@@ -1,0 +1,9 @@
+# Schedule Management 
+
+## Project Schedule Development 
+
+### Cost Coding
+
+Cost units are designated by applying cost codes to activities or summaries in the project schedule within Smartsheet. Each cost unit is created in the cost tracking system for resource costings to be assigned to, and these then become the project control accounts.
+
+Where applicable, activities at any level of the WBS must be coded as an element of the project Cost Breakdown Structure in the "Cost Code" column of the project schedule in Smartsheet. The level(s) at which cost assignments are made, and name of the cost units, must be in accordance with the guidance in [Cost Management](../cost-management).<TODO: Proper reference required>

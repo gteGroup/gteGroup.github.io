@@ -1,138 +1,47 @@
----
-title: Processes | Cost Management | Cost Units, CBS & Control Accounts
----
-<a href="https://gtegroup.github.io/"><< index</a>
-<p>
-    The intersections of the CBS and WBS are the control accounts at which a project can be managed.
-</p>
-<p>
-    The CBS for GTE projects is simply the hierarchy formed by the cost units, where costs will be captured. 
-    This CBS must reside within the project WBS for GTE projects as cost codes are applied to elements in the WBS 
-    in a restrictive manner, as explained below. Generally, costs will be captured at a far less granular level 
-    than the work activities in the project schedule, so the CBS is essentially a subset of the WBS.
-</p>
-<h3>Cost Units (Project Control Accounts)</h3>
-<p>
-    The principal GTE restriction for cost unit designation is that a cost code cannot be applied on multiple 
-    branches of the WBS unless it spans all of those branches up to a common pinnacle. The control accounts are 
-    then these pinnacles.
-</p>
-<p>
-    Cost codes can be assigned, however, at any level of the WBS below L1, and at different levels for any given 
-    branch which provides great flexibility for projects of varying complexity.
-</p>
-<p>
-    The cost codes for a project are assigned to the WBS in the project schedule to designate the cost units, as 
-    described in {{ TBA }}<!-- TODO: Reference -->. The Smartsheet cost codes are mirrored to the cost tracking 
-    system where time and expenses bookings are made for/by resources.
-</p>
-<p>
-    The higher in the hierarchy the cost code assignments for a project, the less granular the project cost control. 
-    The highest level of cost code assignment should be made in consultation with the guidance in the below table. 
-    The guidance provides the highest level of the WBS that should be used in most instances within a particular 
-    delivery element (L2 of the WBS), for a given project classification but it should be noted that it may be valid 
-    in some instances to assign cost codes as high as L1 (ie at the project level).
-</p>
-<p>
-  In addition to the below guidance, the project manager should ensure that it is possible to identify an 
-  individual in the project team solely accountable for the performance of each cost account. That individual will 
-  be responsible for managing any distribution of budget within the control account and providing progress and 
-  estimate to complete updates (at possibly lower levels).
-</p>
+# Cost Management 
 
-<table border="1" cellspacing="0" cellpadding="0" width="567">
-    <thead>
-        <tr>
-            <td><p>#</td>
-            <td><p>Delivery Element</td>
-            <td><p>Classification<br>C1</p></td>
-            <td><p>Classification<br>C2</p></td>
-            <td><p>Classification<br>C3</p></td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><p align="center">1</td>
-            <td><p align="center">Initiation &amp; Planning</td>
-            <td><p align="center">L2</td>
-            <td><p align="center">L2</td>
-            <td><p align="center">L2</td>
-        </tr>
-        <tr>
-            <td><p align="center">2</td>
-            <td><p align="center">Design Concept &amp; Confirmation (0-30%)</td>
-            <td><p align="center">L3</td>
-            <td><p align="center">L3</td>
-            <td><p align="center">L2</td>
-        </tr>
-        <tr>
-            <td><p align="center">3</td>
-            <td><p align="center">Design Development (30-100%)</td>
-            <td><p align="center">L4/L5</td>
-            <td><p align="center">L4/L5</td>
-            <td><p align="center">L3</td>
-        </tr>
-        <tr>
-            <td><p align="center">4</td>
-            <td><p align="center">Off-Site Testing</td>
-            <td><p align="center">L4</td>
-            <td><p align="center">L2</td>
-            <td><p align="center">L3</td>
-        </tr>
-        <tr>
-            <td><p align="center">5</td>
-            <td><p align="center">Site Works (incl Installation, Commissioning)</td>
-            <td><p align="center">L4</td>
-            <td><p align="center">L2</td>
-            <td><p align="center">L2</td>
-        </tr>
-        <tr>
-            <td><p align="center">6</td>
-            <td><p align="center">Execution Closeout</td>
-            <td><p align="center">L3</td>
-            <td><p align="center">L3</td>
-            <td><p align="center">L2</td>
-        </tr>
-        <tr>
-            <td><p align="center">7</td>
-            <td><p align="center">Monitoring &amp; Control</td>
-            <td><p align="center">L3</td>
-            <td><p align="center">L2</td>
-            <td><p align="center">L2</td>
-        </tr>
-        <tr>
-            <td><p align="center">8</td>
-            <td><p align="center">Project Closeout</td>
-            <td><p align="center">L2</td>
-            <td><p align="center">L2</td>
-            <td><p align="center">L2</td>
-        </tr>
-    </tbody>
-</table>
-<p>
-    <em>Note: This is for guidance only, and the specifics of each project and each element within the project, 
-        should be considered by the project manager to determine the cost assignment level appropriate to the 
-        instance. As with all aspects of the framework, any deviation should be well justified, and the 
-        justification recorded in the project file.</em>
-</p>
+## Overview
 
-<h3>Cost Coding</h3>
-<p>
-    The Cost Code column of the project schedule is a free text entry however, cost codes must generally conform 
-    to a consistent approach according to the following guidelines:
-    <ol>
-        <li>Where a single level 1 cost code assignment is made – ie, all project costs are to be captured to a 
-            single cost unit – the cost unit should be named "[ALL COSTS]".</li>
-        <li>Where otherwise, cost unit must be dot-separated numbers.
-            <ol><li>Level 2 cost code assignments will be "X.0" where X is the number in the '#' column of
-                    the above table.</li>
-                <li>Level 3 and below cost assignments will be of the form "X.Y.Z…" (such that cost codes 
-                    assigned at, for example, level 5 in the WBS will be four dot-separated digits). Numbering 
-                    should be logical to the number of sibling cost codes at that point in the WBS – refer to 
-                    the below example.</li></ol>
-        </li>
-    </ol>
-</p>
+The intersections of the CBS and WBS are the control accounts at which a project can be managed.
+
+The CBS for GTE projects is simply the hierarchy formed by the cost units, where costs will be captured. This CBS must reside within the project WBS for GTE projects as cost codes are applied to elements in the WBS in a restrictive manner, as explained below. Generally, costs will be captured at a far less granular level than the work activities in the project schedule, so the CBS is essentially a subset of the WBS.
+
+### Cost Units (Project Control Accounts)
+
+The principal GTE restriction for cost unit designation is that a cost code cannot be applied on multiple branches of the WBS unless it spans all of those branches up to a common pinnacle. The control accounts are then these pinnacles.
+
+Cost codes can be assigned, however, at any level of the WBS below L1, and at different levels for any given branch which provides great flexibility for projects of varying complexity.
+
+The cost codes for a project are assigned to the WBS in the project schedule to designate the cost units, as described in {{ TBA }}<TODO: Reference>. The Smartsheet cost codes are mirrored to the cost tracking system where time and expenses bookings are made for/by resources.
+
+The higher in the hierarchy the cost code assignments for a project, the less granular the project cost control. The highest level of cost code assignment should be made in consultation with the guidance in the below table. The guidance provides the highest level of the WBS that should be used in most instances within a particular delivery element (L2 of the WBS), for a given project classification but it should be noted that it may be valid in some instances to assign cost codes as high as L1 (ie at the project level).
+
+In addition to the below guidance, the project manager should ensure that it is possible to identify an individual in the project team solely accountable for the performance of each cost account. That individual will be responsible for managing any distribution of budget within the control account and providing progress and estimate to complete updates (at possibly lower levels).
+
+
+
+|  #  | Delivery Element | Classification C1 | Classification C2 | Classification C3 |
+| :-: | :--------------: | :---------------: | :---------------: | :---------------: |
+| 1 | Initiation & Planning | L2 | L2 | L2 |
+| 2 | Concept & Confirmation (0-30%) | L3 | L3 | L2 |
+| 3 | Development (30-100%) | L4/L5 | L4/L5 | L3 |
+| 4 | Off-Site Testing | L4 | L2 | L3 |
+| 5 | Site Works | L4 | L2 | L2 |
+| 6 | Execution Closeout | L3 | L3 | L2 |
+| 7 | Monitoring & Control | L3 | L2 | L2 |
+| 8 | Project Closeout | L2 | L2 | L2 |
+
+*Note: This is for guidance only, and the specifics of each project and each element within the project, should be considered by the project manager to determine the cost assignment level appropriate to the instance. As with all aspects of the framework, any deviation should be well justified, and the justification recorded in the project file.*
+
+
+### Cost Coding
+
+The Cost Code column of the project schedule is a free text entry however, cost codes must generally conform to a consistent approach according to the following guidelines:
+
+1. Where a single level 1 cost code assignment is made – ie, all project costs are to be captured to a single cost unit – the cost unit should be named "[ALL COSTS]".
+2. Where otherwise, cost unit must be dot-separated numbers.
+    - Level 2 cost code assignments will be "X.0" where X is the number in the '#' column ofthe above table.
+    - Level 3 and below cost assignments will be of the form "X.Y.Z…" (such that cost codes assigned at, for example, level 5 in the WBS will be four dot-separated digits). Numbering should be logical to the number of sibling cost codes at that point in the WBS – refer to the below example.
 
 <table style="width: 4.3e+2pt;border-collapse:collapse;border:none;">
     <thead>
@@ -582,6 +491,3 @@ title: Processes | Cost Management | Cost Units, CBS & Control Accounts
         </tr>
     </tbody>
 </table>
-
-
-
