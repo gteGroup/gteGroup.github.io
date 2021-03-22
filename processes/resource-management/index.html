@@ -711,6 +711,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pm-requirement" class="md-nav__link">
+    PM Requirement
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -921,6 +928,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pm-requirement" class="md-nav__link">
+    PM Requirement
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -943,9 +957,11 @@
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
 <h3 id="context">Context<a class="headerlink" href="#context" title="Permanent link">#</a></h3>
 <p>GTE personnel ("resources") generally work across several active projects at any one time and so a resource's availability and capacity to complete project work must be assessed from an organizational level (WBS Level 0). </p>
-<p>Budgeted work (ie activities with an assigned budget) is assigned to resources at the project activity level.This is known as "resource assignment". The total work assigned to a resource at any point in time, versus that resource's capacity (generally based on an 8 hour/day), can be considered the "resource loading". The standard GTE Smartsheet schedule template calculates this loading, as a percentage, at the budgeted activity level and reports this up for use on organizational level reports and views.</p>
-<p>As a starting point, the Project Manager will ensure the planned duration for an activity affords sufficient total capacity (duration x hours/day capacity) for the assigned resource to complete the activity in isolation (ie without yet also considering the resource's other work requirements). In simple terms, the total capacity allocated must exceed the activity's budget. For example, a 4 day duration may be established for an activity with a budget of 20hrs. The resource loading (for an 8hr/day resource) would be <code>20 / (8*4)</code>, or 63%.</p>
-<p>The above example simplifies the scenario to a single resource but it should be noted that where the duration is notnegotiable, it may be necessary to add additional resources to the activity to increase the total capacity.</p>
+<p>Budgeted work (ie activities with an assigned budget) is assigned to resources at the project activity level. This is known as "resource assignment". The total work assigned to a resource at any point in time, versus that resource's capacity (generally based on an 8 hour/day), can be considered the "resource loading". The standard GTE Smartsheet schedule template calculates this loading, as a percentage, at the budgeted activity level and reports this up for use on organizational level reports and views.</p>
+<p>As a starting point, the Project Manager will ensure the planned duration for an activity affords sufficient total capacity (duration x hours/day capacity) for the assigned resource to complete the activity in isolation (ie without yet also considering the resource's other work requirements). In simple terms, the total capacity allocated must exceed the activity's budget.</p>
+<p>!! summary "Example"
+    For example, a 4 day duration may be established for an activity with a budget of 20hrs. The resource loading (for an 8hr/day resource) would be <code>20 / (8*4)</code>, or 63%.</p>
+<p>The above example simplifies the scenario to a single resource but it should be noted that where the duration is not negotiable, it may be necessary to add additional resources to the activity to increase the total capacity.</p>
 <p>Smartsheet schedules also exist to account for resource assignment that may not be covered by a project schedule:</p>
 <ul>
 <li><a href="https://app.smartsheet.com/sheets/RxF2VjXg6WmwG9P6XxPm96x5FQ5V8JGpWhrrPMq1">Leave</a></li>
@@ -969,28 +985,32 @@
 <p>The Project Manager must:</p>
 <ol>
 <li>Assign budgets to activities or summary activities in the schedule, such that the overall assigned budget equals the total approved project budget.</li>
-<li>Identify activities where the hours/day capacity is not the standard 8 hours ("Non-Standard Working Time") and <a href="#non-standard-working-time.html">allocate additional capacity to these Non-Standard Working Time activities</a>.</li>
+<li>Identify activities where the hours/day capacity is not the standard 8 hours ("Non-Standard Working Time") and <a href="#non-standard-working-time">allocate additional capacity to these Non-Standard Working Time activities</a>.</li>
 <li>Establish durations for activities in the schedule by defining start and finish dates, and/or logic that defines start and finish dates.</li>
 <li>Assign a resource, or resources, to budgeted activities in the schedule .</li>
 </ol>
 <h4 id="organizational-resource-management">Organizational Resource Management<a class="headerlink" href="#organizational-resource-management" title="Permanent link">#</a></h4>
 <!-- TODO: Links off to Cost Coding, Activity Sequencing, etc -->
 
-<p>The Resource Managers must:
-1. xxxx</p>
+<p>The Resource Managers must:</p>
+<ol>
+<li>xxxx</li>
+</ol>
 <!-- May be other content in here -->
 
 <h2 id="resource-views">Resource Views<a class="headerlink" href="#resource-views" title="Permanent link">#</a></h2>
 <p>Resource Views provide the visibility for the loading of GTE human resources. The views are automatically generated from resource assignments made at the project activity level, and from additional non-project schedules designed to capture auxiliary assignments such as leave and secondments. </p>
 <h3 id="project-resource-views">Project Resource Views<a class="headerlink" href="#project-resource-views" title="Permanent link">#</a></h3>
-<p>A Resource View showing all of the resources currently assigned to activities on a project is available to the Project Manager from the Gantt View of the Smartsheet project schedule. To access:
-1. Switch to Gantt View
-2. Select the Resource View icon <img alt="Resource View icon" src="https://help.smartsheet.com/sites/default/files/inline-images/resource%20view%20icon.png" /></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>See the <a href="https://help.smartsheet.com/articles/1346969-resource-management-allocation">Smartsheet documentation here</a> for further details.</p>
-</div>
-<p><img align="right" alt="Resource View" src="https://help.smartsheet.com/sites/default/files/inline-images/Project-Resource-View.png" /> The Project Manager must use the Project Resource View to identify overloaded resources assigned to the project and take action to reduce loading to within capacity. The Project Resource View allows the Project Manager to see allocations on other projects so as to discuss competing requirements with the appropriate Resource Manager and/or other Project Manager.</p>
+<p>A Resource View showing all of the resources currently assigned to activities on a project is available to the Project Manager from the Gantt View of the Smartsheet project schedule. To access:</p>
+<ol>
+<li>Switch to Gantt View</li>
+<li>
+<p>Select the Resource View icon <img alt="Resource View icon" src="https://help.smartsheet.com/sites/default/files/inline-images/resource%20view%20icon.png" /></p>
+<p><em>Note: See the <a href="https://help.smartsheet.com/articles/1346969-resource-management-allocation">Smartsheet documentation here</a> for further details.</em></p>
+</li>
+</ol>
+<p><img alt="Resource View" src="https://help.smartsheet.com/sites/default/files/inline-images/Project-Resource-View.png" /></p>
+<p>The Project Manager must use the Project Resource View to identify overloaded resources assigned to the project and take action to reduce loading to within capacity. The Project Resource View allows the Project Manager to see allocations on other projects so as to discuss competing requirements with the appropriate Resource Manager and/or other Project Manager.</p>
 <h3 id="team-resource-views">Team Resource Views<a class="headerlink" href="#team-resource-views" title="Permanent link">#</a></h3>
 <p>It is not possible to share Resource Views in Smartsheet so these need to be setup for the individual.</p>
 <!-- TODO: How -->
@@ -1013,6 +1033,7 @@
 <div class="admonition note">
 <p>As a starting point, the project manager will ensure the planned duration for an activity affords sufficient work time (duration x hours/day capacity) for the assigned resource to complete the activity in isolation (ie withoutyet also considering the resource's other work requirements).</p>
 </div>
+<h3 id="pm-requirement">PM Requirement<a class="headerlink" href="#pm-requirement" title="Permanent link">#</a></h3>
 <!-- TODO: Finish -->
                 
               
