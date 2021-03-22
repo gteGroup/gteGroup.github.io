@@ -846,8 +846,8 @@
                 <h1 id="project-setup">Project Setup<a class="headerlink" href="#project-setup" title="Permanent link">#</a></h1>
 <h2 id="smartsheet">Smartsheet<a class="headerlink" href="#smartsheet" title="Permanent link">#</a></h2>
 <ol>
-<li>Create the project workspace.</li>
-<li>Create the project schedule.</li>
+<li>Create the project workspace. See <a href="../tools-and-templates/smartsheet/#project-workspace">here</a> for details.</li>
+<li>Create the project schedule. See <a href="../tools-and-templates/smartsheet/#project-schedule">here</a> for details.</li>
 </ol>
 <h3 id="project-schedule">Project Schedule<a class="headerlink" href="#project-schedule" title="Permanent link">#</a></h3>
 <h4 id="assigning-budgets">Assigning Budgets<a class="headerlink" href="#assigning-budgets" title="Permanent link">#</a></h4>
@@ -858,7 +858,7 @@
 <p>The capacity of resources is assumed to be 8 hours per day. Where this differs for a particular activity - such as for a 12 hour day on site - set the <code>Non-Standard Capacity</code> column on the activity accordingly (eg "12").</p>
 <div class="admonition help">
 <p class="admonition-title">Why?</p>
-<p>Budgeted work (ie activities with an assigned budget) is assigned to resources at the project activity level. This is known as "resource assignment". The total work assigned to a resource at any point in time, versus that resource's capacity (generally based on 8 hours/day), can be considered the "resource loading". The standard GTE Smartsheet schedule template calculates this loading, as a percentage, at the budgeted activity level as follows, and the accuracy of this calculation is important for its use in <a href="resource-management">Resource Management</a>.</p>
+<p>Budgeted work (ie activities with an assigned budget) is assigned to resources at the project activity level. This is known as "resource assignment". The total work assigned to a resource at any point in time, versus that resource's capacity (generally based on 8 hours/day), can be considered the "resource loading". The standard GTE Smartsheet schedule template calculates this loading, as a percentage, at the budgeted activity level as follows, and the accuracy of this calculation is important for its use in <a href="../resource-management">Resource Management</a>.</p>
 <div class="highlight"><pre><span></span><code>= IFERROR(
     (
         [Budget (hrs)]@row / Duration@row) / ( COUNTM([Resource(s)]@row) 
