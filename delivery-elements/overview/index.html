@@ -175,7 +175,7 @@
 
   <li class="md-tabs__item">
     <a href="../../overview/" class="md-tabs__link">
-      None
+      Overview
     </a>
   </li>
 
@@ -199,13 +199,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../overview/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Delivery Elements
       </a>
     </li>
@@ -313,7 +315,7 @@
   
     <li class="md-nav__item">
       <a href="../../overview/" class="md-nav__link">
-        None
+        Overview
       </a>
     </li>
   
@@ -367,12 +369,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Delivery Elements
@@ -388,11 +392,49 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
-        Overview
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Delivery Elements
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Delivery Elements
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-output-applicability-grid" class="md-nav__link">
+    The Output Applicability Grid
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -716,15 +758,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commencement-checks" class="md-nav__link">
-    Commencement Checks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#applicability" class="md-nav__link">
-    Applicability
+  <a href="#the-output-applicability-grid" class="md-nav__link">
+    The Output Applicability Grid
   </a>
   
 </li>
@@ -745,32 +780,40 @@
                 <h1 id="delivery-elements">Delivery Elements<a class="headerlink" href="#delivery-elements" title="Permanent link">#</a></h1>
 <p>GTE projects are managed through five process groups aligned to those identified in the PMBOK Guide, namely: Initiation, Planning, Execution, Monitoring &amp; Control, and (Project) Closeout.</p>
 <p>These process groups are distinct from the <a href="" title="../overview#lifecycle-phases">lifecycle phases</a> defined in the framework overview.</p>
-<p>!! note
-    The Execution process group should not be confused with the project lifecycle phase of the same name. For an order of magnitude study, for example, the Execution process group would involve the development of the study deliverable(s). Similarly, the Closeout process group differs from the phase of the same name occasionally used by clients – GTE refers to a phase named "Execution Closeout" (see Section 7.6), so named to avoid confusion; and uses "Project Closeout" to refer to the group of processes performed in closing out the project rather than the technical deliverables.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Execution process group should not be confused with the project lifecycle phase of the same name. For an order of magnitude study, for example, the Execution process group would involve the development of the study deliverable(s). Similarly, the Closeout process group differs from the phase of the same name occasionally used by clients – GTE refers to a phase named "Execution Closeout" (see Section 7.6), so named to avoid confusion; and uses "Project Closeout" to refer to the group of processes performed in closing out the project rather than the technical deliverables.</p>
+</div>
 <p>Some process groups necessarily overlap in practice and occur concurrently however the majority effort is generally segregated as depicted below.</p>
 <p>The planning, and monitoring and control, process groups involve activities that occur continually throughout the entire project duration from initiation through to closeout, however the depicted deviation from standard PMBOK definitions more closely aligns with GTE project performance.</p>
-<p>!! note 
-    Planning quite clearly occurs through the project, however planning is considered part of the Monitoring &amp; Control process group once the initial project planning has concluded and execution has commenced.</p>
-<p><img alt="Segregation of Process Groups" src="" title="/img/segregation-of-process-groups.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Planning quite clearly occurs through the project, however planning is considered part of the Monitoring &amp; Control process group once the initial project planning has concluded and execution has commenced.</p>
+</div>
+<p><img alt="Segregation of Process Groups" src="" title="img/segregation-of-process-groups.png" /></p>
 <p>For GTE projects the initiation and planning process groups can be considered one and the same as the work in each occurs promptly following project award – almost simultaneously – up to the commencement of the execution work.</p>
 <p>To avoid dispute with PMBOK, GTE refers to "delivery elements" as those distinct components in the overall execution of a project. These become the level 2 in the GTE standard project WBS <!-- TODO: Add link --> and are a combination of grouped PMBOK process groups described above, and the standard phases through which the execution work for GTE projects typically move (these are items 2 to 6 that follow).</p>
-<p>The level 2 delivery elements are then (in general linear order of execution, with the exception of Monitoring &amp; Control which spans 2 – 6):
-1. Initiation &amp; Planning
-2. Scope Confirmation &amp; Concept Design (0-30%)
-3. Design Development (30-100%)
-4. Testing
-5. Site Works
-6. Execution Closeout
-7. Monitoring &amp; Control
-8. Closeout</p>
+<p>The level 2 delivery elements are then (in general linear order of execution, with the exception of Monitoring &amp; Control which spans 2 – 6):</p>
+<ol>
+<li>Initiation &amp; Planning</li>
+<li>Scope Confirmation &amp; Concept Design (0-30%)</li>
+<li>Design Development (30-100%)</li>
+<li>Testing</li>
+<li>Site Works</li>
+<li>Execution Closeout</li>
+<li>Monitoring &amp; Control</li>
+<li>Closeout</li>
+</ol>
 <p>This documentation provides information for the Project Manager on the possible requirements of each delivery element in terms of the activities and outputs that may be necessary, and the varying detail or rigour that may be associated.</p>
 <p>Each delivery element is essentially systemised to consist of Commencement Checks, Activities &amp; Outputs, and Completion Checks.</p>
-<h2 id="commencement-checks">Commencement Checks<a class="headerlink" href="#commencement-checks" title="Permanent link">#</a></h2>
+<p><strong>Commencement Checks</strong></p>
 <p>Commencement Checks may establish the existence or availability of necessary inputs, being those prior activities or existing documents that are required to complete aspects of the work in the delivery element. Oftentimes, inputs will be derived from the outputs of an earlier delivery element.</p>
+<p><strong>Activities &amp; Outputs</strong></p>
 <p>Activities are the actual undertakings in pursuit of the objectives of the delivery element. This includes the work to be done, collaborations, and meetings to achieve that work.</p>
 <p>Outputs can include hardware, software, and documents or drawings. These may be deliverables (or ‘client deliverables’) produced specifically for the client, or simply records produced fundamentally to support the management of the project.</p>
+<p><strong>Completion Checks</strong></p>
 <p>Completion Checks simply confirm that all necessary work with a delivery element has been completed.</p>
-<h2 id="applicability">Applicability<a class="headerlink" href="#applicability" title="Permanent link">#</a></h2>
+<h2 id="the-output-applicability-grid">The Output Applicability Grid<a class="headerlink" href="#the-output-applicability-grid" title="Permanent link">#</a></h2>
 <p>The <a href="" title="https://app.smartsheet.com/sheets/v577wjfwP3J9jgrXhr8jvgppqq4pc5c5fG29Xhv1">Output Applicability Grid</a> defines the activities and outputs necessary in each of the delivery elements for various project categorizations. Project type, disciplines involved, and classification all affect the types and details of activities and outputs that are applicable. The matrix dictates whether any given activity, output or sub-element of an output is:</p>
 <ul>
 <li><code>M – Mandatory</code>, ie must be obtained, completed or produced as relevant to the input/activity/output. In the case of mandatory inputs, these are critical and should be clearly identified in the project schedule, particularly in the instance where the client is to provide these.</li>
@@ -778,8 +821,10 @@
 <li><code>O – Optional</code>, ie best practice activities or outcomes that can be included where relevant in consideration by the project manager of project size, type, and customer requirements which may not be appropriately considered by the matrix in any given instance.</li>
 <li><code>N/R – Not Required</code>.</li>
 </ul>
-<p>!! note 
-    The project scope may dictate that an output is a deliverable. In this instance, it obviously becomes mandatory regardless of the stipulation of the Output Applicability Grid.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The project scope may dictate that an output is a deliverable. In this instance, it obviously becomes mandatory regardless of the stipulation of the Output Applicability Grid.</p>
+</div>
                 
               
               
@@ -794,6 +839,39 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../../core-concepts/earned-value-management/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Earned Value Management
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../initiation-and-planning/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Initiation & Planning
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
