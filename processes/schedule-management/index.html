@@ -607,8 +607,50 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#assigning-budgets" class="md-nav__link">
+    Assigning Budgets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assigning-non-standard-capacity" class="md-nav__link">
+    Assigning Non-Standard Capacity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-durations" class="md-nav__link">
+    Activity Durations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-sequencing" class="md-nav__link">
+    Activity Sequencing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-assignment" class="md-nav__link">
+    Resource Assignment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cost-coding" class="md-nav__link">
     Cost Coding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-coding" class="md-nav__link">
+    Meta Coding
   </a>
   
 </li>
@@ -779,8 +821,50 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#assigning-budgets" class="md-nav__link">
+    Assigning Budgets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assigning-non-standard-capacity" class="md-nav__link">
+    Assigning Non-Standard Capacity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-durations" class="md-nav__link">
+    Activity Durations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-sequencing" class="md-nav__link">
+    Activity Sequencing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-assignment" class="md-nav__link">
+    Resource Assignment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cost-coding" class="md-nav__link">
     Cost Coding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-coding" class="md-nav__link">
+    Meta Coding
   </a>
   
 </li>
@@ -805,9 +889,34 @@
                 
                 <h1 id="schedule-management">Schedule Management<a class="headerlink" href="#schedule-management" title="Permanent link">#</a></h1>
 <h2 id="project-schedule-development">Project Schedule Development<a class="headerlink" href="#project-schedule-development" title="Permanent link">#</a></h2>
+<h3 id="assigning-budgets">Assigning Budgets<a class="headerlink" href="#assigning-budgets" title="Permanent link">#</a></h3>
+<!-- TODO -->
+
+<p>Coming... Use the <code>Budget (Hrs)</code> column. Check for <code>Budget Issues</code>.</p>
+<h3 id="assigning-non-standard-capacity">Assigning Non-Standard Capacity<a class="headerlink" href="#assigning-non-standard-capacity" title="Permanent link">#</a></h3>
+<p>The capacity of resources is assumed to be 8 hours per day. Where this differs for a particular activity - such as for a 12 hour day on site - set the <code>Non-Standard Capacity</code> column on the activity accordingly (eg "12").</p>
+<div class="admonition help">
+<p class="admonition-title">Why?</p>
+<p>Budgeted work (ie activities with an assigned budget) is assigned to resources at the project activity level. This is known as "resource assignment". The total work assigned to a resource at any point in time, versus that resource's capacity (generally based on 8 hours/day), can be considered the "resource loading". The standard GTE Smartsheet schedule template calculates this loading, as a percentage, at the budgeted activity level as follows, and the accuracy of this calculation is important for its use in <a href="../resource-management">Resource Management</a>.</p>
+<div class="highlight"><pre><span></span><code>= IFERROR(
+    (
+        [Budget (hrs)]@row / Duration@row) / ( COUNTM([Resource(s)]@row) 
+            * IF(
+                [Non-Standard Capacity]@row &lt;&gt; &quot;&quot;, 
+                [Non-Standard Capacity]@row, 8
+            )
+    ), 
+    &quot;&quot;
+)
+</code></pre></div>
+</div>
+<h3 id="activity-durations">Activity Durations<a class="headerlink" href="#activity-durations" title="Permanent link">#</a></h3>
+<h3 id="activity-sequencing">Activity Sequencing<a class="headerlink" href="#activity-sequencing" title="Permanent link">#</a></h3>
+<h3 id="resource-assignment">Resource Assignment<a class="headerlink" href="#resource-assignment" title="Permanent link">#</a></h3>
 <h3 id="cost-coding">Cost Coding<a class="headerlink" href="#cost-coding" title="Permanent link">#</a></h3>
 <p>Cost units are designated by applying cost codes to activities or summaries in the project schedule within Smartsheet. Each cost unit is created in the cost tracking system for resource costings to be assigned to, and these then become the project control accounts.</p>
-<p>Where applicable, activities at any level of the WBS must be coded as an element of the project Cost Breakdown Structure in the "Cost Code" column of the project schedule in Smartsheet. The level(s) at which cost assignments are made, and name of the cost units, must be in accordance with the guidance in <a href="../cost-management">Cost Management</a>.<TODO: Proper reference required></p>
+<p>Where applicable, activities at any level of the WBS must be coded as an element of the project Cost Breakdown Structure in the "Cost Code" column of the project schedule in Smartsheet. The level(s) at which cost assignments are made, and name of the cost units, must be in accordance with the guidance in <a href="../cost-management">Cost Management</a>. <!-- TODO: Proper reference required --></p>
+<h3 id="meta-coding">Meta Coding<a class="headerlink" href="#meta-coding" title="Permanent link">#</a></h3>
                 
               
               
