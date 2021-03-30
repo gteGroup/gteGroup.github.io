@@ -1,0 +1,2463 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../img/logo_blue.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
+    
+    
+      
+        <title>Smartsheet Schedule - GTE Project Management Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2c0c5eaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#smartsheet-standard-schedule" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="GTE Project Management Framework" class="md-header__button md-logo" aria-label="GTE Project Management Framework" data-md-component="logo">
+      
+  <img src="../../img/logo_white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GTE Project Management Framework
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Smartsheet Schedule
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../terminology/" class="md-tabs__link">
+      Terminology
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../overview/" class="md-tabs__link">
+      Overview
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../core-concepts/earned-value-management/" class="md-tabs__link">
+        Core Concepts
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../delivery-elements/overview/" class="md-tabs__link">
+        Delivery Elements
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../processes/project-setup/" class="md-tabs__link">
+        Processes
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tools-and-templates/smartsheet/" class="md-tabs__link">
+        Tools & Templates
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Detailed Reference
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="GTE Project Management Framework" class="md-nav__button md-logo" aria-label="GTE Project Management Framework" data-md-component="logo">
+      
+  <img src="../../img/logo_white.png" alt="logo">
+
+    </a>
+    GTE Project Management Framework
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../terminology/" class="md-nav__link">
+        Terminology
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Core Concepts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Core Concepts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Core Concepts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-concepts/earned-value-management/" class="md-nav__link">
+        Earned Value Management
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Delivery Elements
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Delivery Elements" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Delivery Elements
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delivery-elements/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delivery-elements/initiation-and-planning/" class="md-nav__link">
+        Initiation & Planning
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delivery-elements/concept-and-confirmation/" class="md-nav__link">
+        Concept & Confirmation (0-30%)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delivery-elements/development/" class="md-nav__link">
+        Development (30-100%)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delivery-elements/off-site-testing/" class="md-nav__link">
+        Off-Site Testing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delivery-elements/site-works/" class="md-nav__link">
+        Site Works
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delivery-elements/execution-closeout/" class="md-nav__link">
+        Execution Closeout
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delivery-elements/monitoring-and-control/" class="md-nav__link">
+        Monitoring & Control
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../delivery-elements/project-closeout/" class="md-nav__link">
+        Project Closeout
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      <label class="md-nav__link" for="__nav_6">
+        Processes
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Processes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Processes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/project-setup/" class="md-nav__link">
+        Project Setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/project-management-integration/" class="md-nav__link">
+        Project Management Integration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/scope-management/" class="md-nav__link">
+        Scope Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/schedule-management/" class="md-nav__link">
+        Schedule (Time) Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/cost-management/" class="md-nav__link">
+        Cost Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/quality-management/" class="md-nav__link">
+        Quality Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/resource-management/" class="md-nav__link">
+        Resource Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/communications-management/" class="md-nav__link">
+        Stakeholder & Communications Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/risk-management/" class="md-nav__link">
+        Risk Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/procurement-management/" class="md-nav__link">
+        Procurement Management
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        Tools & Templates
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tools & Templates" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Tools & Templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools-and-templates/smartsheet/" class="md-nav__link">
+        Smartsheet
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      <label class="md-nav__link" for="__nav_8">
+        Detailed Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Detailed Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Detailed Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Smartsheet Schedule
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Smartsheet Schedule
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    Columns
+  </a>
+  
+    <nav class="md-nav" aria-label="Columns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controlled" class="md-nav__link">
+    Controlled
+  </a>
+  
+    <nav class="md-nav" aria-label="Controlled">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activity" class="md-nav__link">
+    activity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baseline_start_date" class="md-nav__link">
+    baseline_start_date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baseline_finish_date" class="md-nav__link">
+    baseline_finish_date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budget_hours" class="md-nav__link">
+    budget_hours
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost_code_entry" class="md-nav__link">
+    cost_code_entry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entry" class="md-nav__link">
+    Entry
+  </a>
+  
+    <nav class="md-nav" aria-label="Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discipline" class="md-nav__link">
+    discipline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration" class="md-nav__link">
+    duration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#information" class="md-nav__link">
+    information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non_standard_capacity" class="md-nav__link">
+    non_standard_capacity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planned_finish_date" class="md-nav__link">
+    planned_finish_date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planned_start_date" class="md-nav__link">
+    planned_start_date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predecessors" class="md-nav__link">
+    predecessors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-update" class="md-nav__link">
+    Field Update
+  </a>
+  
+    <nav class="md-nav" aria-label="Field Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actual_hours_entry" class="md-nav__link">
+    actual_hours_entry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimate_to_complete_hours_entry" class="md-nav__link">
+    estimate_to_complete_hours_entry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actual_hours_costunitup" class="md-nav__link">
+    actual_hours_costUnitUp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budget_hours_all" class="md-nav__link">
+    budget_hours_all
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete__control" class="md-nav__link">
+    complete_%_control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost_code_all" class="md-nav__link">
+    cost_code_all
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimate_at_complete_hours_costunitup" class="md-nav__link">
+    estimate_at_complete_hours_costUnitUp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planned_value_all" class="md-nav__link">
+    planned_value_all
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculation" class="md-nav__link">
+    Calculation
+  </a>
+  
+    <nav class="md-nav" aria-label="Calculation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseline_planned__complete" class="md-nav__link">
+    baseline_planned_%_complete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behind_baseline_plan" class="md-nav__link">
+    behind_baseline_plan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behind_plan" class="md-nav__link">
+    behind_plan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete_" class="md-nav__link">
+    complete_%
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete__1" class="md-nav__link">
+    complete_%
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost_performance_index" class="md-nav__link">
+    cost_performance_index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost_variance" class="md-nav__link">
+    cost_variance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost_variance_" class="md-nav__link">
+    cost_variance_%
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#earned_value_rowcalculation" class="md-nav__link">
+    earned_value_rowCalculation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planned_value" class="md-nav__link">
+    planned_value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_loading" class="md-nav__link">
+    resource_loading
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule_performance_index" class="md-nav__link">
+    schedule_performance_index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule_variance" class="md-nav__link">
+    schedule_variance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule_variance_" class="md-nav__link">
+    schedule_variance_%
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance_to_baseline_start_date" class="md-nav__link">
+    variance_to_baseline_start_date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance_to_baseline_finish_date" class="md-nav__link">
+    variance_to_baseline_finish_date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wbs" class="md-nav__link">
+    wbs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wbs_descendants" class="md-nav__link">
+    wbs_descendants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wbs_level2_description" class="md-nav__link">
+    wbs_level2_description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    Check
+  </a>
+  
+    <nav class="md-nav" aria-label="Check">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flag" class="md-nav__link">
+    flag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budget_issues" class="md-nav__link">
+    budget_issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost_code_issues" class="md-nav__link">
+    cost_code_issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resourcing_issues" class="md-nav__link">
+    resourcing_issues
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displayfilter-columns" class="md-nav__link">
+    Display/Filter Columns
+  </a>
+  
+    <nav class="md-nav" aria-label="Display/Filter Columns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filter_client_view" class="md-nav__link">
+    filter_client_view
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client_hidden" class="md-nav__link">
+    client_hidden
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    Filters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sheet-summary" class="md-nav__link">
+    Sheet Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    Columns
+  </a>
+  
+    <nav class="md-nav" aria-label="Columns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controlled" class="md-nav__link">
+    Controlled
+  </a>
+  
+    <nav class="md-nav" aria-label="Controlled">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activity" class="md-nav__link">
+    activity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baseline_start_date" class="md-nav__link">
+    baseline_start_date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baseline_finish_date" class="md-nav__link">
+    baseline_finish_date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budget_hours" class="md-nav__link">
+    budget_hours
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost_code_entry" class="md-nav__link">
+    cost_code_entry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entry" class="md-nav__link">
+    Entry
+  </a>
+  
+    <nav class="md-nav" aria-label="Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discipline" class="md-nav__link">
+    discipline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration" class="md-nav__link">
+    duration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#information" class="md-nav__link">
+    information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non_standard_capacity" class="md-nav__link">
+    non_standard_capacity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planned_finish_date" class="md-nav__link">
+    planned_finish_date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planned_start_date" class="md-nav__link">
+    planned_start_date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predecessors" class="md-nav__link">
+    predecessors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#field-update" class="md-nav__link">
+    Field Update
+  </a>
+  
+    <nav class="md-nav" aria-label="Field Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actual_hours_entry" class="md-nav__link">
+    actual_hours_entry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimate_to_complete_hours_entry" class="md-nav__link">
+    estimate_to_complete_hours_entry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actual_hours_costunitup" class="md-nav__link">
+    actual_hours_costUnitUp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budget_hours_all" class="md-nav__link">
+    budget_hours_all
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete__control" class="md-nav__link">
+    complete_%_control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost_code_all" class="md-nav__link">
+    cost_code_all
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimate_at_complete_hours_costunitup" class="md-nav__link">
+    estimate_at_complete_hours_costUnitUp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planned_value_all" class="md-nav__link">
+    planned_value_all
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculation" class="md-nav__link">
+    Calculation
+  </a>
+  
+    <nav class="md-nav" aria-label="Calculation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseline_planned__complete" class="md-nav__link">
+    baseline_planned_%_complete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behind_baseline_plan" class="md-nav__link">
+    behind_baseline_plan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behind_plan" class="md-nav__link">
+    behind_plan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete_" class="md-nav__link">
+    complete_%
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete__1" class="md-nav__link">
+    complete_%
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost_performance_index" class="md-nav__link">
+    cost_performance_index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost_variance" class="md-nav__link">
+    cost_variance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost_variance_" class="md-nav__link">
+    cost_variance_%
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#earned_value_rowcalculation" class="md-nav__link">
+    earned_value_rowCalculation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planned_value" class="md-nav__link">
+    planned_value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource_loading" class="md-nav__link">
+    resource_loading
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule_performance_index" class="md-nav__link">
+    schedule_performance_index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule_variance" class="md-nav__link">
+    schedule_variance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule_variance_" class="md-nav__link">
+    schedule_variance_%
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance_to_baseline_start_date" class="md-nav__link">
+    variance_to_baseline_start_date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance_to_baseline_finish_date" class="md-nav__link">
+    variance_to_baseline_finish_date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wbs" class="md-nav__link">
+    wbs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wbs_descendants" class="md-nav__link">
+    wbs_descendants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wbs_level2_description" class="md-nav__link">
+    wbs_level2_description
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    Check
+  </a>
+  
+    <nav class="md-nav" aria-label="Check">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flag" class="md-nav__link">
+    flag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budget_issues" class="md-nav__link">
+    budget_issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost_code_issues" class="md-nav__link">
+    cost_code_issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resourcing_issues" class="md-nav__link">
+    resourcing_issues
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displayfilter-columns" class="md-nav__link">
+    Display/Filter Columns
+  </a>
+  
+    <nav class="md-nav" aria-label="Display/Filter Columns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filter_client_view" class="md-nav__link">
+    filter_client_view
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client_hidden" class="md-nav__link">
+    client_hidden
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    Filters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sheet-summary" class="md-nav__link">
+    Sheet Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="smartsheet-standard-schedule">Smartsheet Standard Schedule<a class="headerlink" href="#smartsheet-standard-schedule" title="Permanent link">#</a></h1>
+<h2 id="columns">Columns<a class="headerlink" href="#columns" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(@all) ActualHrs</td>
+<td><a href="#actual_hours_costunitup">actual_hours_costUnitUp</a></td>
+<td>Summarises <a href="#actual_hours_entry">actual_hours_entry</a>, captured at the cost unit level in the cost system, to each level in the <abbr title="Work Breakdown Structure">WBS</abbr> higher than those cost units.</td>
+</tr>
+<tr>
+<td>(@all) BudgetHrs</td>
+<td><a href="#budget_hours_all">budget_hours_all</a></td>
+<td></td>
+</tr>
+<tr>
+<td>(@all) Cost Code</td>
+<td><a href="#cost_code_all">cost_code_all</a></td>
+<td></td>
+</tr>
+<tr>
+<td>(@all) <abbr title="Planned Value">PV</abbr></td>
+<td><a href="#planned_value_all">planned_value_all</a></td>
+<td></td>
+</tr>
+<tr>
+<td>(@control) % Complete</td>
+<td><a href="#complete_%_control">complete_%_control</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Activity</td>
+<td><a href="#activity">activity</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Actual (hrs)</td>
+<td><a href="#actual_hours_entry">actual_hours_entry</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Baseline Finish Date</td>
+<td><a href="#baseline_finish_date">baseline_finish_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Baseline Planned % Complete</td>
+<td><a href="#baseline_planned_%_complete">baseline_planned_%_complete</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Baseline Start Date</td>
+<td><a href="#baseline_start_date">baseline_start_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Behind Baseline Plan?</td>
+<td><a href="#behind_baseline_plan">behind_baseline_plan</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Behind Plan?</td>
+<td><a href="#behind_plan">behind_plan</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Budget (hrs)</td>
+<td><a href="#budget_hours">budget_hours</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Budget Issues</td>
+<td><a href="#budget_issues">budget_issues</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Calculated % Complete</td>
+<td><a href="#complete_%">complete_%</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Client Hidden?</td>
+<td><a href="#client_hidden">client_hidden</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Cost Code</td>
+<td><a href="#cost_code_entry">cost_code_entry</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Cost Code Issues</td>
+<td><a href="#cost_code_issues">cost_code_issues</a></td>
+<td></td>
+</tr>
+<tr>
+<td><abbr title="Cost Performance Index">CPI</abbr></td>
+<td><a href="#cost_performance_index">cost_performance_index</a></td>
+<td></td>
+</tr>
+<tr>
+<td><abbr title="Cost Variance">CV</abbr></td>
+<td><a href="#cost_variance">cost_variance</a></td>
+<td></td>
+</tr>
+<tr>
+<td><abbr title="Cost Variance">CV</abbr>%</td>
+<td><a href="#cost_variance_%">cost_variance_%</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Deliverable Type</td>
+<td><a href="#deliverable_type">deliverable_type</a></td>
+<td>NOT CURRENTLY USED</td>
+</tr>
+<tr>
+<td>Discipline</td>
+<td><a href="#discipline">discipline</a></td>
+<td>NOT CURRENTLY USED</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td><a href="#duration">duration</a></td>
+<td></td>
+</tr>
+<tr>
+<td><abbr title="Earned Value">EV</abbr></td>
+<td><a href="#earned_value_rowCalculation">earned_value_rowCalculation</a></td>
+<td></td>
+</tr>
+<tr>
+<td><abbr title="Estimate to Complete">ETC</abbr> (hrs)</td>
+<td><a href="#estimate_to_complete_hours_entry">estimate_to_complete_hours_entry</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Filter - Client View</td>
+<td><a href="#filter_client_view">filter_client_view</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Finish Date</td>
+<td><a href="#planned_finish_date">planned_finish_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Flag</td>
+<td><a href="#flag">flag</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Information</td>
+<td><a href="#information">information</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Manual % Complete</td>
+<td><a href="#complete_%_manual">complete_%_manual</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Modified By</td>
+<td>modified_by</td>
+<td>SYSTEM COLUMN</td>
+</tr>
+<tr>
+<td>Non-Standard Capacity</td>
+<td><a href="#non_standard_capacity">non_standard_capacity</a></td>
+<td>Standard resource capacity is 8hrs/day. Set this value where the activity is, for example, performed on site and involves 12hr days not standard 8hr office days (in this case type '12')</td>
+</tr>
+<tr>
+<td>Planned % Complete</td>
+<td><a href="#planned_%_complete">planned_%_complete</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Predecessors</td>
+<td><a href="#predecessors">predecessors</a></td>
+<td></td>
+</tr>
+<tr>
+<td><abbr title="Planned Value">PV</abbr></td>
+<td><a href="#planned_value">planned_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Resource Loading</td>
+<td><a href="#resource_loading">resource_loading</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Resource(s)</td>
+<td><a href="#resources">resources</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Resourcing Issues</td>
+<td><a href="#resourcing_issues">resourcing_issues</a></td>
+<td></td>
+</tr>
+<tr>
+<td>SPI</td>
+<td><a href="#schedule_performance_index">schedule_performance_index</a></td>
+<td></td>
+</tr>
+<tr>
+<td>SV</td>
+<td><a href="#schedule_variance">schedule_variance</a></td>
+<td></td>
+</tr>
+<tr>
+<td>SV%</td>
+<td><a href="#schedule_variance_%">schedule_variance_%</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Start Date</td>
+<td><a href="#planned_start_date">planned_start_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Variance to Baseline Finish Date</td>
+<td><a href="#variance_to_baseline_finish_date">variance_to_baseline_finish_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Variance to Baseline Start Date</td>
+<td><a href="#variance_to_baseline_start_date">variance_to_baseline_start_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><abbr title="Work Breakdown Structure">WBS</abbr></td>
+<td><a href="#wbs">wbs</a></td>
+<td></td>
+</tr>
+<tr>
+<td><abbr title="Work Breakdown Structure">WBS</abbr> Descendants</td>
+<td><a href="#wbs_descendants">wbs_descendants</a></td>
+<td></td>
+</tr>
+<tr>
+<td><abbr title="Work Breakdown Structure">WBS</abbr> Level</td>
+<td><a href="#wbs_level">wbs_level</a></td>
+<td></td>
+</tr>
+<tr>
+<td>wbsL2</td>
+<td><a href="#wbs_level2_description">wbs_level2_description</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="controlled">Controlled<a class="headerlink" href="#controlled" title="Permanent link">#</a></h3>
+<h4 id="activity">activity<a class="headerlink" href="#activity" title="Permanent link">#</a></h4>
+<h4 id="baseline_start_date">baseline_start_date<a class="headerlink" href="#baseline_start_date" title="Permanent link">#</a></h4>
+<h4 id="baseline_finish_date">baseline_finish_date<a class="headerlink" href="#baseline_finish_date" title="Permanent link">#</a></h4>
+<h4 id="budget_hours">budget_hours<a class="headerlink" href="#budget_hours" title="Permanent link">#</a></h4>
+<h4 id="cost_code_entry">cost_code_entry<a class="headerlink" href="#cost_code_entry" title="Permanent link">#</a></h4>
+<h3 id="entry">Entry<a class="headerlink" href="#entry" title="Permanent link">#</a></h3>
+<h4 id="discipline">discipline<a class="headerlink" href="#discipline" title="Permanent link">#</a></h4>
+<h4 id="duration">duration<a class="headerlink" href="#duration" title="Permanent link">#</a></h4>
+<h4 id="information">information<a class="headerlink" href="#information" title="Permanent link">#</a></h4>
+<h4 id="non_standard_capacity">non_standard_capacity<a class="headerlink" href="#non_standard_capacity" title="Permanent link">#</a></h4>
+<h4 id="resources">resources<a class="headerlink" href="#resources" title="Permanent link">#</a></h4>
+<h4 id="planned_finish_date">planned_finish_date<a class="headerlink" href="#planned_finish_date" title="Permanent link">#</a></h4>
+<h4 id="planned_start_date">planned_start_date<a class="headerlink" href="#planned_start_date" title="Permanent link">#</a></h4>
+<h4 id="predecessors">predecessors<a class="headerlink" href="#predecessors" title="Permanent link">#</a></h4>
+<h3 id="field-update">Field Update<a class="headerlink" href="#field-update" title="Permanent link">#</a></h3>
+<h4 id="actual_hours_entry">actual_hours_entry<a class="headerlink" href="#actual_hours_entry" title="Permanent link">#</a></h4>
+<h4 id="estimate_to_complete_hours_entry">estimate_to_complete_hours_entry<a class="headerlink" href="#estimate_to_complete_hours_entry" title="Permanent link">#</a></h4>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h3>
+<h4 id="actual_hours_costunitup">actual_hours_costUnitUp<a class="headerlink" href="#actual_hours_costunitup" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND( [Actual (hrs)]@row &lt;&gt; &quot;&quot;, [Actual (hrs)]@row &lt;&gt; 0 ),
+    [Actual (hrs)]@row,
+    SUM( CHILDREN([(@all) ActualHrs]@row) )
+)
+</code></pre></div>
+</div>
+<h4 id="budget_hours_all">budget_hours_all<a class="headerlink" href="#budget_hours_all" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND( [Budget (hrs)]@row &lt;&gt; &quot;&quot;, [Budget (hrs)]@row &lt;&gt; 0 ),
+    [Budget (hrs)]@row,
+    SUM( CHILDREN([(@all) BudgetHrs]@row) )
+)
+</code></pre></div>
+</div>
+<h4 id="complete__control">complete_%_control<a class="headerlink" href="#complete__control" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    [(@control) EV]@row &lt;&gt; 0,
+    [(@control) EV]@row / [(@all) BudgetHrs]@row,
+    IF(
+        AND( [(@all) BudgetHrs]@row &lt;&gt; 0, [(@all) BudgetHrs]@row &lt;&gt; &quot;&quot; ),
+        IFERROR( AVG( CHILDREN([Calculated % Complete]@row) ), &quot;&quot; ),
+        &quot;&quot;
+    )
+)
+</code></pre></div>
+</div>
+<h4 id="cost_code_all">cost_code_all<a class="headerlink" href="#cost_code_all" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    PARENT([(@all) Cost Code]@row) &lt;&gt; &quot;&quot;,
+    PARENT([(@all) Cost Code]@row),
+    [Cost Code]@row
+)
+</code></pre></div>
+</div>
+<h4 id="estimate_at_complete_hours_costunitup">estimate_at_complete_hours_costUnitUp<a class="headerlink" href="#estimate_at_complete_hours_costunitup" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    [Actual (hrs)]@row &lt;&gt; &quot;&quot;,
+    IF(
+        [ETC (hrs)]@row &lt;&gt; &quot;&quot;,
+        [ETC (hrs)]@row,
+        [Budget (hrs)]@row
+    ) + [(@all) ActualHrs]@row,
+    SUM( CHILDREN([(@all) EACHrs]@row) )
+)
+</code></pre></div>
+</div>
+<h4 id="planned_value_all">planned_value_all<a class="headerlink" href="#planned_value_all" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND( PV@row &lt;&gt; &quot;&quot;, PV@row &lt;&gt; 0 ),
+    PV@row,
+    SUM( CHILDREN([(@all) PV]@row) )
+)
+</code></pre></div>
+</div>
+<h3 id="calculation">Calculation<a class="headerlink" href="#calculation" title="Permanent link">#</a></h3>
+<h4 id="baseline_planned__complete">baseline_planned_%_complete<a class="headerlink" href="#baseline_planned__complete" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND([Baseline Start Date]@row &lt;&gt; &quot;&quot;, [Baseline Finish Date]@row &lt;&gt; &quot;&quot;),
+    ROUND(
+        IF(
+            TODAY() &lt; [Baseline Start Date]@row,
+            0,
+            IF(
+                TODAY() &gt;= [Baseline Finish Date]@row,
+                1,
+                NETWORKDAYS(
+                    [Baseline Start Date]@row,
+                    TODAY()
+                ) / NETWORKDAYS( [Baseline Start Date]@row, [Baseline Finish Date]@row )
+            )
+        ),
+    2),
+    0
+)
+</code></pre></div>
+</div>
+<h4 id="behind_baseline_plan">behind_baseline_plan<a class="headerlink" href="#behind_baseline_plan" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF( [(@control) % Complete]@row &lt; [Baseline Planned % Complete]@row, 1, 0)
+</code></pre></div>
+</div>
+<h4 id="behind_plan">behind_plan<a class="headerlink" href="#behind_plan" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF( [(@control) % Complete]@row &lt; [Planned % Complete]@row, 1, 0)
+</code></pre></div>
+</div>
+<h4 id="complete_">complete_%<a class="headerlink" href="#complete_" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    [FUTURE - EVM Method]@row = &quot;Manual % Complete&quot;,
+    [Manual % Complete]@row,
+    IF(
+        [FUTURE - EVM Method]@row = &quot;Linearised LoE&quot;,
+        [FUTURE - Linearised LoE]@row,
+        IF(
+            [FUTURE - EVM Method]@row = &quot;Gated&quot;,
+            [FUTURE - Gated Progress Reference]@row,
+            IF(
+                [FUTURE - EVM Method]@row = &quot;Apportioned Effort&quot;,
+                &quot;NOT SUPPORTED&quot;,
+                [Manual % Complete]@row
+            )
+        )
+    )
+)
+</code></pre></div>
+</div>
+<h4 id="complete__1">complete_%<a class="headerlink" href="#complete__1" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND( [Start Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;&quot; ),
+    ROUND(
+        IF(
+            TODAY() &lt; [Start Date]@row,
+            0,
+            IF(
+                TODAY() &gt;= [Finish Date]@row,
+                1,
+                NETWORKDAYS([Start Date]@row, TODAY()
+            ) / NETWORKDAYS( [Start Date]@row, [Finish Date]@row )
+        )
+    ), 2),
+    0
+)             
+</code></pre></div>
+</div>
+<h4 id="cost_performance_index">cost_performance_index<a class="headerlink" href="#cost_performance_index" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IFERROR(
+    [(@control) EV]@row / [(@all) ActualHrs]@row, 
+    &quot;&quot;
+)
+</code></pre></div>
+</div>
+<h4 id="cost_variance">cost_variance<a class="headerlink" href="#cost_variance" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=[(@control) EV]@row - [(@all) ActualHrs]@row
+</code></pre></div>
+</div>
+<h4 id="cost_variance_">cost_variance_%<a class="headerlink" href="#cost_variance_" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IFERROR( 
+    CV@row / [(@all) PV]@row, 
+    &quot;&quot; 
+)
+</code></pre></div>
+</div>
+<h4 id="earned_value_rowcalculation">earned_value_rowCalculation<a class="headerlink" href="#earned_value_rowcalculation" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    SUM(CHILDREN(EV@row)) &gt; 0,
+    0,
+    [Calculated % Complete]@row * [(@all) BudgetHrs]@row
+)
+</code></pre></div>
+</div>
+<h4 id="planned_value">planned_value<a class="headerlink" href="#planned_value" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND( [Budget (hrs)]@row &lt;&gt; &quot;&quot;, [Budget (hrs)]@row &lt;&gt; 0 ),
+    [Baseline Planned % Complete]@row * [Budget (hrs)]@row,
+    0
+)
+</code></pre></div>
+</div>
+<h4 id="resource_loading">resource_loading<a class="headerlink" href="#resource_loading" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IFERROR(
+    ( [Budget (hrs)]@row / Duration@row)
+        /( COUNTM([Resource(s)]@row)
+            * IF(
+                [Non-Standard Capacity]@row &lt;&gt; &quot;&quot;,
+                [Non-Standard Capacity]@row,
+                8
+            )
+        ),
+    &quot;&quot;
+)
+</code></pre></div>
+</div>
+<h4 id="schedule_performance_index">schedule_performance_index<a class="headerlink" href="#schedule_performance_index" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IFERROR( 
+    [(@control) EV]@row / [(@all) PV]@row, 
+    &quot;&quot;
+)
+</code></pre></div>
+</div>
+<h4 id="schedule_variance">schedule_variance<a class="headerlink" href="#schedule_variance" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=[(@control) EV]@row - [(@all) PV]@row
+</code></pre></div>
+</div>
+<h4 id="schedule_variance_">schedule_variance_%<a class="headerlink" href="#schedule_variance_" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IFERROR(
+    SV@row / [(@all) PV]@row, 
+    &quot;&quot;
+)
+</code></pre></div>
+</div>
+<h4 id="variance_to_baseline_start_date">variance_to_baseline_start_date<a class="headerlink" href="#variance_to_baseline_start_date" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND( [Baseline Start Date]@row &lt;&gt; &quot;&quot;, [Start Date]@row &lt;&gt; &quot;&quot; ),
+    NETWORKDAYS( [Start Date]@row, [Baseline Start Date]@row ) - 1,
+    &quot;&quot;
+)
+</code></pre></div>
+</div>
+<h4 id="variance_to_baseline_finish_date">variance_to_baseline_finish_date<a class="headerlink" href="#variance_to_baseline_finish_date" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND( [Baseline Finish Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;&quot; ),
+    NETWORKDAYS( [Finish Date]@row, [Baseline Finish Date]@row ) - 1,
+    &quot;&quot;
+)
+</code></pre></div>
+</div>
+<h4 id="wbs">wbs<a class="headerlink" href="#wbs" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    [WBS Level]@row &lt;= 2,
+    Activity@row,
+    IF(
+        [WBS Level]@row &lt;= 2,
+        INDEX(ANCESTORS(Activity@row), 2)
+            + IF(
+                [WBS Level]@row &lt;= 3,
+                &quot;&quot;,
+                &quot; | &quot; + INDEX(ANCESTORS(Activity@row), 3)
+                    + IF(
+                        [WBS Level]@row &lt;= 4,
+                        &quot;&quot;,
+                        &quot; | &quot; + INDEX(ANCESTORS(Activity@row), 4)
+                    )
+            )
+    )
+)            
+</code></pre></div>
+</div>
+<h4 id="wbs_descendants">wbs_descendants<a class="headerlink" href="#wbs_descendants" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF( 
+    [WBS Level]@row &lt;&gt; 1, 
+    COUNT(DESCENDANTS()), 
+    SUM(CHILDREN()
+) 
+</code></pre></div>
+</div>
+<h4 id="wbs_level2_description">wbs_level2_description<a class="headerlink" href="#wbs_level2_description" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    [WBS Level]@row &lt;= 2, Activity@row, 
+    INDEX( ANCESTORS(Activity@row), 2 )
+)           
+</code></pre></div>
+</div>
+<h3 id="check">Check<a class="headerlink" href="#check" title="Permanent link">#</a></h3>
+<h4 id="flag">flag<a class="headerlink" href="#flag" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    COUNT(
+        IF( [SETTING - Show Budget Issues]#, [Budget Issues]@row ),
+        IF( [SETTING - Show Cost Code Issues]#, [Cost Code Issues]@row ),
+        IF( [SETTING - Show Resourcing Issues]#, [Resourcing Issues]@row )
+    ) &gt; 0,
+    &quot;No&quot;,
+    IF(
+        COUNT(
+            IF( [SETTING - Show Budget Issues]#, DESCENDANTS([Budget Issues]@row) ),
+            IF( [SETTING - Show Cost Code Issues]#, DESCENDANTS([Cost Code Issues]@row) ),
+            IF( [SETTING - Show Resourcing Issues]#, DESCENDANTS([Resourcing Issues]@row) )
+        ) &gt; 0,
+        &quot;Hold&quot;,
+        &quot;&quot;
+    )
+)             
+</code></pre></div>
+</div>
+<h4 id="budget_issues">budget_issues<a class="headerlink" href="#budget_issues" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND( [Budget (hrs)]@row &lt;&gt; 0, [Budget (hrs)]@row &lt;&gt; &quot;&quot; ),
+    IF(
+        SUM( CHILDREN([Budget (hrs)]@row) ) &gt; 0,
+        &quot;Budget also assigned on children&quot;,
+        &quot;&quot;
+    ),
+    &quot;&quot;
+)
+</code></pre></div>
+</div>
+<h4 id="cost_code_issues">cost_code_issues<a class="headerlink" href="#cost_code_issues" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    [(@all) BudgetHrs]@row &lt;&gt; 0,
+    &quot;&quot;,
+    IF(
+        [Cost Code]@row = &quot;&quot;,
+        IF(
+            COUNT(ANCESTORS([Cost Code]@row)) &gt; 1,
+            &quot;Multiple ancestor cost codes exist&quot;,
+            IF(
+                AND(
+                    COUNT(ANCESTORS([Cost Code]@row)) = 0,
+                    [WBS Level]@row &lt;&gt; 1,
+                    OR(
+                        COUNT(CHILDREN([Cost Code Issues]@row)) &gt; 0,
+                        COUNT(CHILDREN(Activity@row)) = 0
+                    )
+                ),
+                &quot;Not cost coded, and no applicable ancestor cost code or successor coding to cover all successors&quot;,
+                &quot;&quot;
+            )
+        ),
+        IF(
+            COUNT(ANCESTORS([Cost Code]@row)) &gt; 0,
+            &quot;Cost coded and ancestor cost code(s) also exist&quot;,
+            &quot;&quot;
+        )
+    )
+)
+</code></pre></div>
+</div>
+<h4 id="resourcing_issues">resourcing_issues<a class="headerlink" href="#resourcing_issues" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<p>```
+=IF(
+    [(@control) % Complete]@row &lt;&gt; 1,
+    IF(
+        AND(
+            COUNTM([Resource(s)]@row) &lt;&gt; 0,
+            [Budget (hrs)]@row &lt;&gt; 0
+        ),
+        IF(
+            Duration@row &lt;&gt; 0,
+            IF(
+                [Budget (hrs)]@row / Duration@row
+                    /( COUNTM([Resource(s)]@row)
+                        * IF(
+                            [Non-Standard Capacity]@row &lt;&gt; "",
+                            [Non-Standard Capacity]@row,
+                            8
+                        )
+                    ) &gt; 1,
+                "Assigned resource(s) overloaded: "
+                    + (100 * [Budget (hrs)]@row / Duration@row
+                        /( (COUNTM([Resource(s)]@row)
+                            * IF(
+                                [Non-Standard Capacity]@row &lt;&gt; "",
+                                [Non-Standard Capacity]@row,
+                                8
+                            )
+                        )
+                    ) + "%"),
+                ""
+            ),
+            "Duration issue"
+        ),
+        IF(
+            [Budget (hrs)]@row &lt;&gt; 0,
+            "Resource assignment required"
+        )
+    )
+)</p>
+</div>
+<h3 id="displayfilter-columns">Display/Filter Columns<a class="headerlink" href="#displayfilter-columns" title="Permanent link">#</a></h3>
+<h4 id="filter_client_view">filter_client_view<a class="headerlink" href="#filter_client_view" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    OR(
+        [Client Hidden?]@row = 1,
+        PARENT() = &quot;Hidden&quot;
+    ),
+    &quot;Hidden&quot;,
+    &quot;Visible&quot;
+)
+</code></pre></div>
+</div>
+<h4 id="client_hidden">client_hidden<a class="headerlink" href="#client_hidden" title="Permanent link">#</a></h4>
+<h2 id="filters">Filters<a class="headerlink" href="#filters" title="Permanent link">#</a></h2>
+<h2 id="sheet-summary">Sheet Summary<a class="headerlink" href="#sheet-summary" title="Permanent link">#</a></h2>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../../tools-and-templates/smartsheet/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Smartsheet
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+      
+    
+  </body>
+</html>
