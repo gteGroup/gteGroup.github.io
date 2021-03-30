@@ -959,6 +959,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#earned_value_control" class="md-nav__link">
+    earned_value_control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#estimate_at_complete_hours_costunitup" class="md-nav__link">
     estimate_at_complete_hours_costUnitUp
   </a>
@@ -1437,6 +1444,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#earned_value_control" class="md-nav__link">
+    earned_value_control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#estimate_at_complete_hours_costunitup" class="md-nav__link">
     estimate_at_complete_hours_costUnitUp
   </a>
@@ -1715,22 +1729,22 @@
 <tr>
 <td>(@all) ActualHrs</td>
 <td><a href="#actual_hours_costunitup">actual_hours_costUnitUp</a></td>
-<td>Summarises <a href="#actual_hours_entry">actual_hours_entry</a>, captured at the cost unit level in the cost system, to each level in the <abbr title="Work Breakdown Structure">WBS</abbr> higher than those cost units.</td>
+<td>Summarises up through the <abbr title="Work Breakdown Structure">WBS</abbr> the <abbr title="The realized cost (or burn) incurred for the work performed on an activity (often in a specific time period, and sometimes in labour hours rather than dollars when relating to human resources). Sometimes referred to in other organizations as the Actual Cost of Work Performed (ACWP)">Actual Cost</abbr> which is entered at the Cost Unit level (captured in the <abbr title="Business system for capturing project costs. Avaza">Cost System</abbr> and input to the schedule as <a href="#actual_hours_entry">actual_hours_entry</a>) up through the <abbr title="Work Breakdown Structure">WBS</abbr></td>
 </tr>
 <tr>
 <td>(@all) BudgetHrs</td>
 <td><a href="#budget_hours_all">budget_hours_all</a></td>
-<td></td>
+<td>Summarises up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Budget Hours which are entered at the budgeted level (captured in the <abbr title="The approved version of a work product that can only be changed through formal change control procedures. Used as a basis for comparison">Baseline</abbr> and input to the schedule as <a href="#budget_hours">budget_hours</a>)</td>
 </tr>
 <tr>
 <td>(@all) Cost Code</td>
 <td><a href="#cost_code_all">cost_code_all</a></td>
-<td></td>
+<td>Propogates a Cost Code entered at the Cost Unit level down to descendant levels in the <abbr title="Work Breakdown Structure">WBS</abbr> for explicitly clarifying where the costs should be captured in the <abbr title="Business system for capturing project costs. Avaza">Cost System</abbr></td>
 </tr>
 <tr>
 <td>(@all) <abbr title="Planned Value">PV</abbr></td>
 <td><a href="#planned_value_all">planned_value_all</a></td>
-<td></td>
+<td>Summarises up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Planned Value calculated at the budgeted (or lowest possibly "determinable") level (as <a href="#planned_value">planned_value</a>)</td>
 </tr>
 <tr>
 <td>(@control) % Complete</td>
@@ -1738,7 +1752,12 @@
 <td></td>
 </tr>
 <tr>
-<td>Activity</td>
+<td>(@control) <abbr title="Earned Value">EV</abbr></td>
+<td><a href="#earned_value_control%_control">earned_value_control</a></td>
+<td>Summarises up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Earned Value calculated at the lowest possibly determinable level (as <a href="#earned_value_rowCalculation">earned_value_rowCalculation</a>). The lowest possibly determinable level is where both % Complete and Budget Hours exist</td>
+</tr>
+<tr>
+<td><abbr title="Broadly a distinct, scheduled portion of work performed during the course of the project but also referring to activities – such as meetings, workshops or acceptance testing – that are not in themselves a deliverable">Activity</abbr></td>
 <td><a href="#activity">activity</a></td>
 <td></td>
 </tr>
@@ -1748,22 +1767,22 @@
 <td></td>
 </tr>
 <tr>
-<td>Baseline Finish Date</td>
+<td><abbr title="The approved version of a work product that can only be changed through formal change control procedures. Used as a basis for comparison">Baseline</abbr> Finish Date</td>
 <td><a href="#baseline_finish_date">baseline_finish_date</a></td>
 <td></td>
 </tr>
 <tr>
-<td>Baseline Planned % Complete</td>
+<td><abbr title="The approved version of a work product that can only be changed through formal change control procedures. Used as a basis for comparison">Baseline</abbr> Planned % Complete</td>
 <td><a href="#baseline_planned_%_complete">baseline_planned_%_complete</a></td>
 <td></td>
 </tr>
 <tr>
-<td>Baseline Start Date</td>
+<td><abbr title="The approved version of a work product that can only be changed through formal change control procedures. Used as a basis for comparison">Baseline</abbr> Start Date</td>
 <td><a href="#baseline_start_date">baseline_start_date</a></td>
 <td></td>
 </tr>
 <tr>
-<td>Behind Baseline Plan?</td>
+<td>Behind <abbr title="The approved version of a work product that can only be changed through formal change control procedures. Used as a basis for comparison">Baseline</abbr> Plan?</td>
 <td><a href="#behind_baseline_plan">behind_baseline_plan</a></td>
 <td></td>
 </tr>
@@ -1928,12 +1947,12 @@
 <td></td>
 </tr>
 <tr>
-<td>Variance to Baseline Finish Date</td>
+<td>Variance to <abbr title="The approved version of a work product that can only be changed through formal change control procedures. Used as a basis for comparison">Baseline</abbr> Finish Date</td>
 <td><a href="#variance_to_baseline_finish_date">variance_to_baseline_finish_date</a></td>
 <td></td>
 </tr>
 <tr>
-<td>Variance to Baseline Start Date</td>
+<td>Variance to <abbr title="The approved version of a work product that can only be changed through formal change control procedures. Used as a basis for comparison">Baseline</abbr> Start Date</td>
 <td><a href="#variance_to_baseline_start_date">variance_to_baseline_start_date</a></td>
 <td></td>
 </tr>
@@ -2019,6 +2038,28 @@
     PARENT([(@all) Cost Code]@row) &lt;&gt; &quot;&quot;,
     PARENT([(@all) Cost Code]@row),
     [Cost Code]@row
+)
+</code></pre></div>
+</div>
+<h4 id="earned_value_control">earned_value_control<a class="headerlink" href="#earned_value_control" title="Permanent link">#</a></h4>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>IF(
+    AND( EV@row = 0, [WBS Descendants]@row &gt; 0 ),
+    IF(
+        SUM(CHILDREN([(@control) EV]@row)) &gt; 0,
+        SUM(CHILDREN([(@control) EV]@row)),
+        IFERROR(
+            AVG( CHILDREN([Calculated % Complete]@row) )
+                * IF(
+                    SUM(CHILDREN([Budget (hrs)]@row)) &lt;&gt; 0,
+                    SUM(CHILDREN([Budget (hrs)]@row)),
+                    [(@all) BudgetHrs]@row
+                ),
+            0
+        )
+    ),
+    EV@row
 )
 </code></pre></div>
 </div>
