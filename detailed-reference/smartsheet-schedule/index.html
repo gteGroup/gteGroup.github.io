@@ -1633,11 +1633,11 @@
 <tbody>
 <tr>
 <td>% Complete</td>
-<td>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the % Complete which is determined at lower activity levels (as <code>[comp%](#comp%)</code>).</td>
+<td>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the % Complete which is determined at lower activity levels (as <a href="#comp%"><code>comp%</code></a>).</td>
 <td>Summation/Propagation</td>
 <td>% Complete</td>
 <td>Actual</td>
-<td><a href="#comp%_all">comp%_all</a></td>
+<td><a href="#comp%_all"><code>comp%_all</code></a></td>
 </tr>
 <tr>
 <td>Activity</td>
@@ -1653,7 +1653,7 @@
 <td>Summation/Propagation</td>
 <td>Actual Cost</td>
 <td>Actual</td>
-<td><a href="#actual_hours_all">actual_hours_all</a></td>
+<td><a href="#actual_hours_all"><code>actual_hours_all</code></a></td>
 </tr>
 <tr>
 <td>Actual Finish Date</td>
@@ -1685,7 +1685,7 @@
 <td>Calculation</td>
 <td>Metric</td>
 <td>Actual vs Baseline</td>
-<td><a href="#var_date_finish_actual_to_baseline">var_date_finish_actual_to_baseline</a></td>
+<td><a href="#var_date_finish_actual_to_baseline"><code>var_date_finish_actual_to_baseline</code></a></td>
 </tr>
 <tr>
 <td>Actual Variance to Baseline Start Date</td>
@@ -1693,7 +1693,7 @@
 <td>Calculation</td>
 <td>Metric</td>
 <td>Actual vs Baseline</td>
-<td><a href="#var_date_start_actual_to_baseline">var_date_start_actual_to_baseline</a></td>
+<td><a href="#var_date_start_actual_to_baseline"><code>var_date_start_actual_to_baseline</code></a></td>
 </tr>
 <tr>
 <td>AvazaSection</td>
@@ -1701,7 +1701,7 @@
 <td>Calculation</td>
 <td>System</td>
 <td>All</td>
-<td><a href="#api_avaza_section">api_avaza_section</a></td>
+<td><a href="#api_avaza_section"><code>api_avaza_section</code></a></td>
 </tr>
 <tr>
 <td>Baseline Finish Date</td>
@@ -1713,19 +1713,19 @@
 </tr>
 <tr>
 <td>Baseline Planned % Complete</td>
-<td>Determines Schedule % Complete (or "Planned %") at all levels up through the <abbr title="Work Breakdown Structure">WBS</abbr> using the Planned Values (calculated at the lowest possibly determinable level as <code>[pv_budget_level](#pv_budget_level)</code> and summarized upwards as <code>[pv_all](#pv_all)</code>) and summarized Budgets (<code>[budget_hours_all](#budget_hours_all)</code>). <strong>Note that an activity and summary that does not have a budget (<code>[budget_hours_all](#budget_hours_all)</code>), ie either directly assigned or from it's children, will not have Planned Value. As these may still be considered progressable, the <code>[baseline_schedule_%_complete](#baseline_schedule_%_complete)</code> is used as a fallback planned % for those activities or summaries, however the percentage does not impact higher level summaries.</strong></td>
+<td>Determines Schedule % Complete (or "Planned %") at all levels up through the <abbr title="Work Breakdown Structure">WBS</abbr> using the Planned Values (calculated at the lowest possibly determinable level as <a href="#pv_budget_level"><code>pv_budget_level</code></a> and summarized upwards as <a href="#pv_all"><code>pv_all</code></a>) and summarized Budgets (<a href="#budget_hours_all"><code>budget_hours_all</code></a>). <strong>Note that an activity and summary that does not have a budget (<a href="#budget_hours_all"><code>budget_hours_all</code></a>), ie either directly assigned or from it's children, will not have Planned Value. As these may still be considered progressable, the <a href="#baseline_schedule_%_complete"><code>baseline_schedule_%_complete</code></a> is used as a fallback planned % for those activities or summaries, however the percentage does not impact higher level summaries.</strong></td>
 <td>Summation/Propagation</td>
 <td>% Complete</td>
 <td>Baseline</td>
-<td><a href="#comp%_baseline_planned_all">comp%_baseline_planned_all</a></td>
+<td><a href="#comp%_baseline_planned_all"><code>comp%_baseline_planned_all</code></a></td>
 </tr>
 <tr>
 <td>Baseline Schedule % Complete</td>
-<td>Determines the Schedule % Complete for an activity (or summary) at the data date (today) as a linearization of progress from the Baseline Start Date to the Baseline Finish Dates, factoring in non-working days in the project calendar. <strong>Note that the values yielded for summaries in the <abbr title="Work Breakdown Structure">WBS</abbr> are not accurate portrayals of Planned Value as these linearize at those summary levels only. Accurate "Planned %" is given by <code>[comp%_baseline_planned_all](#comp%_baseline_planned_all)</code>.</strong></td>
+<td>Determines the Schedule % Complete for an activity (or summary) at the data date (today) as a linearization of progress from the Baseline Start Date to the Baseline Finish Dates, factoring in non-working days in the project calendar. <strong>Note that the values yielded for summaries in the <abbr title="Work Breakdown Structure">WBS</abbr> are not accurate portrayals of Planned Value as these linearize at those summary levels only. Accurate "Planned %" is given by <a href="#comp%_baseline_planned_all"><code>comp%_baseline_planned_all</code></a>.</strong></td>
 <td>Calculation</td>
 <td>% Complete</td>
 <td>Baseline</td>
-<td><a href="#comp%_schedule_planned_all">comp%_schedule_planned_all</a></td>
+<td><a href="#comp%_schedule_planned_all"><code>comp%_schedule_planned_all</code></a></td>
 </tr>
 <tr>
 <td>Baseline Start Date</td>
@@ -1741,11 +1741,11 @@
 <td>Summation/Propagation</td>
 <td>Budget</td>
 <td>Baseline</td>
-<td><a href="#budget_hours_all">budget_hours_all</a></td>
+<td><a href="#budget_hours_all"><code>budget_hours_all</code></a></td>
 </tr>
 <tr>
 <td>Budget Assigned [hrs]</td>
-<td>Budgeted Cost, in hours, as assigned to relevant individual activities. The sum of the assigned budgets equals the total project Budgeted Cost, and is summarised up through the <abbr title="Work Breakdown Structure">WBS</abbr> as <code>[budget_hours_all](#budget_hours_all)</code>.</td>
+<td>Budgeted Cost, in hours, as assigned to relevant individual activities. The sum of the assigned budgets equals the total project Budgeted Cost, and is summarised up through the <abbr title="Work Breakdown Structure">WBS</abbr> as <a href="#budget_hours_all"><code>budget_hours_all</code></a>.</td>
 <td>Project Controls (Controlled)</td>
 <td>Budget</td>
 <td>Baseline</td>
@@ -1757,15 +1757,15 @@
 <td>Calculation</td>
 <td>Budget</td>
 <td>Planned</td>
-<td><a href="#budget_hours_assigned_and_requested">budget_hours_assigned_and_requested</a></td>
+<td><a href="#budget_hours_assigned_and_requested"><code>budget_hours_assigned_and_requested</code></a></td>
 </tr>
 <tr>
 <td>Budget Issues</td>
-<td>Used to assist in assigning Budget using the <code>budget_hours_assigned</code> column, providing indication where overlapping budgets have been assigned, ie where assignments have been made on ancestors to an activity that has also been directly assigned a budget. Issues in this column will be represented by a symbol in the <code>[flag](#flag)</code> column if the Sheet Summary setting <a href="#setting_show_budget_issues">setting_show_budget_issues</a> is checked.</td>
+<td>Used to assist in assigning Budget using the <code>budget_hours_assigned</code> column, providing indication where overlapping budgets have been assigned, ie where assignments have been made on ancestors to an activity that has also been directly assigned a budget. Issues in this column will be represented by a symbol in the <a href="#flag"><code>flag</code></a> column if the Sheet Summary setting <a href="#setting_show_budget_issues"><code>setting_show_budget_issues</code></a> is checked.</td>
 <td>System (Display&amp;Filter)</td>
 <td>Budget</td>
 <td>All</td>
-<td><a href="#budget_issues">budget_issues</a></td>
+<td><a href="#budget_issues"><code>budget_issues</code></a></td>
 </tr>
 <tr>
 <td>Budget Requested [hrs]</td>
@@ -1777,11 +1777,11 @@
 </tr>
 <tr>
 <td>Calculated % Complete</td>
-<td>Calculates the % Complete to use for the activity based on the <code>[comp%_evm_method](#comp%_evm_method)</code> selected.</td>
+<td>Calculates the % Complete to use for the activity based on the <a href="#comp%_evm_method"><code>comp%_evm_method</code></a> selected.</td>
 <td>Calculation</td>
 <td>% Complete</td>
 <td>Actual</td>
-<td><a href="#comp%">comp%</a></td>
+<td><a href="#comp%"><code>comp%</code></a></td>
 </tr>
 <tr>
 <td>Client Hidden?</td>
@@ -1797,7 +1797,7 @@
 <td>System (Display&amp;Filter)</td>
 <td>System</td>
 <td>All</td>
-<td><a href="#control_cond_formatting">control_cond_formatting</a></td>
+<td><a href="#control_cond_formatting"><code>control_cond_formatting</code></a></td>
 </tr>
 <tr>
 <td>Cost Code</td>
@@ -1817,19 +1817,19 @@
 </tr>
 <tr>
 <td>Cost Unit Activity</td>
-<td>Combines the <code>[cost_unit_effective](#cost_unit_effective)</code> and the <code>activity</code> into a string.</td>
+<td>Combines the <a href="#cost_unit_effective"><code>cost_unit_effective</code></a> and the <code>activity</code> into a string.</td>
 <td>System (Display&amp;Filter)</td>
 <td>Cost Coding</td>
 <td>All</td>
-<td><a href="#cost_unit_description">cost_unit_description</a></td>
+<td><a href="#cost_unit_description"><code>cost_unit_description</code></a></td>
 </tr>
 <tr>
 <td>Cost Unit Issues</td>
-<td>Used to assist in designating Cost Units using the <code>cost_unit_designation</code> column, providing details on any designation issues such as overlapping Cost Unit designations or budgeted activities not covered by a Cost Unit designation. Issues in this column will be represented by a symbol in the <code>[flag](#flag)</code> column if the Sheet Summary setting <code>[setting_show_cost_unit_issues](#setting_show_cost_unit_issues)</code> is checked.</td>
+<td>Used to assist in designating Cost Units using the <code>cost_unit_designation</code> column, providing details on any designation issues such as overlapping Cost Unit designations or budgeted activities not covered by a Cost Unit designation. Issues in this column will be represented by a symbol in the <a href="#flag"><code>flag</code></a> column if the Sheet Summary setting <a href="#setting_show_cost_unit_issues"><code>setting_show_cost_unit_issues</code></a> is checked.</td>
 <td>System (Display&amp;Filter)</td>
 <td>Cost Coding</td>
 <td>All</td>
-<td><a href="#cost_unit_issues">cost_unit_issues</a></td>
+<td><a href="#cost_unit_issues"><code>cost_unit_issues</code></a></td>
 </tr>
 <tr>
 <td><abbr title="Cost Performance Index">CPI</abbr></td>
@@ -1837,7 +1837,7 @@
 <td>Calculation</td>
 <td>Metric</td>
 <td>Actual vs Baseline</td>
-<td><a href="#cpi">cpi</a></td>
+<td><a href="#cpi"><code>cpi</code></a></td>
 </tr>
 <tr>
 <td><abbr title="Cost Variance">CV</abbr></td>
@@ -1845,7 +1845,7 @@
 <td>Calculation</td>
 <td>Metric</td>
 <td>Actual vs Baseline</td>
-<td><a href="#cv">cv</a></td>
+<td><a href="#cv"><code>cv</code></a></td>
 </tr>
 <tr>
 <td><abbr title="Cost Variance">CV</abbr>%</td>
@@ -1853,23 +1853,23 @@
 <td>Calculation</td>
 <td>Metric</td>
 <td>Actual vs Baseline</td>
-<td><a href="#cv_%">cv_%</a></td>
+<td><a href="#cv_%"><code>cv_%</code></a></td>
 </tr>
 <tr>
 <td>Default FTC [hrs]</td>
-<td>Calculates a default value to be used if a Forecast Hours to Finish (<code>ftc_hours_entry</code>) is not entered and there is assigned budget for the activity. If there is no assigned budget, the sum of the child activities is used. The value calculated is generally the full assigned budget (<code>budget_hours_assigned</code>) as a conservative estimate, however for an <abbr title="Earned Value Management">EVM</abbr> Method (<code>[comp%_evm_method](#comp%_evm_method)</code>) of "Linearised <abbr title="Level of Effort">LoE</abbr>" the actual hours to date (<code>actual_hours_recorded</code>) will be deducted as these activities are expected to meet budget.</td>
+<td>Calculates a default value to be used if a Forecast Hours to Finish (<code>ftc_hours_entry</code>) is not entered and there is assigned budget for the activity. If there is no assigned budget, the sum of the child activities is used. The value calculated is generally the full assigned budget (<code>budget_hours_assigned</code>) as a conservative estimate, however for an <abbr title="Earned Value Management">EVM</abbr> Method (<a href="#comp%_evm_method"><code>comp%_evm_method</code></a>) of "Linearised <abbr title="Level of Effort">LoE</abbr>" the actual hours to date (<code>actual_hours_recorded</code>) will be deducted as these activities are expected to meet budget.</td>
 <td>Calculation</td>
 <td>Forecast Cost</td>
 <td>Forecast (to Baseline)</td>
-<td><a href="#ftc_default">ftc_default</a></td>
+<td><a href="#ftc_default"><code>ftc_default</code></a></td>
 </tr>
 <tr>
 <td>Default FTC Including Change [hrs]</td>
-<td>Calculates a default value to be used if a Forecast Hours to Finish (<code>ftc_hours_entry</code>) is not entered and there is assigned budget and/or requested hours (through formal change management with the client) for the activity. If there is no assigned or requested hours for the activity, the sum of the child activities is used. The value calculated is generally the full assigned and requested budget (<code>budget_hours_assigned_and_requested</code>) as a conservative estimate, however for an <abbr title="Earned Value Management">EVM</abbr> Method (<code>[comp%_evm_method](#comp%_evm_method)</code>) of "Linearised <abbr title="Level of Effort">LoE</abbr>" the actual hours to date (<code>actual_hours_recorded</code>) will be deducted.</td>
+<td>Calculates a default value to be used if a Forecast Hours to Finish (<code>ftc_hours_entry</code>) is not entered and there is assigned budget and/or requested hours (through formal change management with the client) for the activity. If there is no assigned or requested hours for the activity, the sum of the child activities is used. The value calculated is generally the full assigned and requested budget (<code>budget_hours_assigned_and_requested</code>) as a conservative estimate, however for an <abbr title="Earned Value Management">EVM</abbr> Method (<a href="#comp%_evm_method"><code>comp%_evm_method</code></a>) of "Linearised <abbr title="Level of Effort">LoE</abbr>" the actual hours to date (<code>actual_hours_recorded</code>) will be deducted.</td>
 <td>Calculation</td>
 <td>Forecast Cost</td>
 <td>Forecast (to Planned)</td>
-<td><a href="#ftc_default_with_change">ftc_default_with_change</a></td>
+<td><a href="#ftc_default_with_change"><code>ftc_default_with_change</code></a></td>
 </tr>
 <tr>
 <td>Descendant Cost Units</td>
@@ -1877,7 +1877,7 @@
 <td>System (Background)</td>
 <td>System</td>
 <td>All</td>
-<td><a href="#cost_unit_descendants">cost_unit_descendants</a></td>
+<td><a href="#cost_unit_descendants"><code>cost_unit_descendants</code></a></td>
 </tr>
 <tr>
 <td>Duration</td>
@@ -1893,15 +1893,15 @@
 <td>System (Background)</td>
 <td>Cost Coding</td>
 <td>All</td>
-<td><a href="#cost_unit_effective">cost_unit_effective</a></td>
+<td><a href="#cost_unit_effective"><code>cost_unit_effective</code></a></td>
 </tr>
 <tr>
 <td>Expected Budget [hrs]</td>
-<td>Summarizes hours up through the <abbr title="Work Breakdown Structure">WBS</abbr> as for <code>[budget_hours_all](#budget_hours_all)</code> but includes additional hours that may have been requested of the client through formal change management, but not yet approved. The additional hours are input at the budgeted level as <code>budget_hours_requested</code>.</td>
+<td>Summarizes hours up through the <abbr title="Work Breakdown Structure">WBS</abbr> as for <a href="#budget_hours_all"><code>budget_hours_all</code></a> but includes additional hours that may have been requested of the client through formal change management, but not yet approved. The additional hours are input at the budgeted level as <code>budget_hours_requested</code>.</td>
 <td>Summation/Propagation</td>
 <td>Budget</td>
 <td>Planned</td>
-<td><a href="#budget_hours_with_change_all">budget_hours_with_change_all</a></td>
+<td><a href="#budget_hours_with_change_all"><code>budget_hours_with_change_all</code></a></td>
 </tr>
 <tr>
 <td>EOM+0 Data Date</td>
@@ -1909,7 +1909,7 @@
 <td>System (Background)</td>
 <td>System</td>
 <td>Future</td>
-<td><a href="#date_data_eomX">date_data_eomX</a></td>
+<td><a href="#date_data_eomX"><code>date_data_eomX</code></a></td>
 </tr>
 <tr>
 <td>EOM+0 Planned % Complete</td>
@@ -1917,7 +1917,7 @@
 <td>System (Background)</td>
 <td>% Complete</td>
 <td>Future</td>
-<td><a href="#comp%_with_change_all_eomX">comp%_with_change_all_eomX</a></td>
+<td><a href="#comp%_with_change_all_eomX"><code>comp%_with_change_all_eomX</code></a></td>
 </tr>
 <tr>
 <td>EOM+0 PVx [hrs]</td>
@@ -1925,7 +1925,7 @@
 <td>System (Background)</td>
 <td>Planned Value</td>
 <td>Future</td>
-<td><a href="#pv_with_change_all_eomX">pv_with_change_all_eomX</a></td>
+<td><a href="#pv_with_change_all_eomX"><code>pv_with_change_all_eomX</code></a></td>
 </tr>
 <tr>
 <td>EOM+0 PVx at Budget Level [hrs]</td>
@@ -1933,7 +1933,7 @@
 <td>System (Background)</td>
 <td>Planned Value</td>
 <td>Future</td>
-<td><a href="#pv_with_change_budget_level_eomX">pv_with_change_budget_level_eomX</a></td>
+<td><a href="#pv_with_change_budget_level_eomX"><code>pv_with_change_budget_level_eomX</code></a></td>
 </tr>
 <tr>
 <td>EOM+0 Schedule % Complete</td>
@@ -1941,7 +1941,7 @@
 <td>System (Background)</td>
 <td>% Complete</td>
 <td>Future</td>
-<td><a href="#comp%_schedule_eomX">comp%_schedule_eomX</a></td>
+<td><a href="#comp%_schedule_eomX"><code>comp%_schedule_eomX</code></a></td>
 </tr>
 <tr>
 <td>EOM+1 Data Date</td>
@@ -2065,23 +2065,23 @@
 </tr>
 <tr>
 <td><abbr title="Earned Value">EV</abbr> [hrs]</td>
-<td>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Earned Value calculated at the lowest possibly determinable level (as <code>[ev_budget_level](#ev_budget_level)</code>). The lowest possibly determinable level is where both % Complete and Budget Cost, in hours, exist.</td>
+<td>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Earned Value calculated at the lowest possibly determinable level (as <a href="#ev_budget_level"><code>ev_budget_level</code></a>). The lowest possibly determinable level is where both % Complete and Budget Cost, in hours, exist.</td>
 <td>Summation/Propagation</td>
 <td>Earned Value</td>
 <td>Actual vs Baseline</td>
-<td><a href="#ev_all">ev_all</a></td>
+<td><a href="#ev_all"><code>ev_all</code></a></td>
 </tr>
 <tr>
 <td><abbr title="Earned Value">EV</abbr> at Budget Level [hrs]</td>
-<td>Earned Value (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Earned Value (in hours) for that activity as the budget multiplied by the physical % complete <code>[comp%](#comp%). The duration of the activity is determined from the Baseline Start and Finish dates (as ([baseline_schedule_%_complete](#baseline_schedule_%_complete)), using [date_start_baseline](#date_finish_baseline) and [date_start_baseline](#date_finish_baseline)), and the budget used only includes the approved (Baseline) budget (</code>budget_hours_assigned`). <!-- Monitor whether this should actually be comp%_all used here --></td>
+<td>Earned Value (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Earned Value (in hours) for that activity as the budget multiplied by the physical % complete <a href="#comp%"><code>comp%</code></a>. The duration of the activity is determined from the Baseline Start and Finish dates (as (<a href="#baseline_schedule_%_complete"><code>baseline_schedule_%_complete</code></a>), using <a href="#date_finish_baseline"><code>date_start_baseline</code></a> and <a href="#date_finish_baseline"><code>date_start_baseline</code></a>), and the budget used only includes the approved (Baseline) budget (<code>budget_hours_assigned</code>). <!-- Monitor whether this should actually be comp%_all used here --></td>
 <td>Calculation</td>
 <td>Earned Value</td>
 <td>Actual vs Baseline</td>
-<td><a href="#ev_budget_level">ev_budget_level</a></td>
+<td><a href="#ev_budget_level"><code>ev_budget_level</code></a></td>
 </tr>
 <tr>
 <td><abbr title="Earned Value Management">EVM</abbr> Method</td>
-<td>The default method for determing an activity's % Complete (<code>[comp%](#comp%)</code>) is using the manual entry column (<code>comp%_manual</code>). This column is used to select an alternate method such as "Linearised <abbr title="Level of Effort">LoE</abbr>", or "Gated".</td>
+<td>The default method for determing an activity's % Complete (<a href="#comp%"><code>comp%</code></a>) is using the manual entry column (<code>comp%_manual</code>). This column is used to select an alternate method such as "Linearised <abbr title="Level of Effort">LoE</abbr>", or "Gated".</td>
 <td>Project Manager (Setup/Maintain)</td>
 <td>% Complete</td>
 <td>All</td>
@@ -2089,19 +2089,19 @@
 </tr>
 <tr>
 <td>FAC [hrs]</td>
-<td>Forecast at Complete (in hours). This is simply the hours incurred to date (<code>[actual_hours_all](#actual_hours_all)</code>) plus the forecast hours to complete (<code>ftc_hours_all</code>).</td>
+<td>Forecast at Complete (in hours). This is simply the hours incurred to date (<a href="#actual_hours_all"><code>actual_hours_all</code></a>) plus the forecast hours to complete (<code>ftc_hours_all</code>).</td>
 <td>Summation/Propagation</td>
 <td>Forecast Cost</td>
 <td>Forecast (to Baseline)</td>
-<td><a href="#fac_hours_all">fac_hours_all</a></td>
+<td><a href="#fac_hours_all"><code>fac_hours_all</code></a></td>
 </tr>
 <tr>
 <td>FAC Including Change [hrs]</td>
-<td>Forecast at Complete (in hours), factoring expected changes to the budget. This is simply the hours incurred to date (<code>[actual_hours_all](#actual_hours_all)</code>) plus the forecast hours to complete, where in this instance this includes change (<code>[ftc_default_with_change](#ftc_default_with_change)</code>).</td>
+<td>Forecast at Complete (in hours), factoring expected changes to the budget. This is simply the hours incurred to date (<a href="#actual_hours_all"><code>actual_hours_all</code></a>) plus the forecast hours to complete, where in this instance this includes change (<a href="#ftc_default_with_change"><code>ftc_default_with_change</code></a>).</td>
 <td>Summation/Propagation</td>
 <td>Forecast Cost</td>
 <td>Forecast (to Planned)</td>
-<td><a href="#fac_with_change_hours">fac_with_change_hours</a></td>
+<td><a href="#fac_with_change_hours"><code>fac_with_change_hours</code></a></td>
 </tr>
 <tr>
 <td>Filter - Client View</td>
@@ -2109,7 +2109,7 @@
 <td>System (Display&amp;Filter)</td>
 <td>System</td>
 <td>All</td>
-<td><a href="#filter_client_view">filter_client_view</a></td>
+<td><a href="#filter_client_view"><code>filter_client_view</code></a></td>
 </tr>
 <tr>
 <td>Finish Date</td>
@@ -2121,11 +2121,11 @@
 </tr>
 <tr>
 <td>Flag</td>
-<td>A cross (red) indicates an issue on the row. An exclamation (yellow) indicates an issue on a descendant row. The issues can be to do with Budgeting, Cost Coding, or Resourcing and the flags responsiveness to each is dependent on the selected options in the relevant 'Sheet Summary' settings. The specifics of the issues are detailed in the <code>[budget_issues](#budget_issues)</code>, <code>[cost_unit_issues](#cost_unit_issues)</code> and/or <code>[resourcing_issues](#resourcing_issues)</code> columns as relevant.</td>
+<td>A cross (red) indicates an issue on the row. An exclamation (yellow) indicates an issue on a descendant row. The issues can be to do with Budgeting, Cost Coding, or Resourcing and the flags responsiveness to each is dependent on the selected options in the relevant 'Sheet Summary' settings. The specifics of the issues are detailed in the <a href="#budget_issues"><code>budget_issues</code></a>, <a href="#cost_unit_issues"><code>cost_unit_issues</code></a> and/or <a href="#resourcing_issues"><code>resourcing_issues</code></a> columns as relevant.</td>
 <td>System (Display&amp;Filter)</td>
 <td>System</td>
 <td>All</td>
-<td><a href="#flag">flag</a></td>
+<td><a href="#flag"><code>flag</code></a></td>
 </tr>
 <tr>
 <td>Forecast Finish Date</td>
@@ -2145,19 +2145,19 @@
 </tr>
 <tr>
 <td>FTC [hrs]</td>
-<td>Forecast to Complete (in hours). Where a field forecast is applicable for an activity, generally where that activity is a Cost Unit, this value will be the field forecast (provided as <code>ftc_hours_entry</code>) if this has been provided. Where it has not, a default value will be used (<code>[ftc_default](#ftc_default)</code>).</td>
+<td>Forecast to Complete (in hours). Where a field forecast is applicable for an activity, generally where that activity is a Cost Unit, this value will be the field forecast (provided as <code>ftc_hours_entry</code>) if this has been provided. Where it has not, a default value will be used (<a href="#ftc_default"><code>ftc_default</code></a>).</td>
 <td>Summation/Propagation</td>
 <td>Forecast Cost</td>
 <td>Forecast (to Baseline)</td>
-<td><a href="#ftc_hours_all">ftc_hours_all</a></td>
+<td><a href="#ftc_hours_all"><code>ftc_hours_all</code></a></td>
 </tr>
 <tr>
 <td>FTC Including Change [hrs]</td>
-<td>Forecast to Complete (in hours), factoring expected changes to the budget. Where a field forecast is applicable for an activity, generally where that activity is a Cost Unit, this value will be the field forecast (provided as <code>ftc_hours_entry</code>) if this has been provided. Where it has not, a default value will be used where in this instance this includes change (<code>[ftc_default_with_change](#ftc_default_with_change)</code>).</td>
+<td>Forecast to Complete (in hours), factoring expected changes to the budget. Where a field forecast is applicable for an activity, generally where that activity is a Cost Unit, this value will be the field forecast (provided as <code>ftc_hours_entry</code>) if this has been provided. Where it has not, a default value will be used where in this instance this includes change (<a href="#ftc_default_with_change"><code>ftc_default_with_change</code></a>).</td>
 <td>Summation/Propagation</td>
 <td>Forecast Cost</td>
 <td>Forecast (to Planned)</td>
-<td><a href="#ftc_with_change_hours">ftc_with_change_hours</a></td>
+<td><a href="#ftc_with_change_hours"><code>ftc_with_change_hours</code></a></td>
 </tr>
 <tr>
 <td>FUTURE - Parent for Apportioned Effort</td>
@@ -2225,11 +2225,11 @@
 </tr>
 <tr>
 <td>Planned % Complete</td>
-<td>Determines Planned % Complete at all levels up through the <abbr title="Work Breakdown Structure">WBS</abbr> using the <em>expected</em> Planned Values, ie budgets including additional requests (calculated at the lowest possibly determinable level as <code>[pv_with_change_budget_level](#pv_with_change_budget_level)</code> and summarized upwards as <code>[pv_with_change_all](#pv_with_change_all)</code>); and summarized Budgets (<code>[budget_hours_with_change_all](#budget_hours_with_change_all)</code>). <strong>Note that an activity and summary that does not have a budget (<code>[budget_hours_with_change_all](#budget_hours_with_change_all)</code>), ie either directly assigned or from it's children, will not have Planned Value. As these may still be considered progressable, the <code>[schedule_%_complete](#schedule_%_complete)</code> is used as a fallback planned % for those activities or summaries, however the percentage does not impact higher level summaries.</strong></td>
+<td>Determines Planned % Complete at all levels up through the <abbr title="Work Breakdown Structure">WBS</abbr> using the <em>expected</em> Planned Values, ie budgets including additional requests (calculated at the lowest possibly determinable level as <a href="#pv_with_change_budget_level"><code>pv_with_change_budget_level</code></a> and summarized upwards as <a href="#pv_with_change_all"><code>pv_with_change_all</code></a>); and summarized Budgets (<a href="#budget_hours_with_change_all"><code>budget_hours_with_change_all</code></a>). <strong>Note that an activity and summary that does not have a budget (<a href="#budget_hours_with_change_all"><code>budget_hours_with_change_all</code></a>), ie either directly assigned or from it's children, will not have Planned Value. As these may still be considered progressable, the <a href="#schedule_%_complete"><code>schedule_%_complete</code></a> is used as a fallback planned % for those activities or summaries, however the percentage does not impact higher level summaries.</strong></td>
 <td>Summation/Propagation</td>
 <td>% Complete</td>
-<td></td>
-<td><a href="#comp%_with_change_all">comp%_with_change_all</a></td>
+<td>Planned</td>
+<td><a href="#comp%_with_change_all"><code>comp%_with_change_all</code></a></td>
 </tr>
 <tr>
 <td>Planned Variance to Baseline Finish Date</td>
@@ -2237,7 +2237,7 @@
 <td>Calculation</td>
 <td>Metric</td>
 <td>Planned vs Baseline</td>
-<td><a href="#var_date_finish_planned_to_baseline">var_date_finish_planned_to_baseline</a></td>
+<td><a href="#var_date_finish_planned_to_baseline"><code>var_date_finish_planned_to_baseline</code></a></td>
 </tr>
 <tr>
 <td>Planned Variance to Baseline Start Date</td>
@@ -2245,7 +2245,7 @@
 <td>Calculation</td>
 <td>Metric</td>
 <td>Planned vs Baseline</td>
-<td><a href="#var_date_start_planned_to_baseline">var_date_start_planned_to_baseline</a></td>
+<td><a href="#var_date_start_planned_to_baseline"><code>var_date_start_planned_to_baseline</code></a></td>
 </tr>
 <tr>
 <td>Predecessors</td>
@@ -2261,51 +2261,51 @@
 <td>System (Background)</td>
 <td>System</td>
 <td>All</td>
-<td><a href="#project_name">project_name</a></td>
+<td><a href="#project_name"><code>project_name</code></a></td>
 </tr>
 <tr>
 <td><abbr title="Planned Value">PV</abbr> [hrs]</td>
-<td>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Planned Value (in hours) calculated at the budgeted (or lowest possibly "determinable") level (as <code>[pv_budget_level](#pv_budget_level)</code>).</td>
+<td>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Planned Value (in hours) calculated at the budgeted (or lowest possibly "determinable") level (as <a href="#pv_budget_level"><code>pv_budget_level</code></a>).</td>
 <td>Summation/Propagation</td>
 <td>Planned Value</td>
 <td>Baseline</td>
-<td><a href="#pv_all">pv_all</a></td>
+<td><a href="#pv_all"><code>pv_all</code></a></td>
 </tr>
 <tr>
 <td><abbr title="Planned Value">PV</abbr> at Budget Level [hrs]</td>
-<td>Planned Value (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Planned Value (in hours) for that activity as the budget multiplied by the percentage of time through the duration of the activity. The duration of the activity is determined from the Baseline Start and Finish dates (as <code>[comp%_schedule_planned_all](#comp%_schedule_planned_all)</code>), using <code>date_start_baseline</code> and <code>date_finish_baseline</code>), and the budget used only includes the approved (Baseline) budget (<code>budget_hours_assigned</code>).</td>
+<td>Planned Value (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Planned Value (in hours) for that activity as the budget multiplied by the percentage of time through the duration of the activity. The duration of the activity is determined from the Baseline Start and Finish dates (as <a href="#comp%_schedule_planned_all"><code>comp%_schedule_planned_all</code></a>), using <code>date_start_baseline</code> and <code>date_finish_baseline</code>), and the budget used only includes the approved (Baseline) budget (<code>budget_hours_assigned</code>).</td>
 <td>Calculation</td>
 <td>Planned Value</td>
 <td>Baseline</td>
-<td><a href="#pv_budget_level">pv_budget_level</a></td>
+<td><a href="#pv_budget_level"><code>pv_budget_level</code></a></td>
 </tr>
 <tr>
 <td>PVx [hrs]</td>
-<td>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Planned Value (in hours) calculated at the budgeted (or lowest possibly "determinable") level as <code>[pv_with_change_budget_level](#pv_with_change_budget_level)</code>, where this includes additional requested budget as well as approved/assigned budget (<code>budget_hours_assigned_and_requested</code>).</td>
+<td>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Planned Value (in hours) calculated at the budgeted (or lowest possibly "determinable") level as <a href="#pv_with_change_budget_level"><code>pv_with_change_budget_level</code></a>, where this includes additional requested budget as well as approved/assigned budget (<code>budget_hours_assigned_and_requested</code>).</td>
 <td>Summation/Propagation</td>
 <td>Planned Value</td>
 <td>Planned</td>
-<td><a href="#pv_with_change_all">pv_with_change_all</a></td>
+<td><a href="#pv_with_change_all"><code>pv_with_change_all</code></a></td>
 </tr>
 <tr>
 <td>PVx at Budget Level [hrs]</td>
-<td>Planned Value Expected (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Planned Value (in hours) for that activity as that budget multiplied by the percentage of time through the duration of the activity. "Expected" means that in this instance the duration of the activity is determined from the Start and Finish dates from the current plan (as <code>[schedule_%_complete](#schedule_%_complete)</code>), using <code>date_start_planned</code> and <code>date_finish_planned</code>), and the budget used is actually the approved/assigned budget plus any additional requested budget (<code>budget_hours_assigned_and_requested</code>).</td>
+<td>Planned Value Expected (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Planned Value (in hours) for that activity as that budget multiplied by the percentage of time through the duration of the activity. "Expected" means that in this instance the duration of the activity is determined from the Start and Finish dates from the current plan (as <a href="#schedule_%_complete"><code>schedule_%_complete</code></a>), using <code>date_start_planned</code> and <code>date_finish_planned</code>), and the budget used is actually the approved/assigned budget plus any additional requested budget (<code>budget_hours_assigned_and_requested</code>).</td>
 <td>Calculation</td>
 <td>Planned Value</td>
 <td>Planned</td>
-<td><a href="#pv_with_change_budget_level">pv_with_change_budget_level</a></td>
+<td><a href="#pv_with_change_budget_level"><code>pv_with_change_budget_level</code></a></td>
 </tr>
 <tr>
 <td>Reimbursable Activity</td>
-<td>Propagates the assignment of reimbursable activities, entered as a higher level designation (using <a href="#reimb_designation">reimb_designation</a>) down to descendant levels in the <abbr title="Work Breakdown Structure">WBS</abbr>.</td>
+<td>Propagates the assignment of reimbursable activities, entered as a higher level designation (using <a href="#reimb_designation"><code>reimb_designation</code></a>) down to descendant levels in the <abbr title="Work Breakdown Structure">WBS</abbr>.</td>
 <td>Project Controls (Controlled)</td>
 <td>System</td>
 <td>All</td>
-<td><a href="#is_reimb_activity">is_reimb_activity</a></td>
+<td><a href="#is_reimb_activity"><code>is_reimb_activity</code></a></td>
 </tr>
 <tr>
 <td>Reimbursable?</td>
-<td>For projects that include both lump sum and reimbursable (rates based) components, checking this column will designate the reimbursable items in the schedule. The designation will apply to all descendants of any checked item as determined by <a href="#is_reimb_activity">is_reimb_activity</a>.</td>
+<td>For projects that include both lump sum and reimbursable (rates based) components, checking this column will designate the reimbursable items in the schedule. The designation will apply to all descendants of any checked item as determined by <a href="#is_reimb_activity"><code>is_reimb_activity</code></a>.</td>
 <td>Project Controls (Controlled)</td>
 <td>Metadata</td>
 <td>All</td>
@@ -2317,7 +2317,7 @@
 <td>System (Background)</td>
 <td>Resourcing</td>
 <td>All</td>
-<td><a href="#resource_loading">resource_loading</a></td>
+<td><a href="#resource_loading"><code>resource_loading</code></a></td>
 </tr>
 <tr>
 <td>Resource(s)</td>
@@ -2329,11 +2329,11 @@
 </tr>
 <tr>
 <td>Resourcing Issues</td>
-<td>Used to assist in designating human resource(s) using the <code>[resources](#resources)</code> column, providing details on any missing assignments or overloaded resources, and where an activity duration has not been properly established to allow the resource loading to be determined. Issues in this column will be represented by a symbol in the <code>[flag](#flag)</code> column if the Sheet Summary setting <code>[setting_show_resourcing_issues](#setting_show_resourcing_issues)</code> is checked.</td>
+<td>Used to assist in designating human resource(s) using the <a href="#resources"><code>resources</code></a> column, providing details on any missing assignments or overloaded resources, and where an activity duration has not been properly established to allow the resource loading to be determined. Issues in this column will be represented by a symbol in the <a href="#flag"><code>flag</code></a> column if the Sheet Summary setting <a href="#setting_show_resourcing_issues"><code>setting_show_resourcing_issues</code></a> is checked.</td>
 <td>System (Display&amp;Filter)</td>
 <td>Resourcing</td>
 <td>All</td>
-<td><a href="#resourcing_issues">resourcing_issues</a></td>
+<td><a href="#resourcing_issues"><code>resourcing_issues</code></a></td>
 </tr>
 <tr>
 <td>Schedule % Complete</td>
@@ -2341,7 +2341,7 @@
 <td>Calculation</td>
 <td>% Complete</td>
 <td></td>
-<td><a href="#comp%_schedule">comp%_schedule</a></td>
+<td><a href="#comp%_schedule"><code>comp%_schedule</code></a></td>
 </tr>
 <tr>
 <td>Sheet</td>
@@ -2349,7 +2349,7 @@
 <td>System (Background)</td>
 <td>System</td>
 <td>All</td>
-<td><a href="#sheet_name">sheet_name</a></td>
+<td><a href="#sheet_name"><code>sheet_name</code></a></td>
 </tr>
 <tr>
 <td>SPI</td>
@@ -2357,7 +2357,7 @@
 <td>Calculation</td>
 <td>Metric</td>
 <td>Actual vs Baseline</td>
-<td><a href="#spi">spi</a></td>
+<td><a href="#spi"><code>spi</code></a></td>
 </tr>
 <tr>
 <td>Start Date</td>
@@ -2373,7 +2373,7 @@
 <td>Calculation</td>
 <td>Metric</td>
 <td>Actual vs Baseline</td>
-<td><a href="#sv">sv</a></td>
+<td><a href="#sv"><code>sv</code></a></td>
 </tr>
 <tr>
 <td>SV%</td>
@@ -2381,7 +2381,7 @@
 <td>Calculation</td>
 <td>Metric</td>
 <td>Actual vs Baseline</td>
-<td><a href="#sv_%">sv_%</a></td>
+<td><a href="#sv_%"><code>sv_%</code></a></td>
 </tr>
 <tr>
 <td><abbr title="Work Breakdown Structure">WBS</abbr></td>
@@ -2389,7 +2389,7 @@
 <td>System (Background)</td>
 <td>System</td>
 <td>All</td>
-<td><a href="#wbs">wbs</a></td>
+<td><a href="#wbs"><code>wbs</code></a></td>
 </tr>
 <tr>
 <td><abbr title="Work Breakdown Structure">WBS</abbr> Descendants</td>
@@ -2397,7 +2397,7 @@
 <td>System (Background)</td>
 <td>System</td>
 <td>All</td>
-<td><a href="#wbs_descendants">wbs_descendants</a></td>
+<td><a href="#wbs_descendants"><code>wbs_descendants</code></a></td>
 </tr>
 <tr>
 <td><abbr title="Work Breakdown Structure">WBS</abbr> Level</td>
@@ -2405,7 +2405,7 @@
 <td>System (Background)</td>
 <td>System</td>
 <td>All</td>
-<td><a href="#wbs_level">wbs_level</a></td>
+<td><a href="#wbs_level"><code>wbs_level</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -2460,18 +2460,17 @@
 </div>
 <h3 id="budget_issues">budget_issues<a class="headerlink" href="#budget_issues" title="Permanent link">#</a></h3>
 <div class="admonition info">
-<p class="admonition-title">Formula<p>```</p>
-</p>
-<p>=IF(
-    AND( [Budget Assigned [hrs]]@row &lt;&gt; 0, [Budget Assigned [hrs]]@row &lt;&gt; "" ),
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND( [Budget Assigned [hrs]]@row &lt;&gt; 0, [Budget Assigned [hrs]]@row &lt;&gt; &quot;&quot; ),
     IF(
         SUM( CHILDREN([Budget Assigned [hrs]]@row) ) &gt; 0,
-        "Budget also assigned on children",
-        ""
+        &quot;Budget also assigned on children&quot;,
+        &quot;&quot;
     ),
-    ""
+    &quot;&quot;
 )
-```</p>
+</code></pre></div>
 </div>
 <h3 id="comp">comp%<a class="headerlink" href="#comp" title="Permanent link">#</a></h3>
 <div class="admonition info">
@@ -3008,11 +3007,11 @@
 <h3 id="sv_">sv_%<a class="headerlink" href="#sv_" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
-<p>```
-=IFERROR(
-    SV@row / [<abbr title="Planned Value">PV</abbr> [hrs]]@row, 
-    ""
-)</p>
+<div class="highlight"><pre><span></span><code>=IFERROR(
+    SV@row / [PV [hrs]]@row, 
+    &quot;&quot;
+)
+</code></pre></div>
 </div>
 <h3 id="var_date_finish_actual_to_baseline">var_date_finish_actual_to_baseline<a class="headerlink" href="#var_date_finish_actual_to_baseline" title="Permanent link">#</a></h3>
 <div class="admonition info">
