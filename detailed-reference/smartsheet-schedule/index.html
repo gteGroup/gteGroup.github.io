@@ -2520,12 +2520,16 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
-    [EV [hrs]]@row &lt;&gt; 0, 
-    [EV [hrs]]@row / [Budget [hrs]]@row, 
+    PARENT([Calculated % Complete]@row) &gt; 0, 
+    PARENT([Calculated % Complete]@row),
     IF(
-        AND([Budget [hrs]]@row &lt;&gt; 0, [Budget [hrs]]@row &lt;&gt; &quot;&quot;), 
-        IFERROR( AVG(CHILDREN([Calculated % Complete]@row) ), &quot;&quot;), 
-        [Calculated % Complete]@row
+        [EV [hrs]]@row &lt;&gt; 0, 
+        [EV [hrs]]@row / [Budget [hrs]]@row, 
+        IF(
+            AND([Budget [hrs]]@row &lt;&gt; 0, [Budget [hrs]]@row &lt;&gt; &quot;&quot;), 
+            IFERROR( AVG(CHILDREN([Calculated % Complete]@row) ), &quot;&quot;), 
+            [Calculated % Complete]@row
+        )
     )
 )    
 </code></pre></div>
