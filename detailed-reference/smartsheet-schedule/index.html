@@ -3067,7 +3067,7 @@
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Baseline Finish Date]@row &lt;&gt; &quot;&quot;, [Actual Finish Date]@row &lt;&gt; &quot;&quot;), 
-    NETWORKDAYS([Actual Finish Date]@row, [Baseline Finish Date]@row) - 1, 
+    NETWORKDAYS([Actual Finish Date]@row, [Baseline Finish Date]@row) + 1, 
     &quot;&quot;
 )
 </code></pre></div>
@@ -3077,7 +3077,7 @@
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Baseline Start Date]@row &lt;&gt; &quot;&quot;, [Actual Start Date]@row &lt;&gt; &quot;&quot;), 
-    NETWORKDAYS([Actual Start Date]@row, [Baseline Start Date]@row) - 1, 
+    NETWORKDAYS([Actual Start Date]@row, [Baseline Start Date]@row) + 1, 
     &quot;&quot;
 )
 </code></pre></div>
@@ -3087,7 +3087,7 @@
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Baseline Finish Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;&quot;), 
-    NETWORKDAYS([Finish Date]@row, [Baseline Finish Date]@row) - 1, 
+    NETWORKDAYS([Finish Date]@row, [Baseline Finish Date]@row) + 1, 
     &quot;
 )
 </code></pre></div>
@@ -3097,7 +3097,7 @@
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Baseline Start Date]@row &lt;&gt; &quot;&quot;, [Start Date]@row &lt;&gt; &quot;&quot;), 
-    NETWORKDAYS([Start Date]@row, [Baseline Start Date]@row) - 1, 
+    NETWORKDAYS([Start Date]@row, [Baseline Start Date]@row) + 1, 
     &quot;
 )
 </code></pre></div>
