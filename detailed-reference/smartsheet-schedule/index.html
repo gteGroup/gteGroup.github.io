@@ -1017,6 +1017,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#is_finishing_soon" class="md-nav__link">
+    is_finishing_soon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_in_progress" class="md-nav__link">
+    is_in_progress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#is_reimb_activity" class="md-nav__link">
     is_reimb_activity
   </a>
@@ -1448,6 +1462,20 @@
           <li class="md-nav__item">
   <a href="#ftc_with_change_hours" class="md-nav__link">
     ftc_with_change_hours
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_finishing_soon" class="md-nav__link">
+    is_finishing_soon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_in_progress" class="md-nav__link">
+    is_in_progress
   </a>
   
 </li>
@@ -2120,6 +2148,14 @@
 <td></td>
 </tr>
 <tr>
+<td>Finishing Soon</td>
+<td>System column.</td>
+<td>System (Display&amp;Filter)</td>
+<td>System</td>
+<td>All</td>
+<td><a href="#is_finishing_soon"><code>is_finishing_soon</code></a></td>
+</tr>
+<tr>
 <td>Flag</td>
 <td>A cross (red) indicates an issue on the row. An exclamation (yellow) indicates an issue on a descendant row. The issues can be to do with Budgeting, Cost Coding, or Resourcing and the flags responsiveness to each is dependent on the selected options in the relevant 'Sheet Summary' settings. The specifics of the issues are detailed in the <a href="#budget_issues"><code>budget_issues</code></a>, <a href="#cost_unit_issues"><code>cost_unit_issues</code></a> and/or <a href="#resourcing_issues"><code>resourcing_issues</code></a> columns as relevant.</td>
 <td>System (Display&amp;Filter)</td>
@@ -2190,6 +2226,14 @@
 <td>% Complete</td>
 <td>Actual</td>
 <td></td>
+</tr>
+<tr>
+<td>In Progress</td>
+<td>System column.</td>
+<td>System (Display&amp;Filter)</td>
+<td>System</td>
+<td>All</td>
+<td><a href="#is_in_progress"><code>is_in_progress</code></a></td>
 </tr>
 <tr>
 <td>Information</td>
@@ -2836,6 +2880,31 @@
     AND([Forecast Hours to Finish]@row &lt;&gt; &quot;&quot;, [Forecast Hours to Finish]@row &lt;&gt; 0), 
     [Forecast Hours to Finish]@row, 
     [Default FTC Including Change [hrs]]@row
+)
+</code></pre></div>
+</div>
+<h3 id="is_finishing_soon">is_finishing_soon<a class="headerlink" href="#is_finishing_soon" title="Permanent link">#</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND(
+        [Finish Date]@row &lt;&gt; &quot;&quot;, 
+        [Finish Date]@row - 7 &lt;= TODAY()
+    ), 
+    &quot;Yes&quot;
+)
+</code></pre></div>
+</div>
+<h3 id="is_in_progress">is_in_progress<a class="headerlink" href="#is_in_progress" title="Permanent link">#</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND(
+        [Start Date]@row &lt;&gt; &quot;&quot;, 
+        [Start Date]@row &lt;= TODAY(), 
+        [% Complete]@row &lt; 1
+    ), 
+    &quot;Yes&quot;
 )
 </code></pre></div>
 </div>
