@@ -1017,20 +1017,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#is_finishing_soon" class="md-nav__link">
-    is_finishing_soon
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#is_in_progress" class="md-nav__link">
-    is_in_progress
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#is_reimb_activity" class="md-nav__link">
     is_reimb_activity
   </a>
@@ -1110,6 +1096,13 @@
           <li class="md-nav__item">
   <a href="#spi" class="md-nav__link">
     spi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    status
   </a>
   
 </li>
@@ -1467,20 +1460,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#is_finishing_soon" class="md-nav__link">
-    is_finishing_soon
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#is_in_progress" class="md-nav__link">
-    is_in_progress
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#is_reimb_activity" class="md-nav__link">
     is_reimb_activity
   </a>
@@ -1560,6 +1539,13 @@
           <li class="md-nav__item">
   <a href="#spi" class="md-nav__link">
     spi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    status
   </a>
   
 </li>
@@ -2148,14 +2134,6 @@
 <td></td>
 </tr>
 <tr>
-<td>Finishing Soon</td>
-<td>System column.</td>
-<td>System (Display&amp;Filter)</td>
-<td>System</td>
-<td>All</td>
-<td><a href="#is_finishing_soon"><code>is_finishing_soon</code></a></td>
-</tr>
-<tr>
 <td>Flag</td>
 <td>A cross (red) indicates an issue on the row. An exclamation (yellow) indicates an issue on a descendant row. The issues can be to do with Budgeting, Cost Coding, or Resourcing and the flags responsiveness to each is dependent on the selected options in the relevant 'Sheet Summary' settings. The specifics of the issues are detailed in the <a href="#budget_issues"><code>budget_issues</code></a>, <a href="#cost_unit_issues"><code>cost_unit_issues</code></a> and/or <a href="#resourcing_issues"><code>resourcing_issues</code></a> columns as relevant.</td>
 <td>System (Display&amp;Filter)</td>
@@ -2226,14 +2204,6 @@
 <td>% Complete</td>
 <td>Actual</td>
 <td></td>
-</tr>
-<tr>
-<td>In Progress</td>
-<td>System column.</td>
-<td>System (Display&amp;Filter)</td>
-<td>System</td>
-<td>All</td>
-<td><a href="#is_in_progress"><code>is_in_progress</code></a></td>
 </tr>
 <tr>
 <td>Information</td>
@@ -2412,6 +2382,14 @@
 <td></td>
 </tr>
 <tr>
+<td>Status</td>
+<td>System column.</td>
+<td>System (Display&amp;Filter)</td>
+<td>System</td>
+<td>All</td>
+<td><a href="#status"><code>status</code></a></td>
+</tr>
+<tr>
 <td>SV</td>
 <td>Schedule Variance (in hours).</td>
 <td>Calculation</td>
@@ -2547,7 +2525,7 @@
     IF(
         AND([Budget [hrs]]@row &lt;&gt; 0, [Budget [hrs]]@row &lt;&gt; &quot;&quot;), 
         IFERROR( AVG(CHILDREN([Calculated % Complete]@row) ), &quot;&quot;), 
-        &quot;&quot;
+        [Calculated % Complete]@row
     )
 )    
 </code></pre></div>
@@ -2883,31 +2861,6 @@
 )
 </code></pre></div>
 </div>
-<h3 id="is_finishing_soon">is_finishing_soon<a class="headerlink" href="#is_finishing_soon" title="Permanent link">#</a></h3>
-<div class="admonition info">
-<p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>=IF(
-    AND(
-        [Finish Date]@row &lt;&gt; &quot;&quot;, 
-        [Finish Date]@row - 7 &lt;= TODAY()
-    ), 
-    &quot;Yes&quot;
-)
-</code></pre></div>
-</div>
-<h3 id="is_in_progress">is_in_progress<a class="headerlink" href="#is_in_progress" title="Permanent link">#</a></h3>
-<div class="admonition info">
-<p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>=IF(
-    AND(
-        [Start Date]@row &lt;&gt; &quot;&quot;, 
-        [Start Date]@row &lt;= TODAY(), 
-        [% Complete]@row &lt; 1
-    ), 
-    &quot;Yes&quot;
-)
-</code></pre></div>
-</div>
 <h3 id="is_reimb_activity">is_reimb_activity<a class="headerlink" href="#is_reimb_activity" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
@@ -3067,6 +3020,29 @@
 )
 </code></pre></div>
 </div>
+<h3 id="status">status<a class="headerlink" href="#status" title="Permanent link">#</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND([Actual Finish Date]@row &lt;&gt; &quot;&quot;, [Actual Finish Date]@row + 7 &gt; TODAY()), 
+    &quot;Finished Recently&quot;,
+    IF(
+        AND([Finish Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row - 7 &lt;= TODAY()), 
+        &quot;Finishing Soon&quot;, 
+        IF(
+            AND([Start Date]@row &lt;&gt; &quot;&quot;, [Start Date]@row &lt;= TODAY(), [% Complete]@row &lt; 1), 
+            &quot;In Progress&quot;,
+            IF(
+                AND([Start Date]@row &lt;&gt; &quot;&quot;, [Start Date]@row - 7 &lt;= TODAY()), 
+                &quot;Starting Soon&quot;
+            )
+        )
+    )
+)
+</code></pre></div>
+</div>
+<!-- ideall in the future the above is modified to use Actual Start Date in place of Start Date for the "In Progress" calculation -->
+
 <h3 id="sv">sv<a class="headerlink" href="#sv" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
