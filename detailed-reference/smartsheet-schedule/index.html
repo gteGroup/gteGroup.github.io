@@ -1647,11 +1647,11 @@
 <tbody>
 <tr>
 <td>% Complete</td>
-<td>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the % Complete which is determined at lower activity levels (as <a href="#comp%"><code>comp%</code></a>).</td>
+<td>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the % Complete which is determined at lower activity levels (as <a href="#comp"><code>comp%</code></a>).</td>
 <td>Summation/Propagation</td>
 <td>% Complete</td>
 <td>Actual</td>
-<td><a href="#comp%_all"><code>comp%_all</code></a></td>
+<td><a href="#comp_all"><code>comp%_all</code></a></td>
 </tr>
 <tr>
 <td>Activity</td>
@@ -1731,15 +1731,15 @@
 <td>Summation/Propagation</td>
 <td>% Complete</td>
 <td>Baseline</td>
-<td><a href="#comp%_baseline_planned_all"><code>comp%_baseline_planned_all</code></a></td>
+<td><a href="#comp_baseline_planned_all"><code>comp%_baseline_planned_all</code></a></td>
 </tr>
 <tr>
 <td>Baseline Schedule % Complete</td>
-<td>Determines the Schedule % Complete for an activity (or summary) at the data date (today) as a linearization of progress from the Baseline Start Date to the Baseline Finish Dates, factoring in non-working days in the project calendar. <strong>Note that the values yielded for summaries in the <abbr title="Work Breakdown Structure">WBS</abbr> are not accurate portrayals of Planned Value as these linearize at those summary levels only. Accurate "Planned %" is given by <a href="#comp%_baseline_planned_all"><code>comp%_baseline_planned_all</code></a>.</strong></td>
+<td>Determines the Schedule % Complete for an activity (or summary) at the data date (today) as a linearization of progress from the Baseline Start Date to the Baseline Finish Dates, factoring in non-working days in the project calendar. <strong>Note that the values yielded for summaries in the <abbr title="Work Breakdown Structure">WBS</abbr> are not accurate portrayals of Planned Value as these linearize at those summary levels only. Accurate "Planned %" is given by <a href="#comp_baseline_planned_all"><code>comp%_baseline_planned_all</code></a>.</strong></td>
 <td>Calculation</td>
 <td>% Complete</td>
 <td>Baseline</td>
-<td><a href="#comp%_schedule_planned_all"><code>comp%_schedule_planned_all</code></a></td>
+<td><a href="#comp_schedule_planned_all"><code>comp%_schedule_planned_all</code></a></td>
 </tr>
 <tr>
 <td>Baseline Start Date</td>
@@ -1791,11 +1791,11 @@
 </tr>
 <tr>
 <td>Calculated % Complete</td>
-<td>Calculates the % Complete to use for the activity based on the <a href="#comp%_evm_method"><code>comp%_evm_method</code></a> selected.</td>
+<td>Calculates the % Complete to use for the activity based on the <code>comp%_evm_method</code> selected.</td>
 <td>Calculation</td>
 <td>% Complete</td>
 <td>Actual</td>
-<td><a href="#comp%"><code>comp%</code></a></td>
+<td><a href="#comp"><code>comp%</code></a></td>
 </tr>
 <tr>
 <td>Client Hidden?</td>
@@ -1871,7 +1871,7 @@
 </tr>
 <tr>
 <td>Default FTC [hrs]</td>
-<td>Calculates a default value to be used if a Forecast Hours to Finish (<code>ftc_hours_entry</code>) is not entered and there is assigned budget for the activity. If there is no assigned budget, the sum of the child activities is used. The value calculated is generally the full assigned budget (<code>budget_hours_assigned</code>) as a conservative estimate, however for an <abbr title="Earned Value Management">EVM</abbr> Method (<a href="#comp%_evm_method"><code>comp%_evm_method</code></a>) of "Linearised <abbr title="Level of Effort">LoE</abbr>" the actual hours to date (<code>actual_hours_recorded</code>) will be deducted as these activities are expected to meet budget.</td>
+<td>Calculates a default value to be used if a Forecast Hours to Finish (<code>ftc_hours_entry</code>) is not entered and there is assigned budget for the activity. If there is no assigned budget, the sum of the child activities is used. The value calculated is generally the full assigned budget (<code>budget_hours_assigned</code>) as a conservative estimate, however for an <abbr title="Earned Value Management">EVM</abbr> Method (<code>comp%_evm_method</code>) of "Linearised <abbr title="Level of Effort">LoE</abbr>" the actual hours to date (<code>actual_hours_recorded</code>) will be deducted as these activities are expected to meet budget.</td>
 <td>Calculation</td>
 <td>Forecast Cost</td>
 <td>Forecast (to Baseline)</td>
@@ -1879,7 +1879,7 @@
 </tr>
 <tr>
 <td>Default FTC Including Change [hrs]</td>
-<td>Calculates a default value to be used if a Forecast Hours to Finish (<code>ftc_hours_entry</code>) is not entered and there is assigned budget and/or requested hours (through formal change management with the client) for the activity. If there is no assigned or requested hours for the activity, the sum of the child activities is used. The value calculated is generally the full assigned and requested budget (<code>budget_hours_assigned_and_requested</code>) as a conservative estimate, however for an <abbr title="Earned Value Management">EVM</abbr> Method (<a href="#comp%_evm_method"><code>comp%_evm_method</code></a>) of "Linearised <abbr title="Level of Effort">LoE</abbr>" the actual hours to date (<code>actual_hours_recorded</code>) will be deducted.</td>
+<td>Calculates a default value to be used if a Forecast Hours to Finish (<code>ftc_hours_entry</code>) is not entered and there is assigned budget and/or requested hours (through formal change management with the client) for the activity. If there is no assigned or requested hours for the activity, the sum of the child activities is used. The value calculated is generally the full assigned and requested budget (<code>budget_hours_assigned_and_requested</code>) as a conservative estimate, however for an <abbr title="Earned Value Management">EVM</abbr> Method (<code>comp%_evm_method</code>) of "Linearised <abbr title="Level of Effort">LoE</abbr>" the actual hours to date (<code>actual_hours_recorded</code>) will be deducted.</td>
 <td>Calculation</td>
 <td>Forecast Cost</td>
 <td>Forecast (to Planned)</td>
@@ -1931,7 +1931,7 @@
 <td>System (Background)</td>
 <td>% Complete</td>
 <td>Future</td>
-<td><a href="#comp%_with_change_all_eomX"><code>comp%_with_change_all_eomX</code></a></td>
+<td><a href="#comp_with_change_all_eomX"><code>comp%_with_change_all_eomX</code></a></td>
 </tr>
 <tr>
 <td>EOM+0 PVx [hrs]</td>
@@ -1955,7 +1955,7 @@
 <td>System (Background)</td>
 <td>% Complete</td>
 <td>Future</td>
-<td><a href="#comp%_schedule_eomX"><code>comp%_schedule_eomX</code></a></td>
+<td><a href="#comp_schedule_eomX"><code>comp%_schedule_eomX</code></a></td>
 </tr>
 <tr>
 <td>EOM+1 Data Date</td>
@@ -2087,7 +2087,7 @@
 </tr>
 <tr>
 <td><abbr title="Earned Value">EV</abbr> at Budget Level [hrs]</td>
-<td>Earned Value (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Earned Value (in hours) for that activity as the budget multiplied by the physical % complete <a href="#comp%"><code>comp%</code></a>. The duration of the activity is determined from the Baseline Start and Finish dates (as (<a href="#baseline_schedule_%_complete"><code>baseline_schedule_%_complete</code></a>), using <a href="#date_finish_baseline"><code>date_start_baseline</code></a> and <a href="#date_finish_baseline"><code>date_start_baseline</code></a>), and the budget used only includes the approved (Baseline) budget (<code>budget_hours_assigned</code>). <!-- Monitor whether this should actually be comp%_all used here --></td>
+<td>Earned Value (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Earned Value (in hours) for that activity as the budget multiplied by the physical % complete <a href="#comp"><code>comp%</code></a>. The duration of the activity is determined from the Baseline Start and Finish dates (as (<a href="#baseline_schedule_%_complete"><code>baseline_schedule_%_complete</code></a>), using <a href="#date_finish_baseline"><code>date_start_baseline</code></a> and <a href="#date_finish_baseline"><code>date_start_baseline</code></a>), and the budget used only includes the approved (Baseline) budget (<code>budget_hours_assigned</code>). <!-- Monitor whether this should actually be comp%_all used here --></td>
 <td>Calculation</td>
 <td>Earned Value</td>
 <td>Actual vs Baseline</td>
@@ -2095,7 +2095,7 @@
 </tr>
 <tr>
 <td><abbr title="Earned Value Management">EVM</abbr> Method</td>
-<td>The default method for determing an activity's % Complete (<a href="#comp%"><code>comp%</code></a>) is using the manual entry column (<code>comp%_manual</code>). This column is used to select an alternate method such as "Linearised <abbr title="Level of Effort">LoE</abbr>", or "Gated".</td>
+<td>The default method for determing an activity's % Complete (<a href="#comp"><code>comp%</code></a>) is using the manual entry column (<code>comp%_manual</code>). This column is used to select an alternate method such as "Linearised <abbr title="Level of Effort">LoE</abbr>", or "Gated".</td>
 <td>Project Manager (Setup/Maintain)</td>
 <td>% Complete</td>
 <td>All</td>
@@ -2243,7 +2243,7 @@
 <td>Summation/Propagation</td>
 <td>% Complete</td>
 <td>Planned</td>
-<td><a href="#comp%_with_change_all"><code>comp%_with_change_all</code></a></td>
+<td><a href="#comp_with_change_all"><code>comp%_with_change_all</code></a></td>
 </tr>
 <tr>
 <td>Planned Variance to Baseline Finish Date</td>
@@ -2287,7 +2287,7 @@
 </tr>
 <tr>
 <td><abbr title="Planned Value">PV</abbr> at Budget Level [hrs]</td>
-<td>Planned Value (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Planned Value (in hours) for that activity as the budget multiplied by the percentage of time through the duration of the activity. The duration of the activity is determined from the Baseline Start and Finish dates (as <a href="#comp%_schedule_planned_all"><code>comp%_schedule_planned_all</code></a>), using <code>date_start_baseline</code> and <code>date_finish_baseline</code>), and the budget used only includes the approved (Baseline) budget (<code>budget_hours_assigned</code>).</td>
+<td>Planned Value (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Planned Value (in hours) for that activity as the budget multiplied by the percentage of time through the duration of the activity. The duration of the activity is determined from the Baseline Start and Finish dates (as <a href="#comp_schedule_planned_all"><code>comp%_schedule_planned_all</code></a>), using <code>date_start_baseline</code> and <code>date_finish_baseline</code>), and the budget used only includes the approved (Baseline) budget (<code>budget_hours_assigned</code>).</td>
 <td>Calculation</td>
 <td>Planned Value</td>
 <td>Baseline</td>
@@ -2355,7 +2355,7 @@
 <td>Calculation</td>
 <td>% Complete</td>
 <td></td>
-<td><a href="#comp%_schedule"><code>comp%_schedule</code></a></td>
+<td><a href="#comp_schedule"><code>comp%_schedule</code></a></td>
 </tr>
 <tr>
 <td>Sheet</td>
@@ -2537,7 +2537,7 @@
 <h3 id="comp_baseline_planned_all">comp%_baseline_planned_all<a class="headerlink" href="#comp_baseline_planned_all" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>&quot;=IF(
+<div class="highlight"><pre><span></span><code>=IF(
     [Budget [hrs]]@row &lt;&gt; 0, 
     [PV [hrs]]@row / [Budget [hrs]]@row, 
     [Baseline Schedule % Complete]@row
@@ -2917,7 +2917,7 @@
 <h3 id="pv_with_change_all_eomx">pv_with_change_all_eomX<a class="headerlink" href="#pv_with_change_all_eomx" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>&quot;=IF(
+<div class="highlight"><pre><span></span><code>=IF(
     AND(
         [EOM+X PVx at Budget Level [hrs]]@row &lt;&gt; &quot;&quot;, 
         [EOM+X PVx at Budget Level [hrs]]@row &lt;&gt; 0
