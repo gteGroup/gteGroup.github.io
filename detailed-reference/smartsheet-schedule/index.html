@@ -1814,7 +1814,7 @@
 <td>Represents the approved Budgeted Cost, in hours, for the activity <code>budget_hours_assigned</code> plus any additional hours that have been requested formally but not yet been approved <code>budget_hours_requested</code>.</td>
 <td>Calculation</td>
 <td>Budget</td>
-<td>Planned</td>
+<td>Expected</td>
 <td><a href="#budget_hours_assigned_and_requested"><code>budget_hours_assigned_and_requested</code></a></td>
 </tr>
 <tr>
@@ -1830,7 +1830,7 @@
 <td>Budgeted <em>additional</em> (unapproved and so not included in the Baseline) Cost, in hours, as assigned to relevant individual activities. Represents the sum of all additional hours requested for the activity (through formal change management with the client) that has not yet been approved and added to the (Baseline) Budget (<code>budget_hours_assigned</code>) for the activity.</td>
 <td>Project Controls (Controlled)</td>
 <td>Budget</td>
-<td>Planned</td>
+<td>Expected</td>
 <td></td>
 </tr>
 <tr>
@@ -1942,7 +1942,7 @@
 <td>The working days between, and including, the Start (<code>date_start_planned</code>) and Finish Dates (<code>date_finish_planned</code>) of the activity; where working days are as defined by the project calendar (Smartsheet setting).</td>
 <td>Project Manager (Setup/Maintain)</td>
 <td>Date/Logic</td>
-<td>Planned</td>
+<td>Expected</td>
 <td></td>
 </tr>
 <tr>
@@ -1958,7 +1958,7 @@
 <td>Summarizes hours up through the <abbr title="Work Breakdown Structure">WBS</abbr> as for <a href="#budget_hours_all"><code>budget_hours_all</code></a> but includes additional hours that may have been requested of the client through formal change management, but not yet approved. The additional hours are input at the budgeted level as <code>budget_hours_requested</code>.</td>
 <td>Summation/Propagation</td>
 <td>Budget</td>
-<td>Planned</td>
+<td>Expected</td>
 <td><a href="#budget_hours_with_change_all"><code>budget_hours_with_change_all</code></a></td>
 </tr>
 <tr>
@@ -2174,7 +2174,7 @@
 <td>The Finish Date for the activity as most recently planned. This may differ from the Baseline equivalent (<code>date_finish_baseline</code>) and may or may not reflect field feedback (<code>date_finish_fcast</code>) depending on whether the Project Manager intends to hold or measure the project team to earlier plans. When an activity is complete, the Finish Date should equal the Actual Finish Date (<code>date_finish_actual</code>).</td>
 <td>Project Manager (Setup/Maintain)</td>
 <td>Date/Logic</td>
-<td>Planned</td>
+<td>Expected</td>
 <td></td>
 </tr>
 <tr>
@@ -2286,7 +2286,7 @@
 <td>Determines Planned % Complete at all levels up through the <abbr title="Work Breakdown Structure">WBS</abbr> using the <em>expected</em> Planned Values, ie budgets including additional requests (calculated at the lowest possibly determinable level as <a href="#pv_with_change_budget_level"><code>pv_with_change_budget_level</code></a> and summarized upwards as <a href="#pv_with_change_all"><code>pv_with_change_all</code></a>); and summarized Budgets (<a href="#budget_hours_with_change_all"><code>budget_hours_with_change_all</code></a>). <strong>Note that an activity and summary that does not have a budget (<a href="#budget_hours_with_change_all"><code>budget_hours_with_change_all</code></a>), ie either directly assigned or from it's children, will not have Planned Value. As these may still be considered progressable, the <a href="#schedule_%_complete"><code>schedule_%_complete</code></a> is used as a fallback planned % for those activities or summaries, however the percentage does not impact higher level summaries.</strong></td>
 <td>Summation/Propagation</td>
 <td>% Complete</td>
-<td>Planned</td>
+<td>Expected</td>
 <td><a href="#comp_with_change_all"><code>comp%_with_change_all</code></a></td>
 </tr>
 <tr>
@@ -2342,7 +2342,7 @@
 <td>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Planned Value (in hours) calculated at the budgeted (or lowest possibly "determinable") level as <a href="#pv_with_change_budget_level"><code>pv_with_change_budget_level</code></a>, where this includes additional requested budget as well as approved/assigned budget (<code>budget_hours_assigned_and_requested</code>).</td>
 <td>Summation/Propagation</td>
 <td>Planned Value</td>
-<td>Planned</td>
+<td>Expected</td>
 <td><a href="#pv_with_change_all"><code>pv_with_change_all</code></a></td>
 </tr>
 <tr>
@@ -2350,7 +2350,7 @@
 <td>Planned Value Expected (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Planned Value (in hours) for that activity as that budget multiplied by the percentage of time through the duration of the activity. "Expected" means that in this instance the duration of the activity is determined from the Start and Finish dates from the current plan (as <a href="#schedule_%_complete"><code>schedule_%_complete</code></a>), using <code>date_start_planned</code> and <code>date_finish_planned</code>), and the budget used is actually the approved/assigned budget plus any additional requested budget (<code>budget_hours_assigned_and_requested</code>).</td>
 <td>Calculation</td>
 <td>Planned Value</td>
-<td>Planned</td>
+<td>Expected</td>
 <td><a href="#pv_with_change_budget_level"><code>pv_with_change_budget_level</code></a></td>
 </tr>
 <tr>
@@ -2422,7 +2422,7 @@
 <td>The Start Date for the activity as most recently planned. This may differ from the Baseline equivalent (<code>date_start_baseline</code>) and may or may not reflect field feedback (<code>date_start_fcast</code>) depending on whether the Project Manager intends to hold or measure the project team to earlier plans. When an activity is complete, the Finish Date should equal the Actual Finish Date (<code>date_start_actual</code>).</td>
 <td>Project Manager (Setup/Maintain)</td>
 <td>Date/Logic</td>
-<td>Planned</td>
+<td>Expected</td>
 <td></td>
 </tr>
 <tr>
