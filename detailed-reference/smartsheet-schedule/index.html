@@ -971,20 +971,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#date_finish_baseline" class="md-nav__link">
-    date_finish_baseline
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#date_start_baseline" class="md-nav__link">
-    date_start_baseline
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ev_all" class="md-nav__link">
     ev_all
   </a>
@@ -1452,20 +1438,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#date_finish_baseline" class="md-nav__link">
-    date_finish_baseline
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#date_start_baseline" class="md-nav__link">
-    date_start_baseline
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ev_all" class="md-nav__link">
     ev_all
   </a>
@@ -1810,20 +1782,12 @@
 <td><a href="#api_avaza_section"><code>api_avaza_section</code></a></td>
 </tr>
 <tr>
-<td>Baseline Finish</td>
-<td>The finish date for the activity as agreed with the client either explicitly in the Baseline, or implicitly to support explicit commitments in the Baseline. The column is controlled by Smartsheet and will only be updated by a re-baseline in the user interface.</td>
+<td>Baseline Finish Date</td>
+<td>The finish date for the activity as agreed with the client either explicitly in the Baseline, or implicitly to support explicit commitments in the Baseline. The column is controlled by Smartsheet and will only be updated by a re-baseline in the user interface. Note that the Smartsheet Baseline functionality is not used directly due to various limitations.</td>
 <td>Project Controls (Controlled)</td>
 <td>Date/Logic</td>
 <td>Baseline</td>
 <td></td>
-</tr>
-<tr>
-<td>Baseline Finish Date</td>
-<td>A copy of the Smartsheet controlled Baseline Finish value.</td>
-<td>System</td>
-<td>Date/Logic</td>
-<td>Baseline</td>
-<td><a href="#date_finish_baseline"><code>date_finish_baseline</code></a></td>
 </tr>
 <tr>
 <td>Baseline Planned % Complete</td>
@@ -1842,20 +1806,12 @@
 <td><a href="#comp_schedule_planned_all"><code>comp%_schedule_planned_all</code></a></td>
 </tr>
 <tr>
-<td>Baseline Start</td>
-<td>The start date for the activity as agreed with the client either explicitly in the Baseline, or implicitly to support explicit commitments in the Baseline. The column is controlled by Smartsheet and will only be updated by a re-baseline in the user interface.</td>
+<td>Baseline Start Date</td>
+<td>The start date for the activity as agreed with the client either explicitly in the Baseline, or implicitly to support explicit commitments in the Baseline. The column is controlled by Smartsheet and will only be updated by a re-baseline in the user interface. Note that the Smartsheet Baseline functionality is not used directly due to various limitations.</td>
 <td>Project Controls (Controlled)</td>
 <td>Date/Logic</td>
 <td>Baseline</td>
 <td></td>
-</tr>
-<tr>
-<td>Baseline Start Date</td>
-<td>A copy of the Smartsheet controlled Baseline Start value.</td>
-<td>System</td>
-<td>Date/Logic</td>
-<td>Baseline</td>
-<td><a href="#date_start_baseline"><code>date_start_baseline</code></a></td>
 </tr>
 <tr>
 <td>Budget [hrs]</td>
@@ -2195,7 +2151,7 @@
 </tr>
 <tr>
 <td><abbr title="Earned Value">EV</abbr> at Budget Level [hrs]</td>
-<td>Earned Value (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Earned Value (in hours) for that activity as the budget multiplied by the physical % complete <a href="#comp"><code>comp%</code></a>. The duration of the activity is determined from the Baseline Start and Finish dates (as (<a href="#baseline_schedule_%_complete"><code>baseline_schedule_%_complete</code></a>), using <a href="#date_finish_baseline"><code>date_start_baseline</code></a> and <a href="#date_finish_baseline"><code>date_start_baseline</code></a>), and the budget used only includes the approved (Baseline) budget (<code>budget_hours_assigned</code>). <!-- Monitor whether this should actually be comp%_all used here --></td>
+<td>Earned Value (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Earned Value (in hours) for that activity as the budget multiplied by the physical % complete <a href="#comp"><code>comp%</code></a>. The duration of the activity is determined from the Baseline Start and Finish dates (as (<a href="#baseline_schedule_%_complete"><code>baseline_schedule_%_complete</code></a>), using <code>date_start_baseline</code> and <code>date_start_baseline</code>, and the budget used only includes the approved (Baseline) budget (<code>budget_hours_assigned</code>). <!-- Monitor whether this should actually be comp%_all used here --></td>
 <td>Calculation</td>
 <td>Earned Value</td>
 <td>Actual vs Baseline</td>
@@ -2395,7 +2351,7 @@
 </tr>
 <tr>
 <td><abbr title="Planned Value">PV</abbr> at Budget Level [hrs]</td>
-<td>Planned Value (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Planned Value (in hours) for that activity as the budget multiplied by the percentage of time through the duration of the activity. The duration of the activity is determined from the Baseline Start and Finish dates (as <a href="#comp_schedule_planned_all"><code>comp%_schedule_planned_all</code></a>), using <code>date_start_baseline</code> and <code>date_finish_baseline</code>), and the budget used only includes the approved (Baseline) budget (<code>budget_hours_assigned</code>).</td>
+<td>Planned Value (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Planned Value (in hours) for that activity as the budget multiplied by the percentage of time through the duration of the activity. The duration of the activity is determined from the Baseline Start and Finish dates (<code>date_start_baseline</code> and <code>date_finish_baseline</code>) as <a href="#comp_schedule_planned_all"><code>comp%_schedule_planned_all</code></a>, and the budget used only includes the approved (Baseline) budget (<code>budget_hours_assigned</code>).</td>
 <td>Calculation</td>
 <td>Planned Value</td>
 <td>Baseline</td>
@@ -2852,18 +2808,6 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=[EOM+X]#
-</code></pre></div>
-</div>
-<h3 id="date_finish_baseline">date_finish_baseline<a class="headerlink" href="#date_finish_baseline" title="Permanent link">#</a></h3>
-<div class="admonition info">
-<p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>=[Baseline Start]@row
-</code></pre></div>
-</div>
-<h3 id="date_start_baseline">date_start_baseline<a class="headerlink" href="#date_start_baseline" title="Permanent link">#</a></h3>
-<div class="admonition info">
-<p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>=[Baseline Finish]@row
 </code></pre></div>
 </div>
 <h3 id="ev_all">ev_all<a class="headerlink" href="#ev_all" title="Permanent link">#</a></h3>
