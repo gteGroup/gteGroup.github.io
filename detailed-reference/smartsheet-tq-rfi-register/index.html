@@ -814,23 +814,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#formulas" class="md-nav__link">
-    Formulas
+  <a href="#column-details" class="md-nav__link">
+    Column Details
   </a>
   
-    <nav class="md-nav" aria-label="Formulas">
+    <nav class="md-nav" aria-label="Column Details">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#status" class="md-nav__link">
-    status
+    Status
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#status_detailed" class="md-nav__link">
-    status_detailed
+  <a href="#detailed-status" class="md-nav__link">
+    Detailed Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-status-tq" class="md-nav__link">
+    Detailed Status (TQ)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-status-rfi" class="md-nav__link">
+    Detailed Status (RFI)
   </a>
   
 </li>
@@ -898,23 +912,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#formulas" class="md-nav__link">
-    Formulas
+  <a href="#column-details" class="md-nav__link">
+    Column Details
   </a>
   
-    <nav class="md-nav" aria-label="Formulas">
+    <nav class="md-nav" aria-label="Column Details">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#status" class="md-nav__link">
-    status
+    Status
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#status_detailed" class="md-nav__link">
-    status_detailed
+  <a href="#detailed-status" class="md-nav__link">
+    Detailed Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-status-tq" class="md-nav__link">
+    Detailed Status (TQ)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-status-rfi" class="md-nav__link">
+    Detailed Status (RFI)
   </a>
   
 </li>
@@ -943,54 +971,61 @@
 <thead>
 <tr>
 <th>Title</th>
-<th>Description</th>
-<th>(Formula)</th>
+<th>Brief Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Status</td>
+<td><a href="#status">Status</a></td>
 <td>TBA</td>
-<td><a href="#status"><code>status</code></a></td>
 </tr>
 <tr>
-<td>Detailed Status</td>
+<td><a href="#detailed-status">Detailed Status</a></td>
 <td>TBA</td>
-<td><a href="#status_detailed"><code>status_detailed</code></a></td>
+</tr>
+<tr>
+<td><a href="#detailed-status-tq">Detailed Status (<abbr title="Technical Query">TQ</abbr>)</a></td>
+<td>Determines the detailed status for technical queries.</td>
+</tr>
+<tr>
+<td><a href="#detailed-status-rfi">Detailed Status (<abbr title="Request for Information">RFI</abbr>)</a></td>
+<td>Determines the detailed status for requests for information.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="formulas">Formulas<a class="headerlink" href="#formulas" title="Permanent link">#</a></h2>
-<h3 id="status">status<a class="headerlink" href="#status" title="Permanent link">#</a></h3>
+<h2 id="column-details">Column Details<a class="headerlink" href="#column-details" title="Permanent link">#</a></h2>
+<h3 id="status">Status<a class="headerlink" href="#status" title="Permanent link">#</a></h3>
+<p>Provides the high level status of the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> as either: <code>Preparing</code>, <code>Issued</code>, <code>Re-Issued</code>, or <code>Closed</code>. (An indeterminate status of <code>Unknown Status</code> is also possible if an error occurs.)</p>
+<p>The high level status is the client-facing reporting status.</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     OR(
-        [Detailed Status (Workflow Based)]@row = &quot;Approving&quot;, 
-        [Detailed Status (Workflow Based)]@row = &quot;Authorising&quot;,
-        [Detailed Status (Workflow Based)]@row = &quot;Authoriser Actioning&quot;, 
-        [Detailed Status (Workflow Based)]@row = &quot;Approver Actioning&quot;, 
-        [Detailed Status (Workflow Based)]@row = &quot;Revising&quot;
+        [Detailed Status]@row = &quot;Approving&quot;, 
+        [Detailed Status]@row = &quot;Authorising&quot;, 
+        [Detailed Status]@row = &quot;Authoriser Actioning&quot;, 
+        [Detailed Status]@row = &quot;Approver Actioning&quot;, 
+        [Detailed Status]@row = &quot;Revising&quot;
     ), 
-    &quot;Preparing&quot;,
+    &quot;Preparing&quot;, 
     IF(
         OR(
-            [Detailed Status (Workflow Based)]@row = &quot;Issued&quot;, 
-            [Detailed Status (Workflow Based)]@row = &quot;Client Actioning&quot;, 
-            [Detailed Status (Workflow Based)]@row = &quot;SME Actioning&quot;, 
-            [Detailed Status (Workflow Based)]@row = &quot;Client Reviewing SME Response&quot;, 
-            [Detailed Status (Workflow Based)]@row = &quot;Client Finalising Response&quot;
+            [Detailed Status]@row = &quot;Issued&quot;, 
+            [Detailed Status]@row = &quot;Client Actioning&quot;, 
+            [Detailed Status]@row = &quot;SME Actioning&quot;, 
+            [Detailed Status]@row = &quot;Client Reviewing SME Response&quot;, 
+            [Detailed Status]@row = &quot;Client Finalising Response&quot;
         ), 
-        &quot;Issued&quot;,
+        &quot;Issued&quot;, 
         IF(
-            [Detailed Status (Workflow Based)]@row = &quot;Further Requested&quot;,
-            &quot;Re-Issued&quot;,
+            [Detailed Status]@row = &quot;Further Requested&quot;, 
+            &quot;Re-Issued&quot;, 
             IF(
                 OR(
-                    [Detailed Status (Workflow Based)]@row = &quot;Cancelled&quot;, 
-                    [Detailed Status (Workflow Based)]@row = &quot;Closed&quot;
-                ),
-                [Detailed Status (Workflow Based)]@row,
+                    [Detailed Status]@row = &quot;Cancelled&quot;, 
+                    [Detailed Status]@row = &quot;Closed&quot;
+                ), 
+                &quot;Closed&quot;, 
                 &quot;Unknown Status&quot;
             )
         )
@@ -998,7 +1033,195 @@
 )
 </code></pre></div>
 </div>
-<h3 id="status_detailed">status_detailed<a class="headerlink" href="#status_detailed" title="Permanent link">#</a></h3>
+<h3 id="detailed-status">Detailed Status<a class="headerlink" href="#detailed-status" title="Permanent link">#</a></h3>
+<p>Provides the detailed, system level status of the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> as either: <code>Preparing</code>, <code>Issued</code>, <code>Re-Issued</code>, or <code>Closed</code>. (An indeterminate status of <code>Unknown Detailed Status</code> is also possible if an error occurs.)</p>
+<p>The detailed status is the non-client-facing status for internal reports and for determining the precise status of RTIs in the workflow.</p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    [Detailed Status (TQ)]@row &lt;&gt; &quot;&quot;, 
+    [Detailed Status (TQ)]@row, 
+    [Detailed Status (RFI)]@row
+)
+</code></pre></div>
+</div>
+<h3 id="detailed-status-tq">Detailed Status (<abbr title="Technical Query">TQ</abbr>)<a class="headerlink" href="#detailed-status-tq" title="Permanent link">#</a></h3>
+<p>Provides the detailed, system level status for TQs only, as one of the following:</p>
+<ul>
+<li><code>Approver Actioning</code></li>
+<li><code>Approving</code></li>
+<li><code>Assessing Response</code></li>
+<li><code>Authoriser Actioning</code></li>
+<li><code>Authorising</code></li>
+<li><code>Cancelled</code></li>
+<li><code>Client Actioning</code></li>
+<li><code>Client Finalising Response</code></li>
+<li><code>Client Reviewing SME Response</code></li>
+<li><code>Closed</code></li>
+<li><code>Further Requested</code></li>
+<li><code>Issued</code></li>
+<li><code>Revising</code></li>
+<li><code>SME Actioning</code></li>
+<li>An indeterminate status of <code>Unknown Detailed Status</code> is also possible if an error occurs.</li>
+</ul>
+<p>The detailed status for the <abbr title="Technical Query">TQ</abbr> is used as the <a href="#detailed-status">Detailed Status</a> where applicable. (<abbr title="Technical Query">TQ</abbr> and <abbr title="Request for Information">RFI</abbr> formulas are only split due to Smartsheet size constraints.)</p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    [Type of Request]@row = &quot;Technical Query (TQ)&quot;, 
+    IF(
+        [Status: Technical Approval (by GTE Tech Approver)]@row = &quot;Rejected&quot;, 
+        IF(
+            [Workflow: Approver&#39;s Direction]@row = &quot;Cancel Request&quot;, 
+            &quot;Cancelled&quot;, 
+            IF(
+                [Workflow: Approver&#39;s Direction]@row = &quot;Request Revision (by Raiser)&quot;, 
+                IF(
+                    [Workflow: Raiser&#39;s Direction after Revision]@row = &quot;Submit Revision&quot;, 
+                    &quot;Approving&quot;, 
+                    IF(
+                        [Workflow: Raiser&#39;s Direction after Revision]@row = &quot;Cancel Request&quot;, 
+                        &quot;Cancelled&quot;,
+                        &quot;Revising&quot;
+                    )
+                ), 
+                IF(
+                    [Workflow: Approver&#39;s Direction]@row = &quot;Approve (and Request Authorisation)&quot;, 
+                    &quot;Authorising&quot;, 
+                    &quot;Approver Actioning&quot;
+                )
+            )
+        ), 
+        IF(
+            [Status: Technical Approval (by GTE Tech Approver)]@row = &quot;Approved&quot;, 
+            IF(
+                [Status: Authorisation (by GTE PM)]@row = &quot;Rejected&quot;, 
+                IF(
+                    [Workflow: Authoriser&#39;s Direction for TQ]@row = &quot;Cancel Request&quot;, 
+                    &quot;Cancelled&quot;, 
+                    IF(
+                        [Workflow: Authoriser&#39;s Direction for TQ]@row = &quot;Request Revision (by Raiser)&quot;, 
+                        &quot;Revising&quot;, 
+                        IF(
+                            [Workflow: Authoriser&#39;s Direction for TQ]@row = &quot;Request Approval for Amendments&quot;, 
+                            &quot;Approving&quot;, 
+                            IF(
+                                [Workflow: Authoriser&#39;s Direction for TQ]@row = &quot;Authorise (and Issue)&quot;, 
+                                &quot;Issued&quot;, 
+                                &quot;Authoriser Actioning&quot;
+                            )
+                        )
+                    )
+                ), 
+                IF(
+                    [Status: Authorisation (by GTE PM)]@row = &quot;Authorised&quot;, 
+                    IF(
+                        [Status: Recommendation Approval (by Client)]@row = &quot;Approved as Recommended&quot;, 
+                        IF(
+                            [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Approve&quot;, 
+                            &quot;Closed&quot;, 
+                            IF(
+                                [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Rejected&quot;, 
+                                IF(
+                                    [Workflow: Means to Address]@row = &quot;Delegate for Response (to SME Selected)&quot;, 
+                                    IF(
+                                        [Status: Acceptance of SME Response (by Client)]@row = &quot;Accepted&quot;, 
+                                        &quot;Client Finalising Response&quot;, 
+                                        IF(
+                                            [Status: Acceptance of SME Response (by Client)]@row = &quot;Rejected&quot;, 
+                                            &quot;SME Actioning&quot;, 
+                                            &quot;Unknown Detailed Status&quot;
+                                        )
+                                    ), 
+                                    &quot;Further Requested&quot;
+                                ), 
+                                IF(
+                                    [Workflow: Means to Address]@row = &quot;Submit Response (As Revised)&quot;, 
+                                    &quot;Assessing Response&quot;, 
+                                    IF(
+                                        [Workflow: Means to Address]@row = &quot;Select Action&quot;, 
+                                        &quot;Further Requested&quot;, 
+                                        &quot;Assessing Response&quot;
+                                    )
+                                )
+                            )
+                        ), 
+                        IF(
+                            [Status: Recommendation Approval (by Client)]@row = &quot;Not Approved as Recommended&quot;, 
+                            IF(
+                                [Response (Complete When Ready to Issue to GTE)]@row &lt;&gt; &quot;&quot;, 
+                                IF(
+                                    [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Approved&quot;, 
+                                    &quot;Closed&quot;, 
+                                    IF(
+                                        [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Rejected&quot;, 
+                                        IF(
+                                            [Workflow: Means to Address]@row = &quot;Delegate for Response (to SME Selected)&quot;, 
+                                            IF(
+                                                [Status: Acceptance of SME Response (by Client)]@row = &quot;Accepted&quot;, 
+                                                &quot;Client Finalising Response&quot;, 
+                                                IF(
+                                                    [Status: Acceptance of SME Response (by Client)]@row = &quot;Rejected&quot;, 
+                                                    &quot;SME Actioning&quot;, 
+                                                    &quot;Unknown Detailed Status&quot;
+                                                )
+                                            ), 
+                                            &quot;Further Requested&quot;
+                                        ), 
+                                        IF(
+                                            [Workflow: Means to Address]@row = &quot;Submit Response (As Revised)&quot;, 
+                                            &quot;Assessing Response&quot;, 
+                                            &quot;Unknown Detailed Status&quot;
+                                        )
+                                    )
+                                ), 
+                                IF(
+                                    [Nominated Delegate or SME (if Req.)]@row &lt;&gt; &quot;&quot;, 
+                                    IF(
+                                        [Technical Response]@row &lt;&gt; &quot;&quot;, 
+                                        IF(
+                                            [Status: Acceptance of SME Response (by Client)]@row = &quot;Accepted&quot;, 
+                                            &quot;Client Finalising Response&quot;, 
+                                            IF(
+                                                [Status: Acceptance of SME Response (by Client)]@row = &quot;Rejected&quot;, 
+                                                &quot;SME Actioning&quot;, 
+                                                &quot;Client Reviewing SME Response&quot;
+                                            )
+                                        ), 
+                                        &quot;SME Actioning&quot;
+                                    ), 
+                                    &quot;Client Actioning&quot;
+                                )
+                            ), 
+                            &quot;Issued&quot;
+                        )
+                    ), 
+                    &quot;Authorising&quot;
+                )
+            ), 
+            &quot;Approving&quot;
+        )
+    )
+)
+</code></pre></div>
+</div>
+<h3 id="detailed-status-rfi">Detailed Status (<abbr title="Request for Information">RFI</abbr>)<a class="headerlink" href="#detailed-status-rfi" title="Permanent link">#</a></h3>
+<p>Provides the detailed, system level status for RFIs only, as one of the following:</p>
+<ul>
+<li><code>Assessing Response</code></li>
+<li><code>Authoriser Actioning</code></li>
+<li><code>Authorising</code></li>
+<li><code>Cancelled</code></li>
+<li><code>Client Actioning</code></li>
+<li><code>Client Finalising Response</code></li>
+<li><code>Client Reviewing SME Response</code></li>
+<li><code>Closed</code></li>
+<li><code>Further Requested</code></li>
+<li><code>Issued</code></li>
+<li><code>Revising</code></li>
+<li><code>SME Actioning</code></li>
+</ul>
+<p>The detailed status for the <abbr title="Request for Information">RFI</abbr> is used as the <a href="#detailed-status">Detailed Status</a> where applicable. (<abbr title="Technical Query">TQ</abbr> and <abbr title="Request for Information">RFI</abbr> formulas are only split due to Smartsheet size constraints.)</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
@@ -1014,8 +1237,7 @@
                     &quot;Closed&quot;, 
                     IF(
                         [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Rejected&quot;, 
-                        &quot;Further Requested&quot;, 
-                        &quot;Assessing Response&quot;
+                        &quot;Further Requested&quot;, &quot;Assessing Response&quot;
                     )
                 ), 
                 IF(
@@ -1037,8 +1259,7 @@
                 )
             ), 
             IF(
-                [Status: Authorisation (by GTE PM)]@row &lt;&gt; &quot;Rejected&quot;, 
-                &quot;Authorising&quot;,
+                [Status: Authorisation (by GTE PM)]@row = &quot;Rejected&quot;, 
                 IF(
                     [Workflow: Authoriser&#39;s Direction for RFI]@row = &quot;Cancel Request&quot;, 
                     &quot;Cancelled&quot;, 
@@ -1059,127 +1280,29 @@
                             &quot;Authoriser Actioning&quot;
                         )
                     )
-                )
+                ), 
+                &quot;Authorising&quot;
             )
         ), 
         IF(
             [Workflow: Means to Address]@row = &quot;Delegate for Response (to SME Selected)&quot;, 
-            &quot;SME Actioning&quot;, 
             IF(
-                [Workflow: Means to Address]@row = &quot;Submit Response (as Revised)&quot;, 
-                &quot;Assessing Response&quot;, 
+                [Status: Acceptance of SME Response (by Client)]@row = &quot;Accepted&quot;, 
+                &quot;Client Finalising Response&quot;, 
+                &quot;SME Actioning&quot;
+            ), 
+            IF(
+                [Status: Acceptance of SME Response (by Client)]@row = &quot;Rejected&quot;, 
+                &quot;SME Actioning&quot;, 
                 IF(
-                    [Amendments Required]@row &lt;&gt; &quot;&quot;, 
-                    &quot;Client Actioning&quot;, 
+                    [Workflow: Means to Address]@row = &quot;Submit Response (as Revised)&quot;, 
+                    &quot;Assessing Response&quot;, 
                     &quot;Further Requested&quot;
                 )
             )
         )
-    ), 
-    IF(
-        [Type of Request]@row = &quot;Technical Query (TQ)&quot;, 
-        IF(
-            [Status: Acceptance of Client Response (by GTE PM)]@row &lt;&gt; &quot;Rejected&quot;, 
-            IF(
-                [Status: Technical Approval (by GTE Tech Approver)]@row = &quot;Rejected&quot;, 
-                IF(
-                    [Workflow: Approver&#39;s Direction]@row = &quot;Cancel Request&quot;, 
-                    &quot;Cancelled&quot;, 
-                    IF(
-                        [Workflow: Approver&#39;s Direction]@row = &quot;Request Revision (by Raiser)&quot;, 
-                        IF(
-                            [Workflow: Raiser&#39;s Direction after Revision]@row = &quot;Submit Revision&quot;, 
-                            &quot;Approving&quot;, 
-                            IF(
-                                [Workflow: Raiser&#39;s Direction after Revision]@row = &quot;Cancel Request&quot;, 
-                                &quot;Cancelled&quot;, 
-                                &quot;Revising&quot;
-                            )
-                        ), 
-                        IF(
-                            [Workflow: Approver&#39;s Direction]@row = &quot;Approve (and Request Authorisation)&quot;, 
-                            &quot;Authorising&quot;, 
-                            &quot;Approver Actioning&quot;
-                        )
-                    )
-                ), 
-                IF(
-                    [Status: Technical Approval (by GTE Tech Approver)]@row = &quot;Approved&quot;, 
-                    IF(
-                        [Status: Authorisation (by GTE PM)]@row = &quot;Rejected&quot;, 
-                        IF(
-                            [Workflow: Authoriser&#39;s Direction for TQ]@row = &quot;Cancel Request&quot;, 
-                            &quot;Cancelled&quot;, 
-                            IF(
-                                [Workflow: Authoriser&#39;s Direction for TQ]@row = &quot;Request Revision (by Raiser)&quot;, 
-                                &quot;Revising&quot;, 
-                                IF(
-                                    [Workflow: Authoriser&#39;s Direction for TQ]@row = &quot;Request Approval for Amendments&quot;,
-                                    &quot;Approving&quot;, 
-                                    IF(
-                                        [Workflow: Authoriser&#39;s Direction for TQ]@row = &quot;Authorise (and Issue)&quot;, 
-                                        &quot;Issued&quot;, 
-                                        &quot;Authoriser Actioning&quot;
-                                    )
-                                )
-                            )
-                        ), 
-                        IF(
-                            [Status: Authorisation (by GTE PM)]@row = &quot;Authorised&quot;, 
-                            IF(
-                                [Status: Recommendation Approval (by Client)]@row = &quot;Approved as Recommended&quot;, 
-                                IF(
-                                    [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Approve&quot;, 
-                                    &quot;Closed&quot;, 
-                                    IF(
-                                        [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Rejected&quot;, 
-                                        &quot;Further Requested&quot;, 
-                                        &quot;Assessing Response&quot;
-                                    )
-                                ), 
-                                IF(
-                                    [Status: Recommendation Approval (by Client)]@row = &quot;Not Approved as Recommended&quot;, 
-                                    IF(
-                                        [Response (Complete When Ready to Issue to GTE)]@row &lt;&gt; &quot;&quot;, 
-                                        IF(
-                                            [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Approved&quot;, 
-                                            &quot;Closed&quot;, 
-                                            IF(
-                                                [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Rejected&quot;, 
-                                                &quot;Further Requested&quot;, 
-                                                &quot;Assessing Response&quot;
-                                            )
-                                        ), 
-                                        IF(
-                                            [Nominated Delegate or SME (if Req.)]@row &lt;&gt; &quot;&quot;, 
-                                            IF(
-                                                [Technical Response]@row &lt;&gt; &quot;&quot;, 
-                                                IF(
-                                                    [Status: Acceptance of SME Response (by Client)]@row = &quot;Accepted&quot;, 
-                                                    &quot;Client Finalising Response&quot;, 
-                                                    IF(
-                                                        [Status: Acceptance of SME Response (by Client)]@row = &quot;Rejected&quot;, 
-                                                        &quot;SME Actioning&quot;, 
-                                                        &quot;Client Reviewing SME Response&quot;
-                                                    )
-                                                ), 
-                                                &quot;SME Actioning&quot;
-                                            ), 
-                                            &quot;Client Actioning&quot;
-                                        )
-                                    ), 
-                                    &quot;Issued&quot;
-                                )
-                            ), 
-                            &quot;Authorising&quot;
-                        )
-                    ), 
-                    &quot;Approving&quot;
-                )
-            )
-        )
     )
-)           
+)
 </code></pre></div>
 </div>
                 
