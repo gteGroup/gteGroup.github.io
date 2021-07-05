@@ -1012,12 +1012,17 @@
 <li><code>Preparing</code> </li>
 <li><code>Issued</code> </li>
 <li><code>Re-Issued</code></li>
+<li><code>Responded</code></li>
 <li><code>Closed</code></li>
 <li>An indeterminate status of <code>Unknown Status</code> is also possible if an error occurs.</li>
 </ul>
 <p>The high level status is the client-facing reporting status.</p>
 <div class="admonition info">
-<p class="admonition-title">Formula</p>
+<p class="admonition-title">Formula<div class="highlight"><pre><span></span><code>)
+</code></pre></div>
+<p>)</p>
+</p>
+<p>)</p>
 <div class="highlight"><pre><span></span><code>=IF(
     OR(
         [Detailed Status]@row = &quot;Approving&quot;, 
@@ -1043,9 +1048,13 @@
                 OR(
                     [Detailed Status]@row = &quot;Cancelled&quot;, 
                     [Detailed Status]@row = &quot;Closed&quot;
-                ), 
-                &quot;Closed&quot;, 
-                &quot;Unknown Status&quot;
+                ),
+                &quot;Closed&quot;,
+                IF(
+                    [Detailed Status]@row = &quot;Assessing Response&quot;, 
+                    &quot;Responded&quot;, 
+                    &quot;Unknown Status&quot;
+                )
             )
         )
     )
