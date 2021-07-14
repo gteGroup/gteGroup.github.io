@@ -1334,7 +1334,7 @@
     [Maximum Response Days]# &lt;&gt; &quot;&quot;, 
     IF(
         [Responded Date]@row &lt;&gt; &quot;&quot;, 
-        [Responded Date]@row - [Issued Date]@row &gt; [Maximum Response Days]# 
+        [Responded Date]@row - [Issued Date]@row &gt; [Maximum Response Days]#, 
         TODAY() - [Issued Date]@row &gt; [Maximum Response Days]#
     )
 )
