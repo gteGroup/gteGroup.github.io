@@ -873,6 +873,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#overdue-exceeds-maximum-response-days" class="md-nav__link">
+    Overdue &amp; Exceeds Maximum Response Days
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -971,6 +978,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#overdue-exceeds-maximum-response-days" class="md-nav__link">
+    Overdue &amp; Exceeds Maximum Response Days
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1015,6 +1029,10 @@
 <td><a href="#detailed-status-rfi">Detailed Status (<abbr title="Request for Information">RFI</abbr>)</a></td>
 <td>Determines the detailed status for requests for information.</td>
 </tr>
+<tr>
+<td><a href="#overdue-and-exceeds-maximum-response-days">Overdue &amp; Exceeds Maximum Response Days</a></td>
+<td>Determines the detailed status for requests for information.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="column-details">Column Details<a class="headerlink" href="#column-details" title="Permanent link">#</a></h2>
@@ -1030,11 +1048,7 @@
 </ul>
 <p>The high level status is the client-facing reporting status.</p>
 <div class="admonition info">
-<p class="admonition-title">Formula<div class="highlight"><pre><span></span><code>)
-</code></pre></div>
-<p>)</p>
-</p>
-<p>)</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     OR(
         [Detailed Status]@row = &quot;Approving&quot;, 
@@ -1051,11 +1065,19 @@
             [Detailed Status]@row = &quot;SME Actioning&quot;, 
             [Detailed Status]@row = &quot;Client Reviewing SME Response&quot;, 
             [Detailed Status]@row = &quot;Client Finalising Response&quot;
-        ), 
-        &quot;Issued&quot;, 
+        ),
         IF(
-            [Detailed Status]@row = &quot;Further Requested&quot;, 
-            &quot;Re-Issued&quot;, 
+            TODAY() &lt;= [Response Required by Date]@row,
+            &quot;Issued&quot;,
+            &quot;Overdue&quot;
+        ), 
+        IF(
+            [Detailed Status]@row = &quot;Further Requested&quot;,
+            IF(
+                TODAY() &lt;= [Response Required by Date]@row,
+                &quot;Re-Issued&quot;,
+                &quot;Overdue&quot;
+            ), 
             IF(
                 OR(
                     [Detailed Status]@row = &quot;Cancelled&quot;, 
@@ -1342,6 +1364,20 @@
             )
         )
     )
+)
+</code></pre></div>
+</div>
+<h3 id="overdue-exceeds-maximum-response-days">Overdue &amp; Exceeds Maximum Response Days<a class="headerlink" href="#overdue-exceeds-maximum-response-days" title="Permanent link">#</a></h3>
+<p>Indicates when the maximum response time, as established in GTE's proposal (nominally 10 days), has been exceeded if the <a href="#status">Status</a> is 'Overdue'.</p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND(
+        Status@row = &quot;Overdue&quot;, 
+        TODAY() - [Issued Date]@row &gt; [Maximum Response Days]#
+    ), 
+    1, 
+    0
 )
 </code></pre></div>
 </div>
