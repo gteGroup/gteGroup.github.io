@@ -874,8 +874,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#overdue-exceeds-maximum-response-days" class="md-nav__link">
-    Overdue &amp; Exceeds Maximum Response Days
+  <a href="#overdue-or-late" class="md-nav__link">
+    Overdue (or Late)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceeds-max-response-days" class="md-nav__link">
+    Exceeds Max Response Days
   </a>
   
 </li>
@@ -979,8 +986,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#overdue-exceeds-maximum-response-days" class="md-nav__link">
-    Overdue &amp; Exceeds Maximum Response Days
+  <a href="#overdue-or-late" class="md-nav__link">
+    Overdue (or Late)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceeds-max-response-days" class="md-nav__link">
+    Exceeds Max Response Days
   </a>
   
 </li>
@@ -1018,6 +1032,10 @@
 <td>A high-level status for RTIs for client reporting purposes.</td>
 </tr>
 <tr>
+<td><a href="#exceeds-max-response-days">Exceeds Max Response Days</a></td>
+<td>Determines the detailed status for requests for information.</td>
+</tr>
+<tr>
 <td><a href="#detailed-status">Detailed Status</a></td>
 <td>The detailed status of an <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> which shows precisely where it is within the workflow.</td>
 </tr>
@@ -1030,8 +1048,8 @@
 <td>Determines the detailed status for requests for information.</td>
 </tr>
 <tr>
-<td><a href="#overdue-and-exceeds-maximum-response-days">Overdue &amp; Exceeds Maximum Response Days</a></td>
-<td>Determines the detailed status for requests for information.</td>
+<td><a href="#overdue-or-late">Overdue (or Late)</a></td>
+<td>Indicates whether a response is overdue, or was provided later than required/requested.</td>
 </tr>
 </tbody>
 </table>
@@ -1067,14 +1085,14 @@
             [Detailed Status]@row = &quot;Client Finalising Response&quot;
         ),
         IF(
-            TODAY() &lt;= [Response Required by Date]@row,
+            [Overdue (or Late)]@row = 0,
             &quot;Issued&quot;,
             &quot;Overdue&quot;
         ), 
         IF(
             [Detailed Status]@row = &quot;Further Requested&quot;,
             IF(
-                TODAY() &lt;= [Response Required by Date]@row,
+                [Overdue (or Late)]@row = 0,
                 &quot;Re-Issued&quot;,
                 &quot;Overdue&quot;
             ), 
@@ -1367,17 +1385,31 @@
 )
 </code></pre></div>
 </div>
-<h3 id="overdue-exceeds-maximum-response-days">Overdue &amp; Exceeds Maximum Response Days<a class="headerlink" href="#overdue-exceeds-maximum-response-days" title="Permanent link">#</a></h3>
-<p>Indicates when the maximum response time, as established in GTE's proposal (nominally 10 days), has been exceeded if the <a href="#status">Status</a> is 'Overdue'.</p>
+<h3 id="overdue-or-late">Overdue (or Late)<a class="headerlink" href="#overdue-or-late" title="Permanent link">#</a></h3>
+<p>Indicates when a response is overdue, or was provided later than required/requested. Where a response has not been received, this is because the current date exceeds the <a href="#response-required-by-date">Response Required by Date</a>. If a response has been received then the <a href="#responded-date">Responded Date</a> must be greater than the <a href="#response-required-by-date">Response Required by Date</a>. </p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>=IF(
-    AND(
-        Status@row = &quot;Overdue&quot;, 
+<div class="highlight"><pre><span></span><code>=AND(
+    [Response Required by Date]@row &lt;&gt; &quot;&quot;, 
+    IF(
+        [Responded Date]@row &lt;&gt; &quot;&quot;, 
+        [Responded Date]@row &gt; [Response Required by Date]@row, 
+        TODAY() &gt; [Response Required by Date]@row
+    )
+)
+</code></pre></div>
+</div>
+<h3 id="exceeds-max-response-days">Exceeds Max Response Days<a class="headerlink" href="#exceeds-max-response-days" title="Permanent link">#</a></h3>
+<p>Indicates when a response exceeded the maximum response time, as established in GTE's proposal (nominally 10 days).</p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=AND(
+    [Response Required by Date]@row &lt;&gt; &quot;&quot;, 
+    IF(
+        [Responded Date]@row &lt;&gt; &quot;&quot;, 
+        [Responded Date]@row - [Issued Date]@row &gt; [Maximum Response Days]# 
         TODAY() - [Issued Date]@row &gt; [Maximum Response Days]#
-    ), 
-    1, 
-    0
+    )
 )
 </code></pre></div>
 </div>
