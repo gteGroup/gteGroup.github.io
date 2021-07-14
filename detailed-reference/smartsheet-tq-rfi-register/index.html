@@ -846,13 +846,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#status" class="md-nav__link">
-    Status
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#detailed-status" class="md-nav__link">
     Detailed Status
   </a>
@@ -874,6 +867,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#exceeds-max-response-days" class="md-nav__link">
+    Exceeds Max Response Days
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#overdue-or-late" class="md-nav__link">
     Overdue (or Late)
   </a>
@@ -881,8 +881,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#exceeds-max-response-days" class="md-nav__link">
-    Exceeds Max Response Days
+  <a href="#status" class="md-nav__link">
+    Status
   </a>
   
 </li>
@@ -958,13 +958,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#status" class="md-nav__link">
-    Status
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#detailed-status" class="md-nav__link">
     Detailed Status
   </a>
@@ -986,6 +979,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#exceeds-max-response-days" class="md-nav__link">
+    Exceeds Max Response Days
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#overdue-or-late" class="md-nav__link">
     Overdue (or Late)
   </a>
@@ -993,8 +993,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#exceeds-max-response-days" class="md-nav__link">
-    Exceeds Max Response Days
+  <a href="#status" class="md-nav__link">
+    Status
   </a>
   
 </li>
@@ -1028,14 +1028,6 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="#status">Status</a></td>
-<td>A high-level status for RTIs for client reporting purposes.</td>
-</tr>
-<tr>
-<td><a href="#exceeds-max-response-days">Exceeds Max Response Days</a></td>
-<td>Determines the detailed status for requests for information.</td>
-</tr>
-<tr>
 <td><a href="#detailed-status">Detailed Status</a></td>
 <td>The detailed status of an <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> which shows precisely where it is within the workflow.</td>
 </tr>
@@ -1048,71 +1040,20 @@
 <td>Determines the detailed status for requests for information.</td>
 </tr>
 <tr>
+<td><a href="#exceeds-max-response-days">Exceeds Max Response Days</a></td>
+<td>Determines the detailed status for requests for information.</td>
+</tr>
+<tr>
 <td><a href="#overdue-or-late">Overdue (or Late)</a></td>
 <td>Indicates whether a response is overdue, or was provided later than required/requested.</td>
+</tr>
+<tr>
+<td><a href="#status">Status</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="column-details">Column Details<a class="headerlink" href="#column-details" title="Permanent link">#</a></h2>
-<h3 id="status">Status<a class="headerlink" href="#status" title="Permanent link">#</a></h3>
-<p>Provides the high level status of the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> as either: </p>
-<ul>
-<li><code>Preparing</code> </li>
-<li><code>Issued</code> </li>
-<li><code>Re-Issued</code></li>
-<li><code>Responded</code></li>
-<li><code>Closed</code></li>
-<li>An indeterminate status of <code>Unknown Status</code> is also possible if an error occurs.</li>
-</ul>
-<p>The high level status is the client-facing reporting status.</p>
-<div class="admonition info">
-<p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>=IF(
-    OR(
-        [Detailed Status]@row = &quot;Approving&quot;, 
-        [Detailed Status]@row = &quot;Authorising&quot;, 
-        [Detailed Status]@row = &quot;Authoriser Actioning&quot;, 
-        [Detailed Status]@row = &quot;Approver Actioning&quot;, 
-        [Detailed Status]@row = &quot;Revising&quot;
-    ), 
-    &quot;Preparing&quot;, 
-    IF(
-        OR(
-            [Detailed Status]@row = &quot;Issued&quot;, 
-            [Detailed Status]@row = &quot;Client Actioning&quot;, 
-            [Detailed Status]@row = &quot;SME Actioning&quot;, 
-            [Detailed Status]@row = &quot;Client Reviewing SME Response&quot;, 
-            [Detailed Status]@row = &quot;Client Finalising Response&quot;
-        ),
-        IF(
-            [Overdue (or Late)]@row = 0,
-            &quot;Issued&quot;,
-            &quot;Overdue&quot;
-        ), 
-        IF(
-            [Detailed Status]@row = &quot;Further Requested&quot;,
-            IF(
-                [Overdue (or Late)]@row = 0,
-                &quot;Re-Issued&quot;,
-                &quot;Overdue&quot;
-            ), 
-            IF(
-                OR(
-                    [Detailed Status]@row = &quot;Cancelled&quot;, 
-                    [Detailed Status]@row = &quot;Closed&quot;
-                ),
-                &quot;Closed&quot;,
-                IF(
-                    [Detailed Status]@row = &quot;Assessing Response&quot;, 
-                    &quot;Responded&quot;, 
-                    &quot;Unknown Status&quot;
-                )
-            )
-        )
-    )
-)
-</code></pre></div>
-</div>
 <h3 id="detailed-status">Detailed Status<a class="headerlink" href="#detailed-status" title="Permanent link">#</a></h3>
 <p>Provides the detailed, system level status of the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> as either: <code>Preparing</code>, <code>Issued</code>, <code>Re-Issued</code>, or <code>Closed</code>. (An indeterminate status of <code>Unknown Detailed Status</code> is also possible if an error occurs.)</p>
 <p>The detailed status is the non-client-facing status for internal reports and for determining the precise status of RTIs in the workflow.</p>
@@ -1385,6 +1326,20 @@
 )
 </code></pre></div>
 </div>
+<h3 id="exceeds-max-response-days">Exceeds Max Response Days<a class="headerlink" href="#exceeds-max-response-days" title="Permanent link">#</a></h3>
+<p>Indicates when a response exceeded the maximum response time, as established in GTE's proposal (nominally 10 days).</p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=AND(
+    [Response Required by Date]@row &lt;&gt; &quot;&quot;, 
+    IF(
+        [Responded Date]@row &lt;&gt; &quot;&quot;, 
+        [Responded Date]@row - [Issued Date]@row &gt; [Maximum Response Days]# 
+        TODAY() - [Issued Date]@row &gt; [Maximum Response Days]#
+    )
+)
+</code></pre></div>
+</div>
 <h3 id="overdue-or-late">Overdue (or Late)<a class="headerlink" href="#overdue-or-late" title="Permanent link">#</a></h3>
 <p>Indicates when a response is overdue, or was provided later than required/requested. Where a response has not been received, this is because the current date exceeds the <a href="#response-required-by-date">Response Required by Date</a>. If a response has been received then the <a href="#responded-date">Responded Date</a> must be greater than the <a href="#response-required-by-date">Response Required by Date</a>. </p>
 <div class="admonition info">
@@ -1399,16 +1354,61 @@
 )
 </code></pre></div>
 </div>
-<h3 id="exceeds-max-response-days">Exceeds Max Response Days<a class="headerlink" href="#exceeds-max-response-days" title="Permanent link">#</a></h3>
-<p>Indicates when a response exceeded the maximum response time, as established in GTE's proposal (nominally 10 days).</p>
+<h3 id="status">Status<a class="headerlink" href="#status" title="Permanent link">#</a></h3>
+<p>Provides the high level status of the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> as either: </p>
+<ul>
+<li><code>Preparing</code> </li>
+<li><code>Issued</code> </li>
+<li><code>Re-Issued</code></li>
+<li><code>Responded</code></li>
+<li><code>Closed</code></li>
+<li>An indeterminate status of <code>Unknown Status</code> is also possible if an error occurs.</li>
+</ul>
+<p>The high level status is the client-facing reporting status.</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>=AND(
-    [Response Required by Date]@row &lt;&gt; &quot;&quot;, 
+<div class="highlight"><pre><span></span><code>=IF(
+    OR(
+        [Detailed Status]@row = &quot;Approving&quot;, 
+        [Detailed Status]@row = &quot;Authorising&quot;, 
+        [Detailed Status]@row = &quot;Authoriser Actioning&quot;, 
+        [Detailed Status]@row = &quot;Approver Actioning&quot;, 
+        [Detailed Status]@row = &quot;Revising&quot;
+    ), 
+    &quot;Preparing&quot;, 
     IF(
-        [Responded Date]@row &lt;&gt; &quot;&quot;, 
-        [Responded Date]@row - [Issued Date]@row &gt; [Maximum Response Days]# 
-        TODAY() - [Issued Date]@row &gt; [Maximum Response Days]#
+        OR(
+            [Detailed Status]@row = &quot;Issued&quot;, 
+            [Detailed Status]@row = &quot;Client Actioning&quot;, 
+            [Detailed Status]@row = &quot;SME Actioning&quot;, 
+            [Detailed Status]@row = &quot;Client Reviewing SME Response&quot;, 
+            [Detailed Status]@row = &quot;Client Finalising Response&quot;
+        ),
+        IF(
+            [Overdue (or Late)]@row = 0,
+            &quot;Issued&quot;,
+            &quot;Overdue&quot;
+        ), 
+        IF(
+            [Detailed Status]@row = &quot;Further Requested&quot;,
+            IF(
+                [Overdue (or Late)]@row = 0,
+                &quot;Re-Issued&quot;,
+                &quot;Overdue&quot;
+            ), 
+            IF(
+                OR(
+                    [Detailed Status]@row = &quot;Cancelled&quot;, 
+                    [Detailed Status]@row = &quot;Closed&quot;
+                ),
+                &quot;Closed&quot;,
+                IF(
+                    [Detailed Status]@row = &quot;Assessing Response&quot;, 
+                    &quot;Responded&quot;, 
+                    &quot;Unknown Status&quot;
+                )
+            )
+        )
     )
 )
 </code></pre></div>
