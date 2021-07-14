@@ -1331,7 +1331,7 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=AND(
-    [Response Required by Date]@row &lt;&gt; &quot;&quot;, 
+    [Maximum Response Days]# &lt;&gt; &quot;&quot;, 
     IF(
         [Responded Date]@row &lt;&gt; &quot;&quot;, 
         [Responded Date]@row - [Issued Date]@row &gt; [Maximum Response Days]# 
