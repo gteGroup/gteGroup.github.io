@@ -593,10 +593,75 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../processes/cost-management/" class="md-nav__link">
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" data-md-state="indeterminate" type="checkbox" id="__nav_6_5" checked>
+      
+      <label class="md-nav__link" for="__nav_6_5">
         Cost Management
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Cost Management" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Cost Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/cost-management/overview/" class="md-nav__link">
+        Overview
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/cost-management/estimating/" class="md-nav__link">
+        Estimating
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/cost-management/cost-units-and-cost-codes/" class="md-nav__link">
+        Cost Units & Cost Codes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../processes/cost-management/invoicing.md" class="md-nav__link">
+        Invoicing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -3073,7 +3138,7 @@
 <h3 id="complete">% Complete<a class="headerlink" href="#complete" title="Permanent link">#</a></h3>
 <p>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the % Complete which is determined at lower activity levels (as <a href="#comp"><code>comp%</code></a>).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     PARENT([Calculated % Complete]@row) &gt; 0, 
     PARENT([Calculated % Complete]@row),
@@ -3098,7 +3163,7 @@
 <h3 id="actual-hrs">Actual [hrs]<a class="headerlink" href="#actual-hrs" title="Permanent link">#</a></h3>
 <p>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Actual Cost which is entered at the Cost Unit level (captured in the Cost System and input to the Project Schedule as <code>actual_hours_recorded</code>.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Actual Recorded [hrs]]@row &lt;&gt; &quot;&quot;, [Actual Recorded [hrs]]@row &lt;&gt; 0), 
     [Actual Recorded [hrs]]@row, 
@@ -3115,7 +3180,7 @@
 <h3 id="actual-variance-to-baseline-finish-date">Actual Variance to Baseline Finish Date<a class="headerlink" href="#actual-variance-to-baseline-finish-date" title="Permanent link">#</a></h3>
 <p>Compares the Actual Finish Date (<code>date_finish_actual</code>) with the Baseline Finish Date (<code>date_finish_baseline</code>). Negative variance indicates a slip against the baseline.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Baseline Finish Date]@row &lt;&gt; &quot;&quot;, [Actual Finish Date]@row &lt;&gt; &quot;&quot;), 
     NETWORKDAYS([Actual Finish Date]@row, [Baseline Finish Date]@row) + 1, 
@@ -3126,7 +3191,7 @@
 <h3 id="actual-variance-to-baseline-start-date">Actual Variance to Baseline Start Date<a class="headerlink" href="#actual-variance-to-baseline-start-date" title="Permanent link">#</a></h3>
 <p>Compares the Actual Start Date (<code>date_start_actual</code>) with the Baseline Start Date (<code>date_start_baseline</code>). Negative variance indicates a slip against the baseline.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Baseline Start Date]@row &lt;&gt; &quot;&quot;, [Actual Start Date]@row &lt;&gt; &quot;&quot;), 
     NETWORKDAYS([Actual Start Date]@row, [Baseline Start Date]@row) + 1, 
@@ -3137,7 +3202,7 @@
 <h3 id="avazasection">AvazaSection<a class="headerlink" href="#avazasection" title="Permanent link">#</a></h3>
 <p>System column for use with the API integration with Avaza.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     [WBS Level]@row &lt;= 2, Activity@row, 
     INDEX( ANCESTORS(Activity@row), 2 )
@@ -3149,7 +3214,7 @@
 <h3 id="baseline-planned-complete">Baseline Planned % Complete<a class="headerlink" href="#baseline-planned-complete" title="Permanent link">#</a></h3>
 <p>Determines Schedule % Complete (or ""Planned %"") at all levels up through the <abbr title="Work Breakdown Structure">WBS</abbr> using the Planned Values (calculated at the lowest possibly determinable level as <a href="#pv_budget_level"><code>pv_budget_level</code></a> and summarized upwards as <a href="#pv_all"><code>pv_all</code></a>) and summarized Budgets (<a href="#budget_hours_all"><code>budget_hours_all</code></a>). <strong>Note that an activity and summary that does not have a budget (<a href="#budget_hours_all"><code>budget_hours_all</code></a>), ie either directly assigned or from it's children, will not have Planned Value. As these may still be considered progressable, the <a href="#baseline_schedule_%_complete"><code>baseline_schedule_%_complete</code></a> is used as a fallback planned % for those activities or summaries, however the percentage does not impact higher level summaries.</strong></p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     [Budget \[hrs\]]@row &lt;&gt; 0, 
     [PV \[hrs\]]@row / [Budget \[hrs\]]@row, 
@@ -3160,7 +3225,7 @@
 <h3 id="baseline-schedule-complete">Baseline Schedule % Complete<a class="headerlink" href="#baseline-schedule-complete" title="Permanent link">#</a></h3>
 <p>Determines the Schedule % Complete for an activity (or summary) at the data date (today) as a linearization of progress from the Baseline Start Date to the Baseline Finish Dates, factoring in non-working days in the project calendar. <strong>Note that the values yielded for summaries in the <abbr title="Work Breakdown Structure">WBS</abbr> are not accurate portrayals of Planned Value as these linearize at those summary levels only. Accurate ""Planned %"" is given by <a href="#comp_baseline_planned_all"><code>comp%_baseline_planned_all</code></a>.</strong></p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Baseline Start Date]@row &lt;&gt; &quot;&quot;, [Baseline Finish Date]@row &lt;&gt; &quot;&quot;),
     ROUND(
@@ -3186,7 +3251,7 @@
 <h3 id="budget-hrs">Budget [hrs]<a class="headerlink" href="#budget-hrs" title="Permanent link">#</a></h3>
 <p>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Budgeted Cost, in hours, which is entered at various budgeted levels (captured in the Baseline and input to the schedule as <code>budget_hours_assigned</code>.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Budget Assigned [hrs]]@row &lt;&gt; &quot;&quot;, [Budget Assigned [hrs]]@row &lt;&gt; 0), 
     [Budget Assigned [hrs]]@row, 
@@ -3199,14 +3264,14 @@
 <h3 id="budget-assigned-requested-hrs">Budget Assigned + Requested [hrs]<a class="headerlink" href="#budget-assigned-requested-hrs" title="Permanent link">#</a></h3>
 <p>Represents the approved Budgeted Cost, in hours, for the activity <code>budget_hours_assigned</code> plus any additional hours that have been requested formally but not yet been approved <code>budget_hours_requested</code>.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=[Budget Assigned [hrs]]@row + [Budget Requested [hrs]]@row
 </code></pre></div>
 </div>
 <h3 id="budget-issues">Budget Issues<a class="headerlink" href="#budget-issues" title="Permanent link">#</a></h3>
 <p>Used to assist in assigning Budget using the <code>budget_hours_assigned</code> column, providing indication where overlapping budgets have been assigned, ie where assignments have been made on ancestors to an activity that has also been directly assigned a budget. Issues in this column will be represented by a symbol in the <a href="#flag"><code>flag</code></a> column if the Sheet Summary setting <a href="#setting_show_budget_issues"><code>setting_show_budget_issues</code></a> is checked.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND( [Budget Assigned \[hrs\]]@row &lt;&gt; 0, [Budget Assigned \[hrs\]]@row &lt;&gt; &quot;&quot; ),
     IF(
@@ -3223,7 +3288,7 @@
 <h3 id="calculated-complete">Calculated % Complete<a class="headerlink" href="#calculated-complete" title="Permanent link">#</a></h3>
 <p>Calculates the % Complete to use for the activity based on the <code>comp%_evm_method</code> selected.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     [EVM Method]@row = &quot;&quot;Manual % Complete&quot;&quot;, 
     [Manual % Complete]@row, 
@@ -3248,7 +3313,7 @@
 <h3 id="control-conditional-formatting">Control Conditional Formatting<a class="headerlink" href="#control-conditional-formatting" title="Permanent link">#</a></h3>
 <p>System column.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     [SETTING - Obscure System Columns]# = 1,
     &quot;&quot;Obscure System Columns&quot;&quot;, 
@@ -3263,7 +3328,7 @@
 <h3 id="cost-unit-activity">Cost Unit Activity<a class="headerlink" href="#cost-unit-activity" title="Permanent link">#</a></h3>
 <p>Combines the <a href="#cost_unit_effective"><code>cost_unit_effective</code></a> and the <code>activity</code> into a string.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     [Cost Code]@row &lt;&gt; &quot;&quot;, 
     [Cost Code]@row + &quot;&quot; | &quot;&quot; + Activity@row, 
@@ -3274,7 +3339,7 @@
 <h3 id="cost-unit-issues">Cost Unit Issues<a class="headerlink" href="#cost-unit-issues" title="Permanent link">#</a></h3>
 <p>Used to assist in designating Cost Units using the <code>cost_unit_designation</code> column, providing details on any designation issues such as overlapping Cost Unit designations or budgeted activities not covered by a Cost Unit designation. Issues in this column will be represented by a symbol in the <a href="#flag"><code>flag</code></a> column if the Sheet Summary setting <a href="#setting_show_cost_unit_issues"><code>setting_show_cost_unit_issues</code></a> is checked.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     [Budget \[hrs\]]@row = 0, 
     &quot;&quot;, 
@@ -3312,7 +3377,7 @@
 <h3 id="cpi"><abbr title="Cost Performance Index">CPI</abbr><a class="headerlink" href="#cpi" title="Permanent link">#</a></h3>
 <p>Cost Performance Index (based on hours).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IFERROR(
     [EV \[hrs\]]@row / [Actual \[hrs\]]@row, 
     &quot;&quot;
@@ -3322,14 +3387,14 @@
 <h3 id="cv"><abbr title="Cost Variance">CV</abbr><a class="headerlink" href="#cv" title="Permanent link">#</a></h3>
 <p>Cost Variance (in hours).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=[EV \[hrs\]]@row - [Actual \[hrs\]]@row
 </code></pre></div>
 </div>
 <h3 id="cv_1"><abbr title="Cost Variance">CV</abbr>%<a class="headerlink" href="#cv_1" title="Permanent link">#</a></h3>
 <p>Cost Variance (in hours), expressed as a percentage of Planned Value (hours).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IFERROR( 
     CV@row / [PV \[hrs\]]@row, 
     &quot;&quot; 
@@ -3339,7 +3404,7 @@
 <h3 id="default-ftc-hrs">Default FTC [hrs]<a class="headerlink" href="#default-ftc-hrs" title="Permanent link">#</a></h3>
 <p>Calculates a default value to be used if a Forecast Hours to Finish (<code>ftc_hours_entry</code>) is not entered and there is assigned budget for the activity. If there is no assigned budget, the sum of the child activities is used. The value calculated is generally the full assigned budget (<code>budget_hours_assigned</code>) as a conservative estimate, however for an <abbr title="Earned Value Management">EVM</abbr> Method (<code>comp%_evm_method</code>) of ""Linearised <abbr title="Level of Effort">LoE</abbr>"" the actual hours to date (<code>actual_hours_recorded</code>) will be deducted as these activities are expected to meet budget.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND( [Budget Assigned \[hrs\]]@row &lt;&gt; &quot;&quot;, [Budget Assigned \[hrs\]]@row &lt;&gt; 0 ), 
     IF(
@@ -3354,7 +3419,7 @@
 <h3 id="default-ftc-including-change-hrs">Default FTC Including Change [hrs]<a class="headerlink" href="#default-ftc-including-change-hrs" title="Permanent link">#</a></h3>
 <p>Calculates a default value to be used if a Forecast Hours to Finish (<code>ftc_hours_entry</code>) is not entered and there is assigned budget and/or requested hours (through formal change management with the client) for the activity. If there is no assigned or requested hours for the activity, the sum of the child activities is used. The value calculated is generally the full assigned and requested budget (<code>budget_hours_assigned_and_requested</code>) as a conservative estimate, however for an <abbr title="Earned Value Management">EVM</abbr> Method (<code>comp%_evm_method</code>) of ""Linearised <abbr title="Level of Effort">LoE</abbr>"" the actual hours to date (<code>actual_hours_recorded</code>) will be deducted.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Budget Assigned + Requested \[hrs\]]@row &lt;&gt; &quot;&quot;, [Budget Assigned + Requested \[hrs\]]@row &lt;&gt; 0), 
     IF(
@@ -3369,7 +3434,7 @@
 <h3 id="descendant-cost-units">Descendant Cost Units<a class="headerlink" href="#descendant-cost-units" title="Permanent link">#</a></h3>
 <p>System column.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=COUNTIF( DESCENDANTS([Cost Unit]@row), 1 )
 </code></pre></div>
 </div>
@@ -3378,7 +3443,7 @@
 <h3 id="effective-cost-unit">Effective Cost Unit<a class="headerlink" href="#effective-cost-unit" title="Permanent link">#</a></h3>
 <p>Propagates a Cost Code entered at the Cost Unit level down to descendant levels in the <abbr title="Work Breakdown Structure">WBS</abbr> for explicitly clarifying where the costs should be captured in the Cost System.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     PARENT() &lt;&gt; &quot;&quot;, 
     PARENT(), 
@@ -3389,7 +3454,7 @@
 <h3 id="expected-budget-hrs">Expected Budget [hrs]<a class="headerlink" href="#expected-budget-hrs" title="Permanent link">#</a></h3>
 <p>Summarizes hours up through the <abbr title="Work Breakdown Structure">WBS</abbr> as for <a href="#budget_hours_all"><code>budget_hours_all</code></a> but includes additional hours that may have been requested of the client through formal change management, but not yet approved. The additional hours are input at the budgeted level as <code>budget_hours_requested</code>.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
    AND(
        [Budget Assigned + Requested [hrs]]@row &lt;&gt; &quot;&quot;, 
@@ -3403,14 +3468,14 @@
 <h3 id="eom0-data-date">EOM+0 Data Date<a class="headerlink" href="#eom0-data-date" title="Permanent link">#</a></h3>
 <p>System mirror of Sheet Summary value used for Cash Flow Forecasts.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=[EOM+X]#
 </code></pre></div>
 </div>
 <h3 id="eom0-planned-complete">EOM+0 Planned % Complete<a class="headerlink" href="#eom0-planned-complete" title="Permanent link">#</a></h3>
 <p>System calculation used for Cash Flow Forecasts.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     [Expected Budget \[hrs\]]@row &lt;&gt; 0, 
     [EOM+X PVx \[hrs\]]@row / [Expected Budget \[hrs\]]@row, 
@@ -3421,7 +3486,7 @@
 <h3 id="eom0-pvx-hrs">EOM+0 PVx [hrs]<a class="headerlink" href="#eom0-pvx-hrs" title="Permanent link">#</a></h3>
 <p>System calculation used for Cash Flow Forecasts.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND(
         [EOM+X PVx at Budget Level \[hrs\]]@row &lt;&gt; &quot;&quot;, 
@@ -3435,7 +3500,7 @@
 <h3 id="eom0-pvx-at-budget-level-hrs">EOM+0 PVx at Budget Level [hrs]<a class="headerlink" href="#eom0-pvx-at-budget-level-hrs" title="Permanent link">#</a></h3>
 <p>System calculation used for Cash Flow Forecasts.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND(
         [Budget Assigned + Requested \[hrs\]]@row &lt;&gt; &quot;&quot;, 
@@ -3449,7 +3514,7 @@
 <h3 id="eom0-schedule-complete">EOM+0 Schedule % Complete<a class="headerlink" href="#eom0-schedule-complete" title="Permanent link">#</a></h3>
 <p>System calculation used for Cash Flow Forecasts.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Start Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;&quot;), 
     ROUND(
@@ -3501,7 +3566,7 @@
 <h3 id="ev-hrs"><abbr title="Earned Value">EV</abbr> [hrs]<a class="headerlink" href="#ev-hrs" title="Permanent link">#</a></h3>
 <p>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Earned Value calculated at the lowest possibly determinable level (as <a href="#ev_budget_level"><code>ev_budget_level</code></a>). The lowest possibly determinable level is where both % Complete and Budget Cost, in hours, exist.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([EV at Budget Level \[hrs\]]@row = 0, [WBS Descendants]@row &gt; 0), 
     IF(
@@ -3524,7 +3589,7 @@
 <h3 id="ev-at-budget-level-hrs"><abbr title="Earned Value">EV</abbr> at Budget Level [hrs]<a class="headerlink" href="#ev-at-budget-level-hrs" title="Permanent link">#</a></h3>
 <p>Earned Value (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Earned Value (in hours) for that activity as the budget multiplied by the physical % complete <a href="#comp"><code>comp%</code></a>. The duration of the activity is determined from the Baseline Start and Finish dates (as (<a href="#baseline_schedule_%_complete"><code>baseline_schedule_%_complete</code></a>), using <code>date_start_baseline</code> and <code>date_start_baseline</code>, and the budget used only includes the approved (Baseline) budget (<code>budget_hours_assigned</code>). <!-- Monitor whether this should actually be comp%_all used here --></p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     SUM(CHILDREN([EV at Budget Level \[hrs\]]@row)) &gt; 0, 
     0, 
@@ -3537,21 +3602,21 @@
 <h3 id="fac-hrs">FAC [hrs]<a class="headerlink" href="#fac-hrs" title="Permanent link">#</a></h3>
 <p>Forecast at Complete (in hours). This is simply the hours incurred to date (<a href="#actual_hours_all"><code>actual_hours_all</code></a>) plus the forecast hours to complete (<code>ftc_hours_all</code>).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=[Actual \[hrs\]]@row + [FTC \[hrs\]]@row
 </code></pre></div>
 </div>
 <h3 id="fac-including-change-hrs">FAC Including Change [hrs]<a class="headerlink" href="#fac-including-change-hrs" title="Permanent link">#</a></h3>
 <p>Forecast at Complete (in hours), factoring expected changes to the budget. This is simply the hours incurred to date (<a href="#actual_hours_all"><code>actual_hours_all</code></a>) plus the forecast hours to complete, where in this instance this includes change (<a href="#ftc_default_with_change"><code>ftc_default_with_change</code></a>).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=[Actual \[hrs\]]@row + [FTC Including Change \[hrs\]]@row
 </code></pre></div>
 </div>
 <h3 id="filter-client-view">Filter - Client View<a class="headerlink" href="#filter-client-view" title="Permanent link">#</a></h3>
 <p>System column.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     OR(
         [Client Hidden?]@row = 1,
@@ -3567,7 +3632,7 @@
 <h3 id="flag">Flag<a class="headerlink" href="#flag" title="Permanent link">#</a></h3>
 <p>A cross (red) indicates an issue on the row. An exclamation (yellow) indicates an issue on a descendant row. The issues can be to do with Budgeting, Cost Coding, or Resourcing and the flags responsiveness to each is dependent on the selected options in the relevant 'Sheet Summary' settings. The specifics of the issues are detailed in the <a href="#budget_issues"><code>budget_issues</code></a>, <a href="#cost_unit_issues"><code>cost_unit_issues</code></a> and/or <a href="#resourcing_issues"><code>resourcing_issues</code></a> columns as relevant.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     COUNT(
         IF([SETTING - Show Budget Issues]#, [Budget Issues]@row), 
@@ -3594,7 +3659,7 @@
 <h3 id="ftc-hrs">FTC [hrs]<a class="headerlink" href="#ftc-hrs" title="Permanent link">#</a></h3>
 <p>Forecast to Complete (in hours). Where a field forecast is applicable for an activity, generally where that activity is a Cost Unit, this value will be the field forecast (provided as <code>ftc_hours_entry</code>) if this has been provided. Where it has not, a default value will be used (<a href="#ftc_default"><code>ftc_default</code></a>).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Forecast Hours to Finish]@row &lt;&gt; &quot;&quot;, [Forecast Hours to Finish]@row &lt;&gt; 0), 
     [Forecast Hours to Finish]@row, 
@@ -3605,7 +3670,7 @@
 <h3 id="ftc-including-change-hrs">FTC Including Change [hrs]<a class="headerlink" href="#ftc-including-change-hrs" title="Permanent link">#</a></h3>
 <p>Forecast to Complete (in hours), factoring expected changes to the budget. Where a field forecast is applicable for an activity, generally where that activity is a Cost Unit, this value will be the field forecast (provided as <code>ftc_hours_entry</code>) if this has been provided. Where it has not, a default value will be used where in this instance this includes change (<a href="#ftc_default_with_change"><code>ftc_default_with_change</code></a>).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Forecast Hours to Finish]@row &lt;&gt; &quot;&quot;, [Forecast Hours to Finish]@row &lt;&gt; 0), 
     [Forecast Hours to Finish]@row, 
@@ -3632,7 +3697,7 @@
 <h3 id="planned-complete">Planned % Complete<a class="headerlink" href="#planned-complete" title="Permanent link">#</a></h3>
 <p>Determines Planned % Complete at all levels up through the <abbr title="Work Breakdown Structure">WBS</abbr> using the <em>expected</em> Planned Values, ie budgets including additional requests (calculated at the lowest possibly determinable level as <a href="#pv_with_change_budget_level"><code>pv_with_change_budget_level</code></a> and summarized upwards as <a href="#pv_with_change_all"><code>pv_with_change_all</code></a>); and summarized Budgets (<a href="#budget_hours_with_change_all"><code>budget_hours_with_change_all</code></a>). <strong>Note that an activity and summary that does not have a budget (<a href="#budget_hours_with_change_all"><code>budget_hours_with_change_all</code></a>), ie either directly assigned or from it's children, will not have Planned Value. As these may still be considered progressable, the <a href="#schedule_%_complete"><code>schedule_%_complete</code></a> is used as a fallback planned % for those activities or summaries, however the percentage does not impact higher level summaries.</strong></p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     [Expected Budget \[hrs\]]@row &lt;&gt; 0, 
     [PVx \[hrs\]]@row / [Expected Budget \[hrs\]]@row, 
@@ -3643,7 +3708,7 @@
 <h3 id="planned-variance-to-baseline-finish-date">Planned Variance to Baseline Finish Date<a class="headerlink" href="#planned-variance-to-baseline-finish-date" title="Permanent link">#</a></h3>
 <p>Compares the (Planned) Finish Date (<code>date_finish_planned</code>) with the Baseline Finish Date (<code>date_finish_baseline</code>). Negative variance indicates a slip against the baseline.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Baseline Finish Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;&quot;), 
     NETWORKDAYS([Finish Date]@row, [Baseline Finish Date]@row) + 1, 
@@ -3654,7 +3719,7 @@
 <h3 id="planned-variance-to-baseline-start-date">Planned Variance to Baseline Start Date<a class="headerlink" href="#planned-variance-to-baseline-start-date" title="Permanent link">#</a></h3>
 <p>Compares the (Planned) Start Date (<code>date_start_planned</code>) with the Baseline Start Date (<code>date_start_baseline</code>). Negative variance indicates a slip against the baseline.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Baseline Start Date]@row &lt;&gt; &quot;&quot;, [Start Date]@row &lt;&gt; &quot;&quot;), 
     NETWORKDAYS([Start Date]@row, [Baseline Start Date]@row) + 1, 
@@ -3667,14 +3732,14 @@
 <h3 id="project">Project<a class="headerlink" href="#project" title="Permanent link">#</a></h3>
 <p>System mirror of Sheet Summary value.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IFERROR(&quot;&quot;P&quot;&quot; + [Project ID]# + &quot;&quot; - &quot;&quot; + [Project Name]#, &quot;&quot;Enter Project ID in Sheet Summary&quot;&quot;)
 </code></pre></div>
 </div>
 <h3 id="pv-hrs"><abbr title="Planned Value">PV</abbr> [hrs]<a class="headerlink" href="#pv-hrs" title="Permanent link">#</a></h3>
 <p>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Planned Value (in hours) calculated at the budgeted (or lowest possibly ""determinable"") level (as <a href="#pv_budget_level"><code>pv_budget_level</code></a>).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([PV at Budget Level \[hrs\]]@row &lt;&gt; &quot;&quot;, [PV at Budget Level \[hrs\]]@row &lt;&gt; 0), 
     [PV at Budget Level \[hrs\]]@row, 
@@ -3685,7 +3750,7 @@
 <h3 id="pv-at-budget-level-hrs"><abbr title="Planned Value">PV</abbr> at Budget Level [hrs]<a class="headerlink" href="#pv-at-budget-level-hrs" title="Permanent link">#</a></h3>
 <p>Planned Value (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Planned Value (in hours) for that activity as the budget multiplied by the percentage of time through the duration of the activity. The duration of the activity is determined from the Baseline Start and Finish dates (<code>date_start_baseline</code> and <code>date_finish_baseline</code>) as <a href="#comp_schedule_planned_all"><code>comp%_schedule_planned_all</code></a>, and the budget used only includes the approved (Baseline) budget (<code>budget_hours_assigned</code>).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Budget Assigned \[hrs\]]@row &lt;&gt; &quot;&quot;, [Budget Assigned \[hrs\]]@row &lt;&gt; 0), 
     [Baseline Schedule % Complete]@row * [Budget Assigned \[hrs\]]@row, 
@@ -3696,7 +3761,7 @@
 <h3 id="pvx-hrs">PVx [hrs]<a class="headerlink" href="#pvx-hrs" title="Permanent link">#</a></h3>
 <p>Summarizes up through the <abbr title="Work Breakdown Structure">WBS</abbr> the Planned Value (in hours) calculated at the budgeted (or lowest possibly ""determinable"") level as <a href="#pv_with_change_budget_level"><code>pv_with_change_budget_level</code></a>, where this includes additional requested budget as well as approved/assigned budget (<code>budget_hours_assigned_and_requested</code>).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([PVx at Budget Level \[hrs\]]@row &lt;&gt; &quot;&quot;, [PVx at Budget Level \[hrs\]]@row &lt;&gt; 0), 
     [PVx at Budget Level \[hrs\]]@row, 
@@ -3707,7 +3772,7 @@
 <h3 id="pvx-at-budget-level-hrs">PVx at Budget Level [hrs]<a class="headerlink" href="#pvx-at-budget-level-hrs" title="Permanent link">#</a></h3>
 <p>Planned Value Expected (in hours) at the budgeted activity level. Where an activity is budgeted, this is the Planned Value (in hours) for that activity as that budget multiplied by the percentage of time through the duration of the activity. ""Expected"" means that in this instance the duration of the activity is determined from the Start and Finish dates from the current plan (as <a href="#schedule_%_complete"><code>schedule_%_complete</code></a>), using <code>date_start_planned</code> and <code>date_finish_planned</code>), and the budget used is actually the approved/assigned budget plus any additional requested budget (<code>budget_hours_assigned_and_requested</code>).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Budget Assigned \[hrs\]]@row &lt;&gt; &quot;&quot;, [Budget Assigned \[hrs\]]@row &lt;&gt; 0), 
     [Schedule % Complete]@row * [Budget Assigned \[hrs\]]@row, 
@@ -3718,7 +3783,7 @@
 <h3 id="reimbursable-activity">Reimbursable Activity<a class="headerlink" href="#reimbursable-activity" title="Permanent link">#</a></h3>
 <p>Propagates the assignment of reimbursable activities, entered as a higher level designation (using <a href="#reimb_designation"><code>reimb_designation</code></a>) down to descendant levels in the <abbr title="Work Breakdown Structure">WBS</abbr>.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     OR(
         [Reimbursable?]@row = 1, 
@@ -3734,7 +3799,7 @@
 <h3 id="resource-loading">Resource Loading<a class="headerlink" href="#resource-loading" title="Permanent link">#</a></h3>
 <p>Calculates the % of a single resources capacity required to complete a budgeted activity, where this a linear distribution of the budget over the duration of the activity divided by the number of resources and the daily capacity in hours of those resources (assumed to be 8hrs unless otherwise set using <code>non_standard_capacity</code>.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IFERROR(
     ( [Budget Assigned \[hrs\]]@row / Duration@row)
         /( COUNTM([Resource(s)]@row)
@@ -3753,7 +3818,7 @@
 <h3 id="resourcing-issues">Resourcing Issues<a class="headerlink" href="#resourcing-issues" title="Permanent link">#</a></h3>
 <p>Used to assist in designating human resource(s) using the <a href="#resources"><code>resources</code></a> column, providing details on any missing assignments or overloaded resources, and where an activity duration has not been properly established to allow the resource loading to be determined. Issues in this column will be represented by a symbol in the <a href="#flag"><code>flag</code></a> column if the Sheet Summary setting <a href="#setting_show_resourcing_issues"><code>setting_show_resourcing_issues</code></a> is checked.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     [% Complete]@row &lt;&gt; 1,
     IF(
@@ -3796,7 +3861,7 @@
 </div>
 <h3 id="schedule-complete">Schedule % Complete<a class="headerlink" href="#schedule-complete" title="Permanent link">#</a></h3>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Start Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;&quot;), 
     ROUND(
@@ -3819,14 +3884,14 @@
 <h3 id="sheet">Sheet<a class="headerlink" href="#sheet" title="Permanent link">#</a></h3>
 <p>System mirror of Sheet Summary value.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=Sheet#
 </code></pre></div>
 </div>
 <h3 id="spi">SPI<a class="headerlink" href="#spi" title="Permanent link">#</a></h3>
 <p>Schedule Performance Index (based on hours).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IFERROR( 
     [EV \[hrs\]]@row / [PV \[hrs\]]@row, 
     &quot;&quot;
@@ -3838,7 +3903,7 @@
 <h3 id="status">Status<a class="headerlink" href="#status" title="Permanent link">#</a></h3>
 <p>System column.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     AND([Start Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;&quot;),
     IF(
@@ -3885,14 +3950,14 @@
 <h3 id="sv">SV<a class="headerlink" href="#sv" title="Permanent link">#</a></h3>
 <p>Schedule Variance (in hours).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=[EV \[hrs\]]@row - [PV \[hrs\]]@row
 </code></pre></div>
 </div>
 <h3 id="sv_1">SV%<a class="headerlink" href="#sv_1" title="Permanent link">#</a></h3>
 <p>Schedule Variance (in hours), expressed as percentage of Planned Value (hours).</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IFERROR(
     SV@row / [PV \[hrs\]]@row, 
     &quot;&quot;
@@ -3902,7 +3967,7 @@
 <h3 id="variance">Variance<a class="headerlink" href="#variance" title="Permanent link">#</a></h3>
 <p>Smartsheet generated column that shows the difference between the <code>Baseline Finish Date</code> and the <code>Finish Date</code>. Should yield the same result as <a href="#var_date_finish_planned_to_baseline"><code>var_date_finish_planned_to_baseline</code></a>.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     [WBS Level]@row &lt;= 2,
     Activity@row,
@@ -3926,7 +3991,7 @@
 <h3 id="wbs"><abbr title="Work Breakdown Structure">WBS</abbr><a class="headerlink" href="#wbs" title="Permanent link">#</a></h3>
 <p>System column.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     [WBS Level]@row &lt;= 2,
     Activity@row,
@@ -3950,7 +4015,7 @@
 <h3 id="wbs-descendants"><abbr title="Work Breakdown Structure">WBS</abbr> Descendants<a class="headerlink" href="#wbs-descendants" title="Permanent link">#</a></h3>
 <p>System column.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF( 
     [WBS Level]@row &lt;&gt; 1, 
     COUNT(DESCENDANTS()), 
@@ -3961,7 +4026,7 @@
 <h3 id="wbs-level"><abbr title="Work Breakdown Structure">WBS</abbr> Level<a class="headerlink" href="#wbs-level" title="Permanent link">#</a></h3>
 <p>System column. Represents the level in the <abbr title="Work Breakdown Structure">WBS</abbr> for the activity.</p>
 <div class="admonition info">
-<p class="admonition-title">"Formula"</p>
+<p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=COUNT(ANCESTORS()) + 1
 </code></pre></div>
 <p>"</p>
