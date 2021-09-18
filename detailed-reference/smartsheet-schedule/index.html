@@ -3805,7 +3805,7 @@
     IF(
         AND( [Budget Assigned \[hrs\]]@row &lt;&gt; &quot;&quot;, [Budget Assigned \[hrs\]]@row &lt;&gt; 0 ), 
         IF(
-            [Assume Linear Performance]# = 1, 
+            AND( [Assume Linear Performance]# = 1, [% Complete]@row &gt; 0 ), 
             [Actual \[hrs\]]@row * (1 - [% Complete]@row) / [% Complete]@row, 
             IF(
                 [EVM Method]@row = &quot;Linearised LoE&quot;, 
@@ -3828,7 +3828,7 @@
     IF(
         AND( [Budget Assigned + Requested \[hrs\]]@row &lt;&gt; &quot;&quot;, [Budget Assigned + Requested \[hrs\]]@row &lt;&gt; 0 ), 
         IF(
-            [Assume Linear Performance]# = 1, 
+            AND( [Assume Linear Performance]# = 1, [% Complete]@row &gt; 0 ), 
             [Actual \[hrs\]]@row * (1 - [% Complete]@row) / [% Complete]@row, 
             IF(
                 [EVM Method]@row = &quot;Linearised LoE&quot;&quot;, 
