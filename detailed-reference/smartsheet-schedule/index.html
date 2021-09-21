@@ -3510,8 +3510,8 @@
         [EV \[hrs\]]@row &lt;&gt; 0, 
         [EV \[hrs\]]@row / [Budget \[hrs\]]@row, 
         IF(
-            AND([Budget \[hrs\]]@row &lt;&gt; 0, [Budget \[hrs\]]@row &lt;&gt; &quot;), 
-            IFERROR( AVG(CHILDREN([Calculated % Complete]@row) ), &quot;), 
+            AND([Budget \[hrs\]]@row &lt;&gt; 0, [Budget \[hrs\]]@row &lt;&gt; &quot;&quot;), 
+            IFERROR( AVG(CHILDREN([Calculated % Complete]@row) ), &quot;&quot;), 
             [Calculated % Complete]@row
         )
     )
@@ -3546,7 +3546,7 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
-    AND([Baseline Finish Date]@row &lt;&gt; &quot;&quot;, [Actual Finish Date]@row &lt;&gt; &quot;), 
+    AND([Baseline Finish Date]@row &lt;&gt; &quot;&quot;, [Actual Finish Date]@row &lt;&gt; &quot;&quot;), 
     NETWORKDAYS([Actual Finish Date]@row, [Baseline Finish Date]@row) + 1, 
     &quot;&quot;
 )
@@ -3591,7 +3591,7 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
-    AND([Baseline Start Date]@row &lt;&gt; &quot;&quot;, [Baseline Finish Date]@row &lt;&gt; &quot;),
+    AND([Baseline Start Date]@row &lt;&gt; &quot;&quot;, [Baseline Finish Date]@row &lt;&gt; &quot;&quot;),
     ROUND(
         IF(
             TODAY() &lt; [Baseline Start Date]@row,
@@ -3928,7 +3928,7 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
-    AND([Start Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;), 
+    AND([Start Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;&quot;), 
     ROUND(
         IF(
             [EOM+X]# &lt; [Start Date]@row, 
@@ -4134,7 +4134,7 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
-    AND([Baseline Finish Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;), 
+    AND([Baseline Finish Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;&quot;), 
     NETWORKDAYS([Finish Date]@row, [Baseline Finish Date]@row) + 1, 
     &quot;&quot;
 )
@@ -4145,7 +4145,7 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
-    AND([Baseline Start Date]@row &lt;&gt; &quot;&quot;, [Start Date]@row &lt;&gt; &quot;), 
+    AND([Baseline Start Date]@row &lt;&gt; &quot;&quot;, [Start Date]@row &lt;&gt; &quot;&quot;), 
     NETWORKDAYS([Start Date]@row, [Baseline Start Date]@row) + 1, 
     &quot;&quot;
 )
@@ -4284,7 +4284,7 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
-    AND([Start Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;), 
+    AND([Start Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;&quot;), 
     ROUND(
         IF(
             TODAY() &lt; [Start Date]@row, 
@@ -4326,7 +4326,7 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
-    AND([Start Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;),
+    AND([Start Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;&quot;),
     IF(
         [Actual Finish Date]@row &lt;&gt; &quot;&quot;,
         IF(
