@@ -3654,17 +3654,17 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
-    [EVM Method]@row = &quot;Manual % Complete&quot;&quot;, 
+    [EVM Method]@row = &quot;Manual % Complete&quot;, 
     [Manual % Complete]@row, 
     IF(
-        [EVM Method]@row = &quot;Linearised LoE&quot;&quot;, 
+        [EVM Method]@row = &quot;Linearised LoE&quot;, 
         [Planned % Complete]@row, 
         IF(
-            [EVM Method]@row = &quot;Gated&quot;&quot;, 
+            [EVM Method]@row = &quot;Gated&quot;, 
             INDEX({GatedProgressSummary - % Complete}, MATCH([Gated Progress Reference]@row, {GatedProgressSummary - Reference}, 0)), 
             IF(
-                [EVM Method]@row = &quot;Apportioned Effort&quot;&quot;, 
-                &quot;NOT SUPPORTED&quot;&quot;, 
+                [EVM Method]@row = &quot;Apportioned Effort&quot;, 
+                &quot;NOT SUPPORTED&quot;, 
                 [Manual % Complete]@row
             )
         )
@@ -3710,7 +3710,7 @@
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     [SETTING - Obscure System Columns]# = 1,
-    &quot;Obscure System Columns&quot;&quot;, 
+    &quot;Obscure System Columns&quot;, 
     &quot;&quot;
 )
 </code></pre></div>
@@ -3741,7 +3741,7 @@
         [Cost Unit]@row = 0, 
         IF(
             COUNTIF(ANCESTORS([Cost Unit]@row), 1) &gt; 1, 
-            &quot;Multiple ancestor cost unit designations exist&quot;&quot;, 
+            &quot;Multiple ancestor cost unit designations exist&quot;, 
             IF(
                 AND(
                     COUNTIF(ANCESTORS([Cost Unit]@row), 1) = 0, 
@@ -3751,16 +3751,16 @@
                         COUNT(CHILDREN(Activity@row)) = 0
                     )
                 ), 
-                &quot;Not cost unit designated, and no applicable ancestor cost units or successor designations to cover all successors&quot;&quot;, 
+                &quot;Not cost unit designated, and no applicable ancestor cost units or successor designations to cover all successors&quot;, 
                 &quot;&quot;
             )
         ), 
         IF(
             [WBS Level]@row = 1, 
-            &quot;Cost unit designation cannot occur at WBS level 1. If a single cost unit is required, assign all budget to a level 2 delivery element and designate this as the cost unit&quot;&quot;, 
+            &quot;Cost unit designation cannot occur at WBS level 1. If a single cost unit is required, assign all budget to a level 2 delivery element and designate this as the cost unit&quot;, 
             IF(
                 COUNTIF(ANCESTORS([Cost Unit]@row), 1) &gt; 0, 
-                &quot;Cost unit designated and ancestor cost unit designation(s) also exist&quot;&quot;, 
+                &quot;Cost unit designated and ancestor cost unit designation(s) also exist&quot;, 
                 &quot;&quot;
             )
         )
@@ -3803,14 +3803,14 @@
     [% Complete]@row = 1, 
     0, 
     IF(
-        AND( [Budget Assigned \[hrs\]]@row &lt;&gt; &quot;&quot;, [Budget Assigned \[hrs\]]@row &lt;&gt; 0 ), 
+        AND( [Budget \[hrs\]]@row &lt;&gt; &quot;&quot;, [Budget \[hrs\]]@row &lt;&gt; 0 ), 
         IF(
-            AND( [Assume Linear Performance]# = 1, [% Complete]@row &gt; 0 ), 
+            AND( [Assume Linear Performance]# = 1, [% Complete]@row &gt; 0, [Cost Unit]@row = 1 ), 
             [Actual \[hrs\]]@row * (1 - [% Complete]@row) / [% Complete]@row, 
             IF(
                 [EVM Method]@row = &quot;Linearised LoE&quot;, 
-                [Budget Assigned \[hrs\]]@row - [Actual \[hrs\]]@row, 
-                [Budget Assigned \[hrs\]]@row
+                [Budget \[hrs\]]@row - [Actual \[hrs\]]@row, 
+                [Budget \[hrs\]]@row
             )
         ), 
         SUM(CHILDREN())
@@ -3826,14 +3826,14 @@
     [% Complete]@row = 1, 
     0, 
     IF(
-        AND( [Budget Assigned + Requested \[hrs\]]@row &lt;&gt; &quot;&quot;, [Budget Assigned + Requested \[hrs\]]@row &lt;&gt; 0 ), 
+        AND( [Expected Budget \[hrs\]]@row &lt;&gt; &quot;&quot;, [Expected Budget \[hrs\]]@row &lt;&gt; 0 ), 
         IF(
-            AND( [Assume Linear Performance]# = 1, [% Complete]@row &gt; 0 ), 
+            AND( [Assume Linear Performance]# = 1, [% Complete]@row &gt; 0, [Cost Unit]@row = 1 ),  
             [Actual \[hrs\]]@row * (1 - [% Complete]@row) / [% Complete]@row, 
             IF(
-                [EVM Method]@row = &quot;Linearised LoE&quot;&quot;, 
-                [Budget Assigned + Requested \[hrs\]]@row - [Actual \[hrs\]]@row, 
-                [Budget Assigned + Requested \[hrs\]]@row
+                [EVM Method]@row = &quot;Linearised LoE&quot;, 
+                [Expected Budget \[hrs\]]@row - [Actual \[hrs\]]@row, 
+                [Expected Budget \[hrs\]]@row
             )
         ), 
         SUM(CHILDREN())
@@ -4010,7 +4010,7 @@
 </code></pre></div>
 </div>
 <h3 id="evm-method"><abbr title="Earned Value Management">EVM</abbr> Method<a class="headerlink" href="#evm-method" title="Permanent link">#</a></h3>
-<p>The default method for determing an activity's % Complete (<a href="#comp"><code>comp%</code></a>) is using the manual entry column (<code>comp%_manual</code>). This column is used to select an alternate method such as "Linearised <abbr title="Level of Effort">LoE</abbr>"", or "Gated".</p>
+<p>The default method for determing an activity's % Complete (<a href="#comp"><code>comp%</code></a>) is using the manual entry column (<code>comp%_manual</code>). This column is used to select an alternate method such as "Linearised <abbr title="Level of Effort">LoE</abbr>", or "Gated".</p>
 <h3 id="fac-hrs">FAC [hrs]<a class="headerlink" href="#fac-hrs" title="Permanent link">#</a></h3>
 <p>Forecast at Complete (in hours). This is simply the hours incurred to date (<a href="#actual_hours_all"><code>actual_hours_all</code></a>) plus the forecast hours to complete (<code>ftc_hours_all</code>).</p>
 <div class="admonition info">
@@ -4083,24 +4083,32 @@
 <h3 id="forecast-hours-to-finish">Forecast Hours to Finish<a class="headerlink" href="#forecast-hours-to-finish" title="Permanent link">#</a></h3>
 <p>The hours, forecast by the relevant team member, required to finish the activity as considered on the basis of the work completed at the date of entry. The forecast should be reflective of the remaining work, and should not factor budget and/or hours burned to date.</p>
 <h3 id="ftc-hrs">FTC [hrs]<a class="headerlink" href="#ftc-hrs" title="Permanent link">#</a></h3>
-<p>Forecast to Complete (in hours). Where a field forecast is applicable for an activity, generally where that activity is a Cost Unit, this value will be the field forecast (provided as <code>ftc_hours_entry</code>) if this has been provided. Where it has not, a default value will be used (<a href="#ftc_default"><code>ftc_default</code></a>).</p>
+<p>Forecast to Complete (in hours). Where a forecast from the frontline is applicable for an activity, generally where that activity is a Cost Unit, this value will be the frontline's forecast (provided as <code>ftc_hours_entry</code>). Where it has not been entered, and FTCs at the lower level do exist, the sum of these will be used. Failing that, a default value (<a href="#ftc_default"><code>ftc_default</code></a>) will be used.</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>=IF(
-    AND([Forecast Hours to Finish]@row &lt;&gt; &quot;&quot;), 
+<div class="highlight"><pre><span></span><code>=IF( 
+    [Forecast Hours to Finish]@row &lt;&gt; &quot;&quot;, 
     [Forecast Hours to Finish]@row, 
-    [Default FTC \[hrs\]]@row
+    IF(
+        SUM( CHILDREN() ) &gt; 0,
+        SUM( CHILDREN() ),
+        [Default FTC \[hrs\]]@row
+    )
 )
 </code></pre></div>
 </div>
 <h3 id="ftc-including-change-hrs">FTC Including Change [hrs]<a class="headerlink" href="#ftc-including-change-hrs" title="Permanent link">#</a></h3>
-<p>Forecast to Complete (in hours), factoring expected changes to the budget. Where a field forecast is applicable for an activity, generally where that activity is a Cost Unit, this value will be the field forecast (provided as <code>ftc_hours_entry</code>) if this has been provided. Where it has not, a default value will be used where in this instance this includes change (<a href="#ftc_default_with_change"><code>ftc_default_with_change</code></a>).</p>
+<p>Forecast to Complete (in hours), factoring expected changes to the budget. Where a forecast from the field is applicable for an activity, generally where that activity is a Cost Unit, this value will be the frontline's forecast (provided as <code>ftc_hours_entry</code>). Where it has not been entered, and FTCs Including Change at the lower level do exist, , the sum of these will be used. Failing that, a default value (<a href="#ftc_default_with_change"><code>ftc_default_with_change</code></a>) will be used.</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>=IF(
-    AND([Forecast Hours to Finish]@row &lt;&gt; &quot;&quot;, [Forecast Hours to Finish]@row &lt;&gt; 0), 
+<div class="highlight"><pre><span></span><code>=IF( 
+    [Forecast Hours to Finish]@row &lt;&gt; &quot;&quot;, 
     [Forecast Hours to Finish]@row, 
-    [Default FTC Including Change \[hrs\]]@row
+    IF(
+        SUM( CHILDREN() ) &gt; 0,
+        SUM( CHILDREN() ),
+        [Default FTC Including Change \[hrs\]]@row
+    )
 )
 </code></pre></div>
 </div>
@@ -4331,32 +4339,32 @@
         [Actual Finish Date]@row &lt;&gt; &quot;&quot;,
         IF(
             [Actual Finish Date]@row &lt; TODAY() - 7,
-            &quot;Finished&quot;&quot;,
+            &quot;Finished&quot;,
             IF(
                 [Actual Finish Date]@row &lt;= TODAY(),
-                &quot;Finished Recently&quot;&quot;,
+                &quot;Finished Recently&quot;,
                 &quot;ERROR - Actual Finish Date is in the future&quot;
             )
         ),
         IF(
             [Finish Date]@row &lt; TODAY() + 7, 
-            &quot;Finishing Soon&quot;&quot;, 
+            &quot;Finishing Soon&quot;, 
             IF(
                 [Start Date]@row &lt;= TODAY(),
                 IF(
                     [% Complete]@row &lt; 1,
-                    &quot;In Progress&quot;&quot;,
+                    &quot;In Progress&quot;,
                     &quot;Finished - Record Actual Finish Date&quot;
                 ),
                 IF(
                     [Start Date]@row &lt; TODAY() + 7, 
-                    &quot;Starting &lt;1 Week&quot;&quot;,
+                    &quot;Starting &lt;1 Week&quot;,
                     IF(
                         [Start Date]@row &lt; TODAY() + 28,
-                        &quot;Starting Later &lt;1M (and &gt;1W)&quot;&quot;,
+                        &quot;Starting Later &lt;1M (and &gt;1W)&quot;,
                         IF(
                             [Start Date]@row &lt; TODAY() + 84,
-                            &quot;Starting Later 3M (and &gt;1M)&quot;&quot;,
+                            &quot;Starting Later 3M (and &gt;1M)&quot;,
                             &quot;Starting Later &gt;3M&quot;
                         )
                     )
