@@ -2854,14 +2854,13 @@
 <h3 id="applicable-activity-labour">Applicable Activity Labour ($)<a class="headerlink" href="#applicable-activity-labour" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
-<p>```</p>
+<div class="highlight"><pre><span></span><code>=IF(
+   [Line Item Type]@row = &quot;Rates Based&quot;, 
+   [Activity Reimbursable Labour ($)]@row, 
+   [Activity Lump Sum Labour ($)]@row
+)
+</code></pre></div>
 </div>
-<p>=IF(
-       [Line Item Type]@row = "Rates Based", 
-       [Activity Reimbursable Labour ($)]@row, 
-       [Activity Lump Sum Labour ($)]@row
-    )
-    ```</p>
 <h3 id="applicable-activity-procurement">Applicable Activity Procurement ($)<a class="headerlink" href="#applicable-activity-procurement" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
