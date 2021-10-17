@@ -866,6 +866,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../cost-approval/" class="md-nav__link">
+        Cost Approval
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cost-units-and-cost-codes/" class="md-nav__link">
         Cost Units & Cost Codes
       </a>
@@ -1370,14 +1382,14 @@
 <p>To create the estimate sheet for the potential project:</p>
 <ol>
 <li>
-<p>Copy the folder named <em>'_xxxx_GTE_EstimateTemplate'</em> in the <em>'1000 - Potential Projects'</em> workspace in Smartsheet by choosing 'Save as New'.</p>
+<p>Copy the folder named <em>'_Pxxxx_GTE_EstimateTemplate'</em> in the <em>'1000 - Potential Projects'</em> workspace in Smartsheet by choosing 'Save as New'.</p>
 <p><em>Note: To copy a folder, right click it in the workspace tree and choose 'Save as New'. See the <a href="https://help.smartsheet.com/articles/1782802-copying-folders-workspaces">Smartsheet documentation here</a> for more detailed instruction.</em></p>
 </li>
 <li>
 <p>Name the folder according to the template convention, where:</p>
 <ul>
 <li>The leading '_' should b removed,</li>
-<li>'xxxx' is the Project ID,</li>
+<li>'xxxx' is the Project ID (maintain the leading 'P' in this instance),</li>
 <li>'GTE' should be replaced with the Client's name in pascal case, and</li>
 <li>'EstimateTemplate' should be replaced with the project name as it reads in the <a href="https://app.smartsheet.com/sheets/cjMrq22wxV6pHhfX2mJMWJpgW2vFxr86hfc2Vrh1">Project Register</a> (which should be pascal cased).</li>
 </ul>
@@ -1468,6 +1480,103 @@
 <!-- TO DO  -->
 
 <h2 id="migrating-the-estimate-to-the-schedule-upon-award">Migrating the Estimate to the Schedule Upon Award<a class="headerlink" href="#migrating-the-estimate-to-the-schedule-upon-award" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>??? warning
+    The below is temporary loose guidance only. To be reviewed and eventually automated.
+</code></pre></div>
+<p>Current <em>manual</em> process:</p>
+<ol>
+<li>
+<p>In the future schedule, collapse the schedule up to its level 2 core <abbr title="Work Breakdown Structure">WBS</abbr>, copy those activity names (as below) and then remove all rows except row 1. Only need to copy if needing to reinstate at the end… which isn`t necessary if the estimate is already to the schedule format.</p>
+<div class="admonition info">
+<p class="admonition-title">Level 2 <abbr title="Work Breakdown Structure">WBS</abbr></p>
+<ul>
+<li>Milestones</li>
+<li>Initiation &amp; Planning</li>
+<li>Concept &amp; Confirmation (0-30%)</li>
+<li>Development (30-100%)</li>
+<li>Off-Site Testing</li>
+<li>Site Works (incl Installation, Commissioning)</li>
+<li>Execution Closeout</li>
+<li>Monitoring &amp; Control</li>
+<li>Project Closeout</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In the estimate, create a column called 'Estimate Row' and give it an incrementing integer from 1 (ie assign 1 to row 1 and then use row above plus 1 formula).</p>
+<details class="danger"><summary>FUTURE STATE / TODO...</summary><p>Add this via the API process. Don`t want to add this column into the Estimate template as it requires a non-column-formula which is prone to breaking.</p>
+</details>
+</li>
+<li>
+<p>Check for any <code>Estimate Budget Issues</code>. These should have been resolved before the estimate was issued anyway.</p>
+</li>
+<li>
+<p>Select all rows except row 1 in the estimate and use the 'Copy to Another Sheet' feature on the right click menu to copy to the schedule.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Do not use 'Move to Another Sheet'. This can't be undone and will result in lost information (see predecessors below).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>Rows can be collapsed in the estimate at this point – no issues.</li>
+<li>Include Attachments and Comments.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In the schedule, select all the new rows (everything except row 1) and indent it beneath row 1. Expand everything.</p>
+</li>
+<li>
+<p>Expand all rows of the estimate and copy predecessors from row 1 to the bottom and paste into the schedule. These aren`t brought in as part of the process.</p>
+</li>
+<li>
+<p>Copy <code>Activity Labour (hrs)</code> to <code>Budget Assigned [hrs]</code>. Check the top line <code>Budget [hrs]</code> equals the top line in the estimate, and then rename <code>Activity Labour (hrs)</code> to <code>Original Budget Assigned [hrs]</code> for reference (or just delete it because it`s in the estimate anyway).</p>
+</li>
+<li>
+<p>Delete the following columns:</p>
+<ul>
+<li>Revision</li>
+<li>Client Pricing Schedule Issues</li>
+<li>Estimate Budget Issues</li>
+<li>Scope Qualification Input</li>
+<li>Estimator</li>
+<li>Scheduled Item?</li>
+<li>Estimate Resource Loading</li>
+<li>Qty</li>
+<li>Time (Hrs)</li>
+<li>Proposal Manager</li>
+<li>Filter - Tender Schedule</li>
+<li>Scope Table Row#</li>
+</ul>
+<details class="danger"><summary>FUTURE STATE / TODO...</summary><p>The above list has likely changed and needs to be revisited.</p>
+</details>
+</li>
+<li>
+<p>Hide (or delete if you want) the following columns:</p>
+<ul>
+<li>Client Pricing Schedule Ref.</li>
+<li>Scope Ref.</li>
+<li>Scope Description</li>
+<li>Scope Qualifications</li>
+<li>Resource Role</li>
+<li>Location</li>
+</ul>
+<details class="danger"><summary>FUTURE STATE / TODO...</summary><p>The above list has likely changed and needs to be revisited.</p>
+</details>
+</li>
+<li>
+<p>Tick <code>Reimbursable?</code> for any reimbursable lines on a lump sum + rates job. (No need to tick if all reimbursable.)</p>
+</li>
+<li>
+<p>At this stage, delete all $ columns in the schedule. </p>
+<details class="danger"><summary>FUTURE STATE / TODO...</summary><p>At some point we might bring in the $ columns.</p>
+</details>
+</li>
+<li>
+<p>If required (because the estimate was built in a non-standard structure), insert X rows and insert the core level 2 <abbr title="Work Breakdown Structure">WBS</abbr> that was copied, and then move the estimate rows around within that structure as desired… keeping an eye on the top line so as not to make errors with the hierarchy that would affect that.</p>
+</li>
+</ol>
                 
               
               
@@ -1500,13 +1609,13 @@
         </a>
       
       
-        <a href="../cost-units-and-cost-codes/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../cost-approval/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Cost Units & Cost Codes
+              Cost Approval
             </div>
           </div>
           <div class="md-footer__button md-icon">

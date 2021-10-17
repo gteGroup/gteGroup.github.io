@@ -776,6 +776,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../processes/cost-management/cost-approval/" class="md-nav__link">
+        Cost Approval
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../processes/cost-management/cost-units-and-cost-codes/" class="md-nav__link">
         Cost Units & Cost Codes
       </a>
@@ -4364,7 +4376,7 @@
                         &quot;Starting Later &lt;1M (and &gt;1W)&quot;,
                         IF(
                             [Start Date]@row &lt; TODAY() + 84,
-                            &quot;Starting Later 3M (and &gt;1M)&quot;,
+                            &quot;Starting Later &lt;3M (and &gt;1M)&quot;,
                             &quot;Starting Later &gt;3M&quot;
                         )
                     )

@@ -776,6 +776,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../processes/cost-management/cost-approval/" class="md-nav__link">
+        Cost Approval
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../processes/cost-management/cost-units-and-cost-codes/" class="md-nav__link">
         Cost Units & Cost Codes
       </a>
@@ -1304,6 +1316,13 @@
           <li class="md-nav__item">
   <a href="#applicable-activity-procurement" class="md-nav__link">
     Applicable Activity Procurement ($)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applicable-activity-total" class="md-nav__link">
+    Applicable Activity Total ($)
   </a>
   
 </li>
@@ -1933,6 +1952,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#applicable-activity-total" class="md-nav__link">
+    Applicable Activity Total ($)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#applicable-expense" class="md-nav__link">
     Applicable Expense ($)
   </a>
@@ -2413,6 +2439,10 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="#applicable-activity-total">Applicable Activity Total ($)</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="#applicable-expense">Applicable Expense ($)</a></td>
 <td></td>
 </tr>
@@ -2871,6 +2901,12 @@
 )
 </code></pre></div>
 </div>
+<h3 id="applicable-activity-total">Applicable Activity Total ($)<a class="headerlink" href="#applicable-activity-total" title="Permanent link">#</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=VALUE([Applicable Activity Labour ($)]@row) + VALUE([Applicable Activity Expense ($)]@row) + VALUE([Applicable Activity Procurement ($)]@row)
+</code></pre></div>
+</div>
 <h3 id="applicable-expense">Applicable Expense ($)<a class="headerlink" href="#applicable-expense" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
@@ -2939,7 +2975,7 @@
 <h3 id="budget-assigned">Budget Assigned [$]<a class="headerlink" href="#budget-assigned" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>=VALUE([Applicable Activity Labour ($)]@row) + VALUE([Applicable Activity Expense ($)]@row) + VALUE([Applicable Activity Procurement ($)]@row)
+<div class="highlight"><pre><span></span><code>=[Applicable Activity Total ($)]@row
 </code></pre></div>
 </div>
 <h3 id="cost-item">Cost Item<a class="headerlink" href="#cost-item" title="Permanent link">#</a></h3>
