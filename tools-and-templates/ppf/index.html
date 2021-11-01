@@ -1492,6 +1492,10 @@
 <h2 id="add-in-installation">Add-in Installation<a class="headerlink" href="#add-in-installation" title="Permanent link">#</a></h2>
 <p>The installation program consists of the following set of folders/files:</p>
 <p><img alt="" src="../../img/ppf-install-1.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the 'Known Issues' section item 1 in the bottom of this page for steps to be taken to install certificate and to allow installation to run smoothly.</p>
+</div>
 <p>To begin the installation of the add-in, follow the steps below:</p>
 <ol>
 <li>Exit Outlook</li>
@@ -1507,36 +1511,38 @@
 <p>GTE has adopted a set of rules around storing and handling project-related email correspondence, which form the basis for successful operation of the GTE Outlook Add-in. The rules are as follows:</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-</div>
 <ul>
 <li>There is an MS Exchange public folder (<strong>Project Public Folder – PPF</strong>) configured for each project</li>
-<li>PPF’s are located in the main “All Public Folders” folder and based on the project status, distributed into one of the following groups:</li>
+<li>PPF’s are located in the main “All Public Folders” folder and based on the project status, distributed into one of the following groups:<ul>
 <li>Potential Projects</li>
 <li>Active Projects</li>
 <li>Non-executed Projects</li>
 <li>Completed Projects</li>
+</ul>
+</li>
 <li>Each PPF has a configured email address obeying the following format:    <code>PxxxxF@gtegroup.com.au</code></li>
 <li>ALL project related emails (internal/external, in/outgoing) will be stored in its respective PPF. This is achieved by Cc-ing all emails to the PPF email address. By doing so, all replies (internal/external) will be automatically delivered to and stored in the PPF.</li>
 <li>ALL project-related emails (internal/external, out/ingoing) will contain the project code in the 'Pxxxx:' format in their <code>Subject</code> field, for example:
 <img alt="" src="../../img/ppf-operation-1.png" /></li>
 <li>Any email received from an external sender, which has not been Cc'd to PPF (typically communication thread initiated by the customer) must be manually moved/copied to the PPF by email's principal recipient</li>
 </ul>
+</div>
 <p>The main purpose of the GTE Outlook add-in is to make sure that all the outgoing project-related emails will contain the project code in their subject as well as the PPF email address in their <code>Cc</code>.</p>
 <p>The GTE Outlook Add-in is loaded automatically upon Outlook start-up. Its function is to check each email before sending and making sure the <code>Cc</code> and <code>Subject</code> fields are properly set up.</p>
 <p>After clicking the <code>Send</code> button when sending an email (new/reply/forward), the add-in searches the email <code>Subject</code> field for the project code in the 'Pxxxx:' or 'pxxxx:' format. If the code is not found, it displays the following pop-up message:</p>
 <p><img alt="" src="../../img/ppf-operation-2.png" /></p>
-<p>Select one of the following options:
-<code>Cancel</code>: email sending action is cancelled
-<code>No</code>: email is sent without any change to Subject/Cc
+<p>Select one of the following options:<br />
+<code>Cancel</code>: email sending action is cancelled<br />
+<code>No</code>: email is sent without any change to Subject/Cc<br />
 <code>Yes</code>: the following window is displayed:</p>
 <p><img alt="" src="../../img/ppf-operation-3.png" /></p>
-<p>Enter the project code (4 digits) in the <code>Project ID:</code> field (the only editable field), and the <code>Cc</code> and <code>Subject</code> fields will update automatically:
+<p>Enter the project code (4 digits) in the <code>Project ID:</code> field (the only editable field), and the <code>Cc</code> and <code>Subject</code> fields will update automatically:<br />
 <img alt="" src="../../img/ppf-operation-4.png" /></p>
-<p>After entering the correct project ID, click one of the following buttons:
-<code>OK &amp; Send</code>: send the email out with the <code>Subject</code> and <code>Cc</code> fields being modified accordingly
-<code>OK &amp; Edit</code>: go back to the email editing window with the <code>Subject</code> and <code>Cc</code> fields modified accordingly
+<p>After entering the correct project ID, click one of the following buttons:<br />
+<code>OK &amp; Send</code>: send the email out with the <code>Subject</code> and <code>Cc</code> fields being modified accordingly<br />
+<code>OK &amp; Edit</code>: go back to the email editing window with the <code>Subject</code> and <code>Cc</code> fields modified accordingly<br />
 <code>Cancel</code>: go back to the email editing window without any changes made to the <code>Subject</code> or <code>Cc</code> fields</p>
-<p>In case the email being sent contains a project ID in the <code>Subject</code> field in the correct format, and the <code>Cc</code> field does not contain the corresponding PPF email address, the following message will be displayed:
+<p>In case the email being sent contains a project ID in the <code>Subject</code> field in the correct format, and the <code>Cc</code> field does not contain the corresponding PPF email address, the following message will be displayed:<br />
 <img alt="" src="../../img/ppf-operation-5.png" /></p>
 <p>You have the following options to choose from:
 <code>Yes</code>: add project folder email address to the <code>Cc</code> field and send the email
@@ -1544,33 +1550,37 @@
 <code>Cancel</code>: go back to the email editing window without affecting the <code>Cc</code> field</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>If project ID in the email <code>Subject</code> contains lower letter 'p', addin automatically changes it to the upper case letter 'P'</p>
+</div>
 <h2 id="recommended-outlook-configuration">Recommended Outlook Configuration<a class="headerlink" href="#recommended-outlook-configuration" title="Permanent link">#</a></h2>
 <p>To quickly access the PPF, the following steps are recommended to be configured in MS Outlook:</p>
 <ol>
 <li>
 <p>Since public folders are accessible via the 'Folders' navigation icon, this icon should be made visible in Outlook bottom-left navigation pane:</p>
-</li>
-<li>
-<p>Click the three-dots icon: <img alt="" src="../../img/ppf-config-1.png" /> and select 'Navigation Options'.</p>
-</li>
-<li>
-<p>Move 'Folders' higher in the hierarchy. At the same time, move 'Shortcuts' higher as well (this item is also used for quickly accessing PPF):</p>
-<p><img alt="" src="../../img/ppf-config-2.png" />
-   * The navigation pane changes to the following:  <img alt="" src="../../img/ppf-config-3.png" />. By clicking the 'Folders' icon, the PPF can be found in the respective subfolder of the <code>Public Folders &gt; All Public Folders</code>:</p>
-<p><img alt="" src="../../img/ppf-config-4.png" />
+<ul>
+<li>Click the three-dots icon: <img alt="" src="../../img/ppf-config-1.png" /> and select 'Navigation Options'.</li>
+<li>Move 'Folders' higher in the hierarchy. At the same time, move 'Shortcuts' higher as well (this item is also used for quickly accessing PPF):</li>
+</ul>
+<p><img alt="" src="../../img/ppf-config-2.png" /></p>
+<ul>
+<li>The navigation pane changes to the following:  <img alt="" src="../../img/ppf-config-3.png" />. By clicking the 'Folders' icon, the PPF can be found in the respective subfolder of the <code>Public Folders &gt; All Public Folders</code>:</li>
+</ul>
+<p><img alt="" src="../../img/ppf-config-4.png" /><br />
 2. Alternatively, configure the PPF to be accessible offline:</p>
-</li>
-<li>
-<p>Select your account in the <code>File &gt; Account Settings</code>:</p>
-<p><img alt="" src="../../img/ppf-config-5.png" />
-   * Click <code>Change…</code>.
-   * Click <code>More Settings</code>.
-   * Go to the 'Advanced' tab.
-   * Tick the <code>Download Public Folder Favorites</code> checkbox:</p>
-<p><img alt="" src="../../img/ppf-config-6.png" />
-   * Click <code>OK</code>. Outlook will need to be re-started afterwards.</p>
+<ul>
+<li>Select your account in the <code>File &gt; Account Settings</code>:</li>
+</ul>
+<p><img alt="" src="../../img/ppf-config-5.png" />  </p>
+<ul>
+<li>Click <code>Change…</code>.  </li>
+<li>Click <code>More Settings</code>.  </li>
+<li>Go to the 'Advanced' tab.  </li>
+<li>Tick the <code>Download Public Folder Favorites</code> checkbox:  </li>
+</ul>
+<p><img alt="" src="../../img/ppf-config-6.png" /></p>
+<ul>
+<li>Click <code>OK</code>. Outlook will need to be re-started afterwards.</li>
+</ul>
 </li>
 </ol>
 <p>By doing this, any PPF that is added to the 'Favourites' public folder will be available offline. To add a PPF to Favorites follow the steps below:</p>
@@ -1583,17 +1593,23 @@
 </li>
 </ul>
 <p>The PPF then appears under the 'Favorites' folder:</p>
-<p><img alt="" src="../../img/ppf-config-8.png" />
+<p><img alt="" src="../../img/ppf-config-8.png" /><br />
 3. Using 'Shortcuts' for quick access:</p>
 <ul>
 <li>
 <p>Click on <code>Shortcuts</code> in the bottom-left navigation pane: <img alt="" src="../../img/ppf-config-9.png" />, the Folder Pane shows the default Shortcut structure:</p>
-<p><img alt="" src="../../img/ppf-config-10.png" />
-   * The default shortcuts are normally not required, they can be removed by right-clicking and selecting 'Delete Shortcut'
-   * Right-click the <code>Shortcuts</code> item and select 'New Shortcut'
-   * In the displayed folder hierarchy, select the corresponding PPF (it is recommended that the version from “Favorites” is selected so that shortcuts refer to the offline version if needed):</p>
-<p><img alt="" src="../../img/ppf-config-11.png" />
-   * Click <code>OK</code>. The shortcut to the PPF is added to the Folder Pane:</p>
+<p><img alt="" src="../../img/ppf-config-10.png" /></p>
+</li>
+<li>
+<p>The default shortcuts are normally not required, they can be removed by right-clicking and selecting 'Delete Shortcut'</p>
+</li>
+<li>Right-click the <code>Shortcuts</code> item and select 'New Shortcut'</li>
+<li>
+<p>In the displayed folder hierarchy, select the corresponding PPF (it is recommended that the version from “Favorites” is selected so that shortcuts refer to the offline version if needed):</p>
+<p><img alt="" src="../../img/ppf-config-11.png" /></p>
+</li>
+<li>
+<p>Click <code>OK</code>. The shortcut to the PPF is added to the Folder Pane:</p>
 <p><img alt="" src="../../img/ppf-config-12.png" /></p>
 </li>
 </ul>
