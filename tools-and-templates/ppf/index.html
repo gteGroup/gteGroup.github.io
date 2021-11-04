@@ -1487,14 +1487,14 @@
                 <h1 id="gte-outlook-add-in">GTE Outlook Add-in<a class="headerlink" href="#gte-outlook-add-in" title="Permanent link">#</a></h1>
 <div class="admonition summary">
 <p class="admonition-title">Summary</p>
-</div>
 <p>The GTE Outlook Add-in helps with storing project related email correspondence into a MS Exchange Project Public Folder (PPF) created for each active project. This allows tracking and archiving of project related correspondence.</p>
+</div>
 <h2 id="add-in-installation">Add-in Installation<a class="headerlink" href="#add-in-installation" title="Permanent link">#</a></h2>
-<p>The installation program consists of the following set of folders/files:</p>
+<p>The installation program consists of the following set of folders/files (when downloading the installation files, make sure all from below have been downloaded, including the 'Application Files' folder):</p>
 <p><img alt="" src="../../img/ppf-install-1.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>See the 'Known Issues' section item 1 in the bottom of this page for steps to be taken to install certificate and to allow installation to run smoothly.</p>
+<p>Before start of installation, first check if Public Folders are appearing in your Outlook (see below section 'Recommneded Outlook Configuration'). If you do not see the Public Folders in the Folders pane, follow instructions in the 'Known Issues' section, item 1.</p>
 </div>
 <p>To begin the installation of the add-in, follow the steps below:</p>
 <ol>
@@ -1617,9 +1617,6 @@
 <h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">#</a></h2>
 <ol>
 <li>
-<p>While installing the add-in, the digital certificate is not recognized as trusted and therefore the installation is aborted. The reason for this is that the add-in has been developed internally and since we don't have certification authority we can only certify the addin using developer's internal certificate (which is not officially recognized as trusted by any certification authority). To overcome thjis issue, please follow the instructions contained in <a href="https://www.youtube.com/watch?v=alDwd8ghO7A">this</a> video.  </p>
-</li>
-<li>
 <p>Occasionally the Public Folders disappear completely from the Folders Pane a couple of seconds after the Outlook restart. This is a known Microsoft problem, to fix it the following needs to be done:</p>
 <ol>
 <li>Close Outlook</li>
@@ -1630,6 +1627,9 @@
 <li>Restart Outlook</li>
 </ol>
 <p>This will restore the Outlook profile and will solve the Public Folders disappearing problem.</p>
+</li>
+<li>
+<p>While installing the add-in, in certain cases the digital certificate is not recognized as trusted and therefore the installation is aborted. I this happens, please follow the instructions contained in <a href="https://www.youtube.com/watch?v=alDwd8ghO7A">this</a> video.  </p>
 </li>
 </ol>
                 
