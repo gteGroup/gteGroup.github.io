@@ -1466,6 +1466,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#contract-or-po-s" class="md-nav__link">
+    Contract or PO #(s)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#created-by" class="md-nav__link">
     Created By
   </a>
@@ -2284,6 +2291,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#contract-or-po-s" class="md-nav__link">
+    Contract or PO #(s)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#created-by" class="md-nav__link">
     Created By
   </a>
@@ -2922,19 +2936,19 @@
 <tbody>
 <tr>
 <td><a href="#of-disciplines"># of Disciplines</a></td>
-<td> </td>
+<td>The number of <a href="#disciplines">Discipline(s)</a> involved in the project. </td>
 </tr>
 <tr>
 <td><a href="#actual-complete-schedule-link">Actual % Complete [Schedule Link]</a></td>
-<td> </td>
+<td>Actual % complete for projects in Port Hedland Work Management Overview. </td>
 </tr>
 <tr>
 <td><a href="#actual-hrs-avaza">Actual Hrs [AVAZA]</a></td>
-<td> </td>
+<td>Actual hours worked on the project obtained from AVAZA.</td>
 </tr>
 <tr>
 <td><a href="#applied-contingency-on-total-proposed-budget">Applied Contingency % on Total Proposed Budget</a></td>
-<td> </td>
+<td>Actual contingency % on total proposed budget. </td>
 </tr>
 <tr>
 <td><a href="#authorised">Authorised</a></td>
@@ -2942,11 +2956,11 @@
 </tr>
 <tr>
 <td><a href="#budget-hours">Budget Hours</a></td>
-<td> </td>
+<td>Budget hours for the project. </td>
 </tr>
 <tr>
 <td><a href="#category">Category</a></td>
-<td> </td>
+<td>The type of project: <code>Lump Sum</code>, <code>Rates Based</code>, <code>Audit</code>, <code>Secondment</code>, <code>Onselling</code>, <code>Internal</code>.</td>
 </tr>
 <tr>
 <td><a href="#classification-award">Classification @Award</a></td>
@@ -2958,27 +2972,31 @@
 </tr>
 <tr>
 <td><a href="#classification">Classification</a></td>
-<td> </td>
+<td>Classification for a project's <a href="#value-banding">Value Banding</a> and <a href="#risk-banding">Risk Banding</a>. This is classified as <code>C1</code>, <code>C2</code> or <code>C3</code>.</td>
 </tr>
 <tr>
 <td><a href="#client-pm">Client <abbr title="Project Manager">PM</abbr></a></td>
-<td> </td>
+<td>Client project manager's contact address. </td>
 </tr>
 <tr>
 <td><a href="#client-reference">Client Reference</a></td>
-<td> </td>
+<td>Client reference ID for the project.</td>
 </tr>
 <tr>
 <td><a href="#client-sites">Client Site(s)</a></td>
-<td> </td>
+<td>Dropdown box with list of all Client Site(s). For site(s) not listed, choose <code>Site not listed</code> from the dropdown box. </td>
 </tr>
 <tr>
 <td><a href="#client">Client</a></td>
-<td></td>
+<td>Dropdown box with list of all Clients.</td>
 </tr>
 <tr>
 <td><a href="#close-out-date">Close Out Date</a></td>
 <td> </td>
+</tr>
+<tr>
+<td><a href="#contract-or-po-s">Contract or PO #(s)</a></td>
+<td>Contract or PO #(s) for the project.</td>
 </tr>
 <tr>
 <td><a href="#created-by">Created By</a></td>
@@ -3018,7 +3036,7 @@
 </tr>
 <tr>
 <td><a href="#estimated-project-value">Estimated Project Value</a></td>
-<td>Preliminary Estimated Value for the Potential Project</td>
+<td>Preliminary Estimated Value for the Potential Project.</td>
 </tr>
 <tr>
 <td><a href="#expected-award-date">Expected Award Date</a></td>
@@ -3346,17 +3364,20 @@
         [Value Banding]@row = &quot;High&quot;, 
         AND(
             [Value Banding]@row = &quot;Medium&quot;, 
-            [Risk Banding]@row = &quot;High&quot;)
-        ), 
-        &quot;C1&quot;, 
-        IF(
-            OR(
-                AND(
-                    [Value Banding]@row = &quot;Medium&quot;, 
-                    [Risk Banding]@row &lt;&gt; &quot;High&quot;), 
-                    AND(
-                        [Value Banding]@row = &quot;Low&quot;, 
-                        [Risk Banding]@row = &quot;High&quot;)
+            [Risk Banding]@row = &quot;High&quot;
+        )
+    ), 
+    &quot;C1&quot;, 
+    IF(
+        OR(
+            AND(
+                [Value Banding]@row = &quot;Medium&quot;, 
+                [Risk Banding]@row &lt;&gt; &quot;High&quot;
+            ), 
+            AND(
+                [Value Banding]@row = &quot;Low&quot;, 
+                [Risk Banding]@row = &quot;High&quot;
+            )
             ), 
             &quot;C2&quot;, 
             IF(
@@ -3364,10 +3385,10 @@
                     [Value Banding]@row = &quot;Low&quot;, 
                     [Risk Banding]@row &lt;&gt; &quot;High&quot;
                 ), 
-                &quot;C3&quot;, 
-                &quot;Error&quot;
+            &quot;C3&quot;, 
+            &quot;Error&quot;
             )
-        )
+    )
 )
 </code></pre></div>
 </div>
@@ -3378,6 +3399,7 @@
 <h3 id="client-reference">Client Reference<a class="headerlink" href="#client-reference" title="Permanent link">#</a></h3>
 <h3 id="client-sites">Client Site(s)<a class="headerlink" href="#client-sites" title="Permanent link">#</a></h3>
 <h3 id="close-out-date">Close Out Date<a class="headerlink" href="#close-out-date" title="Permanent link">#</a></h3>
+<h3 id="contract-or-po-s">Contract or PO #(s)<a class="headerlink" href="#contract-or-po-s" title="Permanent link">#</a></h3>
 <h3 id="created-by">Created By<a class="headerlink" href="#created-by" title="Permanent link">#</a></h3>
 <h3 id="date-completed">Date Completed<a class="headerlink" href="#date-completed" title="Permanent link">#</a></h3>
 <h3 id="date-created">Date Created<a class="headerlink" href="#date-created" title="Permanent link">#</a></h3>
