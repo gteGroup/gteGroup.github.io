@@ -1480,29 +1480,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#date-completed" class="md-nav__link">
-    Date Completed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#date-created" class="md-nav__link">
-    Date Created
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#date-issued" class="md-nav__link">
     Date Issued
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#date-won" class="md-nav__link">
-    Date Won
   </a>
   
 </li>
@@ -1530,7 +1509,7 @@
         
           <li class="md-nav__item">
   <a href="#estimated-project-value" class="md-nav__link">
-    Estimated Project Value
+    Estimated Project Value ($)
   </a>
   
 </li>
@@ -1713,6 +1692,13 @@
           <li class="md-nav__item">
   <a href="#project-awarded-date" class="md-nav__link">
     Project Awarded Date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-completed-date" class="md-nav__link">
+    Project Completed Date
   </a>
   
 </li>
@@ -1970,8 +1956,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#total-proposed-budget" class="md-nav__link">
-    Total Proposed Budget [$]
+  <a href="#total-project-budget" class="md-nav__link">
+    Total Project Budget [$]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#total-project-budget-hrs" class="md-nav__link">
+    Total Project Budget [hrs]
   </a>
   
 </li>
@@ -2305,29 +2298,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#date-completed" class="md-nav__link">
-    Date Completed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#date-created" class="md-nav__link">
-    Date Created
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#date-issued" class="md-nav__link">
     Date Issued
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#date-won" class="md-nav__link">
-    Date Won
   </a>
   
 </li>
@@ -2355,7 +2327,7 @@
         
           <li class="md-nav__item">
   <a href="#estimated-project-value" class="md-nav__link">
-    Estimated Project Value
+    Estimated Project Value ($)
   </a>
   
 </li>
@@ -2538,6 +2510,13 @@
           <li class="md-nav__item">
   <a href="#project-awarded-date" class="md-nav__link">
     Project Awarded Date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-completed-date" class="md-nav__link">
+    Project Completed Date
   </a>
   
 </li>
@@ -2795,8 +2774,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#total-proposed-budget" class="md-nav__link">
-    Total Proposed Budget [$]
+  <a href="#total-project-budget" class="md-nav__link">
+    Total Project Budget [$]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#total-project-budget-hrs" class="md-nav__link">
+    Total Project Budget [hrs]
   </a>
   
 </li>
@@ -2992,7 +2978,7 @@
 </tr>
 <tr>
 <td><a href="#close-out-date">Close Out Date</a></td>
-<td> </td>
+<td>Project close out date.</td>
 </tr>
 <tr>
 <td><a href="#contract-or-po-s">Contract or PO #(s)</a></td>
@@ -3000,27 +2986,19 @@
 </tr>
 <tr>
 <td><a href="#created-by">Created By</a></td>
-<td> </td>
+<td>System generated column. Displays email account for the user that created the row entry. </td>
 </tr>
 <tr>
-<td><a href="#date-completed">Date Completed</a></td>
-<td> </td>
-</tr>
-<tr>
-<td><a href="#date-created">Date Created</a></td>
-<td> </td>
+<td><a href="#created-date">Created Date</a></td>
+<td>System generated column.  Displays the date and time for when the row entry was initially created.</td>
 </tr>
 <tr>
 <td><a href="#date-issued">Date Issued</a></td>
-<td> </td>
-</tr>
-<tr>
-<td><a href="#date-won">Date Won</a></td>
-<td> </td>
+<td>Date for when the project was issued. </td>
 </tr>
 <tr>
 <td><a href="#description">Description</a></td>
-<td> </td>
+<td>Brief description of project task. </td>
 </tr>
 <tr>
 <td><a href="#disciplines">Discipline(s)</a></td>
@@ -3047,8 +3025,8 @@
 <td> </td>
 </tr>
 <tr>
-<td><a href="#future-columns-for-v2-work">FUTURE COLUMNS FOR V2+ WORK &gt;&gt;&gt;</a></td>
-<td> </td>
+<td><a href="#future-columns-for-v2-work"><em>FUTURE COLUMNS FOR V2+ WORK &gt;&gt;&gt;</em></a></td>
+<td><em>Temporary column. All columns to the right to be used in V2+ Project Register</em> </td>
 </tr>
 <tr>
 <td><a href="#go">Go %</a></td>
@@ -3137,6 +3115,10 @@
 <tr>
 <td><a href="#project-awarded-date">Project Awarded Date</a></td>
 <td> </td>
+</tr>
+<tr>
+<td><a href="#project-completed-date">Project Completed Date</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="#project-folder-id">Project Folder ID</a></td>
@@ -3283,7 +3265,11 @@
 <td>Budget issued after project has been awarded by the client</td>
 </tr>
 <tr>
-<td><a href="#total-proposed-budget">Total Proposed Budget [$]</a></td>
+<td><a href="#total-project-budget">Total Project Budget [$]</a></td>
+<td>Project value derived from preparing the proposal</td>
+</tr>
+<tr>
+<td><a href="#total-project-budget-hrs">Total Project Budget [hrs]</a></td>
 <td>Project value derived from preparing the proposal</td>
 </tr>
 <tr>
@@ -3401,14 +3387,11 @@
 <h3 id="close-out-date">Close Out Date<a class="headerlink" href="#close-out-date" title="Permanent link">#</a></h3>
 <h3 id="contract-or-po-s">Contract or PO #(s)<a class="headerlink" href="#contract-or-po-s" title="Permanent link">#</a></h3>
 <h3 id="created-by">Created By<a class="headerlink" href="#created-by" title="Permanent link">#</a></h3>
-<h3 id="date-completed">Date Completed<a class="headerlink" href="#date-completed" title="Permanent link">#</a></h3>
-<h3 id="date-created">Date Created<a class="headerlink" href="#date-created" title="Permanent link">#</a></h3>
 <h3 id="date-issued">Date Issued<a class="headerlink" href="#date-issued" title="Permanent link">#</a></h3>
-<h3 id="date-won">Date Won<a class="headerlink" href="#date-won" title="Permanent link">#</a></h3>
 <h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h3>
 <h3 id="disciplines">Discipline(s)<a class="headerlink" href="#disciplines" title="Permanent link">#</a></h3>
 <h3 id="electrical-component">Electrical Component<a class="headerlink" href="#electrical-component" title="Permanent link">#</a></h3>
-<h3 id="estimated-project-value">Estimated Project Value<a class="headerlink" href="#estimated-project-value" title="Permanent link">#</a></h3>
+<h3 id="estimated-project-value">Estimated Project Value ($)<a class="headerlink" href="#estimated-project-value" title="Permanent link">#</a></h3>
 <h3 id="estimated-project-value-vs-gte-pm-approval-limit">Estimated Project Value vs GTE <abbr title="Project Manager">PM</abbr> Approval Limit<a class="headerlink" href="#estimated-project-value-vs-gte-pm-approval-limit" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
@@ -3442,7 +3425,7 @@
             IF(
                 [Date Issued]@row = &quot;&quot;, 
                 &quot;Preparing&quot;, 
-                &quot;Submitted&quot;
+                &quot;Submitted/Pending&quot;
             ), 
         IF(
             OR(
@@ -3513,6 +3496,7 @@
 <h3 id="predicted-profit">Predicted Profit %<a class="headerlink" href="#predicted-profit" title="Permanent link">#</a></h3>
 <h3 id="probability">Probability (%)<a class="headerlink" href="#probability" title="Permanent link">#</a></h3>
 <h3 id="project-awarded-date">Project Awarded Date<a class="headerlink" href="#project-awarded-date" title="Permanent link">#</a></h3>
+<h3 id="project-completed-date">Project Completed Date<a class="headerlink" href="#project-completed-date" title="Permanent link">#</a></h3>
 <h3 id="project-folder-id">Project Folder ID<a class="headerlink" href="#project-folder-id" title="Permanent link">#</a></h3>
 <h3 id="project-id">Project ID<a class="headerlink" href="#project-id" title="Permanent link">#</a></h3>
 <h3 id="project-name">Project Name<a class="headerlink" href="#project-name" title="Permanent link">#</a></h3>
@@ -3647,7 +3631,8 @@
 </div>
 <h3 id="total-awarded-budget">Total Awarded Budget [$]<a class="headerlink" href="#total-awarded-budget" title="Permanent link">#</a></h3>
 <h3 id="total-awarded-budget-hrs">Total Awarded Budget [hrs]<a class="headerlink" href="#total-awarded-budget-hrs" title="Permanent link">#</a></h3>
-<h3 id="total-proposed-budget">Total Proposed Budget [$]<a class="headerlink" href="#total-proposed-budget" title="Permanent link">#</a></h3>
+<h3 id="total-project-budget">Total Project Budget [$]<a class="headerlink" href="#total-project-budget" title="Permanent link">#</a></h3>
+<h3 id="total-project-budget-hrs">Total Project Budget [hrs]<a class="headerlink" href="#total-project-budget-hrs" title="Permanent link">#</a></h3>
 <h3 id="total-requested-budget">Total Requested Budget [$]<a class="headerlink" href="#total-requested-budget" title="Permanent link">#</a></h3>
 <h3 id="total-requested-budget-hrs">Total Requested Budget [hrs]<a class="headerlink" href="#total-requested-budget-hrs" title="Permanent link">#</a></h3>
 <h3 id="total-variation-budget">Total Variation Budget [$]<a class="headerlink" href="#total-variation-budget" title="Permanent link">#</a></h3>
