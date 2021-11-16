@@ -1494,6 +1494,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#created-in-year" class="md-nav__link">
+    Created in Year
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#date-issued" class="md-nav__link">
     Date Issued
   </a>
@@ -2063,13 +2070,6 @@
           <li class="md-nav__item">
   <a href="#weighted-score-technical-reputational" class="md-nav__link">
     Weighted Score - Technical &amp; Reputational
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#year-created" class="md-nav__link">
-    Year Created
   </a>
   
 </li>
@@ -2312,6 +2312,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#created-in-year" class="md-nav__link">
+    Created in Year
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#date-issued" class="md-nav__link">
     Date Issued
   </a>
@@ -2885,13 +2892,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#year-created" class="md-nav__link">
-    Year Created
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2946,7 +2946,7 @@
 </tr>
 <tr>
 <td><a href="#category">Category</a></td>
-<td>The type of project: <code>Lump Sum</code>, <code>Rates Based</code>, <code>Audit</code>, <code>Secondment</code>, <code>Onselling</code>, <code>Internal</code>.</td>
+<td>A project is categorised as either: <code>Lump Sum</code>, <code>Rates Based</code>, <code>Audit</code>, <code>Secondment</code>, <code>Onselling</code>, <code>Internal</code>.</td>
 </tr>
 <tr>
 <td><a href="#classification-award">Classification @Award</a></td>
@@ -2995,6 +2995,10 @@
 <tr>
 <td><a href="#created-in-quarter">Created in Quarter</a></td>
 <td>The quarter (<code>Q1</code>,<code>Q2</code>,<code>Q3</code> or <code>Q4</code>) of the year in which the project was created in.  </td>
+</tr>
+<tr>
+<td><a href="#created-in-year">Created in Year</a></td>
+<td>System generated column. Displays the year for when the row entry was initially created. </td>
 </tr>
 <tr>
 <td><a href="#date-issued">Date Issued</a></td>
@@ -3286,47 +3290,43 @@
 </tr>
 <tr>
 <td><a href="#type">Type</a></td>
-<td> </td>
+<td>The type of project: <code>Lump Sum</code>, <code>Rates</code> or <code>Lump Sum + Rates</code>. </td>
 </tr>
 <tr>
 <td><a href="#value-banding-award">Value Banding @Award</a></td>
-<td> </td>
+<td>Set by automation as a snapshot in time. </td>
 </tr>
 <tr>
 <td><a href="#value-banding-potential">Value Banding @Potential</a></td>
-<td> </td>
+<td> Set by automation as a snapshot in time.</td>
 </tr>
 <tr>
 <td><a href="#value-banding">Value Banding</a></td>
-<td> </td>
+<td>Holds a value of either <code>High</code>, <code>Medium</code> or <code>Low</code> to provide a guide for the assessment and management of the project value.  </td>
 </tr>
 <tr>
 <td><a href="#value">Value</a></td>
-<td> </td>
+<td>Holds the project value in $AUD. </td>
 </tr>
 <tr>
 <td><a href="#weighted-score-capability-experience">Weighted Score - Capability &amp; Experience</a></td>
-<td> </td>
+<td>Holds the weighted score for Capability &amp; Experience and used for calculation of the <a href="#risk-score">Risk Score</a>. </td>
 </tr>
 <tr>
 <td><a href="#weighted-score-commercial">Weighted Score - Commercial</a></td>
-<td> </td>
+<td>Holds the weighted score for Commercial and used for calculation of the <a href="#risk-score">Risk Score</a>. </td>
 </tr>
 <tr>
 <td><a href="#weighted-score-schedule-resource-availability">Weighted Score - Schedule &amp; Resource Availability</a></td>
-<td> </td>
+<td>Holds the weighted score for Schedule &amp; Resource Availability and used for calculation of the <a href="#risk-score">Risk Score</a>. </td>
 </tr>
 <tr>
 <td><a href="#weighted-score---strategic">Weighted Score - Strategic</a></td>
-<td> </td>
+<td>Holds the weighted score for Strategic and used for calculation of the <a href="#risk-score">Risk Score</a>. </td>
 </tr>
 <tr>
 <td><a href="#weighted-score-technical-reputational">Weighted Score - Technical &amp; Reputational</a></td>
-<td> </td>
-</tr>
-<tr>
-<td><a href="#year-created">Year Created</a></td>
-<td> </td>
+<td>Holds the weighted score for Technical &amp; Reputational and used for calculation of the <a href="#risk-score">Risk Score</a>. </td>
 </tr>
 </tbody>
 </table>
@@ -3385,6 +3385,7 @@
 <h3 id="created-by">Created By<a class="headerlink" href="#created-by" title="Permanent link">#</a></h3>
 <h3 id="created-date">Created Date<a class="headerlink" href="#created-date" title="Permanent link">#</a></h3>
 <h3 id="created-in-quarter">Created in Quarter<a class="headerlink" href="#created-in-quarter" title="Permanent link">#</a></h3>
+<h3 id="created-in-year">Created in Year<a class="headerlink" href="#created-in-year" title="Permanent link">#</a></h3>
 <h3 id="date-issued">Date Issued<a class="headerlink" href="#date-issued" title="Permanent link">#</a></h3>
 <h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h3>
 <h3 id="disciplines">Discipline(s)<a class="headerlink" href="#disciplines" title="Permanent link">#</a></h3>
@@ -3707,7 +3708,6 @@ This column only applies to projects circa 2309 onwards.
 ) * [Complexity Weighting - Technical &amp; Reputational]# / [Complexity Weighting - TOTAL]#
 </code></pre></div>
 </div>
-<h3 id="year-created">Year Created<a class="headerlink" href="#year-created" title="Permanent link">#</a></h3>
                 
               
               
