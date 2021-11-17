@@ -2686,7 +2686,7 @@
 </tr>
 <tr>
 <td><a href="#client-pricing-schedule-issues">Client Pricing Schedule Issues</a></td>
-<td></td>
+<td>Issues in this column will be represented by a symbol in the <a href="#flag"><code>flag</code></a> column if the Sheet Summary setting <code>Flag Missing Client Pricing Schedule Ref.?</code> is checked.</td>
 </tr>
 <tr>
 <td><a href="#client-pricing-schedule-ref">Client Pricing Schedule Ref.</a></td>
@@ -2702,7 +2702,7 @@
 </tr>
 <tr>
 <td><a href="#estimate-budget-issues">Estimate Budget Issues</a></td>
-<td></td>
+<td>Issues in this column will be represented by a symbol in the <a href="#flag"><code>flag</code></a> column.</td>
 </tr>
 <tr>
 <td><a href="#estimate-resource-loading">Estimate Resource Loading</a></td>
@@ -2718,7 +2718,7 @@
 </tr>
 <tr>
 <td><a href="#finish-date">Finish Date</a></td>
-<td></td>
+<td>The anticipated finish date for each cost item.</td>
 </tr>
 <tr>
 <td><a href="#fixed-price-expense">Lump Sum Expense ($)</a></td>
@@ -2738,7 +2738,7 @@
 </tr>
 <tr>
 <td><a href="#flag">Flag</a></td>
-<td></td>
+<td>Cross (red) indicates an issue on the row. Exclamation (yellow) indicates an issue on a child row.</td>
 </tr>
 <tr>
 <td><a href="#information">Information</a></td>
@@ -2802,7 +2802,7 @@
 </tr>
 <tr>
 <td><a href="#reimbursable">Reimbursable?</a></td>
-<td></td>
+<td>Use this checkbox to mark which cost items are reimbursable.</td>
 </tr>
 <tr>
 <td><a href="#resource-role">Resource Role</a></td>
@@ -2846,11 +2846,11 @@
 </tr>
 <tr>
 <td><a href="#start-date">Start Date</a></td>
-<td></td>
+<td>The anticipated start date for each cost item.</td>
 </tr>
 <tr>
 <td><a href="#time-hrs">Time (Hrs)</a></td>
-<td></td>
+<td>The anticipated time (in hours) it will take for the cost item to complete.</td>
 </tr>
 <tr>
 <td><a href="#wbs-descendants"><abbr title="Work Breakdown Structure">WBS</abbr> Descendants</a></td>
@@ -3192,6 +3192,7 @@
 </div>
 <h3 id="cost-item">Cost Item<a class="headerlink" href="#cost-item" title="Permanent link">#</a></h3>
 <h3 id="client-pricing-schedule-issues">Client Pricing Schedule Issues<a class="headerlink" href="#client-pricing-schedule-issues" title="Permanent link">#</a></h3>
+<p>Provides details on any flagged issues such as missing references for the client's pricing schedule in the <a href="#client-pricing-schedule-ref"><code>Client Pricing Schedule Ref.</code></a> column. Issues in this column will be represented by a symbol in the <a href="#flag"><code>flag</code></a> column if the Sheet Summary setting <code>Flag Missing Client Pricing Schedule Ref.?</code> is checked.</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
@@ -3312,6 +3313,7 @@
 </code></pre></div>
 </div>
 <h3 id="flag">Flag<a class="headerlink" href="#flag" title="Permanent link">#</a></h3>
+<p>A cross (red) indicates an issue on the row. An exclamation (yellow) indicates an issue on a descendant row. The issues can be to do with the Client Pricing Schedule or Estimate Budgeting and the flags responsiveness to each is dependent on the selected options in the relevant 'Sheet Summary' settings. The specifics of the issues are detailed in the <a href="#client-pricing-schedule-issues"><code>client-pricing-schedule-issues</code></a> or <a href="#estimate-budget-issues"><code>estimate_budget_issues</code></a> columns as relevant.</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
