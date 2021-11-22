@@ -1963,6 +1963,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#predecessors-helper" class="md-nav__link">
+    Predecessors (Helper)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#project" class="md-nav__link">
     Project
   </a>
@@ -2033,6 +2040,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#row-id" class="md-nav__link">
+    Row ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schedule-complete" class="md-nav__link">
     Schedule % Complete
   </a>
@@ -2063,6 +2077,13 @@
           <li class="md-nav__item">
   <a href="#status" class="md-nav__link">
     Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#successors" class="md-nav__link">
+    Successors
   </a>
   
 </li>
@@ -2788,6 +2809,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#predecessors-helper" class="md-nav__link">
+    Predecessors (Helper)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#project" class="md-nav__link">
     Project
   </a>
@@ -2858,6 +2886,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#row-id" class="md-nav__link">
+    Row ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schedule-complete" class="md-nav__link">
     Schedule % Complete
   </a>
@@ -2888,6 +2923,13 @@
           <li class="md-nav__item">
   <a href="#status" class="md-nav__link">
     Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#successors" class="md-nav__link">
+    Successors
   </a>
   
 </li>
@@ -3554,6 +3596,13 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="#predecessors-helper">Predecessors (helper)</a></td>
+<td>System (Background)</td>
+<td>System</td>
+<td>All</td>
+<td></td>
+</tr>
+<tr>
 <td><a href="#project">Project</a></td>
 <td>System (Background)</td>
 <td>System</td>
@@ -3624,6 +3673,13 @@
 <td>resourcing_issues</td>
 </tr>
 <tr>
+<td><a href="#row-id">Row ID</a></td>
+<td>System (Background)</td>
+<td>System</td>
+<td>All</td>
+<td></td>
+</tr>
+<tr>
 <td><a href="#schedule-complete">Schedule % Complete</a></td>
 <td>Calculation</td>
 <td>% Complete</td>
@@ -3657,6 +3713,13 @@
 <td>System</td>
 <td>All</td>
 <td>status</td>
+</tr>
+<tr>
+<td><a href="#successors">Successors</a></td>
+<td>Project Manager (Setup/Maintain)</td>
+<td>Date/Logic</td>
+<td>All</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="#sv">SV</a></td>
@@ -4365,6 +4428,21 @@
 </div>
 <h3 id="predecessors">Predecessors<a class="headerlink" href="#predecessors" title="Permanent link">#</a></h3>
 <p>Used to define relationships between activities as schedule logic.</p>
+<h3 id="predecessors-helper">Predecessors (Helper)<a class="headerlink" href="#predecessors-helper" title="Permanent link">#</a></h3>
+<p>Helper column used in evaluating the Successors column</p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=&quot;|&quot; + 
+    SUBSTITUTE(
+        SUBSTITUTE(
+            SUBSTITUTE(
+                SUBSTITUTE(Predecessors@row, &quot;,&quot;, &quot;|&quot;),
+                &quot;S&quot;, &quot;|&quot;),
+            &quot;F&quot;, &quot;|&quot;),
+        &quot; &quot;, &quot;&quot;)
+    + &quot;|&quot;
+</code></pre></div>
+</div>
 <h3 id="project">Project<a class="headerlink" href="#project" title="Permanent link">#</a></h3>
 <p>System mirror of Sheet Summary value.</p>
 <div class="admonition info">
@@ -4506,6 +4584,15 @@
 )
 </code></pre></div>
 </div>
+<h3 id="row-id">Row ID<a class="headerlink" href="#row-id" title="Permanent link">#</a></h3>
+<p>Value mirrorring the row sequence number of the row (used in other formulas eg Successor).</p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=COUNTIFS(Activity$1:Activity@row, OR(@cell = &quot;&quot;, @cell &lt;&gt; &quot;&quot;))
+
+(Note: this is not a column formula !)
+</code></pre></div>
+</div>
 <h3 id="schedule-complete">Schedule % Complete<a class="headerlink" href="#schedule-complete" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
@@ -4591,6 +4678,18 @@
         )
     ),
     &quot;Not scheduled&quot;
+)
+</code></pre></div>
+</div>
+<h3 id="successors">Successors<a class="headerlink" href="#successors" title="Permanent link">#</a></h3>
+<p>Showing task numbers of all those tasks that are linked this task through any type of dependency. The field is not editable and is only used for informative purposes.</p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=JOIN(
+    COLLECT([Row ID]:[Row ID],
+            [Predecessors (Helper)]:[Predecessors (Helper)],
+            FIND(&quot;|&quot; + [Row ID]@row + &quot;|&quot;, @cell) &gt; 0),
+    &quot;,&quot;
 )
 </code></pre></div>
 </div>
