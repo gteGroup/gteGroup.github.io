@@ -1688,7 +1688,7 @@
                     IF(
                         [Status: Recommendation Approval (by Client)]@row = &quot;Approved as Recommended&quot;, 
                         IF(
-                            [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Approve&quot;, 
+                            [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Accepted&quot;, 
                             &quot;Closed&quot;, 
                             IF(
                                 [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Rejected&quot;, 
@@ -1721,7 +1721,7 @@
                             IF(
                                 [Response (Complete When Ready to Issue to GTE)]@row &lt;&gt; &quot;&quot;, 
                                 IF(
-                                    [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Approved&quot;, 
+                                    [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Accepted&quot;, 
                                     &quot;Closed&quot;, 
                                     IF(
                                         [Status: Acceptance of Client Response (by GTE PM)]@row = &quot;Rejected&quot;, 
