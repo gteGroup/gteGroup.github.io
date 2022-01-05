@@ -1528,13 +1528,17 @@
 <ul>
 <li>There is an MS Exchange public folder (<strong>Project Public Folder – PPF</strong>) configured for each project</li>
 <li>PPF’s are located in the main “All Public Folders” folder and based on the project status, distributed into one of the following groups:<ul>
-<li>Potential Projects</li>
-<li>Active Projects</li>
-<li>Non-executed Projects</li>
-<li>Completed Projects</li>
+<li>Projects General Correspondence</li>
+<li>Projects Sensitive Correspondence</li>
+<li>Projects Archive - General</li>
+<li>Projects Archive - Sensitive</li>
 </ul>
 </li>
-<li>Each PPF has a configured email address obeying the following format:    <code>PxxxxF@gtegroup.com.au</code></li>
+<li>Each PPF has a configured email address obeying the following format:<ul>
+<li>General correspondence - <code>PxxxxF@gtegroup.com.au</code></li>
+<li>Sensitive correspondence - <code>PxxxxS@gtegroup.com.au</code></li>
+</ul>
+</li>
 <li>ALL project related emails (internal/external, in/outgoing) will be stored in its respective PPF. This is achieved by Cc-ing all emails to the PPF email address. By doing so, all replies (internal/external) will be automatically delivered to and stored in the PPF.</li>
 <li>ALL project-related emails (internal/external, out/ingoing) will contain the project code in the 'Pxxxx:' format in their <code>Subject</code> field, for example:
 <img alt="" src="../../img/ppf-operation-1.png" /></li>
@@ -1546,11 +1550,13 @@
 <p>After clicking the <code>Send</code> button when sending an email (new/reply/forward), the add-in searches the email <code>Subject</code> field for the project code in the 'Pxxxx:' or 'pxxxx:' format. If the code is not found, it displays the following pop-up message:</p>
 <p><img alt="" src="../../img/ppf-operation-2.png" /></p>
 <p>Select one of the following options:<br />
-<code>Cancel</code>: email sending action is cancelled<br />
 <code>No</code>: email is sent without any change to Subject/Cc<br />
-<code>Yes</code>: the following window is displayed:</p>
+<code>Cancel</code>: email sending action is cancelled<br />
+<code>Yes - General</code>: email will later be stored in <code>Projects General Correspondence</code> folder<br />
+<code>Yes - Sensitive</code>: email will later be stored in <code>Projects Sensitive Correspondence</code> folder<br />
+After any of <code>Yes - ...</code> buttons is clicked, the following window is displayed:</p>
 <p><img alt="" src="../../img/ppf-operation-3.png" /></p>
-<p>Enter the project code (4 digits) in the <code>Project ID:</code> field (the only editable field), and the <code>Cc</code> and <code>Subject</code> fields will update automatically:<br />
+<p>Enter the project code (4 digits) in the <code>Project ID:</code> field (the only editable field), and the <code>Cc</code> and <code>Subject</code> fields will update automatically. The <code>Cc</code> field will reflect the previous General or Sensitive choice (i.e. PxxxxF@ or PxxxxS@):<br />
 <img alt="" src="../../img/ppf-operation-4.png" /></p>
 <p>After entering the correct project ID, click one of the following buttons:<br />
 <code>OK &amp; Send</code>: send the email out with the <code>Subject</code> and <code>Cc</code> fields being modified accordingly<br />
@@ -1558,9 +1564,10 @@
 <code>Cancel</code>: go back to the email editing window without any changes made to the <code>Subject</code> or <code>Cc</code> fields</p>
 <p>In case the email being sent contains a project ID in the <code>Subject</code> field in the correct format, and the <code>Cc</code> field does not contain the corresponding PPF email address, the following message will be displayed:<br />
 <img alt="" src="../../img/ppf-operation-5.png" /></p>
-<p>You have the following options to choose from:
-<code>Yes</code>: add project folder email address to the <code>Cc</code> field and send the email
-<code>No</code>: don't change the <code>Cc</code> field and send the email
+<p>You have the following options to choose from:<br />
+<code>Yes - General</code>: add general project folder email address (PxxxxF@gtegroup.com.au) to the <code>Cc</code> field and send the email<br />
+<code>Yes - Sensitive</code>: add sensitive project folder email address (PxxxxS@gtegroup.com.au) to the <code>Cc</code> field and send the email<br />
+<code>No</code>: don't change the <code>Cc</code> field and send the email<br />
 <code>Cancel</code>: go back to the email editing window without affecting the <code>Cc</code> field</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1631,7 +1638,7 @@
 <h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">#</a></h2>
 <ol>
 <li>
-<p>Occasionally the Public Folders disappear completely from the Folders Pane a couple of seconds after the Outlook restart. This is a known Microsoft problem, to fix it the following needs to be done:</p>
+<p>Occasionally the Public Folders disappear completely from the Folders Pane a couple of seconds after the Outlook restart. This is a known Microsoft problem. To fix it, first try to restart the Outlook. If it does not help, try the following:</p>
 <ol>
 <li>Close Outlook</li>
 <li>Open the Registry Editor (regedit)</li>
