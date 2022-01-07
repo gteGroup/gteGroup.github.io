@@ -1535,7 +1535,7 @@
 </ul>
 </li>
 <li>Each PPF has a configured email address obeying the following format:<ul>
-<li>General correspondence - <code>PxxxxF@gtegroup.com.au</code></li>
+<li>General correspondence - <code>PxxxxG@gtegroup.com.au</code></li>
 <li>Sensitive correspondence - <code>PxxxxS@gtegroup.com.au</code></li>
 </ul>
 </li>
@@ -1556,7 +1556,7 @@
 <code>Yes - Sensitive</code>: email will later be stored in <code>Projects Sensitive Correspondence</code> folder<br />
 After any of <code>Yes - ...</code> buttons is clicked, the following window is displayed:</p>
 <p><img alt="" src="../../img/ppf-operation-3.png" /></p>
-<p>Enter the project code (4 digits) in the <code>Project ID:</code> field (the only editable field), and the <code>Cc</code> and <code>Subject</code> fields will update automatically. The <code>Cc</code> field will reflect the previous General or Sensitive choice (i.e. PxxxxF@ or PxxxxS@):<br />
+<p>Enter the project code (4 digits) in the <code>Project ID:</code> field (the only editable field), and the <code>Cc</code> and <code>Subject</code> fields will update automatically. The <code>Cc</code> field will reflect the previous General or Sensitive choice (i.e. PxxxxG@ or PxxxxS@):<br />
 <img alt="" src="../../img/ppf-operation-4.png" /></p>
 <p>After entering the correct project ID, click one of the following buttons:<br />
 <code>OK &amp; Send</code>: send the email out with the <code>Subject</code> and <code>Cc</code> fields being modified accordingly<br />
@@ -1565,7 +1565,7 @@ After any of <code>Yes - ...</code> buttons is clicked, the following window is 
 <p>In case the email being sent contains a project ID in the <code>Subject</code> field in the correct format, and the <code>Cc</code> field does not contain the corresponding PPF email address, the following message will be displayed:<br />
 <img alt="" src="../../img/ppf-operation-5.png" /></p>
 <p>You have the following options to choose from:<br />
-<code>Yes - General</code>: add general project folder email address (PxxxxF@gtegroup.com.au) to the <code>Cc</code> field and send the email<br />
+<code>Yes - General</code>: add general project folder email address (PxxxxG@gtegroup.com.au) to the <code>Cc</code> field and send the email<br />
 <code>Yes - Sensitive</code>: add sensitive project folder email address (PxxxxS@gtegroup.com.au) to the <code>Cc</code> field and send the email<br />
 <code>No</code>: don't change the <code>Cc</code> field and send the email<br />
 <code>Cancel</code>: go back to the email editing window without affecting the <code>Cc</code> field</p>
@@ -1638,16 +1638,17 @@ After any of <code>Yes - ...</code> buttons is clicked, the following window is 
 <h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">#</a></h2>
 <ol>
 <li>
-<p>Occasionally the Public Folders disappear completely from the Folders Pane a couple of seconds after the Outlook restart. This is a known Microsoft problem. To fix it, first try to restart the Outlook. If it does not help, try the following:</p>
+<p>Public Folders are not visible in the Folders Pane - the workaround is to apply a change in the registry. It should be done automatically via a GPO (Group Policy) but if you experience this issue it is worth checking if the registry is correctly set up:</p>
 <ol>
-<li>Close Outlook</li>
 <li>Open the Registry Editor (regedit)</li>
-<li>Navigate to the Current User/Software/Microsoft/Office</li>
-<li>Delete the “Outlook” key</li>
-<li>Delete the “16.0/Outlook” key</li>
+<li>Navigate to the 'Current User/Software/Microsoft/Office/16.0'</li>
+<li>There should be a 'AutoDiscover' key, if it's not - create one</li>
+<li>Under the 'AutoDiscover' key, there should be a 'ExcludeLastKnownGoodURL' value, if not create it:
+    a. DWORD (32-bit)
+    b. Value = 1</li>
 <li>Restart Outlook</li>
 </ol>
-<p>This will restore the Outlook profile and will solve the Public Folders disappearing problem.</p>
+<p>If you experience disappearing of Public Folders even when the registry is set as described, just try to restart Outlook, the Public Folders should re-appear (this typically happens when moving PC between in-office/outside-office locations).</p>
 </li>
 <li>
 <p>While installing the add-in, in certain cases the digital certificate is not recognized as trusted and therefore the installation is aborted. I this happens, please follow the instructions contained in <a href="https://www.youtube.com/watch?v=alDwd8ghO7A">this</a> video.  </p>
