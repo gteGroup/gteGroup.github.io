@@ -1479,30 +1479,30 @@
 <p>Any changes to any of the smartsheet Project Workspace MUST follow an agreed procedure and MUST be properly documented. Both are described in this section and are mandatory for any Project Workspace changes</p>
 </div>
 <ol>
-<li>Changes of the Project Workspace are issued in batches, after a reasonable collection of changes has been implemented (in many occasions the changes relate with each other, especially when they are a part of major imrovement/project implementation which affects more than one sheet and potentially also affect the workspace structure)</li>
-<li>Changes which are being prepared for implementation but are not yet issued for use are stored in <code>SOURCE:xxxx_GTE-ProjectWorkspaceTemplate</code> workspace. This workspace is an identical copy of live Project Workspace in the time of releasing of a new Project Worspace version, however over the time new updates are being implemented into it which after some time will need to be made live.</li>
-<li>Live version of the Project Workspace is contained in <code>xxxx_GTE-ProjectWorkspaceTemplate</code>. Since Portal uses Smartsheet ID of the Project Workspace for project provisioning, this workspace should never be changed/deleted. To publish (activate) current SOURCE version of Project Workspace and thus make it alive, the contents of the live Project Workspace has to be deleted first (VGA note: or archived?) and the contents of the SOURCE Project Workspace has to be copied to live Project Workspace</li>
-<li>Some changes of the Project Workspace need to be activated into live version immediately without waiting for the next release. Such changes must be implemented into both Project Workspace versions - SOURCE and live. Such changes also must be documented as described in the following points.</li>
+<li>Changes of the Project Workspace are issued in batches, after a reasonable collection of changes has been prepared (in many occasions the changes relate with each other, especially when they are part of a major improvement/project implementation which affects more than one sheet and potentially also affects the workspace structure).</li>
+<li>Changes which are being prepared for implementation but are not yet issued for use are stored in <code>SOURCE:xxxx_GTE-ProjectWorkspaceTemplate</code> workspace. This workspace is an identical copy of live Project Workspace in the time of releasing of a new Project Workspace version, however over the time new updates are being implemented into it which after some time will need to go live.</li>
+<li>Live version of the Project Workspace is contained in the <code>xxxx_GTE-ProjectWorkspaceTemplate</code> workspace. Since Portal uses Smartsheet ID of the Project Workspace for project provisioning, this workspace must never be changed/deleted. To publish (activate) current SOURCE version of the Project Workspace and thus make it live, the contents of the live Project Workspace have to be deleted first (VGA note: or archived?) and the contents of the SOURCE Project Workspace have to be copied over to live Project Workspace.</li>
+<li>Some changes of the Project Workspace need to be activated in the live version immediately without waiting for the next release. Such changes must be implemented into the both Project Workspace versions - SOURCE and live. Such changes also must be documented as described in the following text.</li>
 <li>All changes to the Project Workspace are documented in the <code>0000 - PM Framework Development (Restricted)\Workspace Template Change Log</code> smartsheet as follows:  <ol>
 <li>Each release is assigned a version number in the x.y form, x being a Major release and y a Minor release  </li>
-<li>Each release is formed by a grouped of rows, each containing a single change description (sub-grouped into 'Schedule' and 'Other')  </li>
-<li>Each release has a header row, indicating version number (e.g. Release Version 1.3) and release date (enter into Date column in the time of release)  </li>
-<li>In case the individual change is also implemented in the live Project Workspace version, the corresponding checkbox in the 'Applied to Live' is ticked</li>
+<li>Each release description is formed by a group of rows, each containing a single change description (sub-grouped into 'Schedule' and 'Other')  </li>
+<li>Each release has a header row, indicating a version number (e.g. Release Version 1.3) and a release date (entered into the Date column in the time of release)  </li>
+<li>In case the individual change is also implemented in the live Project Workspace version, the corresponding checkbox in the 'Applied to Live' column is ticked</li>
 <li>The following columns of the change log are intended for distributing to users as a change description:<ul>
 <li>'Release Changes' - short change description</li>
-<li>'Date'</li>
+<li>'Date' - date if change implementation (not release), equals to 'TEMPLATE BUILD DATE' sheet summary field value in the corresponding template</li>
 <li>'Template' - name of the affected template</li>
 </ul>
 </li>
-<li>The following columns are intended for PMO purposes only:<ul>
+<li>The following columns are intended for PMO internal purposes only:<ul>
 <li>'Type' - User or Background change; User changes are to be announced to public, Background do not need to be announced</li>
-<li>'Change Details' - further internal change details (whcih do not need to be announced to public)</li>
-<li>'Changed By'</li>
+<li>'Change Details' - further internal change details (which do not need to be announced to public)</li>
+<li>'Changed By' - indicates who implemented the change</li>
 </ul>
 </li>
 </ol>
 </li>
-<li>To further increase change traceability, it is recommended that the release version number is also entered into the associated ticket entry column 'Group Tag' in the <code>PM Framework Improvements &amp; Issues - Ticket System</code> smartsheet. This way it is possible to match the individual entried in the change log with the PMF ticket.</li>
+<li>To further increase change traceability, it is recommended that the release version number is also entered into the associated ticket entry column 'Group Tag' in the <code>PM Framework Improvements &amp; Issues - Ticket System</code> smartsheet. This way it is possible to match the individual entries in the change log with the PMF ticket.</li>
 </ol>
                 
               
