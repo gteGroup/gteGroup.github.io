@@ -1454,9 +1454,68 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Project Workspace Changes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Project Workspace Changes
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#releasing-changes" class="md-nav__link">
+    Releasing Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Releasing Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#routine-changes-via-release" class="md-nav__link">
+    Routine Changes via Release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployed-changes-via-portal-update" class="md-nav__link">
+    Deployed Changes via Portal Update
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning-documenting-changes" class="md-nav__link">
+    Versioning &amp; Documenting Changes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1490,6 +1549,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#releasing-changes" class="md-nav__link">
+    Releasing Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Releasing Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#routine-changes-via-release" class="md-nav__link">
+    Routine Changes via Release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployed-changes-via-portal-update" class="md-nav__link">
+    Deployed Changes via Portal Update
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning-documenting-changes" class="md-nav__link">
+    Versioning &amp; Documenting Changes
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1504,34 +1605,105 @@
                 <h1 id="project-workspace-changes">Project Workspace Changes<a class="headerlink" href="#project-workspace-changes" title="Permanent link">#</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Any changes to any of the smartsheet Project Workspace MUST follow an agreed procedure and MUST be properly documented. Both are described in this section and are mandatory for any Project Workspace changes</p>
+<p>Any changes to any of the Smartsheet Project Workspace sheets, reports or dashboards <em>must</em> follow an agreed procedure and <em>must</em> be properly documented. The steps to achieve each of these requirements are described in this section.</p>
 </div>
+<p>Changes to the Project Workspace are prepared and issued in batches after a reasonable collection of changes has been prepared. In many occasions the changes relate with each other, especially when they are part of a major improvement/project implementation which affects more than one sheet and potentially also affects the workspace structure.</p>
+<p>Changes to the workspace are effected on the <code>SOURCE:xxxx_GTE-ProjectWorkspaceTemplate</code> workspace. This workspace is identical to the live template workspace <code>xxxx_GTE-ProjectWorkspaceTemplate</code> at the time of releasing a new Project Workspace version, and will gradually deviate with new functionality and changes that are prepared and not yet released.</p>
+<h2 id="releasing-changes">Releasing Changes<a class="headerlink" href="#releasing-changes" title="Permanent link">#</a></h2>
+<h3 id="routine-changes-via-release">Routine Changes via Release<a class="headerlink" href="#routine-changes-via-release" title="Permanent link">#</a></h3>
+<p>Typically, changes to the workspace will be released to the template workspace and apply only to future projects created using that version of the template.</p>
+<p>The GTE Project Portal uses the Smartsheet ID of the Project Workspace for project provisioning. As a result, this template workspace must never be deleted or replaced. To publish/release the current SOURCE version of the Project Workspace, the contents of the live Project Workspace have to be transitioned to the existing workspace container ('folder') in accordance with the following procedure: </p>
 <ol>
-<li>Changes of the Project Workspace are issued in batches, after a reasonable collection of changes has been prepared (in many occasions the changes relate with each other, especially when they are part of a major improvement/project implementation which affects more than one sheet and potentially also affects the workspace structure).</li>
-<li>Changes which are being prepared for implementation but are not yet issued for use are stored in <code>SOURCE:xxxx_GTE-ProjectWorkspaceTemplate</code> workspace. This workspace is an identical copy of live Project Workspace in the time of releasing of a new Project Workspace version, however over the time new updates are being implemented into it which after some time will need to go live.</li>
-<li>Live version of the Project Workspace is contained in the <code>xxxx_GTE-ProjectWorkspaceTemplate</code> workspace. Since Portal uses Smartsheet ID of the Project Workspace for project provisioning, this workspace must never be changed/deleted. To publish (activate) current SOURCE version of the Project Workspace and thus make it live, the contents of the live Project Workspace have to be deleted first (VGA note: or archived?) and the contents of the SOURCE Project Workspace have to be copied over to live Project Workspace. Following this, all templates need to be renamed - [SOURCE] to be replaced by [TEMPLATE]</li>
-<li>Some changes of the Project Workspace need to be activated in the live version immediately without waiting for the next release. Such changes must be implemented into the both Project Workspace versions - SOURCE and live. Such changes also must be documented as described in the following text.</li>
-<li>All changes to the Project Workspace are documented in the <code>0000 - PM Framework Development (Restricted)\Workspace Template Change Log</code> smartsheet as follows:  <ol>
-<li>Each release is assigned a version number in the x.y form, x being a Major release and y a Minor release  </li>
-<li>Each release description is formed by a group of rows, each containing a single change description (sub-grouped into 'Schedule' and 'Other')  </li>
-<li>Each release has a header row, indicating a version number (e.g. Release Version 1.3) and a release date (entered into the Date column in the time of release)  </li>
-<li>In case the individual change is also implemented in the live Project Workspace version, the corresponding checkbox in the 'Applied to Live' column is ticked</li>
-<li>The following columns of the change log are intended for distributing to users as a change description:<ul>
-<li>'Release Changes' - short change description</li>
-<li>'Date' - date if change implementation (not release), equals to 'TEMPLATE BUILD DATE' sheet summary field value in the corresponding template</li>
-<li>'Template' - name of the affected template</li>
+<li>
+<p>Save a copy of the existing template workspace for roll-back purposes.</p>
+<ul>
+<li>Login to the GTE Smartsheet account.</li>
+<li>Right-click the workspace and select 'Save as New'.</li>
+<li>Name the workspace <code>Z_BKUP-yymmdd:TEMPLATE:ProjWorkspace</code>, ensuring to 'Include recipients &amp; permissions settings' and leave all other settings as defaults.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By not 'Sharing', the backups will only be visbible to the GTE Smartsheet account as desired.</p>
+</div>
+</li>
+<li>
+<p>Save a copy of the SOURCE to be released ("SOURCE-COPY").</p>
+<ul>
+<li>Right-click the workspace and select 'Save as New'.</li>
+<li>The workspace name does not matter as this is temporary and will be deleted.</li>
+<li>Ensure to 'Include recipients &amp; permissions settings' and leave all other settings as defaults.</li>
 </ul>
 </li>
-<li>The following columns are intended for PMO internal purposes only:<ul>
-<li>'Type' - User or Background change; User changes are to be announced to public, Background do not need to be announced</li>
-<li>'Change Details' - further internal change details (which do not need to be announced to public)</li>
-<li>'Changed By' - indicates who implemented the change</li>
+<li>
+<p>Delete all folders and sheets from the live template workspace <code>xxxx_GTE-ProjectWorkspaceTemplate</code>.</p>
+</li>
+<li>
+<p>Release the temporary SOURCE-COPY workspace contents to the live template workspace by selecting at once all root folders and documents and dragging these into the empty live template workspace.</p>
+</li>
+<li>
+<p>Replace <code>[SOURCE]</code> in the names of all sheets, reports, and dashboards in the live template workspace with <code>[TEMPLATE]</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is possible to use the GTE Project Portal to complete part of this task. Visit <a href="https://s1d.com.au/admin/resources/projects/4">P1000 Dummy Project</a>, choose the action 'Rename Workspace Entities' and click the play button. When prompted, enter "TEMPLATE" for the 'Appended Text'. This will rename all <strong>sheets and dashboards only</strong>. The API does not allow renaming of reports and these will still need to be performed manually. </p>
+</div>
+</li>
+<li>
+<p>Open all reports in the live template workspace, one by one, and set the report source to the live template workspace. Unfortunately, this step cannot be avoided due to moving the contents from one workspace to another and without completing it all reports will not work.</p>
+</li>
+<li>
+<p>Save an additional copy of the SOURCE to be released for record purpose.</p>
+<ul>
+<li>Right-click the workspace and select 'Save as New'.</li>
+<li>Name the workspace <code>Z_BKUP-yymmdd:SOURCE:ProjWorkspace</code>, ensuring to 'Include recipients &amp; permissions settings' and leave all other settings as defaults.</li>
+</ul>
+</li>
+<li>
+<p>Delete the previous backup workspaces - both the template and source versions.</p>
+</li>
+</ol>
+<h3 id="deployed-changes-via-portal-update">Deployed Changes via Portal Update<a class="headerlink" href="#deployed-changes-via-portal-update" title="Permanent link">#</a></h3>
+<p>Occasionally, it may be necessary - or just possible - to deploy changes made to one or more template workspace <em>sheets</em> to the corresponding sheets in existing live projects. This is achievable using the <a href="https://s1d.com.au/maintenance">maintenance functionality in the GTE Project Portal</a>. Where such deployments are made, the changes must also be deployed to the SOURCE and live template workspaces using the same functionality, ie by including the relevant sheets in these key workspaces in the deployment list in the Portal.</p>
+<p>It should be noted that such deployments are not easily tracked by the workspace versioning process so it is critical that these changes be recorded in the <a href="https://app.smartsheet.com/sheets/25wX3h6rFhjhV9Vq38X6J7XQGqHhCjMwjMXGx561">Workspace Template Change Log</a> in accordance with the below <a href="#versioning-documenting-changes">versioning and documenting</a> guidance.</p>
+<h2 id="versioning-documenting-changes">Versioning &amp; Documenting Changes<a class="headerlink" href="#versioning-documenting-changes" title="Permanent link">#</a></h2>
+<p>All changes to the Project Workspace are documented in the <a href="https://app.smartsheet.com/sheets/25wX3h6rFhjhV9Vq38X6J7XQGqHhCjMwjMXGx561">Workspace Template Change Log</a> Smartsheet as follows:</p>
+<ol>
+<li>
+<p>Each release is assigned a version number in the Vx.y form, x being a Major release and y a Minor release.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A Major release is defined as substantial change of the Project Workspace structure, typically associated with some overall change in other systems/tools or a major change of used techniques/technologies. A Minor release is a change affecting only one or a few templates and implements an existing feature improvement, a new feature implementation or a fix of an issue in a current template.</p>
+</div>
+</li>
+<li>
+<p>Each release description is formed by a group of rows, each containing a single change description (sub-grouped into 'Schedule' and 'Other').  </p>
+</li>
+<li>
+<p>Each release has a header row, indicating a version number (e.g. Release V1.3) and a release date (entered into the Date column in the time of release).</p>
+</li>
+<li>
+<p>In case the individual change is also implemented in the live Project Workspace version, the corresponding checkbox in the 'Applied to Live' column is ticked.</p>
+</li>
+<li>
+<p>The following columns of the change log are intended for distributing to users as a change description:</p>
+<ul>
+<li>'Release Changes' - short change description.</li>
+<li>'Date' - date of the change implementation (not the release date, which will always be later). This date will be equal to the 'TEMPLATE BUILD DATE' sheet summary field value in the corresponding template, unless there is a further change to the same template in the same release batch.</li>
+<li>'Template' - name of the affected template.</li>
+</ul>
+</li>
+<li>
+<p>The following columns are intended for PMO internal purposes only:</p>
+<ul>
+<li>'Type' - User or Background change. User changes are to be announced via notification to the GTE PM mailing list; Background do not need to be announced.</li>
+<li>'Change Details' - further internal change details which do not need to be announced to public, and so may include additional technical context that may be useful for later reference.</li>
+<li>'Changed By' - indicates who implemented the change.</li>
 </ul>
 </li>
 </ol>
-</li>
-<li>To further increase change traceability, it is recommended that the release version number is also entered into the associated ticket entry column 'Group Tag' in the <code>PM Framework Improvements &amp; Issues - Ticket System</code> smartsheet. This way it is possible to match the individual entries in the change log with the PMF ticket.</li>
-</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>To further increase change traceability, it is recommended that the release version number is also entered into the associated ticket entry column 'Group Tag' in the <a href="https://app.smartsheet.com/sheets/Vhh76VPqQ47R365xXrfxmfPqmRGxjG8v8H6cM6F1">PM Framework Improvements &amp; Issues - Ticket System</a> Smartsheet. This way it is possible to match the individual entries in the change log with the PMF ticket.</p>
+</div>
                 
               
               
