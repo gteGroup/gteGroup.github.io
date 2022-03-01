@@ -4399,13 +4399,16 @@
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IFERROR(
     ( [FTC \[hrs\]]@row
-        / NETWORKDAYS(
-            IF(
-                [Start Date]@row &lt; TODAY(),
-                TODAY(),
-                [Start Date]@row
+        / IF([Finish Date]@row &gt;= TODAY(),
+            NETWORKDAYS(
+                IF(
+                    [Start Date]@row &lt; TODAY(),
+                    TODAY(),
+                    [Start Date]@row
+                ),
+                [Finish Date]@row
             ),
-            [Finish Date]@row
+            IF([FTC \[hrs\]]@row = 0, 1, 0)
         )
     )
         / ( COUNTM([Resource(s)]@row)
