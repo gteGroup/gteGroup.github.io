@@ -263,7 +263,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../detailed-reference/smartsheet-estimate/" class="md-tabs__link">
+      <a href="../../detailed-reference/smartsheet-baseline-register/" class="md-tabs__link">
         Detailed Reference
       </a>
     </li>
@@ -1325,8 +1325,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../../detailed-reference/smartsheet-baseline-register/" class="md-nav__link">
+        Smartsheet Baseline Register
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../detailed-reference/smartsheet-estimate/" class="md-nav__link">
         Smartsheet Estimate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../detailed-reference/smartsheet-expected-register/" class="md-nav__link">
+        Smartsheet Expected Register
       </a>
     </li>
   
@@ -1522,6 +1550,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estimate-changes/" class="md-nav__link">
+        Estimate Changes
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1605,7 +1647,11 @@
                 <h1 id="project-workspace-changes">Project Workspace Changes<a class="headerlink" href="#project-workspace-changes" title="Permanent link">#</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Any changes to any of the Smartsheet Project Workspace sheets, reports or dashboards <em>must</em> follow an agreed procedure and <em>must</em> be properly documented. The steps to achieve each of these requirements are described in this section.</p>
+<p>Any changes to any of the Project Workspace sheets, reports or dashboards <em>must</em> follow an agreed procedure and <em>must</em> be properly documented. The steps to achieve each of these requirements are described in this section.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Since Portal is using Smartsheet ID of the Project Workspace, any changes of the Project Workspace contents can only be done in the existing version of the workspace which cannnot be replaced by a newer worspace version as a whole. This is reflected in the workspace release procedure described further in this section.</p>
 </div>
 <p>Changes to the Project Workspace are prepared and issued in batches after a reasonable collection of changes has been prepared. In many occasions the changes relate with each other, especially when they are part of a major improvement/project implementation which affects more than one sheet and potentially also affects the workspace structure.</p>
 <p>Changes to the workspace are effected on the <code>SOURCE:xxxx_GTE-ProjectWorkspaceTemplate</code> workspace. This workspace is identical to the live template workspace <code>xxxx_GTE-ProjectWorkspaceTemplate</code> at the time of releasing a new Project Workspace version, and will gradually deviate with new functionality and changes that are prepared and not yet released.</p>
@@ -1665,7 +1711,7 @@
 <p>Occasionally, it may be necessary - or just possible - to deploy changes made to one or more template workspace <em>sheets</em> to the corresponding sheets in existing live projects. This is achievable using the <a href="https://s1d.com.au/maintenance">maintenance functionality in the GTE Project Portal</a>. Where such deployments are made, the changes must also be deployed to the SOURCE and live template workspaces using the same functionality, ie by including the relevant sheets in these key workspaces in the deployment list in the Portal.</p>
 <p>It should be noted that such deployments are not easily tracked by the workspace versioning process so it is critical that these changes be recorded in the <a href="https://app.smartsheet.com/sheets/25wX3h6rFhjhV9Vq38X6J7XQGqHhCjMwjMXGx561">Workspace Template Change Log</a> in accordance with the below <a href="#versioning-documenting-changes">versioning and documenting</a> guidance.</p>
 <h2 id="versioning-documenting-changes">Versioning &amp; Documenting Changes<a class="headerlink" href="#versioning-documenting-changes" title="Permanent link">#</a></h2>
-<p>All changes to the Project Workspace are documented in the <a href="https://app.smartsheet.com/sheets/25wX3h6rFhjhV9Vq38X6J7XQGqHhCjMwjMXGx561">Workspace Template Change Log</a> Smartsheet as follows:</p>
+<p>All changes to the Project Workspace are documented in the <a href="https://app.smartsheet.com/sheets/25wX3h6rFhjhV9Vq38X6J7XQGqHhCjMwjMXGx561">PMF Template Change Log</a> Smartsheet as follows:</p>
 <ol>
 <li>
 <p>Each release is assigned a version number in the Vx.y form, x being a Major release and y a Minor release.</p>
@@ -1702,7 +1748,7 @@
 </ol>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>To further increase change traceability, it is recommended that the release version number is also entered into the associated ticket entry column 'Group Tag' in the <a href="https://app.smartsheet.com/sheets/Vhh76VPqQ47R365xXrfxmfPqmRGxjG8v8H6cM6F1">PM Framework Improvements &amp; Issues - Ticket System</a> Smartsheet. This way it is possible to match the individual entries in the change log with the PMF ticket. In addition, there is a column 'PMF Ticket #' in the <code>Workspace Template Change Log</code> which should be used to reference the related PMF ticket.</p>
+<p>To further increase change traceability, it is recommended that the release version number is also entered into the associated ticket entry column 'Group Tag' in the <a href="https://app.smartsheet.com/sheets/Vhh76VPqQ47R365xXrfxmfPqmRGxjG8v8H6cM6F1">PM Framework Improvements &amp; Issues - Ticket System</a> Smartsheet. This way it is possible to match the individual entries in the change log with the PMF ticket. In addition, there is a column 'PMF Ticket #' in the <code>PMF Template Change Log</code> which should be used to reference the related PMF ticket.</p>
 </div>
                 
               
@@ -1742,6 +1788,21 @@
           </div>
         </a>
       
+      
+        
+        <a href="../estimate-changes/" class="md-footer__link md-footer__link--next" aria-label="Next: Estimate Changes" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Estimate Changes
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
