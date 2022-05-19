@@ -3254,14 +3254,14 @@
 <td>cv_%</td>
 </tr>
 <tr>
-<td><a href="#default-ftc-hrs">Default FTC [hrs]</a></td>
+<td><a href="#default-ftc-hrs">Default <abbr title="Forecast to Complete">FTC</abbr> [hrs]</a></td>
 <td>Calculation</td>
 <td>Forecast Cost</td>
 <td>Forecast (to Baseline)</td>
 <td>ftc_default</td>
 </tr>
 <tr>
-<td><a href="#default-fTC-including-change-hrs">Default FTC Including Change [hrs]</a></td>
+<td><a href="#default-fTC-including-change-hrs">Default <abbr title="Forecast to Complete">FTC</abbr> Including Change [hrs]</a></td>
 <td>Calculation</td>
 <td>Forecast Cost</td>
 <td>Forecast (to Planned)</td>
@@ -3324,14 +3324,14 @@
 <td>complete_%_evm_method</td>
 </tr>
 <tr>
-<td><a href="#fac-hrs">FAC [hrs]</a></td>
+<td><a href="#fac-hrs"><abbr title="Forecast at Complete (or Completion)">FAC</abbr> [hrs]</a></td>
 <td>Summation/Propagation</td>
 <td>Forecast Cost</td>
 <td>Forecast (to Baseline)</td>
 <td>fac_hours</td>
 </tr>
 <tr>
-<td><a href="#fac-including-change-hrs">FAC Including Change [hrs]</a></td>
+<td><a href="#fac-including-change-hrs"><abbr title="Forecast at Complete (or Completion)">FAC</abbr> Including Change [hrs]</a></td>
 <td>Summation/Propagation</td>
 <td>Forecast Cost</td>
 <td>Forecast (to Planned)</td>
@@ -3380,14 +3380,14 @@
 <td>ftc_hours_entry</td>
 </tr>
 <tr>
-<td><a href="#ftc-hrs">FTC [hrs]</a></td>
+<td><a href="#ftc-hrs"><abbr title="Forecast to Complete">FTC</abbr> [hrs]</a></td>
 <td>Summation/Propagation</td>
 <td>Forecast Cost</td>
 <td>Forecast (to Baseline)</td>
 <td>ftc_hours</td>
 </tr>
 <tr>
-<td><a href="#ftc-including-change-hrs">FTC Including Change [hrs]</a></td>
+<td><a href="#ftc-including-change-hrs"><abbr title="Forecast to Complete">FTC</abbr> Including Change [hrs]</a></td>
 <td>Summation/Propagation</td>
 <td>Forecast Cost</td>
 <td>Forecast (to Planned)</td>
@@ -4028,7 +4028,7 @@
 )
 </code></pre></div>
 </div>
-<h3 id="default-ftc-hrs">Default FTC [hrs]<a class="headerlink" href="#default-ftc-hrs" title="Permanent link">#</a></h3>
+<h3 id="default-ftc-hrs">Default <abbr title="Forecast to Complete">FTC</abbr> [hrs]<a class="headerlink" href="#default-ftc-hrs" title="Permanent link">#</a></h3>
 <p>Calculates a default value to be used if a Forecast Hours to Finish (<a href="#forecast-hours-to-finish"><code>ftc_hours_entry</code></a>) is not entered and there is assigned budget for the activity. If there is no assigned budget, the sum of the child activities is used. The value calculated is generally the full assigned budget (<a href="#budget-assigned-hrs"><code>budget_hours_assigned</code></a>) as a conservative estimate, however for an <abbr title="Earned Value Management">EVM</abbr> Method (<a href="#evm-method"><code>complete_%_evm_method</code></a>) of "Linearised <abbr title="Level of Effort">LoE</abbr>" the actual hours to date (<a href="#actual-recorded-hrs"><code>actual_hours_recorded</code></a>) will be deducted as these activities are expected to meet the budget.</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
@@ -4051,7 +4051,7 @@
 )
 </code></pre></div>
 </div>
-<h3 id="default-ftc-including-change-hrs">Default FTC Including Change [hrs]<a class="headerlink" href="#default-ftc-including-change-hrs" title="Permanent link">#</a></h3>
+<h3 id="default-ftc-including-change-hrs">Default <abbr title="Forecast to Complete">FTC</abbr> Including Change [hrs]<a class="headerlink" href="#default-ftc-including-change-hrs" title="Permanent link">#</a></h3>
 <p>Calculates a default value to be used if a Forecast Hours to Finish (<a href="#forecast-hours-to-finish"><code>ftc_hours_entry</code></a>) is not entered and there is assigned budget and/or requested hours (through formal change management with the client) for the activity. If there is no assigned or requested hours for the activity, the sum of the child activities is used. The value calculated is generally the full assigned and requested budget (<a href="#budget-assigned-requested-hrs"><code>budget_hours_assigned_and_requested</code></a>) as a conservative estimate, however for an <abbr title="Earned Value Management">EVM</abbr> Method (<a href="#evm-method"><code>complete_%_evm_method</code></a>) of "Linearised <abbr title="Level of Effort">LoE</abbr>" the actual hours to date (<a href="#actual-recorded-hrs"><code>actual_hours_recorded</code></a>) will be deducted.</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
@@ -4146,14 +4146,14 @@
 </div>
 <h3 id="evm-method"><abbr title="Earned Value Management">EVM</abbr> Method<a class="headerlink" href="#evm-method" title="Permanent link">#</a></h3>
 <p>The default method for determing an activity's % Complete (<a href="#complete"><code>complete_%</code></a>) is using the manual entry column (<code>complete_%_manual</code>). This column is used to select an alternate method such as "Linearised <abbr title="Level of Effort">LoE</abbr>", "Gated" or "Apportioned Effort".</p>
-<h3 id="fac-hrs">FAC [hrs]<a class="headerlink" href="#fac-hrs" title="Permanent link">#</a></h3>
+<h3 id="fac-hrs"><abbr title="Forecast at Complete (or Completion)">FAC</abbr> [hrs]<a class="headerlink" href="#fac-hrs" title="Permanent link">#</a></h3>
 <p>Forecast at Complete (in hours). This is simply the hours incurred to date (<a href="#actual-hrs"><code>actual_hours</code></a>) plus the forecast hours to complete (<a href="#ftc-hrs"><code>ftc_hours</code></a>).</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=[Actual \[hrs\]]@row + [FTC \[hrs\]]@row
 </code></pre></div>
 </div>
-<h3 id="fac-including-change-hrs">FAC Including Change [hrs]<a class="headerlink" href="#fac-including-change-hrs" title="Permanent link">#</a></h3>
+<h3 id="fac-including-change-hrs"><abbr title="Forecast at Complete (or Completion)">FAC</abbr> Including Change [hrs]<a class="headerlink" href="#fac-including-change-hrs" title="Permanent link">#</a></h3>
 <p>Forecast at Complete (in hours), factoring expected changes to the budget. This is simply the hours incurred to date (<a href="#actual-hrs"><code>actual_hours</code></a>) plus the forecast hours to complete, where in this instance this includes change (<a href="#default-ftc-including-change-hrs"><code>ftc_default_with_change</code></a>).</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
@@ -4217,7 +4217,7 @@
 <p>The date, forecast by the relevant team member, when it is expected that the activity will be completed. This date is the input for the Project Manager's update of the (Planned) Start and Finish dates (<a href="#start-date"><code>date_start_expected</code></a> and <a href="#finish-date"><code>date_finish_expected</code></a>), although the Project Manager will not necessarily change these dates based on the feedback.</p>
 <h3 id="forecast-hours-to-finish">Forecast Hours to Finish<a class="headerlink" href="#forecast-hours-to-finish" title="Permanent link">#</a></h3>
 <p>The hours, forecast by the relevant team member, required to finish the activity as considered on the basis of the work completed at the date of entry. The forecast should be reflective of the remaining work, and should not factor budget and/or hours burned to date.</p>
-<h3 id="ftc-hrs">FTC [hrs]<a class="headerlink" href="#ftc-hrs" title="Permanent link">#</a></h3>
+<h3 id="ftc-hrs"><abbr title="Forecast to Complete">FTC</abbr> [hrs]<a class="headerlink" href="#ftc-hrs" title="Permanent link">#</a></h3>
 <p>Forecast to Complete (in hours). Where a forecast from the frontline is applicable for an activity (generally, where that activity is a Cost Unit), this value will be the frontline's forecast (provided as <a href="#forecast-hours-to-finish"><code>ftc_hours_entry</code></a>). Where it has not been entered, and FTCs at the lower level do exist, the sum of these will be used. Failing that, a default value (<a href="#default-ftc-hrs"><code>ftc_default</code></a>) will be used.</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
@@ -4232,7 +4232,7 @@
 )
 </code></pre></div>
 </div>
-<h3 id="ftc-including-change-hrs">FTC Including Change [hrs]<a class="headerlink" href="#ftc-including-change-hrs" title="Permanent link">#</a></h3>
+<h3 id="ftc-including-change-hrs"><abbr title="Forecast to Complete">FTC</abbr> Including Change [hrs]<a class="headerlink" href="#ftc-including-change-hrs" title="Permanent link">#</a></h3>
 <p>Forecast to Complete (in hours), factoring expected changes to the budget. Where a forecast from the field is applicable for an activity, generally where that activity is a Cost Unit, this value will be the frontline's forecast (provided as <a href="#forecast-hours-to-finish"><code>ftc_hours_entry</code></a>). Where it has not been entered, and FTCs Including Change at the lower level do exist, the sum of these will be used. Failing that, a default value (<a href="#default-ftc-including-change-hrs"><code>ftc_default_with_change</code></a>) will be used.</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
