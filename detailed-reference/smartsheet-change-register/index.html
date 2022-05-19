@@ -1871,9 +1871,18 @@
 </div>
 <h2 id="row-2-specific-formulae">Row 2 Specific Formulae<a class="headerlink" href="#row-2-specific-formulae" title="Permanent link">#</a></h2>
 <h3 id="time-hrs">Time (Hrs)<a class="headerlink" href="#time-hrs" title="Permanent link">#</a></h3>
-<p>!!! info "Formula
-    <div class="highlight"><pre><span></span><code>=INDEX( {Project Register - Total Awarded Budget [hrs]}, MATCH([Project ID]#, {Project Register - Project ID}, 0) )
-</code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=INDEX(
+    {Project Register - Total Awarded Budget [hrs]},
+    MATCH(
+        [Project ID]#,
+        {Project Register - Project ID},
+        0
+    )
+)
+</code></pre></div>
+</div>
                 
               
               
