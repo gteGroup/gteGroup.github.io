@@ -4192,23 +4192,22 @@ This column only applies to projects circa 2309 onwards.
 <h3 id="risk-and-biddecline-verification">Risk and Bid/Decline Verification<a class="headerlink" href="#risk-and-biddecline-verification" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
-<p>'''
-=IF(
-    [Proposal Manager Bid/Decline Recommendation]@row = "", "Missing Bid/Decline Recommendation", 
+<div class="highlight"><pre><span></span><code>=IF(
+    [Proposal Manager Bid/Decline Recommendation]@row = &quot;&quot;, &quot;Missing Bid/Decline Recommendation&quot;, 
     IF(
-        [Risk Approval]@row = "", "Missing Risk Approver", 
+        [Risk Approval]@row = &quot;&quot;, &quot;Missing Risk Approver&quot;, 
         IF(
-            AND([Risk - Commercial Check]@row = "Requires Approval", [Risk - Commercial Approve/Decline]@row = ""), "Missing Commercial Risk Approver", 
+            AND([Risk - Commercial Check]@row = &quot;Requires Approval&quot;, [Risk - Commercial Approve/Decline]@row = &quot;&quot;), &quot;Missing Commercial Risk Approver&quot;, 
             IF(
-                AND([Proposal Manager Bid/Decline Recommendation]@row = "Bid", OR([Risk - Commercial Check]@row = "", [Risk - Commercial Approve/Decline]@row = "Approved")), "Verified Bid", 
+                AND([Proposal Manager Bid/Decline Recommendation]@row = &quot;Bid&quot;, OR([Risk - Commercial Check]@row = &quot;&quot;, [Risk - Commercial Approve/Decline]@row = &quot;Approved&quot;)), &quot;Verified Bid&quot;, 
                 IF(
-                    OR([Proposal Manager Bid/Decline Recommendation]@row = "Decline", [Risk - Commercial Approve/Decline]@row = "Declined"), "Verified Decline", "Unverified"
+                    OR([Proposal Manager Bid/Decline Recommendation]@row = &quot;Decline&quot;, [Risk - Commercial Approve/Decline]@row = &quot;Declined&quot;), &quot;Verified Decline&quot;, &quot;Unverified&quot;
                 )
             )
         )
     )
 )
-'''</p>
+</code></pre></div>
 </div>
 <h3 id="risk-approval">Risk Approval<a class="headerlink" href="#risk-approval" title="Permanent link">#</a></h3>
 <div class="admonition info">
