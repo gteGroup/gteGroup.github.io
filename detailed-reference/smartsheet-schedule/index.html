@@ -1508,6 +1508,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#actual-distributed-hrs" class="md-nav__link">
+    Actual Distributed [hrs]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#actual-finish-date" class="md-nav__link">
     Actual Finish Date
   </a>
@@ -2112,6 +2119,13 @@
           <li class="md-nav__item">
   <a href="#sv_1" class="md-nav__link">
     SV%
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcpi" class="md-nav__link">
+    TCPI
   </a>
   
 </li>
@@ -2331,6 +2345,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#actual-distributed-hrs" class="md-nav__link">
+    Actual Distributed [hrs]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#actual-finish-date" class="md-nav__link">
     Actual Finish Date
   </a>
@@ -2940,6 +2961,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tcpi" class="md-nav__link">
+    TCPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#variance" class="md-nav__link">
     Variance
   </a>
@@ -3033,6 +3061,13 @@
 <td>Actual Cost</td>
 <td>Actual</td>
 <td>actual_hours</td>
+</tr>
+<tr>
+<td><a href="#actual-distributed-hrs">Actual Distributed [hrs]</a></td>
+<td>Summation/Propagation</td>
+<td>Actual Cost</td>
+<td>Actual</td>
+<td>actual_distriuted_hours</td>
 </tr>
 <tr>
 <td><a href="#actual-finish-date">Actual Finish Date</a></td>
@@ -3644,6 +3679,13 @@
 <td>sv_%</td>
 </tr>
 <tr>
+<td><a href="#tcpi">TCPI</a></td>
+<td>Calculation</td>
+<td>Metric</td>
+<td>To-Complete Performance Index</td>
+<td>tcpi</td>
+</tr>
+<tr>
 <td><a href="#variance">Variance</a></td>
 <td>System (Background)</td>
 <td>System</td>
@@ -3707,6 +3749,24 @@
     AND([Actual Recorded \[hrs\]]@row &lt;&gt; &quot;&quot;, [Actual Recorded \[hrs\]]@row &lt;&gt; 0), 
     [Actual Recorded \[hrs\]]@row, 
     SUM( CHILDREN([Actual \[hrs\]]@row) )
+)
+</code></pre></div>
+</div>
+<h3 id="actual-distributed-hrs">Actual Distributed [hrs]<a class="headerlink" href="#actual-distributed-hrs" title="Permanent link">#</a></h3>
+<p>Actual hours, as read from the Avaza for parent activity, distributed across all its children (using activity's <abbr title="Earned Value">EV</abbr>). It helps to correctly calculate <abbr title="Forecast to Complete">FTC</abbr> for non Cost Unit activities (and subsequently the Resource Loading).</p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IFERROR(
+    IF(
+        [Effective Cost Unit]@row = PARENT([Effective Cost Unit]@row),
+        PARENT() / PARENT([EV \[hrs\]]@row) * [EV \[hrs\]]@row,
+        IF(
+            [Cost Unit]@row = 1,
+            [Actual Recorded \[hrs\]]@row,
+            0
+        )
+    ),
+    0
 )
 </code></pre></div>
 </div>
@@ -4043,21 +4103,33 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
-    [% Complete]@row = 1, 
-    0, 
+    [WBS Descendants]@row = 0,
     IF(
-        AND( [Budget \[hrs\]]@row &lt;&gt; &quot;&quot;, [Budget \[hrs\]]@row &lt;&gt; 0 ), 
+        [% Complete]@row = 1,
+        0,
         IF(
-            [EVM Method]@row = &quot;Linearised LoE&quot;, 
-            [Budget \[hrs\]]@row - [Actual \[hrs\]]@row, 
+            AND(
+                [Budget \[hrs\]]@row &lt;&gt; &quot;&quot;,
+                [Budget \[hrs\]]@row &lt;&gt; 0,
+                [Resource(s)]@row &lt;&gt; &quot;&quot;
+            ),
             IF(
-                AND( [Assume Linear Performance]# = 1, [% Complete]@row &gt; 0, [Cost Unit]@row = 1 ), 
-                [Actual \[hrs\]]@row * (1 - [% Complete]@row) / [% Complete]@row, 
-                [Budget \[hrs\]]@row
-            )
-        ), 
-        SUM(CHILDREN())
-    )
+                [EVM Method]@row = &quot;Linearised LoE&quot;,
+                [Budget \[hrs\]]@row - [Actual Distributed \[hrs\]]@row,
+                IF(
+                    [Assume Linear Performance]# = 1,
+                    IF(
+                        [% Complete]@row &gt; 0,
+                        [Actual Distributed \[hrs\]]@row * (1 - [% Complete]@row) / [% Complete]@row,
+                        [Budget \[hrs\]]@row
+                    ),
+                    [Budget \[hrs\]]@row - [Actual Distributed \[hrs\]]@row
+                )
+            ),
+            0
+        )
+    ),
+    SUM(CHILDREN())
 )
 </code></pre></div>
 </div>
@@ -4627,6 +4699,16 @@
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IFERROR(
     SV@row / [PV \[hrs\]]@row, 
+    &quot;&quot;
+)
+</code></pre></div>
+</div>
+<h3 id="tcpi">TCPI<a class="headerlink" href="#tcpi" title="Permanent link">#</a></h3>
+<p>To-Complete Performance Index, indicates how efficiently do we need to use our remaining resources.</p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IFERROR(
+    ([FAC \[hrs\]]@row - [EV \[hrs\]]@row) / ([FAC \[hrs\]]@row - [Actual \[hrs\]]@row),
     &quot;&quot;
 )
 </code></pre></div>
