@@ -1830,40 +1830,62 @@
 <li>Open the PPM Master sheet.</li>
 <li>Either Insert a new row, or Copy/Paste an existing row to be used as a basis, to the intended position in the sheet.</li>
 <li>Define the Action/Details column.</li>
-<li>If applicable, apply one or multiple parameter(s) in the Parameters column. Either use one of the existing parameters (as defined in PPM Documentation sheet), or create a new parameter, using next available spare one:
-i. Update Parameter definition in the PPM Documentation sheet.
-ii. In PPM Register, define a new  column formula to evaluate the new parameter in column, corresponding to the new parameter (Param 1 – Param 15). Save this sheet.
-iii. Update the Parameters column for the newly added row in the PPM Master sheet accordingly .</li>
-<li>Define assignee for the new item in the ‘Assigned To’ column. Select one of the pre-defined roles. The actual assignment for all roles (including Spare 1 and Spare 2) is to be done in the PPM Register sheet, following similar process as mentioned in the item 3 above.</li>
+<li>
+<p>If applicable, apply one or multiple parameter(s) in the Parameters column. Either use one of the existing parameters (as defined in PPM Documentation sheet), or create a new parameter, using next available spare one:</p>
+<ol>
+<li>Update Parameter definition in the PPM Documentation sheet.</li>
+<li>In PPM Register, define a new  column formula to evaluate the new parameter in column, corresponding to the new parameter (Param 1 – Param 15). Save this sheet.</li>
+<li>Update the Parameters column for the newly added row in the PPM Master sheet accordingly .</li>
+</ol>
+</li>
+<li>
+<p>Define assignee for the new item in the ‘Assigned To’ column. Select one of the pre-defined roles. The actual assignment for all roles (including Spare 1 and Spare 2) is to be done in the PPM Register sheet, following similar process as mentioned in the item 3 above.</p>
+</li>
 <li>Define Predecessors for the new item.</li>
 <li>Define Target Date Base for the new item, selecting one of pre-defined base dates. In case the spare date is selected, it’s actual value is to be defined in the PPM Register sheet following similar process as mentioned in the item 3 above.</li>
 <li>Define Target Date Delay.</li>
-<li>Indicate if any of the rules does apply to the newly added item. In case the new spare rule is being used for this purpose, similar process as mentioned in the item 5 above is to be followed.</li>
-</ol>
+<li>
+<p>Indicate if any of the rules does apply to the newly added item. In case the new spare rule is being used for this purpose, similar process as mentioned in the item 5 above is to be followed.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Even though Master PPM changes are completed at this point, <strong>DO NOT</strong> save PPM Master yet!</p>
 </div>
-<ol>
-<li>Disable all PPM notifications via a PPM Register sheet by ticking the Sheet Summary checkbox <code>Disable Notification Workflow</code>. <strong>Save the PPM Register sheet</strong>.</li>
+</li>
+<li>
+<p>Disable all PPM notifications via a PPM Register sheet by ticking the Sheet Summary checkbox <code>Disable Notification Workflow</code>. <strong>Save the PPM Register sheet</strong>.</p>
+</li>
 <li>Only after the PPM Register is saved, <strong>Save the PPM Master sheet</strong>.</li>
-<li>Synchronize Status values across all PPM Instances:
-i. Open the report <a href="https://app.smartsheet.com/reports/8h8q7vGfWjx6qHW8jqrW7WRcrcgHcHXfrhrprfJ1">_PPMServiceReport – Manual Alignment</a>.
-ii. Tick all the checkboxes in the <code>Manual Alignment Trigger</code> column.
-iii. Save the report and wait a few minutes for the synchronization to be completed.
-iv. Untick all the checkboxes in the <code>Manual Alignment Trigger</code> column.
-v.  Save the report.</li>
-<li>Synchronize Feedback values across all PPM Instances:
-i. Open the report <a href="https://app.smartsheet.com/reports/hPVcC3JRpj9PG5vmXq7M8HpxF7xPhP389W2qGFc1">_PPMServiceReport – Feedback Alignment</a>.
-ii. Copy and Paste the WHOLE contents of <code>Feedback – Shadow</code> column into <code>Feedback</code> column.
-iii. Save the report.</li>
-<li>Review the existing Comments using the <a href="https://app.smartsheet.com/reports/ph7vhf57XvvHCww94jv5xPgjrpR6wPpVCJ6FgPp1">_PPMServiceReport - Comments</a> report. Adding new rows before any row(s) with the comment will cause discrepancy between the original commented row and the actual comment and therefor it is recommended that such comments are deleted.</li>
+<li>
+<p>Synchronize Status values across all PPM Instances:</p>
+<ol>
+<li>Open the report <a href="https://app.smartsheet.com/reports/8h8q7vGfWjx6qHW8jqrW7WRcrcgHcHXfrhrprfJ1">_PPMServiceReport – Manual Alignment</a>.</li>
+<li>Tick all the checkboxes in the <code>Manual Alignment Trigger</code> column.</li>
+<li>Save the report and wait a few minutes for the synchronization to be completed.</li>
+<li>Untick all the checkboxes in the <code>Manual Alignment Trigger</code> column.</li>
+<li>Save the report.</li>
+</ol>
+</li>
+<li>
+<p>Synchronize Feedback values across all PPM Instances:</p>
+<ol>
+<li>Open the report <a href="https://app.smartsheet.com/reports/hPVcC3JRpj9PG5vmXq7M8HpxF7xPhP389W2qGFc1">_PPMServiceReport – Feedback Alignment</a>.</li>
+<li>Copy and Paste the WHOLE contents of <code>Feedback – Shadow</code> column into <code>Feedback</code> column.</li>
+<li>Save the report.</li>
+</ol>
+</li>
+<li>
+<p>Review the existing Comments using the <a href="https://app.smartsheet.com/reports/ph7vhf57XvvHCww94jv5xPgjrpR6wPpVCJ6FgPp1">_PPMServiceReport - Comments</a> report. Adding new rows before any row(s) with the comment will cause discrepancy between the original commented row and the actual comment and therefor it is recommended that such comments are deleted.</p>
+</li>
 <li>Re-enable all PPM notifications via a PPM Register sheet by unticking the Sheet Summary checkbox <code>Disable Notification Workflow</code>. <strong>Save the PPM Register sheet</strong>.</li>
-<li>Sent PPM notifications for newly added row(s):
-i. In the PPM Master, tick the corresponding checkbox in the <code>Manual Notification Trigger</code> column.
-ii. Save the PPM Master sheet.
-iii. After a few minutes time, untick all the <code>Manual Notification Trigger</code> checkboxes.
-iv. Save the PPM Master sheet.</li>
+<li>
+<p>Sent PPM notifications for newly added row(s):</p>
+<ol>
+<li>In the PPM Master, tick the corresponding checkbox in the <code>Manual Notification Trigger</code> column.</li>
+<li>Save the PPM Master sheet.</li>
+<li>After a few minutes time, untick all the <code>Manual Notification Trigger</code> checkboxes.</li>
+<li>Save the PPM Master sheet.</li>
+</ol>
+</li>
 </ol>
 <h3 id="deleting-rows">Deleting Rows<a class="headerlink" href="#deleting-rows" title="Permanent link">#</a></h3>
 <div class="admonition important">
@@ -1872,26 +1894,38 @@ iv. Save the PPM Master sheet.</li>
 </div>
 <ol>
 <li>Open the PPM Master sheet.</li>
-<li>Delete the row(s).</li>
-</ol>
+<li>
+<p>Delete the row(s).</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Even though Master PPM changes are completed at this point, <strong>DO NOT</strong> save PPM Master yet!</p>
 </div>
-<ol>
-<li>Disable all PPM notifications via a PPM Register sheet by ticking the Sheet Summary checkbox <code>Disable Notification Workflow</code>. <strong>Save the PPM Register sheet</strong>.</li>
+</li>
+<li>
+<p>Disable all PPM notifications via a PPM Register sheet by ticking the Sheet Summary checkbox <code>Disable Notification Workflow</code>. <strong>Save the PPM Register sheet</strong>.</p>
+</li>
 <li>Only after the PPM Register is saved, <strong>Save the PPM Master sheet</strong>.</li>
-<li>Synchronize Status values across all PPM Instances:
-i. Open the report <a href="https://app.smartsheet.com/reports/8h8q7vGfWjx6qHW8jqrW7WRcrcgHcHXfrhrprfJ1">_PPMServiceReport – Manual Alignment</a>
-ii. Tick all the checkboxes in the <code>Manual Alignment Trigger</code> column.
-iii. Save the report and wait a few minutes for the synchronization to be completed.
-iv. Untick all the checkboxes in the <code>Manual Alignment Trigger</code> column.
-v. Save the report.</li>
-<li>Synchronize Feedback values across all PPM Instances:
-i. Open the report <a href="https://app.smartsheet.com/reports/hPVcC3JRpj9PG5vmXq7M8HpxF7xPhP389W2qGFc1">_PPMServiceReport – Feedback Alignment</a>.
-ii. Copy and Paste the WHOLE contents of <code>Feedback – Shadow</code> column into <code>Feedback</code> column.
-iii. Save the report.</li>
-<li>Review the existing Comments using the <a href="https://app.smartsheet.com/reports/ph7vhf57XvvHCww94jv5xPgjrpR6wPpVCJ6FgPp1">_PPMServiceReport - Comments</a> report. Deleting rows before any the row(s) with the comment will cause discrepancy between the original commented row and the actual comment and therefor it is recommended that such comments are deleted.</li>
+<li>
+<p>Synchronize Status values across all PPM Instances:</p>
+<ol>
+<li>Open the report <a href="https://app.smartsheet.com/reports/8h8q7vGfWjx6qHW8jqrW7WRcrcgHcHXfrhrprfJ1">_PPMServiceReport – Manual Alignment</a></li>
+<li>Tick all the checkboxes in the <code>Manual Alignment Trigger</code> column.</li>
+<li>Save the report and wait a few minutes for the synchronization to be completed.</li>
+<li>Untick all the checkboxes in the <code>Manual Alignment Trigger</code> column.</li>
+<li>Save the report.</li>
+</ol>
+</li>
+<li>
+<p>Synchronize Feedback values across all PPM Instances:</p>
+<ol>
+<li>Open the report <a href="https://app.smartsheet.com/reports/hPVcC3JRpj9PG5vmXq7M8HpxF7xPhP389W2qGFc1">_PPMServiceReport – Feedback Alignment</a>.</li>
+<li>Copy and Paste the WHOLE contents of <code>Feedback – Shadow</code> column into <code>Feedback</code> column.</li>
+<li>Save the report.</li>
+</ol>
+</li>
+<li>
+<p>Review the existing Comments using the <a href="https://app.smartsheet.com/reports/ph7vhf57XvvHCww94jv5xPgjrpR6wPpVCJ6FgPp1">_PPMServiceReport - Comments</a> report. Deleting rows before any the row(s) with the comment will cause discrepancy between the original commented row and the actual comment and therefor it is recommended that such comments are deleted.</p>
+</li>
 <li>Re-enable all PPM notifications via a PPM Register sheet by unticking the Sheet Summary checkbox <code>Disable Notification Workflow</code>. <strong>Save the PPM Register sheet</strong>.</li>
 </ol>
 <h3 id="updating-rows">Updating Rows<a class="headerlink" href="#updating-rows" title="Permanent link">#</a></h3>
@@ -1903,9 +1937,11 @@ iii. Save the report.</li>
 <h2 id="versioning-documenting-changes">Versioning &amp; Documenting Changes<a class="headerlink" href="#versioning-documenting-changes" title="Permanent link">#</a></h2>
 <p>Before making changes to any of the PPM sheets, save the backup of current version in the <code>__ARCHIVES &amp; BACKUPS</code> folder of the <a href="https://app.smartsheet.com/workspaces/PgMqJqjX242qgxVR64QX8hH6Q8cxcxj5p3FJ23v1">0000 - PM Framework (Restricted)</a> workspace. In here, create a new folder with the name <code>PPM_Template_yy-mm-dd</code> and move any sheets that are going to be changed into this folder.</p>
 <p>Any changes in the PPM sheet(s) must be documented in the <a href="https://app.smartsheet.com/sheets/7QWfFm59gV8f8CPXw2HHrpg49M4Xg9FgwqMcC5p1">PPM Template Change History</a> sheet.</p>
-<p>Changes are to be described in the <code>Change Details</code> column, entering the details of the implemented changes. This will be used to document the history of changes that have been applied to the PPM:
-1.  Update the PPM Template Change History sheet by filling in the <code>Change Details</code> column and optionally the <code>Further Details</code> column.
-2.  Any time a PPM Template sheet is changed, the Sheet Summary field named <code>Template Build Date</code> is to be updated to indicate the date of the change.</p>
+<p>Changes are to be described in the <code>Change Details</code> column, entering the details of the implemented changes. This will be used to document the history of changes that have been applied to the PPM:</p>
+<ol>
+<li>Update the PPM Template Change History sheet by filling in the <code>Change Details</code> column and optionally the <code>Further Details</code> column.</li>
+<li>Any time a PPM Template sheet is changed, the Sheet Summary field named <code>Template Build Date</code> is to be updated to indicate the date of the change.</li>
+</ol>
 
               
             </article>
