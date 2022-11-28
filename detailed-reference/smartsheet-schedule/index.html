@@ -1907,6 +1907,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#gated-progress-identifier" class="md-nav__link">
+    Gated Progress Identifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gated-progress-reference" class="md-nav__link">
     Gated Progress Reference
   </a>
@@ -1930,6 +1937,13 @@
           <li class="md-nav__item">
   <a href="#information" class="md-nav__link">
     Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#last-progress-update-date" class="md-nav__link">
+    Last Progress Update Date
   </a>
   
 </li>
@@ -2758,6 +2772,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#gated-progress-identifier" class="md-nav__link">
+    Gated Progress Identifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gated-progress-reference" class="md-nav__link">
     Gated Progress Reference
   </a>
@@ -2781,6 +2802,13 @@
           <li class="md-nav__item">
   <a href="#information" class="md-nav__link">
     Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#last-progress-update-date" class="md-nav__link">
+    Last Progress Update Date
   </a>
   
 </li>
@@ -3476,6 +3504,13 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="#gated-progress-identifier">Gated Progress Identifier</a></td>
+<td>Project Manager (Setup/Maintain)</td>
+<td>% Complete</td>
+<td>Actual</td>
+<td></td>
+</tr>
+<tr>
 <td><a href="#gated-progress-reference">Gated Progress Reference</a></td>
 <td>Project Manager (Setup/Maintain)</td>
 <td>% Complete</td>
@@ -3500,6 +3535,13 @@
 <td><a href="#information">Information</a></td>
 <td>Project Manager (Setup/Maintain)</td>
 <td>Metadata</td>
+<td>All</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#last-progress-update-date">Last Progress Update Date</a></td>
+<td>System (Background)</td>
+<td>System</td>
 <td>All</td>
 <td></td>
 </tr>
@@ -4361,6 +4403,13 @@
 </div>
 <h3 id="future-parent-for-apportioned-effort">FUTURE - Parent for Apportioned Effort<a class="headerlink" href="#future-parent-for-apportioned-effort" title="Permanent link">#</a></h3>
 <p>Future - disregard.</p>
+<h3 id="gated-progress-identifier">Gated Progress Identifier<a class="headerlink" href="#gated-progress-identifier" title="Permanent link">#</a></h3>
+<p>Identifies the gated reference using the full path name from the original gated reference sheet hierarchy. This helps user by providing more readable descriptioin of the used gated reference thus simplifying the process of creating a gated reference structure.</p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=INDEX({GatedProgressSummary - Identifier}, MATCH([Gated Progress Reference]@row, {GatedProgressSummary - Reference}, 0))
+</code></pre></div>
+</div>
 <h3 id="gated-progress-reference">Gated Progress Reference<a class="headerlink" href="#gated-progress-reference" title="Permanent link">#</a></h3>
 <p>Where "Gated" is selected as the earned value measurement method (<a href="#evm-method"><code>complete_%_evm_method</code></a>), this reference should be set to an external progress source (gated progress sheet).</p>
 <h3 id="gte-pm">GTE <abbr title="Project Manager">PM</abbr><a class="headerlink" href="#gte-pm" title="Permanent link">#</a></h3>
@@ -4374,6 +4423,8 @@
 <p>Optional column. Selecting one or more of the existing options, such as 'Comms Site Works', or entering any new custom value allows this column to be used in global report filters to produce high level resourcing views.</p>
 <h3 id="information">Information<a class="headerlink" href="#information" title="Permanent link">#</a></h3>
 <p>Free text entry to provide any comments against the activity that should be more visible than row comments. In some instances, this column may be populated from the original estimate and provide detail on the basis of the estimate for example.</p>
+<h3 id="last-progress-update-date">Last Progress Update Date<a class="headerlink" href="#last-progress-update-date" title="Permanent link">#</a></h3>
+<p>System column. Automation records current date whenever manual % complete is changed. It is then used to evaluate when was the latest schedule progress updated whcih can then be indicated to the client as an information how latest the schedule progress is.</p>
 <h3 id="manual-complete">Manual % Complete<a class="headerlink" href="#manual-complete" title="Permanent link">#</a></h3>
 <p>Where "Manual % Complete" is selected as the earned value measurement method (<a href="#evm-method"><code>complete_%_evm_method</code></a>), or where no selection is made, the physical % Complete of relevant activities should be entered in this column by project team members responsible for the work.</p>
 <h3 id="modified-by">Modified By<a class="headerlink" href="#modified-by" title="Permanent link">#</a></h3>

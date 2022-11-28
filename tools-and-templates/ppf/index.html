@@ -1436,6 +1436,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#move-navigation-pane-to-bottom-of-outlook-window" class="md-nav__link">
+    Move Navigation Pane To Bottom Of Outlook Window
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1815,6 +1822,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#move-navigation-pane-to-bottom-of-outlook-window" class="md-nav__link">
+    Move Navigation Pane To Bottom Of Outlook Window
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2042,6 +2056,16 @@
 <li>
 <p>Click 'OK', then 'Next' and 'Finish'. The certificate gets installed.</p>
 </li>
+</ol>
+<h3 id="move-navigation-pane-to-bottom-of-outlook-window">Move Navigation Pane To Bottom Of Outlook Window<a class="headerlink" href="#move-navigation-pane-to-bottom-of-outlook-window" title="Permanent link">#</a></h3>
+<p>If you prefer the Navigation Pane to rather be on the bottom of Outlook Window instead of current default position on the left, there is some modification required in the Key registry:</p>
+<ol>
+<li>Close Outlook</li>
+<li>Right click Start &gt; Run &gt; type Regedit</li>
+<li>Navigate to HKEY_CURRENT_USER &gt; Software &gt; Microsoft &gt; Office &gt; 16.0 &gt; Common &gt; ExperimentEcs &gt; Overrides</li>
+<li>Create string value named Microsoft.Office.Outlook.Hub.HubBar (if this exists already, skip)</li>
+<li>Set value to <code>false</code></li>
+<li>Restart Outlook</li>
 </ol>
 
               

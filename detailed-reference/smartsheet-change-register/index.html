@@ -1417,6 +1417,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#activity-labour-rate-hr" class="md-nav__link">
+    Activity Labour Rate ($/hr)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#change-for-activity" class="md-nav__link">
     Change # for Activity
   </a>
@@ -1721,6 +1728,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#activity-labour-rate-hr" class="md-nav__link">
+    Activity Labour Rate ($/hr)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#change-for-activity" class="md-nav__link">
     Change # for Activity
   </a>
@@ -1825,6 +1839,35 @@
 </tbody>
 </table>
 <h2 id="column-details">Column Details<a class="headerlink" href="#column-details" title="Permanent link">#</a></h2>
+<h3 id="activity-labour-rate-hr">Activity Labour Rate ($/hr)<a class="headerlink" href="#activity-labour-rate-hr" title="Permanent link">#</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    [New Activity Labour Rate ($/hr)]@row &lt;&gt; &quot;&quot;,
+    [New Activity Labour Rate ($/hr)]@row, 
+    IF(
+        [Activity Labour (hrs)]@row = &quot;&quot;,
+        &quot;&quot;, 
+        IF(
+            OR(
+                Client# = &quot;CPPC&quot;,
+                Client# = &quot;CPM&quot;
+            ),
+            IF(
+                Location@row = &quot;Office&quot;,
+                INDEX({Roles &amp; Rates - CPPC/CPM_Office}, MATCH([Resource Role]@row, {Roles &amp; Rates - Role}, 0)),
+                INDEX({Roles &amp; Rates - CPPC/CPM_Site}, MATCH([Resource Role]@row, {Roles &amp; Rates - Role}, 0))
+            ),
+            IF(
+                Location@row = &quot;Office&quot;,
+                INDEX({Roles &amp; Rates - Standard_Office}, MATCH([Resource Role]@row, {Roles &amp; Rates - Role}, 0)),
+                INDEX({Roles &amp; Rates - Standard_Site}, MATCH([Resource Role]@row, {Roles &amp; Rates - Role}, 0))
+            )
+        )
+    )
+)
+</code></pre></div>
+</div>
 <h3 id="change-for-activity">Change # for Activity<a class="headerlink" href="#change-for-activity" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
@@ -1839,15 +1882,16 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
-    [WBS Level]@row = 1, 
-    IF([Project ID]# &lt;&gt; &quot;xxxx&quot;, &quot;P&quot; + [Project ID]# + &quot; | &quot; + [Project Name]#, &quot;SETUP REQ&#39;D: OPEN SHEET SUMMARY&quot;), 
+    [WBS Level]@row = 1,
+    IF(
+        [Project ID]# &lt;&gt; &quot;xxxx&quot;,
+        &quot;P&quot; + [Project ID]# + &quot; | &quot; + [Project Name]#,
+        &quot;SETUP REQ&#39;D: OPEN SHEET SUMMARY&quot;
+    ), 
     IF(
         [WBS Level]@row = 2, 
-        [Change #]@row + IF([Change #]@row &lt;&gt; &quot;&quot;, &quot; - &quot;, &quot;&quot;) + [Existing Activity ID or New Activity Name]@row, 
-        IFERROR(
-            INDEX({Schedule - Activity}, MATCH([Existing Activity ID or New Activity Name]@row, {Schedule - Activity ID}, 0)), 
-            [Existing Activity ID or New Activity Name]@row
-        )
+        [Change #]@row + IF([Change #]@row &lt;&gt; &quot;&quot;, &quot; - &quot;, &quot;&quot;) + [New Activity Name]@row,
+        [New Activity Name]@row
     )
 )
 </code></pre></div>
