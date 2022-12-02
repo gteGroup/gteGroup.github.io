@@ -13,7 +13,7 @@
     
     
       
-        <title>Smartsheet TQ/RFI Register - GTE Project Management Framework</title>
+        <title>Smartsheet rti register - GTE Project Management Framework</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#smartsheet-tqrfi-register" class="md-skip">
+        <a href="#smartsheet-rti-register" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Smartsheet TQ/RFI Register
+              Smartsheet rti register
             
           </span>
         </div>
@@ -256,15 +256,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../smartsheet-baseline-register/" class="md-tabs__link md-tabs__link--active">
+      <a href="../smartsheet-baseline-register/" class="md-tabs__link">
         Detailed Reference
       </a>
     </li>
@@ -1324,14 +1322,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
       
       
       
@@ -1450,107 +1446,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Smartsheet TQ/RFI Register
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../smartsheet-tq-rfi-register.md" class="md-nav__link">
         Smartsheet TQ/RFI Register
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#column-summary" class="md-nav__link">
-    Column Summary
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#column-details" class="md-nav__link">
-    Column Details
-  </a>
-  
-    <nav class="md-nav" aria-label="Column Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#detailed-status" class="md-nav__link">
-    Detailed Status
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detailed-status-tq" class="md-nav__link">
-    Detailed Status (TQ)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detailed-status-rfi" class="md-nav__link">
-    Detailed Status (RFI)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceeds-max-response-days" class="md-nav__link">
-    Exceeds Max Response Days
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#overdue-or-late" class="md-nav__link">
-    Overdue (or Late)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#status" class="md-nav__link">
-    Status
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1754,8 +1654,9 @@
                 
 
 
-<h1 id="smartsheet-tqrfi-register">Smartsheet <abbr title="Technical Query">TQ</abbr>/<abbr title="Request for Information">RFI</abbr> Register<a class="headerlink" href="#smartsheet-tqrfi-register" title="Permanent link">#</a></h1>
+<h1 id="smartsheet-rti-register">Smartsheet <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> Register<a class="headerlink" href="#smartsheet-rti-register" title="Permanent link">#</a></h1>
 <h2 id="column-summary">Column Summary<a class="headerlink" href="#column-summary" title="Permanent link">#</a></h2>
+<p>Following are the columns that are filled in by user through the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> entry form:</p>
 <table>
 <thead>
 <tr>
@@ -1764,6 +1665,60 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="#amendments-required">Amendments Required</a></td>
+<td>Manual column - edited by user throught the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> entry form.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Brief Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#agreed-maximum-response-days">Agreed Maximum Response Days</a></td>
+<td>System column - configurable parameter, linked in from 1000_RTI_Parameters sheet.</td>
+</tr>
+<tr>
+<td><a href="#amendments-requested">Amendments Requested</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#carbon-copy-recipients">Carbon Copy Recipients</a></td>
+<td>Manual column - edited by user throught the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> entry form.</td>
+</tr>
+<tr>
+<td><a href="#client-actioning">Client Actioning</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#client-pm">Client <abbr title="Project Manager">PM</abbr></a></td>
+<td>System column - configurable parameter, linked in from 1000_RTI_Parameters sheet.</td>
+</tr>
+<tr>
+<td><a href="#clients-response">Client's Response</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#closed-date">Closed Date</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#days-in-potential-limbo-same-person">Days in Potential Approval Limbo</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#days-in-potential-limbo-other-person">Days in Potential Limbo (Other Person)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#days-in-potential-limbo-same-person">Days in Potential Limbo (Same Person)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
 <tr>
 <td><a href="#detailed-status">Detailed Status</a></td>
 <td>The detailed status of an <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> which shows precisely where it is within the workflow.</td>
@@ -1777,15 +1732,379 @@
 <td>Determines the detailed status for requests for information.</td>
 </tr>
 <tr>
+<td><a href="#details">Details</a></td>
+<td>Manual column - edited by user throught the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> entry form.</td>
+</tr>
+<tr>
+<td><a href="#directions-for-nominated-sme-if-req">Directions for Nominated SME (if Req.)</a></td>
+<td>Manual column - edited by user throught the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> entry form.</td>
+</tr>
+<tr>
+<td><a href="#directions-comments-by-the-clients-pm">Directions/Comments (by the Client's <abbr title="Project Manager">PM</abbr>)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#disable-all-workflows">Disable All Workflows</a></td>
+<td>System column - configurable parameter, linked in from 1000_RTI_Parameters sheet.</td>
+</tr>
+<tr>
+<td><a href="#dispensation-details">Dispensation Details</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#dispensation-reference">Dispensation Reference</a></td>
+<td>Manual column - edited by user throught the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> entry form.</td>
+</tr>
+<tr>
+<td><a href="#dispensation-required">Dispensation Required?</a></td>
+<td>Manual column - edited by user throught the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> entry form.</td>
+</tr>
+<tr>
 <td><a href="#exceeds-max-response-days">Exceeds Max Response Days</a></td>
 <td>Determines the detailed status for requests for information.</td>
+</tr>
+<tr>
+<td><a href="#gtes-recommendation">GTE's Recommendation</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#gte-pm-authoriser">GTE <abbr title="Project Manager">PM</abbr> (Authoriser)</a></td>
+<td>System column - configurable parameter, linked in from 1000_RTI_Parameters sheet.</td>
+</tr>
+<tr>
+<td><a href="#gte-workflow">GTE Workflow</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#in-potential-approval-limbo">In Potential Approval Limbo</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#in-potential-limbo-other-person">In Potential Limbo (Other Person)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#in-potential-limbo-same-person">In Potential Limbo (Same Person)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#issue-notification-emails-sent-to">Issue Notification Emails Sent To</a></td>
+<td>System column - configurable parameter, linked in from 1000_RTI_Parameters sheet.</td>
+</tr>
+<tr>
+<td><a href="#issued-date">Issued Date</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#latest-comment">Latest Comment</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#limbo-resend-trigger">Limbo Resend Trigger</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#manual-resend-trigger">Manual Resend Trigger</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#manual-trigger">Manual Trigger</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#maximum-days-in-potential-limbo-ap">Maximum Days in Potential Limbo (AP)</a></td>
+<td>System column - configurable parameter, linked in from 1000_RTI_Parameters sheet.</td>
+</tr>
+<tr>
+<td><a href="#maximum-days-in-potential-limbo-op">Maximum Days in Potential Limbo (OP)</a></td>
+<td>System column - configurable parameter, linked in from 1000_RTI_Parameters sheet.</td>
+</tr>
+<tr>
+<td><a href="#maximum-days-in-potential-limbo-sp">Maximum Days in Potential Limbo (SP)</a></td>
+<td>System column - configurable parameter, linked in from 1000_RTI_Parameters sheet.</td>
+</tr>
+<tr>
+<td><a href="#nominated-delegate-or-sme-if-req">Nominated Delegate or SME (if Req.)</a></td>
+<td>Manual column - entered by client through the Update Request form.</td>
 </tr>
 <tr>
 <td><a href="#overdue-or-late">Overdue (or Late)</a></td>
 <td>Indicates whether a response is overdue, or was provided later than required/requested.</td>
 </tr>
 <tr>
+<td><a href="#raised-by">Raised By</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#pdf-insert-text">PDF Insert Text</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#pdf-version-closed">PDF Version Closed</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#pdf-version-used">PDF Version Used</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#person-actioning">Person Actioning</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#possible-impact-cost">Possible Impact - Cost</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#possible-impact-other">Possible Impact - Other</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#possible-impact-schedule">Possible Impact - Schedule</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#possible-project-impact">Possible Project Impact?</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#potential-approval-limbo-start-date">Potential Approval Limbo Start Date</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#potential-limbo-start-date-other-person">Potential Limbo Start Date (Other Person)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#potential-limbo-start-date-same-person">Potential Limbo Start Date (Same Person)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#potential-limbo-type">Potential Limbo Type</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#project">Project</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#project-id">Project ID</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#project-id-error">Project ID Error</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#project-impact-preliminary-estimate-only">Project Impact (Preliminary Estimate Only)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#project-name">Project Name</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#raised-date">Raised Date</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#recommendation">Recommendation</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#record-limbo-start-date-ap">Record Limbo Start Date (AP)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#record-limbo-start-date-op">Record Limbo Start Date (OP)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#record-limbo-start-date-sp">Record Limbo Start Date (SP)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#reference-documents-drawings">Reference Documents &amp; Drawings</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#reference-documents-or-drawings">Reference Documents or Drawings</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#reminder-subject">Reminder Subject</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#reminder-text">Reminder Text</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#request-details">Request Details</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#responded-date">Responded Date</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#response-complete-when-ready-to-issue-to-gte">Response (Complete When Ready to Issue to GTE)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#response-required-by-date">Response Required by Date</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#retrigger-mask">Retrigger Mask</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#retrigger-potential-limbo-ap-items">Retrigger Potential Limbo (AP) Items</a></td>
+<td>System column - configurable parameter, linked in from 1000_RTI_Parameters sheet.</td>
+</tr>
+<tr>
+<td><a href="#retrigger-potential-limbo-op-items">Retrigger Potential Limbo (OP) Items</a></td>
+<td>System column - configurable parameter, linked in from 1000_RTI_Parameters sheet.</td>
+</tr>
+<tr>
+<td><a href="#retrigger-potential-limbo-sp-items">Retrigger Potential Limbo (SP) Items</a></td>
+<td>System column - configurable parameter, linked in from 1000_RTI_Parameters sheet.</td>
+</tr>
+<tr>
+<td><a href="#rti"><abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> #</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#rti-automation-used-rfi"><abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> Automation Used (<abbr title="Request for Information">RFI</abbr>)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#rti-automation-used-tq"><abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> Automation Used (<abbr title="Technical Query">TQ</abbr>)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#rti-number"><abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> Number</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#seq">Seq #</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#sheet">Sheet</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#sme-response-required-by-date">SME Response Required by Date</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
 <td><a href="#status">Status</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#status-cceptance-of-client-response-by-gte-pm">Status: Acceptance of Client Response (by GTE <abbr title="Project Manager">PM</abbr>)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#status-authorisation-by-gte-pm">Status: Authorisation (by GTE <abbr title="Project Manager">PM</abbr>)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#status-technical-approval-by-gte-tech-approver">Status: Technical Approval (by GTE Tech Approver)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#subject">Subject</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#ubject-title">Subject/Title</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#technical-approver">Technical Approver</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#technical-response">Technical Response</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#technical-response-by-sme">Technical Response by SME</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#today">Today</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#trigger-1-for-testing-purposes-only">Trigger 1 (For testing purposes ONLY)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#trigger-2-for-testing-purposes-only">Trigger 2 (For testing purposes ONLY)</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#type-of-request">Type of Request</a></td>
+<td>Determines the detailed status for requests for information.</td>
+</tr>
+<tr>
+<td><a href="#workflow-approvers-direction">Workflow: Approver's Direction</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#workflow-authorisers-direction-for-rfi">Workflow: Authoriser's Direction for <abbr title="Request for Information">RFI</abbr></a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#workflow-authorisers-direction-for-tq">Workflow: Authoriser's Direction for <abbr title="Technical Query">TQ</abbr></a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#workflow-clients-response-to-rfi">Workflow: Client's Response to <abbr title="Request for Information">RFI</abbr></a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#workflow-clients-response-to-tq">Workflow: Client's Response to <abbr title="Technical Query">TQ</abbr></a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#workflow-clients-rfi-response-after-sme-action">Workflow: Client's <abbr title="Request for Information">RFI</abbr> response after SME Action</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#workflow-clients-tq-response-after-sme-action">Workflow: Client's <abbr title="Technical Query">TQ</abbr> response after SME Action</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#workflow-means-to-address-rfi">Workflow: Means to Address <abbr title="Request for Information">RFI</abbr></a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#workflow-means-to-address-tq">Workflow: Means to Address <abbr title="Technical Query">TQ</abbr></a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#workflow-originators-direction-after-revision">Workflow: Originator's Direction after Revision</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#workflow-smes-action">Workflow: SME's Action</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#workflow-log">Workflow Log</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#workflow-completed">Workflow Completed</a></td>
+<td>A high-level status for RTIs for client reporting purposes.</td>
+</tr>
+<tr>
+<td><a href="#workflow-trigger">Workflow Trigger</a></td>
 <td>A high-level status for RTIs for client reporting purposes.</td>
 </tr>
 </tbody>
@@ -2165,42 +2484,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../smartsheet-schedule/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Smartsheet Schedule" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Smartsheet Schedule
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../avaza/" class="md-footer__link md-footer__link--next" aria-label="Next: Avaza" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Avaza
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

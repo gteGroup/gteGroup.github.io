@@ -974,13 +974,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-gte-tq-to-pdf-tool" class="md-nav__link">
-    USING “GTE-TQ-TO-PDF-TOOL”
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#how-to" class="md-nav__link">
     HOW TO…
   </a>
@@ -1012,13 +1005,6 @@
           <li class="md-nav__item">
   <a href="#force-cancel-an-rti" class="md-nav__link">
     Force Cancel an RTI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#print-pdf-version-of-rti" class="md-nav__link">
-    Print PDF Version of RTI
   </a>
   
 </li>
@@ -1776,7 +1762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../detailed-reference/smartsheet-tq-rfi-register/" class="md-nav__link">
+      <a href="../../../detailed-reference/smartsheet-tq-rfi-register.md" class="md-nav__link">
         Smartsheet TQ/RFI Register
       </a>
     </li>
@@ -2105,13 +2091,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-gte-tq-to-pdf-tool" class="md-nav__link">
-    USING “GTE-TQ-TO-PDF-TOOL”
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#how-to" class="md-nav__link">
     HOW TO…
   </a>
@@ -2143,13 +2122,6 @@
           <li class="md-nav__item">
   <a href="#force-cancel-an-rti" class="md-nav__link">
     Force Cancel an RTI
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#print-pdf-version-of-rti" class="md-nav__link">
-    Print PDF Version of RTI
   </a>
   
 </li>
@@ -2278,7 +2250,7 @@
 </ul>
 <h2 id="rti-implementation"><abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> IMPLEMENTATION<a class="headerlink" href="#rti-implementation" title="Permanent link">#</a></h2>
 <ul>
-<li><abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> data and logic is built into <strong>a single smartsheet 1000_RTI_Register (“<abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> Register” henceforth)</strong>, which is located in the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> folder of the 1000 – Project Management workspace.</li>
+<li><abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> data and logic is built into <strong>a single smartsheet 1000_RTI_Register (“<abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> Register” henceforth)</strong>.</li>
 <li><abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> Register contains all <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr>’s for all active projects. It is recommended, that this sheet is not accessed directly, but rather through a set of reports which are available in the Project Workspace for that purpose.</li>
 <li>Each <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> is identified by a unique ID, the format of which is: <code>GTE-pppp-RTI-xxx [type]</code>, where:<ul>
 <li><em>pppp</em> is Project ID</li>
@@ -2293,10 +2265,14 @@
 </ul>
 </li>
 <li>There is an option to enable a user to indicate during the initiation of a new <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> that the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> will be issued in a PDF form, in which case the internal <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> approval process remains unchanged, but the workflow does not send email notifications to the client – it is assumed that this is done manually by a GTE <abbr title="Project Manager">PM</abbr>.</li>
-<li>An external tool is available which extracts data for a particular <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> from <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> Register and creates a PDF version of the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr>. This can then be used for sending to a client, or for archiving an <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> after its closeout.</li>
+<li><abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> is automatically transferred into PDF and attached to the respective <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> row. This is done at two points:<ul>
+<li>If the "PDF Verion Used" has been selected during the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> creation, then PDF version is created after it is authorized by GTE <abbr title="Project Manager">PM</abbr>.</li>
+<li>After the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> is closed</li>
+</ul>
+</li>
 <li>In the workflow automation engine, there is a set of tools that help with progressing each item in case it is stalled for any reason:<ul>
 <li>Manual re-trigger – a current workflow state is re-initiated and associated Update/Approval Requests are re-sent.</li>
-<li>Manual trigger – an <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> item can be manually moved to any point in the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> workflow. It is recommended that Project Services are asked for assistance with initiating a manual trigger.</li>
+<li>Manual trigger – an <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> item can be manually moved to any point in the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> workflow. It is highly recommended that this function is done by Project Services only.</li>
 </ul>
 </li>
 <li>After project closeout, all project-related <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr>’s from the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> Register are archived into an Excel spreadsheet as a part of overall project workspace backup. In addition, all the <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr>’s are also exported into PDF files (one PDF file per <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr>) and stored in the archived copy of the Project Folder. See <a href="#rti-archiving"><abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> Archiving</a> section for further details.</li>
@@ -2326,7 +2302,7 @@
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If <code>PDF Version Used</code> checkbox has been ticked during the creation of the <abbr title="Technical Query">TQ</abbr>, <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> is not sent to the client since it is expected to be sent manually in the PDF format. In this case, a GTE <abbr title="Project Manager">PM</abbr> receives an Update Request email, in which the <code>PDF Version Closed</code> checkbox is required to be ticked, once the client has responded to the <abbr title="Technical Query">TQ</abbr>; this initiates the client’s response review and <abbr title="Technical Query">TQ</abbr> closeout.</p>
+<p>If the <code>PDF Version Used</code> checkbox has been ticked during the creation of the <abbr title="Technical Query">TQ</abbr>, it is not sent to the client since it is expected to be sent manually in the PDF format. In this case, the PDF version is generated automatically and attached to the <abbr title="Technical Query">TQ</abbr> row. Also, GTE <abbr title="Project Manager">PM</abbr> receives an Update Request email, that requires the <code>PDF Version Closed</code> checkbox to be ticked once the client has responded to the <abbr title="Technical Query">TQ</abbr>, which initiates the client’s response review and <abbr title="Technical Query">TQ</abbr> closeout.</p>
 </div>
 <ol>
 <li><strong><em>Reject <abbr title="Technical Query">TQ</abbr></em></strong> – A GTE <abbr title="Project Manager">PM</abbr> receives an Update Request, requiring selection of one of the following actions:<ol>
@@ -2386,7 +2362,7 @@
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If the <code>PDF Version Used</code> checkbox has been ticked during the creation of the <abbr title="Request for Information">RFI</abbr>, <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> is not sent to the client since it is expected to be sent manually in the PDF format. In this case, GTE <abbr title="Project Manager">PM</abbr> receives an Update Request email, that requires the <code>PDF Version Closed</code> checkbox to be ticked once the client has responded to the <abbr title="Request for Information">RFI</abbr>, which initiates the client’s response review and <abbr title="Request for Information">RFI</abbr> closeout.</p>
+<p>If the <code>PDF Version Used</code> checkbox has been ticked during the creation of the <abbr title="Request for Information">RFI</abbr>, it is not sent to the client since it is expected to be sent manually in the PDF format. In this case, the PDF version is generated automatically and attached to the <abbr title="Request for Information">RFI</abbr> row. Also, GTE <abbr title="Project Manager">PM</abbr> receives an Update Request email, that requires the <code>PDF Version Closed</code> checkbox to be ticked once the client has responded to the <abbr title="Request for Information">RFI</abbr>, which initiates the client’s response review and <abbr title="Request for Information">RFI</abbr> closeout.</p>
 </div>
 <ol>
 <li><strong><em>Reject <abbr title="Request for Information">RFI</abbr></em></strong> – GTE <abbr title="Project Manager">PM</abbr> receives an Update Request, requiring selection of one of the following actions:<ol>
@@ -2513,8 +2489,6 @@
 <p>As part of an overall Project Workspace archiving procedure, each <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> reports (with all underlying data) is exported into an Excel spreadsheet before the Project Workspace is eventually deleted from Smartsheet. These Excel archives are then saved (together with the rest of the Project Workspace archive) in the root of the SharePoint Commercial folder which is then archived following the overall project SharePoint folders archiving procedure and if required, can be accessed at a later stage.</p>
 </li>
 </ol>
-<h2 id="using-gte-tq-to-pdf-tool">USING “GTE-<abbr title="Technical Query">TQ</abbr>-TO-PDF-TOOL”<a class="headerlink" href="#using-gte-tq-to-pdf-tool" title="Permanent link">#</a></h2>
-<p>TBA</p>
 <h2 id="how-to">HOW TO…<a class="headerlink" href="#how-to" title="Permanent link">#</a></h2>
 <h3 id="raise-a-new-rti-automated-version">Raise a New <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> (automated version)<a class="headerlink" href="#raise-a-new-rti-automated-version" title="Permanent link">#</a></h3>
 <ol>
@@ -2571,8 +2545,6 @@
 <p class="admonition-title">Note</p>
 <p>By forced cancellation of an <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> item, notification emails are still sent as they would be if the item was cancelled a proper way following a normal workflow.</p>
 </div>
-<h3 id="print-pdf-version-of-rti">Print PDF Version of <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr><a class="headerlink" href="#print-pdf-version-of-rti" title="Permanent link">#</a></h3>
-<p>Use <strong>GTE-<abbr title="Technical Query">TQ</abbr>-to-PDF-Tool</strong> as described in chapter <a href="#using-gte-tq-to-pdf-tool">USING “GTE-<abbr title="Technical Query">TQ</abbr>-TO-PDF-TOOL”</a>.</p>
 <h3 id="re-trigger-rti-at-current-state">Re-trigger <abbr title="Request for Technical Information (RFIs &amp; TQs)">RTI</abbr> at current state<a class="headerlink" href="#re-trigger-rti-at-current-state" title="Permanent link">#</a></h3>
 <ol>
 <li>Open a <code>Pxxxx_RTI_Report-GTE_ProjectTeam</code> report (located in Smartsheet Project Workspace <code>20 - Scope</code> subfolder).</li>
