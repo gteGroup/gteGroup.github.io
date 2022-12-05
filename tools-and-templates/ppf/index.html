@@ -2026,14 +2026,16 @@
 <p>By clicking on the shortcut, the whole contents of the PPF is displayed in the Main Pane.</p>
 <h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">#</a></h2>
 <h3 id="public-folders-not-visible-lost-from-folder-pane">Public Folders Not Visible (Lost From Folder Pane)<a class="headerlink" href="#public-folders-not-visible-lost-from-folder-pane" title="Permanent link">#</a></h3>
-<p>The workaround is to apply a configuration change in the registry. This change should be applied on each GTE PC automatically via a GPO (Group Policy) but if you experience this issue it is worth checking if the registry is correctly set:
-    1. Open the Registry Editor (regedit).
-    2. Navigate to the 'Current User/Software/Microsoft/Office/16.0/Outlook'.
-    3. There should be a 'AutoDiscover' key, if it's not - create one.
-    4. Under the 'AutoDiscover' key, there should be a 'ExcludeLastKnownGoodURL' value, if not create it:<br />
-        a. DWORD (32-bit)<br />
-        b. Value = 1
-    5. Restart Outlook.</p>
+<p>The workaround is to apply a configuration change in the registry. This change should be applied on each GTE PC automatically via a GPO (Group Policy) but if you experience this issue it is worth checking if the registry is correctly set:</p>
+<ol>
+<li>Open the Registry Editor (regedit).</li>
+<li>Navigate to the 'Current User/Software/Microsoft/Office/16.0/Outlook'.</li>
+<li>There should be a 'AutoDiscover' key, if it's not - create one.</li>
+<li>Under the 'AutoDiscover' key, there should be a 'ExcludeLastKnownGoodURL' value, if not create it:<br />
+    a. DWORD (32-bit)<br />
+    b. Value = 1</li>
+<li>Restart Outlook.</li>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you experience disappearing of Public Folders even when the registry is set as described, just try to restart Outlook, the Public Folders should re-appear (this sometimes can happen when moving PC between in/out-of-office locations).</p>
