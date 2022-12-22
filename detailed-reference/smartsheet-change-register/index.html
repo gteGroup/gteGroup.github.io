@@ -1899,47 +1899,99 @@
 <h3 id="total-approved-budget">Total Approved Budget [$]<a class="headerlink" href="#total-approved-budget" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>= IF(
+<div class="highlight"><pre><span></span><code>=IF(
     AND(
-        [Activity Reimbursable Total ($)]@row &lt;&gt; &quot;&quot;, [Activity Reimbursable Total ($)]@row &lt;&gt; 0, 
-        OR([Variation Status for Activity]@row = &quot;Approved&quot;, [Variation Status for Activity]@row = &quot;Approved &amp; Varied&quot;)
-    ), 
-    [Activity Reimbursable Total ($)]@row, 
-    SUMIF( CHILDREN([Variation Status for Activity]@row), &quot;Approved&quot;, CHILDREN([Reimbursable Total ($)]@row) ) 
-        + SUMIF( CHILDREN([Variation Status for Activity]@row), &quot;Approved &amp; Varied&quot;, CHILDREN([Reimbursable Total ($)]@row) )
+        [Applicable Activity Total ($)]@row &lt;&gt; &quot;&quot;,
+        [Applicable Activity Total ($)]@row &lt;&gt; 0, 
+        OR(
+            [Variation Status for Activity]@row = &quot;CHN Approved&quot;,
+            [Variation Status for Activity]@row = &quot;VAR Received&quot;
+        )
+    ),
+    [Applicable Activity Total ($)]@row,
+    SUMIF(
+        CHILDREN([Variation Status for Activity]@row),
+        OR(
+            @cell = &quot;CHN Approved&quot;,
+            @cell = &quot;VAR Received&quot;
+        ),
+        CHILDREN([Applicable Total ($)]@row)
     )
+)
 </code></pre></div>
 </div>
 <h3 id="total-approved-budget-hrs">Total Approved Budget [hrs]<a class="headerlink" href="#total-approved-budget-hrs" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>= IF(
-    AND( 
-        [Activity Labour (hrs)]@row &lt;&gt; &quot;&quot;, [Activity Labour (hrs)]@row &lt;&gt; 0, 
-        OR([Variation Status for Activity]@row = &quot;Approved&quot;, [Variation Status for Activity]@row = &quot;Approved &amp; Varied&quot;)
-    ), 
-    [Activity Labour (hrs)]@row, 
-    SUMIF( CHILDREN([Variation Status for Activity]@row), &quot;Approved&quot;, CHILDREN([Labour (hrs)]@row) ) 
-        + SUMIF( CHILDREN([Variation Status for Activity]@row), &quot;Approved &amp; Varied&quot;, CHILDREN([Labour (hrs)]@row)) )
+<div class="highlight"><pre><span></span><code>=IF(
+    AND(
+        [Activity Labour (hrs)]@row &lt;&gt; &quot;&quot;,
+        [Activity Labour (hrs)]@row &lt;&gt; 0,
+        OR(
+            [Variation Status for Activity]@row = &quot;CHN Approved&quot;,
+            [Variation Status for Activity]@row = &quot;VAR Received&quot;
+        )
+    ),
+    [Activity Labour (hrs)]@row,
+    SUMIF(
+        CHILDREN([Variation Status for Activity]@row),
+        OR(
+            @cell = &quot;CHN Approved&quot;,
+            @cell = &quot;VAR Received&quot;
+        ),
+        CHILDREN([Labour (hrs)]@row)
+    )
+)
++ IF(
+    [Cost Activity]@row = &quot;BASE SCOPE&quot;,
+    [Labour (hrs)]@row, 0
+)
 </code></pre></div>
 </div>
 <h3 id="total-requested-budget">Total Requested Budget [$]<a class="headerlink" href="#total-requested-budget" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
-<div class="highlight"><pre><span></span><code>=IF(
-    AND( [Activity Reimbursable Total ($)]@row &lt;&gt; &quot;&quot;, [Activity Reimbursable Total ($)]@row &lt;&gt; 0, [Variation Status for Activity]@row = &quot;Submitted&quot; ), 
-    [Activity Reimbursable Total ($)]@row, 
-    SUMIF( CHILDREN([Variation Status for Activity]@row), &quot;Submitted&quot;, CHILDREN([Reimbursable Total ($)]@row) )
-)
-</code></pre></div>
+<p><code>=IF(
+    AND(
+        [Applicable Activity Total ($)]@row &lt;&gt; "",
+        [Applicable Activity Total ($)]@row &lt;&gt; 0,
+        OR(
+            [Variation Status for Activity]@row = "CHN Submitted",
+            [Variation Status for Activity]@row = "VAR Submitted"
+        )
+    ),
+    [Applicable Activity Total ($)]@row,
+    SUMIF(
+        CHILDREN([Variation Status for Activity]@row),
+        OR(
+            @cell = "CHN Submitted",
+            @cell = "VAR Submitted"
+        ),
+        CHILDREN([Applicable Total ($)]@row)
+    )
+)</code></p>
 </div>
 <h3 id="total-requested-budget-hrs">Total Requested Budget [hrs]<a class="headerlink" href="#total-requested-budget-hrs" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
-    AND( [Activity Labour (hrs)]@row &lt;&gt; &quot;&quot;, [Activity Labour (hrs)]@row &lt;&gt; 0, [Variation Status for Activity]@row = &quot;Submitted&quot; ), 
+    AND(
+        [Activity Labour (hrs)]@row &lt;&gt; &quot;&quot;,
+        [Activity Labour (hrs)]@row &lt;&gt; 0,
+        OR(
+            [Variation Status for Activity]@row = &quot;CHN Submitted&quot;,
+            [Variation Status for Activity]@row = &quot;VAR Submitted&quot;
+        )
+    ), 
     [Activity Labour (hrs)]@row, 
-    SUMIF( CHILDREN([Variation Status for Activity]@row), &quot;Submitted&quot;, CHILDREN([Labour (hrs)]@row) )
+    SUMIF(
+        CHILDREN([Variation Status for Activity]@row),
+        OR(
+            @cell = &quot;CHN Submitted&quot;,
+            @cell = &quot;VAR Submitted&quot;
+        ),
+        CHILDREN([Labour (hrs)]@row)
+    )
 )
 </code></pre></div>
 </div>

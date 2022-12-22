@@ -3012,7 +3012,8 @@
     AND(
         [Issued Date]@row &lt;&gt; &quot;&quot;,
         [Responded Date]@row = &quot;&quot;, 
-        Workflow Log]@row &lt;&gt; &quot;[1.4, 2.4, 3.4] RTI Cancelled&quot;
+        Workflow Log]@row &lt;&gt; &quot;[1.4, 2.4, 3.4] RTI Cancelled&quot;,
+        Workflow Log]@row &lt;&gt; &quot;[6.1] RTI Closed&quot;
     ),
     IF(
         [Response Required by Date]@row &lt;&gt; &quot;&quot;,

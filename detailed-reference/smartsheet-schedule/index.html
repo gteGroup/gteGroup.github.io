@@ -1865,8 +1865,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#flag" class="md-nav__link">
-    Flag
+  <a href="#issue-details" class="md-nav__link">
+    Issue Details
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-flag" class="md-nav__link">
+    Issue Flag
   </a>
   
 </li>
@@ -1949,6 +1956,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#lumpsum-progress-payment" class="md-nav__link">
+    Lumpsum Progress Payment [$]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#manual-complete" class="md-nav__link">
     Manual % Complete
   </a>
@@ -2000,6 +2014,13 @@
           <li class="md-nav__item">
   <a href="#predecessors-helper" class="md-nav__link">
     Predecessors (Helper)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progress-health" class="md-nav__link">
+    Progress Health
   </a>
   
 </li>
@@ -2098,6 +2119,13 @@
           <li class="md-nav__item">
   <a href="#schedule-status" class="md-nav__link">
     Schedule Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduling-issues" class="md-nav__link">
+    Scheduling Issues
   </a>
   
 </li>
@@ -2730,8 +2758,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#flag" class="md-nav__link">
-    Flag
+  <a href="#issue-details" class="md-nav__link">
+    Issue Details
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-flag" class="md-nav__link">
+    Issue Flag
   </a>
   
 </li>
@@ -2814,6 +2849,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#lumpsum-progress-payment" class="md-nav__link">
+    Lumpsum Progress Payment [$]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#manual-complete" class="md-nav__link">
     Manual % Complete
   </a>
@@ -2865,6 +2907,13 @@
           <li class="md-nav__item">
   <a href="#predecessors-helper" class="md-nav__link">
     Predecessors (Helper)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progress-health" class="md-nav__link">
+    Progress Health
   </a>
   
 </li>
@@ -2963,6 +3012,13 @@
           <li class="md-nav__item">
   <a href="#schedule-status" class="md-nav__link">
     Schedule Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduling-issues" class="md-nav__link">
+    Scheduling Issues
   </a>
   
 </li>
@@ -3462,13 +3518,6 @@
 <td>date_finish_expected</td>
 </tr>
 <tr>
-<td><a href="#flag">Flag</a></td>
-<td>System (Display&amp;Filter)</td>
-<td>System</td>
-<td>All</td>
-<td>flag</td>
-</tr>
-<tr>
 <td><a href="#forecast-finish-date">Forecast Finish Date</a></td>
 <td>Project Team (Frontline Input)</td>
 <td>Date/Logic</td>
@@ -3539,6 +3588,20 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="#issue-details">Issue Details</a></td>
+<td>System (Display&amp;Filter)</td>
+<td>System</td>
+<td>All</td>
+<td>issue_details</td>
+</tr>
+<tr>
+<td><a href="#issue-flag">Issue Flag</a></td>
+<td>System (Display&amp;Filter)</td>
+<td>System</td>
+<td>All</td>
+<td>issue_flag</td>
+</tr>
+<tr>
 <td><a href="#last-progress-update-date">Last Progress Update Date</a></td>
 <td>System (Background)</td>
 <td>System</td>
@@ -3551,6 +3614,13 @@
 <td>% Complete</td>
 <td>Actual</td>
 <td>complete_%_manual</td>
+</tr>
+<tr>
+<td><a href="#lumpsum-progress-payment">Lumpsum Progress Payment [$]</a></td>
+<td>Project Manager</td>
+<td>Forecast Revenue</td>
+<td>All</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="#modified-by">Modified By</a></td>
@@ -3600,6 +3670,13 @@
 <td>System</td>
 <td>All</td>
 <td></td>
+</tr>
+<tr>
+<td><a href="#progress-health">Progress Health</a></td>
+<td>System (Display&amp;Filter)</td>
+<td>System</td>
+<td>All</td>
+<td>progress_health</td>
 </tr>
 <tr>
 <td><a href="#project">Project</a></td>
@@ -3698,6 +3775,13 @@
 <td>System</td>
 <td>All</td>
 <td></td>
+</tr>
+<tr>
+<td><a href="#scheduling-issues">Scheduling Issues</a></td>
+<td>System (Display&amp;Filter)</td>
+<td>Scheduling</td>
+<td>All</td>
+<td>scheduling_issues</td>
 </tr>
 <tr>
 <td><a href="#sheet">Sheet</a></td>
@@ -4018,11 +4102,14 @@
         [Planned % Complete]@row, 
         IF(
             [EVM Method]@row = &quot;Gated&quot;, 
-            INDEX({GatedProgressSummary - % Complete},
+            ROUND(
+                INDEX({GatedProgressSummary - % Complete},
                   MATCH([Gated Progress Reference]@row,
                         {GatedProgressSummary - Reference},
                         0)
-                ), 
+                ),
+                2
+            ), 
             IF(
                 [EVM Method]@row = &quot;Apportioned Effort&quot;, 
                 &quot;NOT SUPPORTED&quot;, 
@@ -4344,22 +4431,50 @@
 </div>
 <h3 id="finish-date">Finish Date<a class="headerlink" href="#finish-date" title="Permanent link">#</a></h3>
 <p>The Finish Date for the activity as most recently planned. This may differ from the Baseline equivalent (<a href="#baseline-finish-date"><code>date_finish_baseline</code></a>) and may or may not reflect field feedback (<a href="#forecast-finish-date"><code>date_finish_fcast</code></a>) depending on whether the Project Manager intends to hold or measure the project team to earlier plans. When an activity is complete, the Finish Date should equal the Actual Finish Date (<a href="#actual-finish-date"><code>date_finish_actual</code></a>).</p>
-<h3 id="flag">Flag<a class="headerlink" href="#flag" title="Permanent link">#</a></h3>
-<p>A cross (red) indicates an issue on the row. An exclamation (yellow) indicates an issue on a descendant row. The issues can be to do with Budgeting, Cost Coding, or Resourcing and the flags responsiveness to each is dependent on the selected options in the relevant 'Sheet Summary' settings. The specifics of the issues are detailed in the <a href="#budget-issues"><code>budget_issues</code></a>, <a href="#cost-unit-issues"><code>cost_unit_issues</code></a> and/or <a href="#resourcing-issues"><code>resourcing_issues</code></a> columns as relevant.</p>
+<h3 id="issue-details">Issue Details<a class="headerlink" href="#issue-details" title="Permanent link">#</a></h3>
+<p>Combines all types of issues into one text. The aim is to have one concise information that describes the reason for the <a href="#issue-flag"><code>issue_flag</code></a> is indicating issue(s).</p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    [Cost Unit Issues]@row &lt;&gt; &quot;&quot;, 
+    &quot;COST UNIT: &quot; + [Cost Unit Issues]@row + &quot; || &quot;, 
+    &quot;&quot;
+) +
+IF(
+    [Budget Issues]@row &lt;&gt; &quot;&quot;,
+    &quot;BUDGET: &quot; + [Budget Issues]@row + &quot; || &quot;, 
+    &quot;&quot;
+) + 
+IF(
+    [Resourcing Issues]@row &lt;&gt; &quot;&quot;, 
+    &quot;RESOURCING: &quot; + [Resourcing Issues]@row + &quot; || &quot;, 
+    &quot;&quot;
+) + 
+IF(
+    [Scheduling Issues]@row &lt;&gt; &quot;&quot;, 
+    &quot;SCHEDULING: &quot; + [Scheduling Issues]@row, 
+    &quot;&quot;
+)
+</code></pre></div>
+</div>
+<h3 id="issue-flag">Issue Flag<a class="headerlink" href="#issue-flag" title="Permanent link">#</a></h3>
+<p>A cross (red) indicates an issue on the row. An exclamation (yellow) indicates an issue on a descendant row. The issues can be to do with Budgeting, Cost Coding, or Resourcing and the flags responsiveness to each is dependent on the selected options in the relevant 'Sheet Summary' settings. The specifics of the issues are detailed in the <a href="#budget-issues"><code>budget_issues</code></a>, <a href="#cost-unit-issues"><code>cost_unit_issues</code></a>, <a href="#resourcing-issues"><code>resourcing_issues</code></a>, and/or <a href="#scheduling-issues"><code>scheduling_issues</code></a> columns as relevant.</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
     COUNT(
         IF([SETTING - Show Budget Issues]#, [Budget Issues]@row), 
         IF([SETTING - Show Cost Unit Issues]#, [Cost Unit Issues]@row), 
-        IF([SETTING - Show Resourcing Issues]#, [Resourcing Issues]@row)
+        IF([SETTING - Show Resourcing Issues]#, [Resourcing Issues]@row),
+        IF([SETTING - Show Scheduling Issues]#, [Scheduling Issues]@row)
     ) &gt; 0, 
     &quot;No&quot;, 
     IF(
         COUNT(
             IF([SETTING - Show Budget Issues]#, DESCENDANTS([Budget Issues]@row)), 
             IF([SETTING - Show Cost Unit Issues]#, DESCENDANTS([Cost Unit Issues]@row)), 
-            IF([SETTING - Show Resourcing Issues]#, DESCENDANTS([Resourcing Issues]@row))
+            IF([SETTING - Show Resourcing Issues]#, DESCENDANTS([Resourcing Issues]@row)),
+            IF([SETTING - Show Scheduling Issues]#, [Scheduling Issues]@row))
         ) &gt; 0, 
         &quot;Hold&quot;, 
         &quot;&quot;
@@ -4425,6 +4540,8 @@
 <p>Free text entry to provide any comments against the activity that should be more visible than row comments. In some instances, this column may be populated from the original estimate and provide detail on the basis of the estimate for example.</p>
 <h3 id="last-progress-update-date">Last Progress Update Date<a class="headerlink" href="#last-progress-update-date" title="Permanent link">#</a></h3>
 <p>System column. Automation records current date whenever manual % complete is changed. It is then used to evaluate when was the latest schedule progress updated whcih can then be indicated to the client as an information how latest the schedule progress is.</p>
+<h3 id="lumpsum-progress-payment">Lumpsum Progress Payment [$]<a class="headerlink" href="#lumpsum-progress-payment" title="Permanent link">#</a></h3>
+<p>Value entered manually by Project Manager. It is applicable to lumpsum projects only and it indicates the progress (milestone) payments plan. The duration must be 0 (i.e. the "activity" has to be a milestone). The activity name should indicate the short description of the progress payment (e.g. "25% After FAT"). Column 'Information' can be used to enter more details. The values in this column are used for reporting on a Client's dashboard. </p>
 <h3 id="manual-complete">Manual % Complete<a class="headerlink" href="#manual-complete" title="Permanent link">#</a></h3>
 <p>Where "Manual % Complete" is selected as the earned value measurement method (<a href="#evm-method"><code>complete_%_evm_method</code></a>), or where no selection is made, the physical % Complete of relevant activities should be entered in this column by project team members responsible for the work.</p>
 <h3 id="modified-by">Modified By<a class="headerlink" href="#modified-by" title="Permanent link">#</a></h3>
@@ -4483,6 +4600,42 @@
             &quot;F&quot;, &quot;|&quot;),
         &quot; &quot;, &quot;&quot;)
     + &quot;|&quot;
+</code></pre></div>
+</div>
+<h3 id="progress-health">Progress Health<a class="headerlink" href="#progress-health" title="Permanent link">#</a></h3>
+<p>With the use of traffic lights (red/yellow/orange), it indicates how is the activity performing when compared to the actual schedule. When red, activity completion is overdue, when orange the progress is lagging behind the plan and when green progress is as planned or better. For parent activity, this shows the worst value of all its descendants.</p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND(
+        Duration@row &lt;&gt; 0, 
+        [Budget \[hrs\]]@row &lt;&gt; 0
+    ), 
+    IF(
+        [WBS Descendants]@row &gt; 0, 
+        IF(
+            COUNTIF(CHILDREN(), &quot;Red&quot;) &gt; 0,
+            &quot;Red&quot;, 
+            IF(
+                COUNTIF(CHILDREN(), &quot;Yellow&quot;) &gt; 0, 
+                &quot;Yellow&quot;, 
+                &quot;Green&quot;
+            )
+        ), 
+        IF(
+            AND(
+                [% Complete]@row &lt;&gt; 1, 
+                [Finish Date]@row &lt; TODAY()
+            ), 
+            &quot;Red&quot;, 
+            IF(
+                IF(ISBLANK([% Complete]@row), 0, [% Complete]@row) &lt; ([Schedule % Complete]@row - 0.025), 
+                &quot;Yellow&quot;, 
+                &quot;Green&quot;
+            )
+        )
+    )
+)
 </code></pre></div>
 </div>
 <h3 id="project">Project<a class="headerlink" href="#project" title="Permanent link">#</a></h3>
@@ -4599,7 +4752,7 @@
 </code></pre></div>
 </div>
 <h3 id="resourcing-issues">Resourcing Issues<a class="headerlink" href="#resourcing-issues" title="Permanent link">#</a></h3>
-<p>Used to assist in designating human resource(s) using the <a href="#resources"><code>resources</code></a> column, providing details on any missing assignments or overloaded resources, and where an activity duration has not been properly established to allow the resource loading to be determined. Issues in this column will be represented by a symbol in the <a href="#flag"><code>flag</code></a> column if the Sheet Summary setting <code>SETTING - Show Resourcing Issues</code> is checked.</p>
+<p>Used to assist in designating human resource(s) using the <a href="#resources"><code>resources</code></a> column, providing details on any wrong/missing assignments or overloaded resources, and where an activity duration has not been properly established to allow the resource loading to be determined. Issues in this column will be represented by a symbol in the <a href="#flag"><code>flag</code></a> column if the Sheet Summary setting <code>SETTING - Show Resourcing Issues</code> is checked.</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
@@ -4612,11 +4765,15 @@
         IF(
             Duration@row &lt;&gt; 0,
             IF(
-                [Resource Loading]@row &gt; 1,
-                &quot;Assigned resource(s) overloaded&quot;,
+                FIND(&quot;RES &quot;, [Resource(s)]@row) &lt;&gt; 0,
+                &quot;Generic (RES xxxx) resource used&quot;,
                 IF(
-                    [Resource Loading]@row &lt; 0,
-                    &quot;Resource(s) assigned to past activity&quot;
+                    [Resource Loading]@row &gt; 1,
+                    &quot;Assigned resource(s) overloaded&quot;,
+                    IF(
+                        [Resource Loading]@row &lt; 0,
+                        &quot;Resource(s) assigned to past activity&quot;
+                    )
                 )
             ),
             &quot;Duration issue&quot;
@@ -4675,6 +4832,32 @@
 <div class="highlight"><pre><span></span><code>=[Schedule Status]#
 </code></pre></div>
 </div>
+<h3 id="scheduling-issues">Scheduling Issues<a class="headerlink" href="#scheduling-issues" title="Permanent link">#</a></h3>
+<p>Providing details on issue with activity scheduling - either activity early start (non-zero % complete and Start Date in future) or early finish (100% completed and Finish Date in future), requiring update of Start/Finish date and thus fix timing of any dependant activities. Issues in this column will be represented by a symbol in the <a href="#issue-flag"><code>Issue Flag</code></a> column if the Sheet Summary setting <code>SETTING - Show Scheduling Issues</code> is checked.</p>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    AND(
+        [WBS Descendants]@row = 0,
+        [Budget \[hrs\]]@row &lt;&gt; 0, 
+        [Start Date]@row &lt;&gt; &quot;&quot;, 
+        [Start Date]@row &gt; TODAY(), 
+        [% Complete]@row &lt;&gt; 0, [% Complete]@row &lt;&gt; &quot;&quot;
+    ),
+    &quot;Activity early start - update Start Date&quot;,
+    IF(
+        AND(
+            [WBS Descendants]@row = 0,
+            [Budget \[hrs\]]@row &lt;&gt; 0,
+            [Finish Date]@row &lt;&gt; &quot;&quot;,
+            [Finish Date]@row &gt; TODAY(),
+            [% Complete]@row = 1
+        ),
+        &quot;Activity early finish - update Finish Date&quot;
+    )
+)
+</code></pre></div>
+</div>
 <h3 id="sheet">Sheet<a class="headerlink" href="#sheet" title="Permanent link">#</a></h3>
 <p>System mirror of Sheet Summary value.</p>
 <div class="admonition info">
@@ -4703,52 +4886,63 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IF(
-    AND([Start Date]@row &lt;&gt; &quot;&quot;, [Finish Date]@row &lt;&gt; &quot;&quot;),
+    AND(
+        [Start Date]@row &lt;&gt; &quot;&quot;, 
+        [Finish Date]@row &lt;&gt; &quot;&quot;
+    ), 
     IF(
-        [Actual Finish Date]@row &lt;&gt; &quot;&quot;,
+        [Actual Finish Date]@row &lt;&gt; &quot;&quot;, 
         IF(
-            [Actual Finish Date]@row &lt; TODAY() - 7,
-            &quot;Finished&quot;,
+            [Actual Finish Date]@row &lt; TODAY() - 7, 
+            &quot;Finished&quot;, 
             IF(
-                [Actual Finish Date]@row &lt;= TODAY(),
-                &quot;Finished Recently&quot;,
+                [Actual Finish Date]@row &lt;= TODAY(), 
+                &quot;Finished Recently&quot;, 
                 &quot;ERROR - Actual Finish Date is in the future&quot;
             )
-        ),
+        ), 
         IF(
-            [Finish Date]@row &lt; TODAY(),
+            [Finish Date]@row &lt; TODAY(), 
             IF(
-                [% Complete]@row &lt; 1,
-                &quot;Finish Date Passed; Overdue&quot;,
+                [% Complete]@row &lt; 1, 
+                &quot;Finish Date Passed; Overdue&quot;, 
                 &quot;Finished - Record Actual Finish Date&quot;
-            ),
+            ), 
             IF(
                 [Finish Date]@row &lt; TODAY() + 7, 
                 &quot;Finishing Soon&quot;, 
                 IF(
-                    [Start Date]@row &lt;= TODAY(),
+                    [Start Date]@row &lt;= TODAY(), 
                     IF(
-                        [% Complete]@row &lt; 1,
-                        &quot;In Progress&quot;,
+                        [% Complete]@row &lt; 1, 
+                        &quot;In Progress&quot;, 
                         &quot;Finished - Record Actual Finish Date&quot;
-                    ),
+                    ), 
                     IF(
-                        [Start Date]@row &lt; TODAY() + 7, 
-                        &quot;Starting &lt;1 Week&quot;,
+                        AND(
+                            TODAY() &lt;= [Start Date]@row, 
+                            [% Complete]@row &gt; 0, 
+                            [WBS Descendants]@row = 0
+                        ),
+                        &quot;Started Earlier than Planned&quot;,
                         IF(
-                            [Start Date]@row &lt; TODAY() + 28,
-                            &quot;Starting Later &lt;1M (and &gt;1W)&quot;,
+                            [Start Date]@row &lt; TODAY() + 7, 
+                            &quot;Starting &lt;1 Week&quot;, 
                             IF(
-                                [Start Date]@row &lt; TODAY() + 84,
-                                &quot;Starting Later &lt;3M (and &gt;1M)&quot;,
-                                &quot;Starting Later &gt;3M&quot;
+                                [Start Date]@row &lt; TODAY() + 28, 
+                                &quot;Starting Later &lt;1M (and &gt;1W)&quot;, 
+                                IF(
+                                    [Start Date]@row &lt; TODAY() + 84, 
+                                    &quot;Starting Later &lt;3M (and &gt;1M)&quot;, 
+                                    &quot;Starting Later &gt;3M&quot;
+                                )
                             )
                         )
                     )
                 )
             )
         )
-    ),
+    ), 
     &quot;Not scheduled&quot;
 )
 </code></pre></div>
