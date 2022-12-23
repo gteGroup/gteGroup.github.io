@@ -1970,6 +1970,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#manual-progress-responsible-person" class="md-nav__link">
+    Manual Progress Responsible Person
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#modified-by" class="md-nav__link">
     Modified By
   </a>
@@ -2863,6 +2870,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#manual-progress-responsible-person" class="md-nav__link">
+    Manual Progress Responsible Person
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#modified-by" class="md-nav__link">
     Modified By
   </a>
@@ -3614,6 +3628,13 @@
 <td>% Complete</td>
 <td>Actual</td>
 <td>complete_%_manual</td>
+</tr>
+<tr>
+<td><a href="#manual-progress-responsible-person">Manual Progress Responsible Person</a></td>
+<td>Project Manager (Setup/Maintain)</td>
+<td>Resourcing</td>
+<td>All</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="#lumpsum-progress-payment">Lumpsum Progress Payment [$]</a></td>
@@ -4544,6 +4565,17 @@ IF(
 <p>Value entered manually by Project Manager. It is applicable to lumpsum projects only and it indicates the progress (milestone) payments plan. The duration must be 0 (i.e. the "activity" has to be a milestone). The activity name should indicate the short description of the progress payment (e.g. "25% After FAT"). Column 'Information' can be used to enter more details. The values in this column are used for reporting on a Client's dashboard. </p>
 <h3 id="manual-complete">Manual % Complete<a class="headerlink" href="#manual-complete" title="Permanent link">#</a></h3>
 <p>Where "Manual % Complete" is selected as the earned value measurement method (<a href="#evm-method"><code>complete_%_evm_method</code></a>), or where no selection is made, the physical % Complete of relevant activities should be entered in this column by project team members responsible for the work.</p>
+<h3 id="manual-progress-responsible-person">Manual Progress Responsible Person<a class="headerlink" href="#manual-progress-responsible-person" title="Permanent link">#</a></h3>
+<p>Indicates person responsible for updating % Complete for the activity. It is then used for grouping in Progress-Manual report. It is a cell formula reading single value from Resource(s) column but can be replaced by any different contact.</p>
+<div class="admonition info">
+<p class="admonition-title">Formula (cell)</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    CONTAINS(&quot;,&quot;, [Resource(s)]@row), 
+    LEFT([Resource(s)]@row, FIND(&quot;,&quot;, [Resource(s)]@row)), 
+    [Resource(s)]@row
+)
+</code></pre></div>
+</div>
 <h3 id="modified-by">Modified By<a class="headerlink" href="#modified-by" title="Permanent link">#</a></h3>
 <p>System column.</p>
 <h3 id="non-standard-capacity">Non-Standard Capacity<a class="headerlink" href="#non-standard-capacity" title="Permanent link">#</a></h3>
