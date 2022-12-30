@@ -2023,11 +2023,39 @@
 </tr>
 <tr>
 <td><a href="#activity-labour-hrs">Activity Labour (hrs)</a>  </td>
-<td>The calculated hours required for the task.</td>
+<td>The calculated number of hours required for the task.</td>
 </tr>
 <tr>
 <td><a href="#activity-labour-rate-hr">Activity Labour Rate ($/hr)</a>  </td>
 <td>The activity labour rate for the task.</td>
+</tr>
+<tr>
+<td><a href="#activity-fixed-price-expense">Activity Lump Sum Expense ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#activity-fixed-price-labour">Activity Lump Sum Labour ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#activity-fixed-price-procurement">Activity Lump Sum Procurement ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#activity-fixed-price-total">Activity Lump Sum Total ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#activity-expense">Activity Reimbursable Expense ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#activity-labour">Activity Reimbursable Labour ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#activity-procurement">Activity Reimbursable Procurement ($)</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="#activity-procurement-markup">Activity Procurement Markup</a>  </td>
@@ -2035,19 +2063,67 @@
 </tr>
 <tr>
 <td><a href="#activity-procurement-unit-cost">Activity Procurement Unit Cost</a>  </td>
-<td>The cost per unit of procurement.</td>
+<td>The cost per unit of the procurement item.</td>
 </tr>
 <tr>
 <td><a href="#activity-procurement-quantity">Activity Procurement Quantity</a>  </td>
 <td>Indicates the amount of procurement quantity.</td>
 </tr>
 <tr>
+<td><a href="#activity-total">Activity Total ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#allocation">Allocation %</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#applicable-activity-expense">Applicable Activity Expense ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#applicable-activity-labour">Applicable Activity Labour ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#applicable-activity-procurement">Applicable Activity Procurement ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#applicable-activity-total">Applicable Activity Total ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#applicable-expense">Applicable Expense ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#applicable-labour">Applicable Labour ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#applicable-procurement">Applicable Procurement ($)</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="#applicable-total">Applicable Total ($)</a>  </td>
 <td>The calculated total dollar amount for this task.</td>
 </tr>
 <tr>
+<td><a href="#apply-conditional-formatting">Apply Conditional Formatting?</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="#approved-date">Approved Date</a>  </td>
 <td> The date the change notice / variation was approved</td>
+</tr>
+<tr>
+<td><a href="#budget-assigned-hrs">Budget Assigned [hrs]</a></td>
+<td>A budget in hours for the specific schedule activity if the estimate migrates to a schedule</td>
+</tr>
+<tr>
+<td><a href="#budget-assigned">Budget Assigned [$]</a></td>
+<td>A budget in dollars for the specific schedule activity if the estimate migrates to a schedule</td>
 </tr>
 <tr>
 <td><a href="#cancelled-date">Cancelled Date</a>  </td>
@@ -2066,6 +2142,14 @@
 <td>The cost activity that will show on the schedule and Avaza</td>
 </tr>
 <tr>
+<td><a href="#duration">Duration</a></td>
+<td>Duration in days assigned to each cost item. This can be entered or auto-calculated based on the Start and End dates.</td>
+</tr>
+<tr>
+<td><a href="#finish-date">Finish Date</a></td>
+<td>The anticipated finish date for each cost item.</td>
+</tr>
+<tr>
 <td><a href="#information">Information</a>  </td>
 <td>Any information that is required to be noted.</td>
 </tr>
@@ -2074,8 +2158,28 @@
 <td>The labour hours required for the task.</td>
 </tr>
 <tr>
+<td><a href="#line-item-type">Line Item Type</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="#location">Location</a>  </td>
 <td>The location of the resource cateogry used: 'Site' or 'Office'.</td>
+</tr>
+<tr>
+<td><a href="#fixed-price-expense">Lump Sum Expense ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#fixed-price-labour">Lump Sum Labour ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#fixed-price-procurement">Lump Sum Procurement ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#fixed-price-total">Lump Sum Total ($)</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="#new-activity-labour-rate-hr">New Activity Labour Rate ($/hr)</a>  </td>
@@ -2084,6 +2188,10 @@
 <tr>
 <td><a href="#new-activity-name">New Activity Name</a>  </td>
 <td>The description of the new activity.</td>
+</tr>
+<tr>
+<td><a href="#non-standard-capacity">Non-Standard Capacity</a></td>
+<td>Standard resource capacity is 8hrs/day. Set this value where the activity is, for example, performed on site and involves 12hr days not standard 8hr office days (in this case type '12</td>
 </tr>
 <tr>
 <td><a href="#po">PO</a>  </td>
@@ -2102,8 +2210,40 @@
 <td>The total $ dollar value of the purchase order including variation</td>
 </tr>
 <tr>
+<td><a href="#predecessors">Predecessors</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#project">Project</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#qty">Qty</a>  </td>
+<td>Indicates the quantity amount needed for the task.</td>
+</tr>
+<tr>
 <td><a href="#reimbursable?">Reimbursable?</a>  </td>
 <td>Indicates whether or not the activity is reimbursable or not. Used in calculating contingency if lump sum.</td>
+</tr>
+<tr>
+<td><a href="#reimbursable-activity">Reimbursable Activity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#reimbursable-expense">Reimbursable Expense ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#reimbursable-labour">Reimbursable Labour ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#reimbursable-procurement">Reimbursable Procurement ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#reimbursable-total">Reimbursable Total ($)</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="#resource(s)">Resource(s)</a>  </td>
@@ -2114,8 +2254,16 @@
 <td>The resource category to be used for the task.</td>
 </tr>
 <tr>
+<td><a href="#scheduled-item">Scheduled Item?</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="#submitted-date">Submitted Date</a>  </td>
 <td> The date the change notice / variation was submitted</td>
+</tr>
+<tr>
+<td><a href="#start-date">Start Date</a></td>
+<td>The anticipated start date for each cost item.</td>
 </tr>
 <tr>
 <td><a href="#time-(hrs)">Time (Hrs)</a>  </td>
@@ -2154,8 +2302,12 @@
 <td>The status of the variation. Formula to indicate if variation is standalone or not.</td>
 </tr>
 <tr>
-<td><a href="#qty">Qty</a>  </td>
-<td>Indicates the quantity amount needed for the task.</td>
+<td><a href="#wbs-descendants"><abbr title="Work Breakdown Structure">WBS</abbr> Descendants</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#wbs-level"><abbr title="Work Breakdown Structure">WBS</abbr> Level</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>

@@ -1724,6 +1724,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#flag" class="md-nav__link">
+    Flag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#lump-sum-expense" class="md-nav__link">
     Lump Sum Expense ($)
   </a>
@@ -1752,7 +1759,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#flag" class="md-nav__link">
+  <a href="#flag_1" class="md-nav__link">
     Flag
   </a>
   
@@ -2484,6 +2491,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#flag" class="md-nav__link">
+    Flag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#lump-sum-expense" class="md-nav__link">
     Lump Sum Expense ($)
   </a>
@@ -2512,7 +2526,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#flag" class="md-nav__link">
+  <a href="#flag_1" class="md-nav__link">
     Flag
   </a>
   
@@ -2763,35 +2777,35 @@
 </tr>
 <tr>
 <td><a href="#activity-contingency">Activity Contingency %</a></td>
-<td>% to be applied. Do not populate unless the contingency for a specific item differs from the default set in the Sheet Summary.</td>
+<td>The amount to markup the activity. % to be applied. Do not populate unless the markup for a specific item differs from the default set in the Sheet Summary.</td>
 </tr>
 <tr>
 <td><a href="#activity-expense-markup">Activity Expense Markup</a></td>
-<td>% to be applied. Do not populate unless the markup for a specific item differs from the default set in the Sheet Summary.</td>
-</tr>
-<tr>
-<td><a href="#activity-expense-quantity">Activity Expense Quantity</a></td>
-<td></td>
+<td>The amount to markup the expense. % to be applied. Do not populate unless the markup for a specific item differs from the default set in the Sheet Summary.</td>
 </tr>
 <tr>
 <td><a href="#activity-expense-type">Activity Expense Type</a></td>
-<td>Select from standard expense types, or to enter a custom expense amount type a value in the form "$xx - Description of Expense" (description is optional but you must include the hyphen).</td>
+<td>Select from standard expense types, or to enter a custom expense amount type a value in the form "$xx - Description of Expense" (description is optional but you must include the hyphen)</td>
 </tr>
 <tr>
 <td><a href="#activity-expense-unit-cost">Activity Expense Unit Cost</a></td>
-<td></td>
+<td>Indicates the cost per unit of the expense.</td>
+</tr>
+<tr>
+<td><a href="#activity-expense-quantity">Activity Expense Quantity</a></td>
+<td>Indicates the quantity amount of the expense.</td>
 </tr>
 <tr>
 <td><a href="#activity-id">Activity ID</a></td>
-<td></td>
+<td>Unique identifier for each task.</td>
 </tr>
 <tr>
-<td><a href="#activity-labour-hrs">Activity Labour (hrs)</a></td>
-<td></td>
+<td><a href="#activity-labour-hrs">Activity Labour (hrs)</a>  </td>
+<td>The calculated hours required for the task.</td>
 </tr>
 <tr>
-<td><a href="#activity-labour-rate-hr">Activity Labour Rate ($/hr)</a></td>
-<td></td>
+<td><a href="#activity-labour-rate-hr">Activity Labour Rate ($/hr)</a>  </td>
+<td>The activity labour rate for the task.</td>
 </tr>
 <tr>
 <td><a href="#activity-fixed-price-expense">Activity Lump Sum Expense ($)</a></td>
@@ -2822,16 +2836,16 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="#activity-procurement-markup">Activity Procurement Markup</a></td>
-<td>% to be applied. Do not populate unless the markup for a specific item differs from the default set in the Sheet Summary.</td>
+<td><a href="#activity-procurement-markup">Activity Procurement Markup</a>  </td>
+<td>The amount to markup the procurement. % to be applied. Do not populate unless the markup for a specific item differs from the default set in the Sheet Summary.</td>
 </tr>
 <tr>
-<td><a href="#activity-procurement-quantity">Activity Procurement Quantity</a></td>
-<td></td>
+<td><a href="#activity-procurement-unit-cost">Activity Procurement Unit Cost</a>  </td>
+<td>The cost per unit of the procurement item.</td>
 </tr>
 <tr>
-<td><a href="#activity-procurement-unit-cost">Activity Procurement Unit Cost</a></td>
-<td></td>
+<td><a href="#activity-procurement-quantity">Activity Procurement Quantity</a>  </td>
+<td>Indicates the amount of procurement quantity.</td>
 </tr>
 <tr>
 <td><a href="#activity-total">Activity Total ($)</a></td>
@@ -2926,22 +2940,6 @@
 <td>The anticipated finish date for each cost item.</td>
 </tr>
 <tr>
-<td><a href="#fixed-price-expense">Lump Sum Expense ($)</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#fixed-price-labour">Lump Sum Labour ($)</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#fixed-price-procurement">Lump Sum Procurement ($)</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#fixed-price-total">Lump Sum Total ($)</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="#flag">Flag</a></td>
 <td>Cross (red) indicates an issue on the row. Exclamation (yellow) indicates an issue on a child row.</td>
 </tr>
@@ -2962,8 +2960,24 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="#fixed-price-expense">Lump Sum Expense ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#fixed-price-labour">Lump Sum Labour ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#fixed-price-procurement">Lump Sum Procurement ($)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#fixed-price-total">Lump Sum Total ($)</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="#non-standard-capacity">Non-Standard Capacity</a></td>
-<td>Standard resource capacity is 8hrs/day. Set this value where the activity is, for example, performed on site and involves 12hr days not standard 8hr office days (in this case type '12').</td>
+<td>Standard resource capacity is 8hrs/day. Set this value where the activity is, for example, performed on site and involves 12hr days not standard 8hr office days (in this case type '12</td>
 </tr>
 <tr>
 <td><a href="#predecessors">Predecessors</a></td>
@@ -2986,6 +3000,10 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="#reimbursable">Reimbursable?</a></td>
+<td>Use this checkbox to mark which cost items are reimbursable.</td>
+</tr>
+<tr>
 <td><a href="#reimbursable-activity">Reimbursable Activity</a></td>
 <td></td>
 </tr>
@@ -2998,23 +3016,19 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="#Reimbursable-procurement">Reimbursable Procurement ($)</a></td>
+<td><a href="#reimbursable-procurement">Reimbursable Procurement ($)</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="#total">Reimbursable Total ($)</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#reimbursable">Reimbursable?</a></td>
-<td>Use this checkbox to mark which cost items are reimbursable.</td>
-</tr>
-<tr>
-<td><a href="#resource-role">Resource Role</a></td>
+<td><a href="#reimbursable-total">Reimbursable Total ($)</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="#resources">Resource(s)</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#resource-role">Resource Role</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3478,6 +3492,36 @@
 </code></pre></div>
 </div>
 <h3 id="finish-date">Finish Date<a class="headerlink" href="#finish-date" title="Permanent link">#</a></h3>
+<h3 id="flag">Flag<a class="headerlink" href="#flag" title="Permanent link">#</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    COUNT(
+        IF(
+            [Flag Missing Client Pricing Schedule Ref.?]#, 
+            [Client Pricing Schedule Issues]@row
+        ), 
+        [Estimate Budget Issues]@row
+    ) &gt; 0, 
+    &quot;No&quot;, 
+    IF(
+        COUNT(
+            IF(
+                [Flag Missing Client Pricing Schedule Ref.?]#, 
+                DESCENDANTS(
+                    [Client Pricing Schedule Issues]@row
+                )
+            ), 
+            DESCENDANTS(
+                [Estimate Budget Issues]@row
+            )
+        ) &gt; 0, 
+        &quot;Hold&quot;, 
+        &quot;&quot;
+    )
+)
+</code></pre></div>
+</div>
 <h3 id="lump-sum-expense">Lump Sum Expense ($)<a class="headerlink" href="#lump-sum-expense" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
@@ -3530,7 +3574,7 @@
 )
 </code></pre></div>
 </div>
-<h3 id="flag">Flag<a class="headerlink" href="#flag" title="Permanent link">#</a></h3>
+<h3 id="flag_1">Flag<a class="headerlink" href="#flag_1" title="Permanent link">#</a></h3>
 <p>A cross (red) indicates an issue on the row. An exclamation (yellow) indicates an issue on a descendant row. The issues can be to do with the Client Pricing Schedule or Estimate Budgeting and the flags responsiveness to each is dependent on the selected options in the relevant 'Sheet Summary' settings. The specifics of the issues are detailed in the <a href="#client-pricing-schedule-issues"><code>client-pricing-schedule-issues</code></a> or <a href="#estimate-budget-issues"><code>estimate_budget_issues</code></a> columns as relevant.</p>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
