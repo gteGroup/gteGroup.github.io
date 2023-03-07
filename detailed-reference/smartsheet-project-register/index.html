@@ -4134,7 +4134,7 @@
 <div class="highlight"><pre><span></span><code>=IF(
     [Total Awarded Budget \[$\]]@row &lt;&gt; &quot;&quot;, 
     IF(
-        [Total Awarded Budget \[$\]]@row = [Total Submitted (Proposed) Budget \[$\]]@row, 
+        ABS([Total Awarded Budget \[$\]]@row - [Total Submitted (Proposed) Budget \[$\]]@row) &lt; 1, 
         &quot;Green&quot;, 
         &quot;Red&quot;
         ), 
