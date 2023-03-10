@@ -1704,6 +1704,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#estimated-duration-for-schedule-days" class="md-nav__link">
+    Estimated Duration For Schedule [days]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#estimator" class="md-nav__link">
     Estimator
   </a>
@@ -2485,6 +2492,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#estimated-duration-for-schedule-days" class="md-nav__link">
+    Estimated Duration For Schedule [days]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#estimator" class="md-nav__link">
     Estimator
   </a>
@@ -2955,6 +2969,10 @@
 <tr>
 <td><a href="#estimate-resource-loading">Estimate Resource Loading</a></td>
 <td></td>
+</tr>
+<tr>
+<td><a href="#estimated-duration-for-schedule-days">Estimated Duration For Schedule [days]</a></td>
+<td>Proposed value to be used as Duration for project scheduling purposes. It uses assigned hours budget.</td>
 </tr>
 <tr>
 <td><a href="#estimator">Estimator</a></td>
@@ -3496,7 +3514,7 @@
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
 <div class="highlight"><pre><span></span><code>=IFERROR(
-    ([Labour (hrs)]@row / Duration@row) 
+    ([Labour (hrs)]@row * [Go-Get %]# / Duration@row) 
     / (
         COUNTM([Resource(s)]@row) 
         * IF(
@@ -3511,6 +3529,18 @@
     ), 
     &quot;&quot;
 )
+</code></pre></div>
+</div>
+<h3 id="estimated-duration-for-schedule-days">Estimated Duration For Schedule [days]<a class="headerlink" href="#estimated-duration-for-schedule-days" title="Permanent link">#</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IFERROR(
+    IF(
+        Location@row = &quot;Site&quot;, 
+        ROUND([Activity Labour (hrs)]@row / 13, 1), 
+        CEILING([Activity Labour (hrs)]@row, 4) / 4
+    ),
+&quot;&quot;)
 </code></pre></div>
 </div>
 <h3 id="estimator">Estimator<a class="headerlink" href="#estimator" title="Permanent link">#</a></h3>
