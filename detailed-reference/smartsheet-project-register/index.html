@@ -3684,10 +3684,18 @@
 </tr>
 <tr>
 <td><a href="#get">Get %</a></td>
+<td>Dropdown list of predefined Get % values allowing a selection of most fitting value.</td>
+</tr>
+<tr>
+<td><a href="#get-gated">Get % Gated</a></td>
 <td>'Get' is how likely GTE is to win the project (assuming it goes ahead).</td>
 </tr>
 <tr>
 <td><a href="#go">Go %</a></td>
+<td>Dropdown list of predefined Go % values allowing a selection of most fitting value.</td>
+</tr>
+<tr>
+<td><a href="#go-gated">Go % Gated</a></td>
 <td>'Go' is the likelihood the project is awarded (mostly a function of the client).</td>
 </tr>
 <tr>
@@ -3905,6 +3913,10 @@
 <tr>
 <td><a href="#recommendation-declined">Recommendation Declined</a></td>
 <td>Approval request has been declined by the Engineering Manager or an Executive Director.</td>
+</tr>
+<tr>
+<td><a href="#referrer">Referrer</a></td>
+<td>Contains details of the referrer in case the Sales Source is set to "Referral".</td>
 </tr>
 <tr>
 <td><a href="#relevant-value-for-banding-assessment">Relevant Value for Banding Assessment</a></td>
@@ -4310,8 +4322,31 @@
 </div>
 <h3 id="expected-project-award-date">Expected Project Award Date<a class="headerlink" href="#expected-project-award-date" title="Permanent link">#</a></h3>
 <h3 id="get">Get %<a class="headerlink" href="#get" title="Permanent link">#</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    ISNUMBER([Get % Gated]@row), 
+    [Get % Gated]@row, 
+    VALUE(LEFT([Get % Gated]@row, FIND(&quot;%&quot;, [Get % Gated]@row) - 1)) / 100
+)
+</code></pre></div>
+</div>
 <h3 id="go">Go %<a class="headerlink" href="#go" title="Permanent link">#</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=IF(
+    ISNUMBER([Go % Gated]@row), 
+    [Go % Gated]@row, 
+    VALUE(LEFT([Go % Gated]@row, FIND(&quot;%&quot;, [Go % Gated]@row) - 1)) / 100
+)
+</code></pre></div>
+</div>
 <h3 id="go-get">Go-Get %<a class="headerlink" href="#go-get" title="Permanent link">#</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Formula</p>
+<div class="highlight"><pre><span></span><code>=[Go %]@row * [Get %]@row
+</code></pre></div>
+</div>
 <h3 id="gp">GP %<a class="headerlink" href="#gp" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Formula</p>
