@@ -1873,17 +1873,19 @@
 <p>Synchronize Status values across all PPM Instances:</p>
 <ol>
 <li>Open the report <a href="https://app.smartsheet.com/reports/8h8q7vGfWjx6qHW8jqrW7WRcrcgHcHXfrhrprfJ1">_PPMServiceReport – Manual Alignment</a>.</li>
-<li>Tick all the checkboxes in the <code>Manual Alignment Trigger</code> column.</li>
+<li>Tick all the checkboxes in the <code>Manual Alignment Trigger</code> column. It is recommended that this is done in batches of maximum 30 rows, otherwise the action will time out and can cause unpredictable behaviour.</li>
 <li>Save the report and wait a few minutes for the synchronization to be completed.</li>
-<li>Untick all the checkboxes in the <code>Manual Alignment Trigger</code> column.</li>
+<li>Change report filter: 'Manual Alignment Trigger' is <strong>Checked</strong>.</li>
+<li>Untick all the checkboxes in the <code>Manual Alignment Trigger</code> column. It is recommended that this is done in batches of maximum 30 rows, otherwise the action will time out and can cause unpredictable behaviour.</li>
 <li>Save the report.</li>
+<li>Change report filter: 'Manual Alignment Trigger' is <strong>Unchecked</strong>.</li>
 </ol>
 </li>
 <li>
 <p>Synchronize Feedback values across all PPM Instances:</p>
 <ol>
 <li>Open the report <a href="https://app.smartsheet.com/reports/hPVcC3JRpj9PG5vmXq7M8HpxF7xPhP389W2qGFc1">_PPMServiceReport – Feedback Alignment</a>.</li>
-<li>Copy and Paste the WHOLE contents of <code>Feedback – Shadow</code> column into <code>Feedback</code> column.</li>
+<li>Copy and Paste the WHOLE contents of <code>Feedback – Shadow</code> column into <code>Feedback</code> column. It is recommended that this is done in batches of maximum 30 rows, otherwise the action will time out and can cause unpredictable behaviour.</li>
 <li>Save the report.</li>
 </ol>
 </li>
