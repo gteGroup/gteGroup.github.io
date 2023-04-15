@@ -3069,6 +3069,7 @@
     IF(
         OR(
             LEFT([Workflow Log]@row, 5) = &quot;[1.0T&quot;,
+            LEFT([Workflow Log]@row, 5) = &quot;[1.1T&quot;,
             LEFT([Workflow Log]@row, 5) = &quot;[2.2T&quot;,
             LEFT([Workflow Log]@row, 5) = &quot;[3.2T&quot;
         ),
